@@ -1,0 +1,2257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Aella Nguyen Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Aella Nguyen: finance and data projects in equity research, quant research, econometrics and business analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap">
+<style>
+/* Layout: a calm research desk. Sky-white page and trust-navy ink; every project opens as a one-page research note with a key-data rail, sourced exhibits and the original files. */
+:root{
+  --bg:#F6F9FC; --surface:#FFFFFF; --panel:#EEF5FC; --paper:#FFFFFF;
+  --ink:#0B2341; --ink-2:#3F546C; --muted:#5F7389;
+  --line:#DCE6F0; --line-strong:#C3D3E3;
+  --primary:#0176D3; --btn-fg:#FFFFFF; --link:#0B5CAB;
+  --sky:#1B96FF; --sky-wash:#E6F2FE; --grid-line:rgba(1,118,211,.075);
+  --warm:#E2654A; --warm-wash:#FDEDE8; --warm-ink:#A63A22;
+  --pos:#12805C; --neg:#C2412D;
+  --s1:#0176D3; --s2:#E2654A; --on-s1:#FFFFFF; --on-s2:#0B2341;
+  --grid:#E5ECF3; --axis:#B7C7D8; --code-bg:#F4F8FC;
+  --nav-bg:rgba(246,249,252,.88); --hero-top:#E3F0FD;
+  --overlay:rgba(6,18,32,.97); --overlay-ink:#B5C4D4;
+  --shadow:0 1px 2px rgba(11,35,65,.05),0 6px 20px rgba(11,35,65,.06);
+  --shadow-hover:0 2px 6px rgba(11,35,65,.08),0 18px 40px rgba(11,35,65,.11);
+  --f-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-ui:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --maxw:1160px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#071423; --surface:#0D1E33; --panel:#112842; --paper:#FFFFFF;
+    --ink:#EAF1F8; --ink-2:#B5C4D4; --muted:#8EA1B6;
+    --line:#1E3350; --line-strong:#2B4768;
+    --primary:#4DA3FF; --btn-fg:#06162A; --link:#7CB8FF;
+    --sky:#3AA8FF; --sky-wash:#0F2C4A; --grid-line:rgba(77,163,255,.07);
+    --warm:#EE7E62; --warm-wash:#3A2019; --warm-ink:#F4A08A;
+    --pos:#3CC48E; --neg:#F08268;
+    --s1:#2E8BEA; --s2:#DE6A4F; --on-s1:#06162A; --on-s2:#0B2341;
+    --grid:#17304C; --axis:#2D4767; --code-bg:#0A1828;
+    --nav-bg:rgba(7,20,35,.86); --hero-top:#0C2340;
+    --overlay:rgba(3,9,17,.95); --overlay-ink:#B5C4D4;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+    --shadow-hover:0 2px 6px rgba(0,0,0,.35),0 18px 40px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071423; --surface:#0D1E33; --panel:#112842; --paper:#FFFFFF;
+  --ink:#EAF1F8; --ink-2:#B5C4D4; --muted:#8EA1B6;
+  --line:#1E3350; --line-strong:#2B4768;
+  --primary:#4DA3FF; --btn-fg:#06162A; --link:#7CB8FF;
+  --sky:#3AA8FF; --sky-wash:#0F2C4A; --grid-line:rgba(77,163,255,.07);
+  --warm:#EE7E62; --warm-wash:#3A2019; --warm-ink:#F4A08A;
+  --pos:#3CC48E; --neg:#F08268;
+  --s1:#2E8BEA; --s2:#DE6A4F; --on-s1:#06162A; --on-s2:#0B2341;
+  --grid:#17304C; --axis:#2D4767; --code-bg:#0A1828;
+  --nav-bg:rgba(7,20,35,.86); --hero-top:#0C2340;
+  --overlay:rgba(3,9,17,.95); --overlay-ink:#B5C4D4;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+  --shadow-hover:0 2px 6px rgba(0,0,0,.35),0 18px 40px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.lock{overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--sky);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{margin:0;color:var(--ink);text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit}
+.wrap{width:100%;max-width:calc(var(--maxw) + 64px);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section[id],.panel[id],.codebox{scroll-margin-top:84px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--nav-bg);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:14px;min-height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.monogram{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);font-family:var(--f-display);font-size:16px;font-weight:600;letter-spacing:.02em}
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{color:var(--ink-2);text-decoration:none;font-size:.9rem;font-weight:500;padding:8px 10px;border-radius:8px}
+.nav-links a:hover{background:var(--panel);color:var(--ink)}
+@media (max-width:640px){.nav-links a.opt{display:none}.brand-name{display:none}}
+
+/* buttons, chips */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.94rem;line-height:1;padding:12px 18px;border-radius:999px;border:1px solid transparent;background:var(--primary);color:var(--btn-fg);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background-color .15s,border-color .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn-ghost:hover{background:var(--surface);border-color:var(--primary)}
+.btn-small{padding:9px 14px;font-size:.85rem}
+.chip{font-weight:500;font-size:.85rem;line-height:1;padding:9px 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--primary);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.75rem;font-weight:500;line-height:1.2;padding:5px 10px;border-radius:999px;background:var(--panel);color:var(--ink-2)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--hero-top),var(--bg) 92%)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 78% 30%,#000 10%,transparent 72%);mask-image:radial-gradient(ellipse 70% 80% at 78% 30%,#000 10%,transparent 72%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:72px 64px}
+.display{font-family:var(--f-display);font-weight:500;font-size:clamp(3rem,7.2vw,5.2rem);line-height:.98;letter-spacing:-.025em;margin-top:14px;font-variation-settings:"opsz" 72}
+.hero-lede{font-family:var(--f-display);font-style:italic;font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.28;margin-top:18px;max-width:30ch;color:var(--ink);font-variation-settings:"opsz" 36}
+.hero-sub{margin-top:18px;max-width:60ch;color:var(--ink-2);font-size:1.02rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.proof-tile{display:flex;flex-direction:column;gap:4px;padding:18px 18px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s}
+.proof-tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
+.proof-k{font-size:clamp(1.55rem,3vw,2.05rem);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.proof-l{font-size:.88rem;line-height:1.35;color:var(--ink-2)}
+.proof-p{margin-top:auto;padding-top:12px;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--link)}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr;gap:36px;padding-block:44px 40px}}
+@media (max-width:380px){.proof{grid-template-columns:1fr}}
+
+/* principles */
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-block:30px 6px}
+.principle{padding:4px 26px;border-left:1px solid var(--line)}
+.principle:first-child{padding-left:0;border-left:0}
+.principle h3{font-size:1rem;font-weight:700}
+.principle p{margin-top:6px;font-size:.92rem;color:var(--ink-2)}
+@media (max-width:820px){.principles{grid-template-columns:1fr}.principle,.principle:first-child{padding:14px 0;border-left:0;border-top:1px solid var(--line)}.principle:first-child{border-top:0}}
+
+/* sections */
+.section{padding-block:72px}
+.section-alt{background:var(--surface);border-block:1px solid var(--line)}
+.section-head{max-width:720px;margin-bottom:28px}
+.h2{font-family:var(--f-display);font-weight:500;font-size:clamp(1.95rem,3.8vw,2.7rem);line-height:1.08;letter-spacing:-.015em;margin-top:8px;font-variation-settings:"opsz" 60}
+.section-sub{margin-top:10px;color:var(--ink-2);max-width:62ch}
+.subhead{display:flex;align-items:baseline;gap:12px;margin:40px 0 16px;font-size:1.05rem;font-weight:700}
+.subhead span{font-weight:400;font-size:.88rem;color:var(--muted)}
+
+/* filters + cards */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:22px}
+.filter-count{margin-left:auto;font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.cards-feature{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.cards-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.cards-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:1000px){.cards-3{grid-template-columns:repeat(2,minmax(0,1fr))}.cards-3>:last-child{grid-column:span 2}}
+@media (max-width:760px){.cards-feature,.cards-3,.cards-2{grid-template-columns:1fr}.cards-3>:last-child{grid-column:auto}}
+.card{position:relative;display:flex;flex-direction:column;gap:14px;min-width:0;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s,opacity .2s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
+.card.is-dim{opacity:.3}
+.card.is-dim:hover{opacity:.7}
+.card-feature{padding:26px}
+.card h3{font-size:1.24rem;font-weight:700;letter-spacing:-.012em;line-height:1.25}
+.card-feature h3{font-size:1.42rem}
+.card .dek{font-size:.95rem;color:var(--ink-2)}
+.card-metrics{display:flex;flex-wrap:wrap;gap:14px 28px}
+.metric b{display:block;font-size:1.55rem;font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.metric span{font-size:.8rem;color:var(--muted)}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:.86rem}
+.role{color:var(--muted)}
+.cta{font-weight:600;color:var(--link);white-space:nowrap}
+.cta .arr{display:inline-block;transition:transform .18s}
+.card:hover .cta .arr{transform:translateX(3px)}
+.mini{height:96px;margin-top:2px}
+.mini-cap{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:.76rem;color:var(--muted)}
+.mini-cap span{display:inline-flex;align-items:center;gap:6px}
+.mini-cap i{display:inline-block;width:9px;height:9px;border-radius:2px}
+.mini-cap i.l1{background:var(--s1)}.mini-cap i.l2{background:var(--s2)}
+.mini-cap i.mk-t{width:2px;height:11px;border-radius:0;background:var(--warm)}
+.mini-cap i.mk-p{width:2px;height:11px;border-radius:0;background:var(--ink)}
+.nw{white-space:nowrap}
+.rating{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;background:var(--panel)}
+.rating>div{padding:10px 14px;border-left:1px solid var(--line-strong);min-width:0}
+.rating>div:first-child{border-left:0}
+.rating dt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rating dd{margin:3px 0 0;font-weight:700;font-size:1.12rem;letter-spacing:-.01em;white-space:nowrap}
+.hold{display:inline-block;padding:1px 10px;border-radius:999px;background:var(--warm-wash);color:var(--warm-ink)}
+@media (max-width:520px){.rating{grid-template-columns:repeat(2,minmax(0,1fr))}.rating>div:nth-child(3){border-left:0}.rating>div:nth-child(n+3){border-top:1px solid var(--line-strong)}}
+
+/* skills */
+.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skill-col{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--bg);min-width:0}
+.skill-col h3{font-size:1.06rem;font-weight:700;margin-bottom:8px}
+.skill-list li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--ink)}
+.skill-list li:first-child{border-top:0}
+.ev{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px;flex-shrink:0}
+.ev a,.ev span{font-family:var(--f-mono);font-size:.68rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--sky-wash);color:var(--link);text-decoration:none;white-space:nowrap}
+.ev a:hover{background:var(--primary);color:var(--btn-fg)}
+.toolkit{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:24px}
+.toolkit .label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.toolkit .tag{background:var(--bg);border:1px solid var(--line);font-size:.8rem}
+@media (max-width:900px){.skills-grid{grid-template-columns:1fr}}
+
+/* experience */
+.xp{border-top:1px solid var(--line)}
+.xp-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px;padding:24px 0;border-bottom:1px solid var(--line)}
+.xp-when{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);padding-top:4px}
+.xp-org{font-size:1.1rem;font-weight:700}
+.xp-title{color:var(--ink-2);font-size:.95rem}
+.xp-sum{margin-top:8px;color:var(--ink-2);max-width:72ch}
+.xp-row .tags{margin-top:12px}
+@media (max-width:700px){.xp-row{grid-template-columns:1fr;gap:6px}}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.panel{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:0}
+.panel h3{font-size:1.1rem;font-weight:700}
+.panel .k{display:block;margin-top:14px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.panel p{color:var(--ink-2);font-size:.94rem;margin-top:3px}
+.lead-list li{padding:12px 0;border-top:1px solid var(--line)}
+.lead-list li:first-child{border-top:0;padding-top:4px}
+.lead-list b{display:block;font-size:.98rem}
+.lead-list span{display:block;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-top:2px}
+.lead-list p{margin-top:4px}
+
+/* contact */
+.contact{padding-block:80px 72px;background:var(--surface);border-top:1px solid var(--line)}
+.contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px}
+.email-text{font-family:var(--f-mono);font-size:1rem;padding:9px 14px;border-radius:10px;background:var(--panel);color:var(--ink);-webkit-user-select:all;user-select:all;overflow-wrap:anywhere}
+.foot{padding-block:22px;border-top:1px solid var(--line);background:var(--surface)}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.82rem;color:var(--muted)}
+
+/* project view */
+.project{padding-block:18px 64px}
+.crumbs{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:10px 22px}
+.back{font-weight:600;text-decoration:none}
+.back:hover{text-decoration:underline}
+.crumb-pos{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.p-head{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:44px;align-items:start;padding-bottom:30px}
+@media (max-width:920px){.p-head{grid-template-columns:1fr;gap:26px}}
+.p-title{font-family:var(--f-display);font-weight:500;font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.05;letter-spacing:-.02em;margin-top:12px;font-variation-settings:"opsz" 72}
+.p-title:focus{outline:none}
+.p-dek{margin-top:16px;max-width:62ch;font-size:1.1rem;color:var(--ink-2)}
+.status{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:3px 10px;border-radius:999px;background:var(--warm-wash);color:var(--warm-ink);font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;vertical-align:2px}
+.p-head .rating{margin-top:22px;max-width:620px}
+.keydata{padding:18px 20px 10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.kd-title{font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.keydata dl{margin:8px 0 0}
+.keydata dl>div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:.88rem;line-height:1.45}
+.keydata dt{color:var(--muted)}
+.keydata dd{margin:0;font-weight:500;color:var(--ink);overflow-wrap:anywhere}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:34px}
+@media (max-width:920px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{padding:16px 18px;border-radius:12px;background:var(--panel);min-width:0}
+.stat b{display:block;font-size:clamp(1.45rem,2.6vw,2rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.stat span{display:block;margin-top:5px;font-size:.86rem;font-weight:600;color:var(--ink);line-height:1.3}
+.stat small{display:block;margin-top:2px;font-size:.78rem;color:var(--muted);line-height:1.35}
+.p-sec{display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px;padding-block:32px;border-top:1px solid var(--line)}
+.p-sec>h2{font-family:var(--f-display);font-weight:500;font-size:1.55rem;line-height:1.15;font-variation-settings:"opsz" 36}
+@media (max-width:920px){.p-sec{grid-template-columns:1fr;gap:14px}}
+.p-body{min-width:0;max-width:780px}
+.p-body>p{color:var(--ink-2)}
+.p-body>p+p{margin-top:12px}
+.ticks li{position:relative;padding-left:26px;color:var(--ink-2)}
+.ticks li+li{margin-top:11px}
+.ticks li::before{content:"";position:absolute;left:2px;top:.72em;width:12px;height:2px;border-radius:2px;background:var(--sky)}
+.callout{margin-top:4px;padding:18px 20px;border-radius:12px;background:var(--sky-wash)}
+.callout h3{font-family:var(--f-mono);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--link);margin-bottom:6px}
+.callout p{color:var(--ink)}
+.callout p+p{margin-top:8px;color:var(--ink-2)}
+.thesis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.thesis div{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.thesis b{display:block;font-size:.95rem}
+.thesis span{display:block;margin-top:4px;font-size:.86rem;color:var(--ink-2)}
+@media (max-width:760px){.thesis{grid-template-columns:1fr}}
+.skills-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.skills-two h3{font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.soft li{padding:10px 0;border-top:1px solid var(--line);color:var(--ink-2);font-size:.94rem}
+.soft li:first-child{border-top:0;padding-top:0}
+.soft b{color:var(--ink)}
+@media (max-width:720px){.skills-two{grid-template-columns:1fr}}
+.p-next{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;padding-top:28px;border-top:1px solid var(--line)}
+.p-next a{display:block;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.p-next a:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+.p-next small{display:block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.p-next b{display:block;margin-top:4px;font-size:.98rem}
+.p-next .nx{text-align:right}
+@media (max-width:560px){.p-next{grid-template-columns:1fr}.p-next .nx{text-align:left}}
+
+/* exhibits */
+.exhibit{margin:0 0 22px;padding:18px 18px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:0}
+.exhibit:last-child{margin-bottom:0}
+.ex-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-bottom:12px}
+.ex-num{font-family:var(--f-mono);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--link)}
+.ex-title{font-size:1rem;font-weight:700;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:8px;font-size:.82rem;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.legend i.l1{background:var(--s1)}.legend i.l2{background:var(--s2)}
+.legend i.ln{width:16px;height:2px;border-radius:2px}
+.legend i.mk-t{width:2px;height:14px;border-radius:0;background:var(--warm)}
+.legend i.mk-p{width:2px;height:14px;border-radius:0;background:var(--ink)}
+.chart{position:relative;width:100%;min-width:0}
+.ex-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 16px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.link-btn{background:none;border:0;padding:4px 0;font-weight:600;font-size:.8rem;color:var(--link);cursor:pointer}
+.link-btn:hover{text-decoration:underline}
+.ex-table{margin-top:12px;overflow-x:auto}
+table.data{width:100%;border-collapse:collapse;font-size:.85rem;font-variant-numeric:tabular-nums}
+table.data th{padding:8px 10px;border-bottom:1px solid var(--line-strong);text-align:left;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+table.data td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink)}
+table.data .num{text-align:right;white-space:nowrap}
+table.data tr.total td{font-weight:700}
+.note{margin-top:10px;font-size:.84rem;color:var(--muted)}
+.sens td.num{position:relative}
+.sens td.up{color:var(--pos);font-weight:600}
+.sens td.base{outline:2px solid var(--primary);outline-offset:-2px;border-radius:4px;font-weight:700;background:var(--sky-wash)}
+.sens th.row{color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:.85rem}
+.eq{margin:14px 0 4px;padding:16px 18px;border-radius:12px;background:var(--panel);font-family:var(--f-display);font-size:1.18rem;color:var(--ink);overflow-x:auto;white-space:nowrap}
+.eq sub{font-size:.68em}
+
+/* svg charts */
+.viz{display:block;overflow:visible}
+.viz text{font-family:var(--f-ui);pointer-events:none}
+.viz .tick{font-family:var(--f-mono);font-size:11px;fill:var(--muted)}
+.viz .xlabel{font-size:12px;fill:var(--ink-2)}
+.viz .xlabel-strong{font-size:12.5px;font-weight:600;fill:var(--ink)}
+.viz .xlabel-sm{font-size:11px;fill:var(--muted)}
+.viz .vlabel{font-size:11.5px;font-weight:600;fill:var(--ink)}
+.viz .vlabel-on1{font-size:12px;font-weight:700;fill:var(--on-s1)}
+.viz .vlabel-on2{font-size:12px;font-weight:700;fill:var(--on-s2)}
+.viz .mlabel{font-size:11.5px;font-weight:700;fill:var(--ink)}
+.viz .chg{font-weight:600;fill:var(--ink-2)}
+.viz .grid{stroke:var(--grid);stroke-width:1}
+.viz .axis{stroke:var(--axis);stroke-width:1}
+.viz .s1{fill:var(--s1)}.viz .s2{fill:var(--s2)}
+.viz .line{fill:none;stroke-width:2;stroke-linecap:round}
+.viz .ln1{stroke:var(--s1)}.viz .ln2{stroke:var(--s2)}
+.viz .dot{stroke:var(--surface);stroke-width:2}
+.viz .midtick{stroke:var(--surface);stroke-width:2}
+.viz .connector{stroke:var(--axis);stroke-width:1}
+.viz .mk-target{stroke:var(--warm);stroke-width:2}
+.viz .mk-price{stroke:var(--ink);stroke-width:1.5}
+.viz .hit{fill:transparent;outline:none;pointer-events:all}
+.viz line,.viz path,.viz circle{pointer-events:none}
+.viz .halo{paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
+.viz .hit:focus-visible{stroke:var(--sky);stroke-width:2;fill:var(--sky-wash);fill-opacity:.35}
+.viz .bar,.viz .seg,.viz .line,.viz .dot{transition:opacity .15s}
+.viz.hovering .bar:not(.on),.viz.hovering .seg:not(.on),.viz.hovering .line:not(.on),.viz.hovering .dot:not(.on){opacity:.4}
+.viz .grow{transform-box:fill-box;transform-origin:50% 100%;animation:growY .6s cubic-bezier(.2,.7,.2,1) both}
+.viz .grow.neg{transform-origin:50% 0%}
+.viz .growx{transform-box:fill-box;transform-origin:0% 50%;animation:growX .6s cubic-bezier(.2,.7,.2,1) both}
+.viz.static .grow,.viz.static .growx{animation:none}
+@keyframes growY{from{transform:scaleY(0)}}
+@keyframes growX{from{transform:scaleX(0)}}
+.mult{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.mult2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media (max-width:700px){.mult,.mult2{grid-template-columns:1fr}}
+.mult h4,.mult2 h4{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:.9rem;font-weight:700;margin-bottom:4px}
+.mult h4 span,.mult2 h4 span{font-size:.76rem;font-weight:400;color:var(--muted)}
+.mult2 h4 i{display:inline-block;width:11px;height:11px;border-radius:3px;align-self:center}
+.tip{position:fixed;z-index:95;pointer-events:none;max-width:260px;padding:8px 11px;border-radius:9px;background:var(--ink);color:var(--bg);font-size:.8rem;line-height:1.35;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.tip strong{display:block;font-size:.98rem;font-variant-numeric:tabular-nums}
+.tip span{display:block;opacity:.82}
+
+/* files, code, viewer */
+.files{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:720px){.files{grid-template-columns:1fr}}
+.file{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);min-width:0}
+.file-ic{flex:none;display:grid;place-items:center;width:42px;height:50px;border:1px solid var(--line-strong);border-radius:7px;background:var(--panel);font-family:var(--f-mono);font-size:.62rem;font-weight:600;color:var(--link)}
+.file h3{font-size:.98rem;font-weight:700}
+.file p{margin-top:2px;font-size:.82rem;color:var(--muted)}
+.file-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.dl-status{font-size:.78rem;color:var(--muted)}
+.codebox{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.codebox summary{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;cursor:pointer;font-weight:600;font-size:.9rem;list-style:none}
+.codebox summary::-webkit-details-marker{display:none}
+.codebox summary::after{content:"Show";font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--link)}
+.codebox[open] summary::after{content:"Hide"}
+.codebox pre{margin:0;max-height:540px;overflow:auto;padding:16px 18px;border-top:1px solid var(--line);background:var(--code-bg);font-family:var(--f-mono);font-size:12.5px;line-height:1.6;color:var(--ink);tab-size:4}
+.hljs-keyword,.hljs-built_in{color:var(--s1);font-weight:500}
+.hljs-string{color:var(--pos)}
+.hljs-comment{color:var(--muted);font-style:italic}
+.hljs-number,.hljs-literal{color:var(--warm-ink)}
+.hljs-title{color:var(--link);font-weight:600}
+.hljs-meta,.hljs-params{color:var(--ink-2)}
+.viewer{position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;background:var(--overlay);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.viewer-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--surface);border-bottom:1px solid var(--line)}
+.viewer-bar h2{font-size:1rem;font-weight:700;line-height:1.3}
+.viewer-bar p{font-size:.78rem;color:var(--muted)}
+.viewer-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.icon-btn{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-size:1.35rem;line-height:1;cursor:pointer}
+.icon-btn:hover{border-color:var(--primary)}
+.viewer-body{flex:1;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:24px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.vpage{margin:0;width:min(100%,1100px)}
+.viewer-body[data-shape="portrait"] .vpage{width:min(100%,820px)}
+.vpage img{display:block;width:100%;height:auto;border-radius:6px;background:var(--paper);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.vpage figcaption{margin-top:7px;text-align:center;font-family:var(--f-mono);font-size:.72rem;color:var(--overlay-ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aella Nguyen | Portfolio">
+<meta property="og:description" content="Finance analyst with a data toolkit. Seven projects in equity research, quant research, econometrics and analytics, each with its method, results and original files.">
+<meta property="og:image" content="files/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%230B2341%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2741%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2727%27%20fill%3D%27%23F6F9FC%27%20text-anchor%3D%27middle%27%3EAN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Aella Nguyen, back to top"><span class="monogram" aria-hidden="true">AN</span><span class="brand-name">Aella Nguyen</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a class="opt" href="#skills">Skills</a>
+      <a class="opt" href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-small" href="https://www.linkedin.com/in/aella-nguyen" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ HOME ============ -->
+<div id="view-home" class="view">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Mathematical Economics · Gettysburg College · Class of 2027</p>
+        <h1 class="display">Aella Nguyen</h1>
+        <p class="hero-lede">Finance analyst with a data toolkit: from messy data to a clear recommendation.</p>
+        <p class="hero-sub">Senior at Gettysburg College (GPA 3.94/4.00) with minors in Business and Data Science, most recently a Finance Analyst Intern in Microsoft's Finance Rotation Program. The seven projects below cover equity research, quant and factor research, econometrics and business analytics, each with its method, results and original files.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#work">See the work</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/aella-nguyen" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <button class="btn btn-ghost" type="button" data-copy="nguynh02@gettysburg.edu">Copy email</button>
+        </div>
+      </div>
+      <div class="proof" aria-label="Highlights">
+        <a class="proof-tile" href="#indego"><span class="proof-k">2.26M</span><span class="proof-l">bike trips processed in Python</span><span class="proof-p">Indego growth research →</span></a>
+        <a class="proof-tile" href="#cfa"><span class="proof-k">$363.69</span><span class="proof-l">12-month price target, HOLD rating</span><span class="proof-p">CFA Research Challenge →</span></a>
+        <a class="proof-tile" href="#tsla"><span class="proof-k">8,320</span><span class="proof-l">strategy parameter sets backtested</span><span class="proof-p">Quant research →</span></a>
+        <a class="proof-tile" href="#minwage"><span class="proof-k">535,323</span><span class="proof-l">person-month observations</span><span class="proof-p">Econometrics research →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap principles" aria-label="How I work">
+    <div class="principle"><h3>Check the data before the story</h3><p>Indego: flagged invalid durations, trips over 180 minutes and wrong-period dates instead of silently dropping rows.</p></div>
+    <div class="principle"><h3>Find the driver, not just the total</h3><p>Microsoft: split Net New ARR into volume, price and mix. Indego: split growth by station cohort and bike type.</p></div>
+    <div class="principle"><h3>End with a decision</h3><p>CFA: a disciplined HOLD on a stock with strong momentum. Indego: a reversible pilot with clear go or no-go gates.</p></div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="h2">Projects, with the evidence attached</h2>
+        <p class="section-sub">Open any project for the question, the method, the findings and the original deck, paper, code or data.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects by skill">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="valuation" aria-pressed="false">Valuation</button>
+        <button class="chip" type="button" data-filter="forecasting" aria-pressed="false">Forecasting</button>
+        <button class="chip" type="button" data-filter="backtesting" aria-pressed="false">Backtesting</button>
+        <button class="chip" type="button" data-filter="econometrics" aria-pressed="false">Econometrics</button>
+        <button class="chip" type="button" data-filter="python" aria-pressed="false">Python</button>
+        <button class="chip" type="button" data-filter="leadership" aria-pressed="false">Leadership</button>
+        <span class="filter-count" id="filter-count" aria-live="polite">7 projects</span>
+      </div>
+
+      <div class="cards-feature">
+        <a class="card card-feature" href="#indego" data-tags="python analytics">
+          <p class="eyebrow">Independent research · Oct. 2026</p>
+          <h3>Indego Bike Share: where the growth comes from</h3>
+          <p class="dek">Measured Philadelphia's bike-share growth from 2.26M trip records, traced 59% of the new ride-minutes to stations opened in 2025-26, and recommended a reversible e-bike pilot.</p>
+          <div class="mini-cap" aria-hidden="true"><span><i class="l1"></i>Ride-minutes</span><span><i class="l2"></i>Trips</span><span>Growth by quarter, Q1-Q3</span></div>
+          <div class="chart mini" data-chart="indego-mini" aria-hidden="true"></div>
+          <div class="card-metrics">
+            <div class="metric"><b>+18.9%</b><span>ride-minutes, year over year</span></div>
+            <div class="metric"><b>+34.9%</b><span>e-bike trips</span></div>
+            <div class="metric"><b>59%</b><span>of growth from new stations</span></div>
+          </div>
+          <ul class="tags"><li class="tag">Python</li><li class="tag">Cohort analysis</li><li class="tag">Data validation</li><li class="tag">Executive brief</li></ul>
+          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read the case study <span class="arr">→</span></span></div>
+        </a>
+        <a class="card card-feature" href="#cfa" data-tags="valuation forecasting leadership">
+          <p class="eyebrow">Equity research · CFA Institute Research Challenge</p>
+          <h3>Carpenter Technology (NYSE: CRS)</h3>
+          <p class="dek">Led a 5-person team to a HOLD call: record aerospace demand and pricing power are real, but a P/E about 40% above its history already prices them in.</p>
+          <dl class="rating">
+            <div><dt>Rating</dt><dd><span class="hold">HOLD</span></dd></div>
+            <div><dt>Target</dt><dd>$363.69</dd></div>
+            <div><dt>Price</dt><dd>$367.98</dd></div>
+            <div><dt>Downside</dt><dd>1.2%</dd></div>
+          </dl>
+          <div class="mini-cap" aria-hidden="true"><span><i class="l1"></i>Value range, $ per share</span><span><i class="mk-t"></i>Target</span><span><i class="mk-p"></i>Price</span></div>
+          <div class="chart" data-chart="cfa-mini" aria-hidden="true"></div>
+          <div class="card-metrics">
+            <div class="metric"><b>9.45%</b><span>WACC</span></div>
+            <div class="metric"><b>10,000</b><span>Monte Carlo runs</span></div>
+            <div class="metric"><b>47</b><span>slides of research</span></div>
+          </div>
+          <ul class="tags"><li class="tag">DCF</li><li class="tag">Comparable companies</li><li class="tag">Monte Carlo</li><li class="tag">FactSet</li></ul>
+          <div class="card-foot"><span class="role">Team lead, 5 people</span><span class="cta">Read the case study <span class="arr">→</span></span></div>
+        </a>
+      </div>
+
+      <div class="cards-3">
+        <a class="card" href="#tsla" data-tags="backtesting quant">
+          <p class="eyebrow">Quant research · Summer 2025</p>
+          <h3>Volatility-conditioned RSI strategy on TSLA</h3>
+          <p class="dek">Backtested a swing-trading rule on five years of daily TSLA data and stress-tested 8,320 parameter sets.</p>
+          <div class="card-metrics">
+            <div class="metric"><b>1.29</b><span>Sharpe ratio</span></div>
+            <div class="metric"><b>34.6%</b><span>CAGR</span></div>
+            <div class="metric"><b>12.2%</b><span>max drawdown</span></div>
+          </div>
+          <ul class="tags"><li class="tag">Backtesting</li><li class="tag">Risk management</li><li class="tag">Optimization</li></ul>
+          <div class="card-foot"><span class="role">Co-author</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
+        <a class="card" href="#factor" data-tags="backtesting quant">
+          <p class="eyebrow">Factor research · 1996-2023 data</p>
+          <h3>Does sales growth predict stock returns?</h3>
+          <p class="dek">Decile backtests show the fastest growers underperform. A four-factor model flips the long-short spread.</p>
+          <div class="card-metrics">
+            <div class="metric"><b>+6.7%</b><span>model long-short</span></div>
+            <div class="metric"><b>&minus;5.5%</b><span>growth alone</span></div>
+          </div>
+          <ul class="tags"><li class="tag">Factor investing</li><li class="tag">Decile sorts</li><li class="tag">Multi-factor model</li></ul>
+          <div class="card-foot"><span class="role">Team of 4</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
+        <a class="card" href="#minwage" data-tags="econometrics research">
+          <p class="eyebrow">Econometrics · Fall 2026 · In progress</p>
+          <h3>Do minimum wage increases cost teen jobs?</h3>
+          <p class="dek">A staggered difference-in-differences study of 36 states built on Current Population Survey microdata.</p>
+          <div class="card-metrics">
+            <div class="metric"><b>535,323</b><span>observations</span></div>
+            <div class="metric"><b>15 / 21</b><span>treated / comparison states</span></div>
+          </div>
+          <ul class="tags"><li class="tag">Causal inference</li><li class="tag">Difference-in-differences</li><li class="tag">Microdata</li></ul>
+          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
+      </div>
+
+      <h3 class="subhead">Job simulations <span>Virtual programs by Citi and Fidelity International</span></h3>
+      <div class="cards-2">
+        <a class="card" href="#citi" data-tags="forecasting leadership">
+          <p class="eyebrow">Virtual program · Citi Finance</p>
+          <h3>Q4 2022 operating plan</h3>
+          <p class="dek">A P&amp;L walk from $18.0B of revenue to $2.5B of net income, card spending against COVID-19 waves, and deposit trigger monitoring.</p>
+          <ul class="tags"><li class="tag">P&amp;L forecasting</li><li class="tag">Credit costs</li><li class="tag">Risk triggers</li></ul>
+          <div class="card-foot"><span class="role">Team lead</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
+        <a class="card" href="#fidelity" data-tags="portfolio leadership">
+          <p class="eyebrow">Virtual program · Fidelity International</p>
+          <h3>Portfolio construction for a $100K client</h3>
+          <p class="dek">An investment policy statement and a four-ETF allocation, with the bond and gold sleeves backed by rates, inflation and dollar analysis.</p>
+          <ul class="tags"><li class="tag">Investment policy</li><li class="tag">Asset allocation</li><li class="tag">Macro analysis</li></ul>
+          <div class="card-foot"><span class="role">Team lead</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Skills</p>
+        <h2 class="h2">What each project proves</h2>
+        <p class="section-sub">Every skill points to the work that shows it.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-col">
+          <h3>Finance and valuation</h3>
+          <ul class="skill-list">
+            <li><span>DCF and comparable-company valuation</span><span class="ev"><a href="#cfa">CFA</a></span></li>
+            <li><span>WACC, CAPM and beta regression</span><span class="ev"><a href="#cfa">CFA</a></span></li>
+            <li><span>Monte Carlo, scenario and sensitivity analysis</span><span class="ev"><a href="#cfa">CFA</a></span></li>
+            <li><span>P&amp;L forecasting and credit costs</span><span class="ev"><a href="#citi">Citi</a></span></li>
+            <li><span>Factor research and strategy backtesting</span><span class="ev"><a href="#factor">Factor</a><a href="#tsla">TSLA</a></span></li>
+            <li><span>Investment policy and asset allocation</span><span class="ev"><a href="#fidelity">Fidelity</a></span></li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Data and econometrics</h3>
+          <ul class="skill-list">
+            <li><span>Python data pipelines on 2.26M rows</span><span class="ev"><a href="#indego">Indego</a></span></li>
+            <li><span>Seasonality-adjusted growth and cohort analysis</span><span class="ev"><a href="#indego">Indego</a></span></li>
+            <li><span>Difference-in-differences and event studies</span><span class="ev"><a href="#minwage">Min wage</a></span></li>
+            <li><span>Survey-weighted microdata (IPUMS CPS)</span><span class="ev"><a href="#minwage">Min wage</a></span></li>
+            <li><span>Parameter optimization by grid search</span><span class="ev"><a href="#tsla">TSLA</a></span></li>
+            <li><span>Power BI and DAX (40+ measures)</span><span class="ev"><a href="#experience">Microsoft</a></span></li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Leadership and communication</h3>
+          <ul class="skill-list">
+            <li><span>Led a 5-person equity research team</span><span class="ev"><a href="#cfa">CFA</a></span></li>
+            <li><span>Led teams in two job simulations</span><span class="ev"><a href="#citi">Citi</a><a href="#fidelity">Fidelity</a></span></li>
+            <li><span>Two-slide executive brief with a staged decision</span><span class="ev"><a href="#indego">Indego</a></span></li>
+            <li><span>Research writing</span><span class="ev"><a href="#tsla">TSLA</a><a href="#minwage">Min wage</a></span></li>
+            <li><span>Taught Bloomberg Terminal workshops</span><span class="ev"><a href="#leadership">Club</a></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="toolkit" aria-label="Toolkit">
+        <span class="label">Toolkit</span>
+        <span class="tag">Python</span><span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">FactSet</span><span class="tag">Bloomberg Terminal</span><span class="tag">Stata</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Salesforce</span><span class="tag">GitHub Copilot</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Experience</p>
+        <h2 class="h2">Where the skills were used on the job</h2>
+      </div>
+      <ol class="xp">
+        <li class="xp-row">
+          <p class="xp-when">May 2026 - Aug. 2026</p>
+          <div>
+            <h3 class="xp-org">Microsoft</h3>
+            <p class="xp-title">Finance Analyst Intern, Finance Rotation Program (Central Finance Team) · Redmond, WA</p>
+            <p class="xp-sum">Overhauled the company-wide ARR Power BI report during Microsoft's shift to ARR as its core metric, validating 40+ DAX measures used in monthly close. Built a Price x Quantity model that splits Net New ARR growth into volume, price and mix. Benchmarked how 15 public software and cloud peers disclose recurring revenue, which led 3 teams to add customer retention and SKU upsell breakdowns to ARR reporting. Earned an Honorable Mention in the finance intern challenge.</p>
+            <ul class="tags"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Driver-based modeling</li><li class="tag">SEC filings</li></ul>
+          </div>
+        </li>
+        <li class="xp-row">
+          <p class="xp-when">May 2025 - Aug. 2025</p>
+          <div>
+            <h3 class="xp-org">Glasswing Ventures</h3>
+            <p class="xp-title">Venture Capital Research, Finance &amp; Marketing Intern · VC firm managing $270M+ in AI startups</p>
+            <p class="xp-sum">Screened 5 enterprise AI startups in due diligence, pressure-testing growth, unit economics and downside cases with Excel DCF and scenario models. Produced investor reporting and presentation materials for the board and 20 limited partners.</p>
+            <ul class="tags"><li class="tag">Due diligence</li><li class="tag">DCF</li><li class="tag">Scenario analysis</li><li class="tag">Salesforce</li></ul>
+          </div>
+        </li>
+        <li class="xp-row">
+          <p class="xp-when">Dec. 2024 - Present</p>
+          <div>
+            <h3 class="xp-org">Gettysburg Lab for Experimental Economics</h3>
+            <p class="xp-title">Research Assistant · Gettysburg, PA</p>
+            <p class="xp-sum">Conducted 25+ experiments on economic decision-making and contributed to 2 research papers. Modeled energy-market pricing dynamics across 2 projects with SLAC National Accelerator Laboratory.</p>
+            <ul class="tags"><li class="tag">Experimental economics</li><li class="tag">Statistics</li><li class="tag">Econometrics</li></ul>
+          </div>
+        </li>
+        <li class="xp-row">
+          <p class="xp-when">Jan. 2025 - Present</p>
+          <div>
+            <h3 class="xp-org">Gettysburg College, campus dining and retail operations</h3>
+            <p class="xp-title">Financial Analyst &amp; Marketing Intern · Gettysburg, PA</p>
+            <p class="xp-sum">Cut overstock procurement 40% and input waste 70% by sorting inventory by turnover velocity. Doubled team-apparel sales year over year with a demand forecast built on team size and purchase probability.</p>
+            <ul class="tags"><li class="tag">Excel</li><li class="tag">Inventory analysis</li><li class="tag">Demand forecasting</li></ul>
+          </div>
+        </li>
+        <li class="xp-row">
+          <p class="xp-when">May 2024 - Aug. 2024</p>
+          <div>
+            <h3 class="xp-org">Llanerch Diner</h3>
+            <p class="xp-title">Financial Analyst Intern · Philadelphia, PA · the diner featured in Silver Linings Playbook</p>
+            <p class="xp-sum">Lifted revenue 12% and foot traffic 18% by using Excel variance analysis to find high-value customer segments for a targeted merchandising launch.</p>
+            <ul class="tags"><li class="tag">Variance analysis</li><li class="tag">Customer segmentation</li></ul>
+          </div>
+        </li>
+      </ol>
+
+      <div class="two" style="margin-top:28px">
+        <div class="panel" id="leadership">
+          <h3>Leadership</h3>
+          <ul class="lead-list" style="margin-top:12px">
+            <li><b>Vice President, Finance &amp; Investment Club</b><span>Aug. 2024 - Present</span><p>Doubled membership to 100+ and lifted participation 60% by leading Bloomberg Terminal workshops on equity and bond valuation.</p></li>
+            <li><b>Vice President, Omicron Delta Epsilon (economics honor society)</b><span>Jan. 2025 - Present</span><p>Raised $10,000 from alumni and students for case competitions.</p></li>
+            <li><b>Treasurer, Women in Finance</b></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Education</h3>
+          <p style="margin-top:8px;color:var(--ink)"><b>Gettysburg College</b>, B.S. in Mathematical Economics, minors in Business and Data Science. GPA 3.94/4.00, expected May 2027.</p>
+          <span class="k">Study abroad</span><p>Budapest, Hungary (Spring 2026)</p>
+          <span class="k">Honors</span><p>Dean's List (all semesters) · Abraham Lincoln Scholarship · Eisenhower Institute Fellowship</p>
+          <span class="k">Coursework</span><p>Econometrics · Advanced Econometrics · Financial Econometrics · Financial Modeling &amp; Forecasting · Investment Management · Applied Finance · Linear Algebra · Data Science Programming</p>
+          <span class="k">Credentials</span><p>AWS Certified AI Practitioner · CFA Institute Research Challenge (May 2026) · McKinsey Forward Program (2024)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 class="h2">Hiring for 2027? Let's talk.</h2>
+      <p class="section-sub">Looking for 2027 analyst roles across finance, investments and strategy.</p>
+      <div class="contact-row">
+        <span class="email-text">nguynh02@gettysburg.edu</span>
+        <button class="btn btn-small" type="button" data-copy="nguynh02@gettysburg.edu">Copy email</button>
+        <a class="btn btn-small btn-ghost" href="https://www.linkedin.com/in/aella-nguyen" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROJECT: INDEGO ============ -->
+<article id="view-indego" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">1 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Independent research · Oct. 2026</p>
+        <h1 class="p-title" tabindex="-1">Indego Bike Share: where the growth comes from</h1>
+        <p class="p-dek">Ride-minutes, the revenue proxy, grew 18.9% year over year. About 59% of the gain came from stations opened in 2025-26 and demand is shifting to e-bikes, so the call is a small, reversible e-bike pilot before any broad rollout.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Solo, end to end</dd></div>
+          <div><dt>Data</dt><dd>2.26M trips in 6 quarterly files, 337 stations</dd></div>
+          <div><dt>Window</dt><dd><span class="nw">Jan.-Sep. 2026</span> vs. <span class="nw">Jan.-Sep. 2025</span></dd></div>
+          <div><dt>Tools</dt><dd>Python (standard library), Excel, PowerPoint</dd></div>
+          <div><dt>Output</dt><dd>2-slide executive brief, code and data</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>+18.9%</b><span>Ride-minutes</span><small>17.68M to 21.02M</small></div>
+      <div class="stat"><b>+19.2%</b><span>Trips</span><small>1.03M to 1.23M</small></div>
+      <div class="stat"><b>17.08 min</b><span>Average trip</span><small>17.12 min in 2025, nearly flat</small></div>
+      <div class="stat"><b>+8.0%</b><span>Pre-2025 network</span><small>Ride-minutes at established stations</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>Treat Indego, Philadelphia's bike share, as a for-profit business in the middle of a multi-year growth push, with revenue driven by trip duration. How should leaders measure growth, is it too fast or too slow, and what should they do next?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Streamed 2.26M trip records from six quarterly files in plain Python, without loading whole files into memory, and parsed both date formats Indego uses.</li>
+        <li>Compared each quarter with the same quarter a year earlier to remove seasonality, using ride-minutes as the revenue proxy and trips as the volume check.</li>
+        <li>Split the gain by station launch cohort and by bike type, so network expansion is not mistaken for organic demand.</li>
+        <li>Flagged data quality instead of hiding it: invalid durations, trips over 180 minutes, missing stations and wrong-period dates.</li>
+        <li>Wrote it up as a two-slide executive brief, with every limitation stated on the slide.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Findings</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="indego-q">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Growth by quarter vs. the same quarter of 2025</span></figcaption>
+          <div class="legend" data-legend="indego-q"></div>
+          <div class="chart" data-chart="indego-q" role="img" aria-label="Grouped bar chart. Ride-minutes grew 4.1% in Q1, 31.7% in Q2 and 14.2% in Q3; trips grew 2.1%, 32.1% and 16.3%."></div>
+          <div class="ex-foot"><span>Q2 spiked; Q3 still grew, at a slower pace. Source: Indego public trip files.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit" data-ex="indego-src">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 2</span><span class="ex-title">Where the extra 3.34M ride-minutes came from</span></figcaption>
+          <div class="legend" data-legend="indego-src"></div>
+          <div class="chart" data-chart="indego-src" role="img" aria-label="Stacked bar. Stations opened in 2025 and 2026 added 1.99 million ride-minutes, 59 percent of the gain; stations opened before 2025 added 1.36 million, 41 percent."></div>
+          <div class="ex-foot"><span>Minutes are attributed to each trip's start station; a virtual station offsets about 0.2%.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit" data-ex="indego-bike">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 3</span><span class="ex-title">Demand is shifting to e-bikes</span></figcaption>
+          <div class="legend" data-legend="indego-bike"></div>
+          <div class="chart" data-chart="indego-bike" role="img" aria-label="Slope chart. E-bike trips rose from 664 thousand to 895 thousand, up 34.9 percent. Standard-bike trips fell from 369 thousand to 336 thousand, down 9.1 percent."></div>
+          <div class="ex-foot"><span>E-bikes went from 64.3% to 72.7% of all trips. Source: Indego public trip files.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 4</span><span class="ex-title">Established stations worth screening for the pilot</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data">
+              <thead><tr><th>Start station</th><th class="num">Added ride-minutes</th><th class="num">Change</th></tr></thead>
+              <tbody>
+                <tr><td>Schuylkill Banks Pergola</td><td class="num">+62.4K</td><td class="num">+27.4%</td></tr>
+                <tr><td>23rd &amp; Fairmount</td><td class="num">+57.9K</td><td class="num">+50.8%</td></tr>
+                <tr><td>9th &amp; Arch</td><td class="num">+45.6K</td><td class="num">+63.1%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Jan.-Sep. 2026 vs. 2025, stations open before 2025. Candidate screens only, not proof of site-level e-bike demand or ROI.</span></div>
+        </figure>
+        <div class="callout">
+          <h3>Recommendation</h3>
+          <p>Pilot e-bike capacity at 3-5 proven-demand stations for 8-12 weeks, compare them with similar unmodified stations, and scale only if incremental ride-minutes per bike-day and contribution margin clear the bar.</p>
+          <p>Too fast or too slow? The public data cannot answer that yet, because pricing, fleet capacity and unit costs are missing. That is why the first step is a reversible pilot, not full capital spending.</p>
+        </div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Python</li><li class="tag">CSV streaming</li><li class="tag">Data validation</li><li class="tag">Year-over-year growth</li><li class="tag">Seasonality control</li><li class="tag">Cohort analysis</li><li class="tag">Slide design</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Ownership.</b> Ran it solo, from six raw data files to the final recommendation.</li>
+          <li><b>Executive communication.</b> Two slides, one decision, with the evidence and the caveats on the page.</li>
+          <li><b>Judgment.</b> Recommended a reversible pilot instead of claiming more than the data can show.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Next iteration</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Join daily weather data to separate weather swings from real demand growth.</li>
+        <li>Add hour-of-day and pass-type splits to see who is driving the shift to e-bikes.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Original files</h2>
+      <div class="p-body">
+        <div class="files">
+          <div class="file">
+            <span class="file-ic">PDF</span>
+            <div>
+              <h3>Executive brief</h3>
+              <p>2 slides</p>
+              <div class="file-actions">
+                <button class="btn btn-small" type="button" data-open-doc="indego">View slides</button>
+                <button class="btn btn-small btn-ghost" type="button" data-download="files/docs/indego-growth-brief.pdf" data-filename="Aella_Nguyen_Indego_Growth_Brief.pdf" hidden>Download PDF</button>
+                <span class="dl-status" aria-live="polite"></span>
+              </div>
+            </div>
+          </div>
+          <div class="file">
+            <span class="file-ic">ZIP</span>
+            <div>
+              <h3>Code and data</h3>
+              <p>Python script, 4 output CSVs, README</p>
+              <div class="file-actions">
+                <button class="btn btn-small" type="button" data-open-code="codebox-indego">View code</button>
+                <button class="btn btn-small btn-ghost" type="button" data-download="embedded:zip-indego" data-filename="Aella_Nguyen_Indego_Code_and_Data.zip" hidden>Download ZIP</button>
+                <span class="dl-status" aria-live="polite"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="codebox" id="codebox-indego">
+          <summary>indego_growth_analysis.py</summary>
+          <pre><code class="language-python" id="code-indego"></code></pre>
+        </details>
+      </div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#fidelity"><small>← Previous</small><b>Fidelity: portfolio construction</b></a><a class="nx" href="#cfa"><small>Next →</small><b>Carpenter Technology equity research</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ PROJECT: CFA ============ -->
+<article id="view-cfa" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">2 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Equity research · CFA Institute Research Challenge · Sep. 2025 - Feb. 2026</p>
+        <h1 class="p-title" tabindex="-1">Carpenter Technology (NYSE: CRS)</h1>
+        <p class="p-dek">Equity research for the CFA Society Philadelphia Research Challenge. Carpenter's aerospace demand and pricing power are real, but at 43.1x earnings, about 40% above its historical P/E, the market already prices them in.</p>
+        <dl class="rating">
+          <div><dt>Rating</dt><dd><span class="hold">HOLD</span></dd></div>
+          <div><dt>12-month target</dt><dd>$363.69</dd></div>
+          <div><dt>Price, Feb. 12, 2026</dt><dd>$367.98</dd></div>
+          <div><dt>Downside</dt><dd>1.2%</dd></div>
+        </dl>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Team lead</dd></div>
+          <div><dt>Team</dt><dd>5 students</dd></div>
+          <div><dt>Contest</dt><dd>CFA Institute Research Challenge, CFA Society Philadelphia</dd></div>
+          <div><dt>Data</dt><dd>Company filings, FactSet</dd></div>
+          <div><dt>Output</dt><dd>47-slide equity research deck</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>$357.10</b><span>DCF value</span><small>80% of the blended target</small></div>
+      <div class="stat"><b>$390.02</b><span>Comps value</span><small>20% of the blended target</small></div>
+      <div class="stat"><b>9.45%</b><span>WACC</span><small>CAPM, re-levered peer beta</small></div>
+      <div class="stat"><b>10,000</b><span>Monte Carlo runs</span><small>Mean value $360.68</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>Carpenter re-rated sharply as aerospace demand surged: its operating margin rose from &minus;2.9% to 18.4% in four years. At $367.98, is there upside left?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Forecast revenue and margins through FY30 (revenue growing about 7.4% a year) and built an unlevered DCF with an 18.5x EV/EBITDA exit multiple.</li>
+        <li>Derived a 9.45% WACC from CAPM, re-levering a beta from five metals and aerospace peers; a 5-year regression of weekly returns puts CRS's beta at 1.36.</li>
+        <li>Valued CRS against ATI, Howmet, Materion, Kaiser Aluminum and Metallus, weighting EV/EBITDA 75% and P/E 25%.</li>
+        <li>Blended DCF (80%) and comps (20%) into the $363.69 target, then stress-tested it with bull, base and bear cases, a WACC by exit-multiple grid and a 10,000-run Monte Carlo simulation.</li>
+        <li>Rounded out the thesis with DuPont ROE, capex and PP&amp;E schedules, free cash flow, ESG and risk analysis.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Findings</h2>
+      <div class="p-body">
+        <div class="thesis">
+          <div><b>Margin-led returns</b><span>Operating margin up from &minus;2.9% to 18.4% in four years; net income up 575% in three.</span></div>
+          <div><b>Durable demand</b><span>Aerospace and defense drive record backlogs and pricing power.</span></div>
+          <div><b>Priced in</b><span>43.1x P/E and 25.7x EV/EBITDA, about 40% above its own history.</span></div>
+        </div>
+        <figure class="exhibit" data-ex="cfa-ff">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Valuation football field, $ per share</span></figcaption>
+          <div class="legend"><span><i class="l1"></i>Value range</span><span><i class="mk-t"></i>Target $363.69</span><span><i class="mk-p"></i>Price $367.98</span></div>
+          <div class="chart" data-chart="cfa-ff" role="img" aria-label="Football field chart. DCF range 250 to 414 dollars, comparable companies 328 to 427, Monte Carlo 10th to 90th percentile 187 to 573, street consensus 375 to 466. Target 363.69 sits just below the 367.98 price."></div>
+          <div class="ex-foot"><span>White notches mark each method's base case or mean. Source: team analysis, FactSet.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 2</span><span class="ex-title">DCF sensitivity: WACC vs. exit multiple, $ per share</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data sens">
+              <thead><tr><th>WACC</th><th class="num">16.5x</th><th class="num">17.5x</th><th class="num">18.5x</th><th class="num">19.5x</th><th class="num">20.5x</th></tr></thead>
+              <tbody>
+                <tr><th class="row" scope="row">8.45%</th><td class="num">335.81</td><td class="num">353.74</td><td class="num up">371.68</td><td class="num up">389.61</td><td class="num up">407.55</td></tr>
+                <tr><th class="row" scope="row">8.95%</th><td class="num">329.16</td><td class="num">346.73</td><td class="num">364.29</td><td class="num up">381.86</td><td class="num up">399.43</td></tr>
+                <tr><th class="row" scope="row">9.45%</th><td class="num">322.67</td><td class="num">339.88</td><td class="num base">357.10</td><td class="num up">374.30</td><td class="num up">391.51</td></tr>
+                <tr><th class="row" scope="row">9.95%</th><td class="num">316.35</td><td class="num">333.21</td><td class="num">350.06</td><td class="num">366.92</td><td class="num up">383.78</td></tr>
+                <tr><th class="row" scope="row">10.45%</th><td class="num">310.17</td><td class="num">326.69</td><td class="num">343.21</td><td class="num">359.73</td><td class="num up">376.25</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Boxed: base case. Green: above the $367.98 price. Most of the grid sits below it, which supports HOLD.</span></div>
+        </figure>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">DCF</li><li class="tag">Comparable companies</li><li class="tag">WACC and CAPM</li><li class="tag">Beta regression</li><li class="tag">Scenario analysis</li><li class="tag">Sensitivity analysis</li><li class="tag">Monte Carlo simulation</li><li class="tag">DuPont analysis</li><li class="tag">FactSet</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Leadership.</b> Led a 5-person team through a five-month competition.</li>
+          <li><b>Conviction.</b> Made a HOLD call on a stock with strong momentum and backed it with three valuation methods.</li>
+          <li><b>Collaboration.</b> Pulled five people's analysis into one 47-slide argument.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Next iteration</h2>
+      <div class="p-body"><ul class="ticks"><li>Score the call in Feb. 2027, when the 12-month target window closes.</li></ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Original files</h2>
+      <div class="p-body"><div class="files">
+        <div class="file">
+          <span class="file-ic">PDF</span>
+          <div>
+            <h3>Equity research deck</h3>
+            <p>47 slides, including the full appendix</p>
+            <div class="file-actions">
+              <button class="btn btn-small" type="button" data-open-doc="cfa">View slides</button>
+              <button class="btn btn-small btn-ghost" type="button" data-download="files/docs/cfa-carpenter-technology.pdf" data-filename="Aella_Nguyen_CFA_Carpenter_Technology.pdf" hidden>Download PDF</button>
+              <span class="dl-status" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#indego"><small>← Previous</small><b>Indego Bike Share growth</b></a><a class="nx" href="#tsla"><small>Next →</small><b>Volatility-conditioned RSI strategy</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ PROJECT: TSLA ============ -->
+<article id="view-tsla" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">3 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Quantitative research · Summer 2025</p>
+        <h1 class="p-title" tabindex="-1">A volatility-conditioned RSI strategy on TSLA</h1>
+        <p class="p-dek">A swing-trading rule that buys oversold turns only when volatility is falling, then exits on volatility-scaled targets. Over five years of daily TSLA data, the best version returned 34.6% a year with a 1.29 Sharpe ratio and a 12.2% maximum drawdown.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Co-author</dd></div>
+          <div><dt>Authors</dt><dd>Tri Bui, Aella Nguyen</dd></div>
+          <div><dt>Faculty</dt><dd>Prof. Liang Ding</dd></div>
+          <div><dt>Data</dt><dd>TSLA daily prices, <span class="nw">Jan. 2020 - Jan. 2025</span></dd></div>
+          <div><dt>Output</dt><dd>14-page research paper</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>34.6%</b><span>CAGR</span><small>21.9% with a trailing stop</small></div>
+      <div class="stat"><b>1.29</b><span>Sharpe ratio</span><small>0.80 with a trailing stop</small></div>
+      <div class="stat"><b>12.2%</b><span>Maximum drawdown</span><small>22.3% with a trailing stop</small></div>
+      <div class="stat"><b>8,320</b><span>Parameter sets</span><small>Grid search with a drawdown penalty</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>Can a simple reversal signal hold up on one of the most volatile large-cap stocks if risk control comes first?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Required three signals to agree before buying: RSI below its oversold threshold, RSI turning up, and volatility falling.</li>
+        <li>Exited with volatility-scaled rules, an ATR-based take-profit and stop-loss, and tested them against a trailing-stop exit.</li>
+        <li>Searched 8,320 parameter sets across RSI periods of 5-35 days, volatility windows of 5-25 days and thresholds of 20-45 and 65-80, penalizing drawdowns above 25%.</li>
+        <li>Judged each version on Sharpe, Sortino, CAGR, maximum drawdown, profit factor, win rate and holding period.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Findings</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="tsla-mult">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">ATR exits vs. a trailing stop</span></figcaption>
+          <div class="legend" data-legend="tsla-mult"></div>
+          <div class="chart" data-chart="tsla-mult" role="img" aria-label="Three small bar charts. CAGR 34.6 percent for ATR exits vs 21.9 for trailing stop. Sharpe ratio 1.29 vs 0.80. Maximum drawdown 12.2 percent vs 22.3 percent."></div>
+          <div class="ex-foot"><span>Backtest on TSLA daily data, Jan. 2020 - Jan. 2025. Source: Bui and Nguyen.</span><button class="link-btn" type="button" data-toggle-table>Show all metrics</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <div class="callout">
+          <h3>Takeaway</h3>
+          <p>The ATR exit beats the trailing stop on every risk measure, with about half the maximum drawdown. Its win rate is only 41%, so the edge comes from letting winners run: gross profits are 1.66 times gross losses.</p>
+        </div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Backtesting</li><li class="tag">Signal design</li><li class="tag">ATR risk rules</li><li class="tag">Grid search</li><li class="tag">Sharpe and Sortino</li><li class="tag">Profit factor</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Research writing.</b> Wrote up the method, results and limits as a 14-page paper.</li>
+          <li><b>Collaboration.</b> Co-authored with Tri Bui.</li>
+          <li><b>Skepticism.</b> Penalized parameter sets with deep drawdowns instead of chasing the highest return.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Next iteration</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Add a buy-and-hold benchmark and walk-forward, out-of-sample tests.</li>
+        <li>Run Monte Carlo and bootstrap checks, then try the rule on other high-volatility stocks.</li>
+      </ul></div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#cfa"><small>← Previous</small><b>Carpenter Technology equity research</b></a><a class="nx" href="#factor"><small>Next →</small><b>Sales growth factor study</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ PROJECT: FACTOR ============ -->
+<article id="view-factor" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">4 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Factor research · Team project</p>
+        <h1 class="p-title" tabindex="-1">Does sales growth predict stock returns?</h1>
+        <p class="p-dek">A 27-year backtest, Dec. 1996 to Dec. 2023, of decile portfolios sorted on trailing 12-month sales growth. The fastest growers delivered the worst returns, so the team built a four-factor model that turns the long-short spread from &minus;5.5% to +6.7%.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Co-author, team of 4</dd></div>
+          <div><dt>Window</dt><dd><span class="nw">Dec. 1996 - Dec. 2023</span></dd></div>
+          <div><dt>Method</dt><dd>Decile sorts, monthly rebalancing, long-short spread</dd></div>
+          <div><dt>Output</dt><dd>16-slide presentation</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>&minus;6.12%</b><span>Top-growth decile</span><small>Worst average return of all ten</small></div>
+      <div class="stat"><b>+2.63%</b><span>4th decile</span><small>Best average return</small></div>
+      <div class="stat"><b>+6.7%</b><span>Model long-short</span><small>vs. &minus;5.5% for growth alone</small></div>
+      <div class="stat"><b>53.8%</b><span>Model hit rate</span><small>vs. 47.9% for growth alone</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>Investors pay up for fast revenue growth. Does that growth show up in future stock returns, and does it belong in a multi-factor model?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Profiled the factor first: median trailing sales growth of 8.2%, mean of 13.0%, strong right skew (1.68) and fat tails (kurtosis 4.44).</li>
+        <li>Backtested ten decile portfolios with monthly rebalancing, plus a long-short spread of the top decile minus the bottom.</li>
+        <li>Broke results out by regime: the dot-com bust, the financial crisis, the 2013-2018 expansion, the 2020-21 stimulus boom and the 2022-23 rate hikes.</li>
+        <li>Measured rank correlation with value, quality and momentum, then combined all four into a model weighted 40% value, 30% quality, 20% momentum and 10% growth.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Findings</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="factor-dec">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Average return by decile: growth alone vs. the four-factor model</span></figcaption>
+          <div class="chart" data-chart="factor-dec" role="img" aria-label="Two bar charts on the same scale. Sales growth alone: returns peak at the 4th decile, 2.63 percent, and fall to minus 6.12 percent for the top decile; long-short minus 5.50 percent. Four-factor model: returns rise from minus 3.66 percent in decile 1 to 3.04 percent in decile 10; long-short plus 6.71 percent."></div>
+          <div class="ex-foot"><span>Deciles 1-10 run from lowest to highest score; L-S is decile 10 minus decile 1. Source: team backtest, Dec. 1996 - Dec. 2023.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <div class="callout">
+          <h3>Takeaway</h3>
+          <p>Growth pays only up to a point: returns peak in the 4th decile and collapse at the top, where the hit rate falls to 44.4%. The factor works in booms with cheap money and fails in crises and rate shocks. Inside the combined model, returns rise almost steadily from the bottom decile to the top.</p>
+        </div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Factor research</li><li class="tag">Portfolio sorts</li><li class="tag">Backtest evaluation</li><li class="tag">Hit rate and IC</li><li class="tag">Rank correlation</li><li class="tag">Multi-factor design</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Teamwork.</b> Built and presented the study as a team of four.</li>
+          <li><b>Storytelling.</b> Turned 27 years of backtests into one clear recommendation for a multi-factor model.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Original files</h2>
+      <div class="p-body"><div class="files">
+        <div class="file">
+          <span class="file-ic">PDF</span>
+          <div>
+            <h3>Research presentation</h3>
+            <p>16 slides</p>
+            <div class="file-actions">
+              <button class="btn btn-small" type="button" data-open-doc="factor">View slides</button>
+              <button class="btn btn-small btn-ghost" type="button" data-download="files/docs/sales-growth-factor.pdf" data-filename="Aella_Nguyen_Sales_Growth_Factor.pdf" hidden>Download PDF</button>
+              <span class="dl-status" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#tsla"><small>← Previous</small><b>Volatility-conditioned RSI strategy</b></a><a class="nx" href="#minwage"><small>Next →</small><b>Minimum wage and teen jobs</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ PROJECT: MIN WAGE ============ -->
+<article id="view-minwage" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">5 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Econometrics research · ECON 352 Advanced Econometrics · Fall 2026 <span class="status">In progress</span></p>
+        <h1 class="p-title" tabindex="-1">Do minimum wage increases cost teen jobs?</h1>
+        <p class="p-dek">A causal study of how state minimum-wage increases affect employment among 16 to 19 year olds, built on 535,323 person-month observations from the Current Population Survey and a staggered difference-in-differences design.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Solo</dd></div>
+          <div><dt>Status</dt><dd>Data and design complete; estimation next</dd></div>
+          <div><dt>Data</dt><dd>IPUMS CPS Basic Monthly, 2010-2019; state minimum wages (Vaghul and Zipperer, 2022)</dd></div>
+          <div><dt>Method</dt><dd>Staggered DiD (Callaway and Sant'Anna, 2021), event study</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>535,323</b><span>Person-month observations</span><small>Civilian teens, ages 16-19</small></div>
+      <div class="stat"><b>36</b><span>States</span><small>All at $7.25 in Jan. 2010</small></div>
+      <div class="stat"><b>15 / 21</b><span>Treated / comparison</span><small>Raised the wage vs. stayed at $7.25</small></div>
+      <div class="stat"><b>120</b><span>Months</span><small>Jan. 2010 - Dec. 2019</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>Theory disagrees. Competitive labor markets predict job losses when the wage floor rises, while monopsony models predict small or no losses. Among states at the $7.25 federal floor in Jan. 2010, what did later increases do to teen employment?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Merged individual CPS records with monthly state minimum wages by state, year and month; every observation matched.</li>
+        <li>Tightened the design after the proposal: only states at $7.25 in Jan. 2010 enter, each is treated from its first full month above the federal floor, and states that never move form the comparison group.</li>
+        <li>Built survey-weighted descriptive statistics with the CPS final basic weight (WTFINL).</li>
+        <li>Specified a staggered difference-in-differences model with state and month fixed effects, an event-study test of pre-trends and state-clustered standard errors.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Design</h2>
+      <div class="p-body">
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Descriptive statistics, survey-weighted</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data">
+              <thead><tr><th>Variable</th><th class="num">Analytic sample</th><th class="num">Eventually treated</th><th class="num">Never treated</th></tr></thead>
+              <tbody>
+                <tr><td>Employed (%)</td><td class="num">29.40</td><td class="num">27.80</td><td class="num">30.48</td></tr>
+                <tr><td>Female (%)</td><td class="num">49.22</td><td class="num">49.03</td><td class="num">49.34</td></tr>
+                <tr><td>Age (years), average</td><td class="num">17.43</td><td class="num">17.44</td><td class="num">17.43</td></tr>
+                <tr><td>Effective minimum wage ($), average</td><td class="num">7.62</td><td class="num">8.18</td><td class="num">7.25</td></tr>
+                <tr class="total"><td>Observations</td><td class="num">535,323</td><td class="num">222,819</td><td class="num">312,504</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Civilian respondents ages 16-19, IPUMS-CPS Basic Monthly 2010-2019, weighted by WTFINL.</span></div>
+        </figure>
+        <p style="color:var(--ink-2)">Baseline model, with state and month fixed effects:</p>
+        <div class="eq" role="math" aria-label="Employment for teen i in state s and month t equals alpha s plus lambda t plus beta times Treatment s t plus X prime gamma plus error.">Employment<sub>ist</sub> = α<sub>s</sub> + λ<sub>t</sub> + β·Treatment<sub>st</sub> + X′<sub>ist</sub>γ + ε<sub>ist</sub></div>
+        <p class="note">The key assumption is parallel trends. Treated states have lower teen employment throughout (27.8% vs. 30.5%), which is fine; what matters is whether their trends would have matched without the increase. The event study tests this before treatment begins.</p>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Causal inference</li><li class="tag">Difference-in-differences</li><li class="tag">Event study</li><li class="tag">Panel microdata</li><li class="tag">Survey weights</li><li class="tag">Data merging</li><li class="tag">Research design</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Independent research.</b> Scoped the question, built the dataset and designed the study alone.</li>
+          <li><b>Self-correction.</b> Rebuilt the treatment definition when the proposal's version proved too loose.</li>
+          <li><b>Academic writing.</b> Clear, cited research memos at each milestone.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Next iteration</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Estimate the Callaway and Sant'Anna model, plot the event study and test robustness to the choice of comparison states.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Original files</h2>
+      <div class="p-body"><div class="files">
+        <div class="file">
+          <span class="file-ic">PDF</span>
+          <div>
+            <h3>Data and research design memo</h3>
+            <p>6 pages, with references</p>
+            <div class="file-actions">
+              <button class="btn btn-small" type="button" data-open-doc="minwage">View memo</button>
+              <button class="btn btn-small btn-ghost" type="button" data-download="files/docs/minimum-wage-research-design.pdf" data-filename="Aella_Nguyen_Minimum_Wage_Research_Design.pdf" hidden>Download PDF</button>
+              <span class="dl-status" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#factor"><small>← Previous</small><b>Sales growth factor study</b></a><a class="nx" href="#citi"><small>Next →</small><b>Citi: Q4 2022 operating plan</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ PROJECT: CITI ============ -->
+<article id="view-citi" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">6 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Job simulation · Citi Finance virtual program</p>
+        <h1 class="p-title" tabindex="-1">Citi: Q4 2022 operating plan</h1>
+        <p class="p-dek">Rebuilt Citi's Q4 2022 operating plan in a finance job simulation: a P&amp;L walk from segment revenue to net income, a study of how COVID-19 waves moved card spending, and a deposit-limits report that caught a trigger breach.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Program</dt><dd>Citi Finance virtual program</dd></div>
+          <div><dt>Role</dt><dd>Team lead</dd></div>
+          <div><dt>Team</dt><dd>Nhung Luong, Aella Nguyen, Tien Tong</dd></div>
+          <div><dt>Output</dt><dd>14-slide operating plan</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>$18.0B</b><span>Revenue</span><small>+6% year over year, on higher rates</small></div>
+      <div class="stat"><b>$13.0B</b><span>Operating expenses</span><small>&minus;4%, fewer one-off exit costs</small></div>
+      <div class="stat"><b>$1.8B</b><span>Cost of credit</span><small>vs. a $0.5B net release a year earlier</small></div>
+      <div class="stat"><b>$2.5B</b><span>Net income</span><small>&minus;21% year over year</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>How do higher rates, credit costs and consumer behavior flow through Citi's P&amp;L, and where are the early warning signs?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Walked the P&amp;L across four segments, from $18.0B of revenue (+6% on higher rates) to $2.5B of net income (&minus;21%).</li>
+        <li>Traced the decline to credit: a $640M reserve build and 36% higher net credit losses lifted cost of credit to $1.8B, after a $0.5B net release a year earlier.</li>
+        <li>Charted card spending in staples, work-related, delayable and social categories against COVID-19 cases from Jan. 2020 to Dec. 2021 to project Omicron's impact.</li>
+        <li>Tracked deposit surpluses against management action triggers and flagged Surplus 1 falling below zero in late February.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Findings</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="citi-wf">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Q4 2022 P&amp;L walk, revenue to net income</span></figcaption>
+          <div class="legend" data-legend="citi-wf"></div>
+          <div class="chart" data-chart="citi-wf" role="img" aria-label="Waterfall chart. Revenue 18.0 billion dollars, minus operating expenses 13.0 billion, minus cost of credit 1.8 billion, gives pre-tax income of 3.2 billion; minus taxes 0.6 billion and other items 23 million gives net income of 2.5 billion."></div>
+          <div class="ex-foot"><span>$M. Other = discontinued operations and noncontrolling interest. Figures as modeled in the simulation; they match Citi's reported Q4 2022 results.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <div class="callout">
+          <h3>Takeaway</h3>
+          <p>Revenue grew, but cost of credit swung by $2.3B, from a $0.5B release to a $1.8B charge, enough to cut net income 21%. On the consumer side, the link between COVID-19 waves and card spending weakened over time: Omicron brought a mild total dip, steady staples and sharp drops in social and work-related spending.</p>
+        </div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">P&amp;L forecasting</li><li class="tag">Credit loss allowance</li><li class="tag">Segment analysis</li><li class="tag">Consumer spending analysis</li><li class="tag">Limit and trigger monitoring</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Leadership.</b> Led the team through all three parts of the plan.</li>
+          <li><b>Executive writing.</b> Distilled three workstreams into a one-page executive summary.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Original files</h2>
+      <div class="p-body"><div class="files">
+        <div class="file">
+          <span class="file-ic">PDF</span>
+          <div>
+            <h3>Operating plan deck</h3>
+            <p>14 slides</p>
+            <div class="file-actions">
+              <button class="btn btn-small" type="button" data-open-doc="citi">View slides</button>
+              <button class="btn btn-small btn-ghost" type="button" data-download="files/docs/citi-operating-plan.pdf" data-filename="Aella_Nguyen_Citi_Operating_Plan.pdf" hidden>Download PDF</button>
+              <span class="dl-status" aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div></div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#minwage"><small>← Previous</small><b>Minimum wage and teen jobs</b></a><a class="nx" href="#fidelity"><small>Next →</small><b>Fidelity: portfolio construction</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ PROJECT: FIDELITY ============ -->
+<article id="view-fidelity" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">7 of 7</span></div>
+    <header class="p-head">
+      <div>
+        <p class="eyebrow">Job simulation · Fidelity International investment management virtual program</p>
+        <h1 class="p-title" tabindex="-1">Fidelity: portfolio construction for a $100K client</h1>
+        <p class="p-dek">Wrote an investment policy statement for a 35-year-old client with $100K in a taxable account and a 15+ year horizon, then allocated it across four low-cost ETFs, with the bond and gold sleeves justified by inflation, real yields, the yield curve and the dollar.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Program</dt><dd>Fidelity International virtual program</dd></div>
+          <div><dt>Role</dt><dd>Team lead</dd></div>
+          <div><dt>Team</dt><dd>Hiep Ngo, Aella Nguyen, Duong Le</dd></div>
+          <div><dt>Data as of</dt><dd>June 7, 2025</dd></div>
+          <div><dt>Output</dt><dd>17-slide client deck</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>$100K</b><span>Taxable account</span><small>All cash at the start</small></div>
+      <div class="stat"><b>15+ years</b><span>Time horizon</span><small>No withdrawals for 5+ years</small></div>
+      <div class="stat"><b>4 ETFs</b><span>Low-cost core</span><small>SPY, QQQ, BND, GLD</small></div>
+      <div class="stat"><b>10%</b><span>Floor per asset class</span><small>Set in the policy statement</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The question</h2>
+      <div class="p-body"><p>What should a moderately conservative 35-year-old do with $100K of cash in a taxable account?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>Approach</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Profiled the client with the LLTURR framework: liquidity, liability, time horizon, unique situation, risk and return.</li>
+        <li>Wrote the policy: S&amp;P 500 benchmark, long only, equities and ETFs only, no REITs, holdings above $1B in market cap, no cash and at least 10% in every asset class.</li>
+        <li>Made the macro case for each defensive sleeve: a 10-year Treasury near 4.1% with PCE inflation near 2.1% for bonds; low correlation with stocks and a weaker dollar for gold.</li>
+        <li>Picked low-turnover, low-fee ETFs to keep taxable distributions down.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>Findings</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="fid-alloc">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Recommended allocation</span></figcaption>
+          <div class="chart" data-chart="fid-alloc" role="img" aria-label="Bar chart of portfolio weights: QQQ 50 percent, SPY 30 percent, BND 10 percent, GLD 10 percent."></div>
+          <div class="ex-foot"><span>Weights from the team's final recommendation, market data as of June 7, 2025.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills shown</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Investment policy statement</li><li class="tag">Asset allocation</li><li class="tag">Macro analysis</li><li class="tag">ETF selection</li><li class="tag">Tax efficiency</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Leadership.</b> Led the team from client profile to final allocation.</li>
+          <li><b>Client focus.</b> Turned a client's goals and limits into rules a portfolio can follow.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Next iteration</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Optimize the weights under a volatility cap that matches the client's 8-10% comfort range, then report risk-adjusted returns against the S&amp;P 500 benchmark.</li>
+      </ul></div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#citi"><small>← Previous</small><b>Citi: Q4 2022 operating plan</b></a><a class="nx" href="#indego"><small>Next →</small><b>Indego Bike Share growth</b></a></nav>
+  </div>
+</article>
+</main>
+
+<footer class="foot"><div class="wrap foot-in"><span>© 2026 Aella Nguyen</span><span>Updated Oct. 2026</span></div></footer>
+
+<div class="tip" id="tip" aria-hidden="true" hidden></div>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
+  <div class="viewer-bar">
+    <div><h2 id="viewer-title">Original file</h2><p id="viewer-meta"></p></div>
+    <div class="viewer-actions">
+      <button class="btn btn-small" type="button" id="viewer-dl" hidden>Download PDF</button>
+      <button class="icon-btn" type="button" id="viewer-close" aria-label="Close">×</button>
+    </div>
+  </div>
+  <div class="viewer-body" id="viewer-body"></div>
+</div>
+
+<script type="text/plain" id="src-indego">
+"""Indego bike-share growth analysis (Aella Nguyen): read 6 large quarterly CSV files automatically.
+
+Place this file in the same folder as:
+  indego-trips-2025-q1.csv ... indego-trips-2025-q3.csv
+  indego-trips-2026-q1.csv ... indego-trips-2026-q3.csv
+  indego-stations-2026-10-15.csv
+
+Run in Jupyter: %run indego_growth_analysis.py
+
+Requires only Python 3 (no pandas / no extra installation).
+Outputs small Excel-compatible CSV files in a new 'indego_results' folder.
+"""
+from __future__ import annotations
+
+import csv
+from collections import defaultdict
+from datetime import datetime, date
+from pathlib import Path
+
+HOME = Path(__file__).resolve().parent
+OUT = HOME / "indego_results"
+OUT.mkdir(exist_ok=True)
+YEARS = (2025, 2026)
+QUARTERS = (1, 2, 3)
+MAX_VALID_DURATION = 1440  # Data documentation states trips can last up to 24 hours.
+
+
+def blank_summary():
+    return {"trips": 0, "valid_trips": 0, "ride_minutes": 0,
+            "long_over_180": 0, "invalid_duration": 0,
+            "electric_trips": 0, "standard_trips": 0,
+            "wrong_period": 0, "missing_station": 0,
+            "missing_trip_id": 0, "unreadable_date": 0}
+
+
+def growth(current, prior):
+    """Percentage change, blank when no valid baseline."""
+    return round((current / prior - 1) * 100, 2) if prior else ""
+
+
+def mean(total, count):
+    return round(total / count, 2) if count else ""
+
+
+def export(name, columns, records):
+    path = OUT / name
+    # utf-8-sig ensures names with accents open correctly in Windows Excel.
+    with path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=columns, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(records)
+    print("   ->", path.name)
+
+
+def get_station_info():
+    matches = sorted(HOME.glob("indego-stations-*.csv"), reverse=True)
+    stations = {}
+    if not matches:
+        print("WARNING: station file not found; station names/launch dates unavailable.")
+        return stations
+    with matches[0].open("r", newline="", encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            station_id = (row.get("Station_ID") or "").strip()
+            if not station_id:
+                continue  # Some published station files have blank trailing lines.
+            date_str = (row.get("Day of Go_live_date") or "").strip()
+            go_live = None
+            if date_str:
+                try:
+                    go_live = datetime.strptime(date_str, "%m/%d/%Y").date()
+                except ValueError:
+                    pass
+            stations[station_id] = {
+                "name": (row.get("Station_Name") or "").strip(),
+                "go_live": go_live,
+                "status_2026_10": (row.get("Status") or "").strip(),
+            }
+    print(f"Station metadata: {len(stations):,} nonblank station IDs.")
+    return stations
+
+
+stations = get_station_info()
+quarters = {}   # (year, quarter) -> summary
+by_station = defaultdict(lambda: {2025: {"trips": 0, "minutes": 0},
+                                  2026: {"trips": 0, "minutes": 0}})
+by_bike = defaultdict(lambda: {"trips": 0, "minutes": 0})  # (year, bike type)
+missing = []
+# File matching ignores uppercase/lowercase (e.g. 2026-Q3 vs 2026-q3).
+available_csv = {p.name.casefold(): p for p in HOME.iterdir()
+                 if p.is_file() and p.suffix.casefold() == ".csv"}
+
+for year in YEARS:
+    for quarter in QUARTERS:
+        expected_name = f"indego-trips-{year}-q{quarter}.csv"
+        source = available_csv.get(expected_name.casefold())
+        if source is None:
+            missing.append(expected_name)
+            continue
+        print(f"Reading {source.name} ({source.stat().st_size / 1024**2:.1f} MB) ...", flush=True)
+        stat = blank_summary()
+        with source.open("r", newline="", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            required = {"trip_id", "duration", "start_time", "start_station", "bike_type"}
+            absent = required - set(reader.fieldnames or [])
+            if absent:
+                raise ValueError(f"{source.name} is missing columns: {sorted(absent)}")
+            for r in reader:  # STREAM rows; no need to load files into RAM.
+                stat["trips"] += 1
+                if not (r.get("trip_id") or "").strip():
+                    stat["missing_trip_id"] += 1
+
+                start_time = (r.get("start_time") or "").strip()
+                try:
+                    # Indego uses M/D/YYYY in older releases and YYYY-MM-DD in 2026 Q3.
+                    daypart = start_time.split()[0].split("T")[0]
+                    if "-" in daypart:
+                        y, m, d = (int(v) for v in daypart.split("-"))
+                    else:
+                        m, d, y = (int(v) for v in daypart.split("/"))
+                    date(y, m, d)  # Also rejects impossible dates (e.g., month 13).
+                    actual_quarter = (m - 1) // 3 + 1
+                    if y != year or actual_quarter != quarter:
+                        stat["wrong_period"] += 1
+                except (ValueError, IndexError):
+                    stat["unreadable_date"] += 1
+
+                station = (r.get("start_station") or "").strip()
+                if not station:
+                    stat["missing_station"] += 1
+                bike = (r.get("bike_type") or "Unknown").strip().lower()
+                if bike == "electric":
+                    stat["electric_trips"] += 1
+                elif bike == "standard":
+                    stat["standard_trips"] += 1
+
+                # A trip can still count toward trips even when its duration is unusable.
+                if station:
+                    by_station[station][year]["trips"] += 1
+                by_bike[(year, bike)]["trips"] += 1
+                try:
+                    duration = float((r.get("duration") or "").strip())
+                except ValueError:
+                    duration = -1
+                if not 0 < duration <= MAX_VALID_DURATION:
+                    stat["invalid_duration"] += 1
+                    continue
+                stat["valid_trips"] += 1
+                stat["ride_minutes"] += duration
+                if duration > 180:
+                    stat["long_over_180"] += 1
+                if station:
+                    by_station[station][year]["minutes"] += duration
+                by_bike[(year, bike)]["minutes"] += duration
+        quarters[(year, quarter)] = stat
+        print(f"  {stat['trips']:,} trips; {stat['ride_minutes']:,.0f} ride-minutes")
+
+if missing:
+    print("\nNOTE: Missing files (this run will be INCOMPLETE):")
+    for name in missing:
+        print("  ", name)
+
+quarter_rows = []
+for year in YEARS:
+    for quarter in QUARTERS:
+        if (year, quarter) not in quarters:
+            continue
+        s = quarters[(year, quarter)]
+        last = quarters.get((year - 1, quarter))
+        quarter_rows.append({
+            "year": year, "quarter": f"Q{quarter}",
+            "trips": s["trips"], "trip_growth_yoy_pct": growth(s["trips"], last["trips"]) if last else "",
+            "total_ride_minutes": round(s["ride_minutes"], 2),
+            "ride_minutes_growth_yoy_pct": growth(s["ride_minutes"], last["ride_minutes"]) if last else "",
+            "avg_minutes_per_valid_trip": mean(s["ride_minutes"], s["valid_trips"]),
+            "electric_share_trips_pct": round(100*s["electric_trips"]/s["trips"], 2) if s["trips"] else "",
+            "valid_duration_trips": s["valid_trips"],
+            "bad_duration_trips": s["invalid_duration"],
+            "trips_over_180_minutes": s["long_over_180"],
+        })
+export("01_quarter_growth.csv", list(quarter_rows[0].keys()) if quarter_rows else
+       ["year", "quarter", "trips"], quarter_rows)
+
+def sum_year(year, metric):
+    return sum(quarters.get((year, q), {}).get(metric, 0) for q in QUARTERS)
+
+has_full_window = all((y, q) in quarters for y in YEARS for q in QUARTERS)
+if has_full_window:
+    base = sum_year(2025, "trips")
+    latest = sum_year(2026, "trips")
+    base_min = sum_year(2025, "ride_minutes")
+    latest_min = sum_year(2026, "ride_minutes")
+    summary_ytd = [{
+        "comparison": "Jan-Sep 2026 vs Jan-Sep 2025",
+        "trips_2025": base, "trips_2026": latest,
+        "trips_growth_pct": growth(latest, base),
+        "ride_minutes_2025": round(base_min, 2),
+        "ride_minutes_2026": round(latest_min, 2),
+        "ride_minutes_growth_pct": growth(latest_min, base_min),
+        "avg_duration_2025": mean(base_min, sum_year(2025,"valid_trips")),
+        "avg_duration_2026": mean(latest_min, sum_year(2026,"valid_trips")),
+        "electric_share_2025_pct": round(100*sum_year(2025,"electric_trips")/base, 2) if base else "",
+        "electric_share_2026_pct": round(100*sum_year(2026,"electric_trips")/latest, 2) if latest else "",
+    }]
+    export("02_ytd_executive_summary.csv", list(summary_ytd[0].keys()), summary_ytd)
+else:
+    print("Skipping YTD executive comparison: all 6 quarterly files are required.")
+
+station_rows = []
+for st, yearly in by_station.items():
+    meta = stations.get(st, {})
+    go_live = meta.get("go_live")
+    if st == "3000":
+        cohort = "Virtual station (exclude from physical-station ranking)"
+    elif go_live is None:
+        cohort = "Unknown launch date"
+    elif go_live <= date(2025, 1, 1):
+        cohort = "Opened before 2025 (mature network)"
+    elif go_live.year == 2025:
+        cohort = "Opened in 2025"
+    elif go_live.year >= 2026:
+        cohort = "Opened in 2026 or later"
+    else:
+        cohort = "Unknown launch date"
+    a, b = yearly[2025], yearly[2026]
+    station_rows.append({
+        "station_id": st,
+        "station_name": meta.get("name", "Unknown station"),
+        "station_go_live": go_live.isoformat() if go_live else "",
+        "station_status_in_metadata": meta.get("status_2026_10", "Unknown"),
+        "station_cohort": cohort,
+        "trips_2025_jan_sep": a["trips"],
+        "trips_2026_jan_sep": b["trips"],
+        "trips_yoy_pct": growth(b["trips"], a["trips"]) if has_full_window else "",
+        "minutes_2025_jan_sep": round(a["minutes"], 2),
+        "minutes_2026_jan_sep": round(b["minutes"], 2),
+        "minutes_yoy_pct": growth(b["minutes"], a["minutes"]) if has_full_window else "",
+    })
+station_rows.sort(key=lambda r: r["minutes_2026_jan_sep"], reverse=True)
+export("03_station_comparison.csv", list(station_rows[0].keys()) if station_rows else
+       ["station_id", "station_name"], station_rows)
+
+bike_rows = []
+for y, t in sorted(by_bike):
+    s = by_bike[(y,t)]
+    prev = by_bike.get((y-1,t))
+    bike_rows.append({"year":y,"bike_type":t,"trips":s["trips"],
+      "ride_minutes":round(s["minutes"],2),
+      "trip_growth_yoy_pct":growth(s["trips"], prev["trips"]) if prev and has_full_window else "",
+      "minutes_growth_yoy_pct":growth(s["minutes"],prev["minutes"]) if prev and has_full_window else ""})
+export("04_bike_type.csv", list(bike_rows[0].keys()) if bike_rows else
+       ["year", "bike_type", "trips", "ride_minutes"], bike_rows)
+
+qa_rows = []
+for (year,q),s in sorted(quarters.items()):
+    qa_rows.append({"period":f"{year} Q{q}", **s})
+export("05_data_quality.csv", list(qa_rows[0].keys()) if qa_rows else ["period"], qa_rows)
+
+lines = [
+    "INDEGO BIKE SHARE GROWTH ANALYSIS - QUICK GUIDE TO THE OUTPUT",
+    "Source: Indego public quarterly trip files; read from the same folder as this script.",
+    "Coverage: January-September of 2025 and 2026, if all 6 quarter files are present.",
+    "",
+    "IMPORTANT: This is a PROFIT-MOTIVATED business hypothetical, not actual Indego financials.",
+    "Total ride-minutes is a DURATION-BASED REVENUE PROXY (an assumption of this analysis).",
+    "It is NOT measured revenue, profit, bike utilization, fleet capacity or ROI.",
+    "",
+    "FILES:",
+    "01_quarter_growth.csv = 6 quarterly rows, YoY growth, average duration, bike mix.",
+    "02_ytd_executive_summary.csv = Jan-Sep YoY comparison when all 6 files exist.",
+    "03_station_comparison.csv = stations ranked by 2026 trip-origin ride-minutes.",
+    "04_bike_type.csv = electric/standard trips and minutes by year.",
+    "05_data_quality.csv = count of unusually long trips, invalid durations and mismatches.",
+    "",
+    "STATION NOTE: Station analysis assigns ride-minutes to trip START station; this is a demand",
+    "proxy, not capacity-adjusted utilization. 'Mature' stations were launched before Jan 2025.",
+    "Do not compare station % changes when baseline is close to zero or a station just opened.",
+    "Latest station active/inactive status is not proof of its status in a past quarter.",
+    "",
+    "DATA CHECK: Valid ride-minutes are duration > 0 and <= 1440 min. Bad durations",
+    "still count toward raw trip total, but are excluded from duration calculations.",
+    "Long trips >180 min are flagged, not removed. Try sensitivity tests if there are many.",
+    "Trip IDs were NOT deduplicated: verify if duplicates are suspected.",
+    "Trip counts grouped by source filename; wrong-period dates flagged in quality sheet.",
+    "",
+    "SLIDE IDEA: 1) What happened (trip growth vs ride-minute growth, quarterly and YTD).",
+    "            2) Why it matters + targeted pilot recommendation based on station evidence.",
+]
+if has_full_window:
+    s = summary_ytd[0]
+    lines += ["", "JAN-SEP RESULTS:",
+              f"Trips: {s['trips_2025']:,} (2025) -> {s['trips_2026']:,} (2026); YoY {s['trips_growth_pct']}%",
+              f"Minutes: {s['ride_minutes_2025']:,.0f} (2025) -> {s['ride_minutes_2026']:,.0f} (2026); YoY {s['ride_minutes_growth_pct']}%",
+              f"Average duration: {s['avg_duration_2025']} min -> {s['avg_duration_2026']} min"]
+else:
+    lines += ["", "INCOMPLETE: Year-on-year YTD metrics are withheld until all six files exist.",
+              "Missing: " + ", ".join(missing)]
+(OUT / "00_READ_ME_FIRST.txt").write_text("\n".join(lines)+"\n", encoding="utf-8")
+print("\nDONE. Open this folder:", OUT)
+print("Start with 00_READ_ME_FIRST.txt and 02_ytd_executive_summary.csv (when available).")
+</script>
+<script type="application/octet-stream" id="zip-indego">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</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+(function () {
+"use strict";
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var MINUS = "−";
+function sgn(v, d) { return (v > 0 ? "+" : v < 0 ? MINUS : "") + Math.abs(v).toFixed(d); }
+
+/* ---------- chart specs ---------- */
+var CH = {
+  "indego-mini": { type: "grouped", mini: true, height: 96, categories: ["Q1", "Q2", "Q3"], yMin: 0, yMax: 35, gap: 6,
+    series: [{ name: "Ride-minutes", cls: "s1", values: [4.10, 31.74, 14.19] }, { name: "Trips", cls: "s2", values: [2.14, 32.14, 16.34] }] },
+  "indego-q": { type: "grouped", height: 260, categories: ["Q1", "Q2", "Q3"], yMin: 0, yMax: 35, ticks: [0, 10, 20, 30], gap: 20,
+    tickFmt: function (v) { return v + "%"; }, fmt: function (v) { return sgn(v, 1) + "%"; }, fmtShort: function (v) { return sgn(v, 1); },
+    series: [{ name: "Ride-minutes", cls: "s1", values: [4.10, 31.74, 14.19] }, { name: "Trips", cls: "s2", values: [2.14, 32.14, 16.34] }],
+    table: { head: ["Quarter", "Trips 2025", "Trips 2026", "Trips YoY", "Ride-min 2025", "Ride-min 2026", "Ride-min YoY"],
+      rows: [["Q1 (Jan.-Mar.)", "201,588", "205,908", "+2.1%", "3.10M", "3.23M", "+4.1%"], ["Q2 (Apr.-June)", "365,760", "483,327", "+32.1%", "6.52M", "8.59M", "+31.7%"], ["Q3 (July-Sep.)", "465,464", "541,511", "+16.3%", "8.05M", "9.20M", "+14.2%"], ["Jan.-Sep.", "1,032,812", "1,230,746", "+19.2%", "17.68M", "21.02M", "+18.9%"]] } },
+  "indego-src": { type: "stack",
+    segments: [{ name: "Stations opened in 2025-26", cls: "s1", on: "vlabel-on1", value: 1986042, share: 59.45 }, { name: "Stations opened before 2025", cls: "s2", on: "vlabel-on2", value: 1360634, share: 40.73 }],
+    fmtVal: function (v) { return "+" + (v / 1e6).toFixed(2) + "M ride-minutes"; },
+    table: { head: ["Station cohort", "Stations", "Ride-min 2025", "Ride-min 2026", "Change", "Share of gain"],
+      rows: [["Opened before 2025", "256", "17.02M", "18.38M", "+1.36M", "40.7%"], ["Opened in 2025", "41", "0.65M", "1.37M", "+0.72M", "21.6%"], ["Opened in 2026", "39", "0", "1.27M", "+1.27M", "37.9%"], ["Virtual station", "1", "6.2K", "26", MINUS + "6.2K", MINUS + "0.2%"], ["Total", "337", "17.68M", "21.02M", "+3.34M", "100%"]] } },
+  "indego-bike": { type: "slope", left: "Jan.-Sep. 2025", right: "Jan.-Sep. 2026", min: 0, max: 1000000,
+    fmt: function (v) { return Math.round(v / 1000) + "K"; },
+    series: [{ name: "E-bike trips", cls: "s1", ln: "ln1", a: 663578, b: 894973, chg: "+34.9%" }, { name: "Standard-bike trips", cls: "s2", ln: "ln2", a: 369234, b: 335773, chg: MINUS + "9.1%" }],
+    table: { head: ["Bike type", "Trips 2025", "Trips 2026", "Change", "Ride-min 2025", "Ride-min 2026", "Change"],
+      rows: [["E-bike", "663,578", "894,973", "+34.9%", "11.02M", "14.76M", "+33.9%"], ["Standard", "369,234", "335,773", MINUS + "9.1%", "6.66M", "6.26M", MINUS + "6.0%"]] } },
+  "cfa-ff": { type: "range", domain: [150, 600], ticks: [200, 300, 400, 500, 600],
+    rows: [
+      { label: "DCF", sub: "bear to bull", lo: 250.05, hi: 413.95, mid: 357.10, midLabel: "base $357.10" },
+      { label: "Comparable companies", sub: "bear to bull", lo: 328.47, hi: 427.08, mid: 390.02, midLabel: "base $390.02" },
+      { label: "Monte Carlo", sub: "10th to 90th percentile", lo: 186.54, hi: 573.31, mid: 360.68, midLabel: "mean $360.68" },
+      { label: "Street consensus", sub: "low to high", lo: 375, hi: 466 }],
+    markers: [{ label: "Target $363.69", value: 363.69, cls: "mk-target", side: "left" }, { label: "Price $367.98", value: 367.98, cls: "mk-price", side: "right" }],
+    table: { head: ["Method", "Low", "Base / mean", "High"],
+      rows: [["DCF (bear, base, bull)", "$250.05", "$357.10", "$413.95"], ["Comparable companies (bear, base, bull)", "$328.47", "$390.02", "$427.08"], ["Monte Carlo (10th pct., mean, 90th pct.)", "$186.54", "$360.68", "$573.31"], ["Street consensus (low, high)", "$375", "", "$466"], ["Blended target: 80% DCF, 20% comps", "", "$363.69", ""]] } },
+  "cfa-mini": { type: "range", mini: true, domain: [150, 600],
+    rows: [{ label: "DCF", short: "DCF", lo: 250.05, hi: 413.95 }, { label: "Comparable companies", short: "Comps", lo: 328.47, hi: 427.08 }, { label: "Monte Carlo", short: "Monte Carlo", lo: 186.54, hi: 573.31 }],
+    markers: [{ value: 363.69, cls: "mk-target" }, { value: 367.98, cls: "mk-price" }] },
+  "tsla-mult": { type: "multiples",
+    series: [{ name: "ATR take-profit and stop-loss", cls: "s1" }, { name: "Trailing stop", cls: "s2" }],
+    panels: [
+      { title: "CAGR", note: "higher is better", values: [34.62, 21.91], max: 40, fmt: function (v) { return v.toFixed(1) + "%"; } },
+      { title: "Sharpe ratio", note: "higher is better", values: [1.29, 0.80], max: 1.5, fmt: function (v) { return v.toFixed(2); } },
+      { title: "Max drawdown", note: "lower is better", values: [12.24, 22.33], max: 26, fmt: function (v) { return v.toFixed(1) + "%"; } }],
+    table: { head: ["Metric", "ATR take-profit / stop-loss", "Trailing stop"],
+      rows: [["Sharpe ratio", "1.29", "0.80"], ["CAGR", "34.62%", "21.91%"], ["Maximum drawdown", "12.24%", "22.33%"], ["Profit factor", "1.66", "1.31"], ["Win rate", "41.17%", "34.48%"], ["Trades", "34", "29"], ["Average holding time", "54 days", "63 days"]] } },
+  "factor-dec": { type: "deciles", domain: [-7, 7], ticks: [-6, -3, 0, 3, 6],
+    panels: [
+      { name: "Sales growth alone", cls: "s2", sw: "l2", values: [-0.62, 1.45, 2.27, 2.63, 2.40, 2.30, 1.52, -0.23, -2.29, -6.12], ls: -5.50, hits: [48.65, 51.55, 53.21, 54.05, 53.94, 53.48, 52.20, 49.91, 47.54, 44.36], lsHit: 47.86, label: [3, 9] },
+      { name: "Four-factor model", cls: "s1", sw: "l1", values: [-3.66, -2.60, -0.63, 0.33, 1.69, 2.14, 2.43, 2.84, 2.52, 3.04], ls: 6.71, hits: [46.14, 47.28, 49.19, 50.54, 52.58, 53.57, 54.19, 54.81, 54.02, 53.74], lsHit: 53.80, label: [0, 9] }],
+    table: { head: ["Decile", "Growth: avg. return", "Growth: hit rate", "Model: avg. return", "Model: hit rate"],
+      rows: [["1 (lowest)", MINUS + "0.62%", "48.65%", MINUS + "3.66%", "46.14%"], ["2", "1.45%", "51.55%", MINUS + "2.60%", "47.28%"], ["3", "2.27%", "53.21%", MINUS + "0.63%", "49.19%"], ["4", "2.63%", "54.05%", "0.33%", "50.54%"], ["5", "2.40%", "53.94%", "1.69%", "52.58%"], ["6", "2.30%", "53.48%", "2.14%", "53.57%"], ["7", "1.52%", "52.20%", "2.43%", "54.19%"], ["8", MINUS + "0.23%", "49.91%", "2.84%", "54.81%"], ["9", MINUS + "2.29%", "47.54%", "2.52%", "54.02%"], ["10 (highest)", MINUS + "6.12%", "44.36%", "3.04%", "53.74%"], ["Long-short (10 minus 1)", MINUS + "5.50%", "47.86%", "+6.71%", "53.80%"]] } },
+  "citi-wf": { type: "waterfall", max: 20000, ticks: [0, 5000, 10000, 15000, 20000],
+    tickFmt: function (v) { return v === 0 ? "$0" : "$" + (v / 1000) + "B"; },
+    fmt: function (v) { var a = Math.abs(v); var s = a >= 1000 ? "$" + (a / 1000).toFixed(1) + "B" : "$" + a + "M"; return v < 0 ? MINUS + s : s; },
+    steps: [{ label: "Revenue", value: 18006, kind: "total" }, { label: "Operating|expenses", short: "OpEx", value: -12985 }, { label: "Cost of|credit", value: -1845 }, { label: "Pre-tax|income", kind: "subtotal" }, { label: "Taxes", value: -640 }, { label: "Other", value: -23 }, { label: "Net|income", kind: "subtotal" }],
+    table: { head: ["Line item ($M)", "Q4 2022", "Q4 2021", "Change"],
+      rows: [["Revenues, net of interest expense", "18,006", "17,017", "+6%"], ["Operating expenses", "12,985", "13,532", MINUS + "4%"], ["Net credit losses", "1,180", "866", "+36%"], ["Net credit loss allowance build / (release)", "640", "(1,369)", "NM"], ["Other provisions", "25", "38", MINUS + "34%"], ["Total cost of credit", "1,845", "(465)", "NM"], ["Income from continuing operations before taxes", "3,176", "3,950", MINUS + "20%"], ["Provision for income taxes", "640", "771", MINUS + "17%"], ["Discontinued operations, net of taxes", "(2)", "0", "NM"], ["Net income to noncontrolling interest", "21", "6", "NM"], ["Citigroup net income", "2,513", "3,173", MINUS + "21%"]] } },
+  "fid-alloc": { type: "hbars", max: 60, cls: "s1", fmt: function (v) { return v + "%"; },
+    rows: [{ label: "QQQ", sub: "Invesco QQQ Trust", value: 50 }, { label: "SPY", sub: "SPDR S&P 500 ETF", value: 30 }, { label: "BND", sub: "Vanguard Total Bond Market ETF", value: 10 }, { label: "GLD", sub: "SPDR Gold Shares", value: 10 }],
+    table: { head: ["ETF", "Fund", "Weight"], rows: [["QQQ", "Invesco QQQ Trust", "50%"], ["SPY", "SPDR S&P 500 ETF", "30%"], ["BND", "Vanguard Total Bond Market ETF", "10%"], ["GLD", "SPDR Gold Shares", "10%"]] } }
+};
+var LEGENDS = {
+  "indego-q": [["l1", "Ride-minutes"], ["l2", "Trips"]],
+  "indego-src": [["l1", "Stations opened in 2025-26: +1.99M min (59%)"], ["l2", "Stations opened before 2025: +1.36M min (41%)"]],
+  "indego-bike": [["l1 ln", "E-bike trips"], ["l2 ln", "Standard-bike trips"]],
+  "tsla-mult": [["l1", "ATR take-profit and stop-loss"], ["l2", "Trailing stop"]],
+  "citi-wf": [["l1", "Total or subtotal"], ["l2", "Deduction"]]
+};
+
+/* ---------- svg helpers ---------- */
+var NS = "http://www.w3.org/2000/svg";
+function S(tag, attrs, parent) {
+  var e = document.createElementNS(NS, tag);
+  if (attrs) for (var k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function T(parent, x, y, text, cls, anchor) {
+  var t = S("text", { x: x, y: y, "class": cls, "text-anchor": anchor || "start" }, parent);
+  t.textContent = text; return t;
+}
+function TL(parent, x, y, text, cls, anchor, lh) { // multi-line label, lines split by |
+  var parts = String(text).split("|");
+  var t = S("text", { x: x, y: y, "class": cls, "text-anchor": anchor || "start" }, parent);
+  parts.forEach(function (p, i) { var s = S("tspan", { x: x, dy: i ? (lh || 13) : 0 }, t); s.textContent = p; });
+  return t;
+}
+function svgRoot(el, W, H, first, extra) {
+  var svg = S("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, "class": "viz" + (first ? "" : " static") + (extra ? " " + extra : ""), focusable: "false" });
+  return svg;
+}
+function vbar(x, w, y0, y1) {
+  var h = Math.abs(y1 - y0), r = Math.min(4, h, w / 2);
+  if (h < 0.8) return "M" + x + "," + y0 + "h" + w + "v-0.8h" + (-w) + "z";
+  if (y1 < y0) return "M" + x + "," + y0 + "V" + (y1 + r) + "Q" + x + "," + y1 + " " + (x + r) + "," + y1 + "H" + (x + w - r) + "Q" + (x + w) + "," + y1 + " " + (x + w) + "," + (y1 + r) + "V" + y0 + "Z";
+  return "M" + x + "," + y0 + "V" + (y1 - r) + "Q" + x + "," + y1 + " " + (x + r) + "," + y1 + "H" + (x + w - r) + "Q" + (x + w) + "," + y1 + " " + (x + w) + "," + (y1 - r) + "V" + y0 + "Z";
+}
+function hbar(y, h, x0, x1) {
+  var w = Math.abs(x1 - x0), r = Math.min(4, w, h / 2);
+  if (w < 0.8) return "M" + x0 + "," + y + "v" + h + "h0.8v" + (-h) + "z";
+  return "M" + x0 + "," + y + "H" + (x1 - r) + "Q" + x1 + "," + y + " " + x1 + "," + (y + r) + "V" + (y + h - r) + "Q" + x1 + "," + (y + h) + " " + (x1 - r) + "," + (y + h) + "H" + x0 + "Z";
+}
+function rrect(x, y, w, h, rl, rr) {
+  return "M" + (x + rl) + "," + y + "H" + (x + w - rr) + "Q" + (x + w) + "," + y + " " + (x + w) + "," + (y + rr) + "V" + (y + h - rr) + "Q" + (x + w) + "," + (y + h) + " " + (x + w - rr) + "," + (y + h) + "H" + (x + rl) + "Q" + x + "," + (y + h) + " " + x + "," + (y + h - rl) + "V" + (y + rl) + "Q" + x + "," + y + " " + (x + rl) + "," + y + "Z";
+}
+
+/* ---------- tooltip ---------- */
+var tip = $("#tip");
+function placeTip(x, y) {
+  var r = tip.getBoundingClientRect();
+  var left = x + 14, top = y - r.height - 12;
+  if (left + r.width > window.innerWidth - 8) left = x - r.width - 14;
+  if (top < 8) top = y + 18;
+  tip.style.left = Math.max(8, left) + "px"; tip.style.top = Math.max(8, top) + "px";
+}
+function showTip(value, label, ev, el) {
+  tip.replaceChildren();
+  var v = document.createElement("strong"); v.textContent = value;
+  var l = document.createElement("span"); l.textContent = label;
+  tip.append(v, l); tip.hidden = false;
+  if (ev && typeof ev.clientX === "number" && ev.type !== "focus") placeTip(ev.clientX, ev.clientY);
+  else { var b = el.getBoundingClientRect(); placeTip(b.left + b.width / 2, b.top); }
+}
+function hideTip() { tip.hidden = true; }
+window.addEventListener("scroll", hideTip, { passive: true });
+function hit(svg, x, y, w, h, value, label, marks) {
+  var r = S("rect", { x: x, y: y, width: Math.max(1, w), height: Math.max(1, h), "class": "hit", tabindex: "0", role: "img", "aria-label": label + ": " + value }, svg);
+  function on(ev) { svg.classList.add("hovering"); (marks || []).forEach(function (m) { m.classList.add("on"); }); showTip(value, label, ev, r); }
+  function off() { svg.classList.remove("hovering"); (marks || []).forEach(function (m) { m.classList.remove("on"); }); hideTip(); }
+  r.addEventListener("pointerenter", on); r.addEventListener("pointermove", on); r.addEventListener("pointerleave", off);
+  r.addEventListener("focus", on); r.addEventListener("blur", off);
+  return r;
+}
+
+/* ---------- renderers ---------- */
+function grouped(el, s, W, first) {
+  var mini = !!s.mini, H = s.height || 250;
+  var m = mini ? { t: 6, r: 2, b: 2, l: 2 } : { t: 26, r: 6, b: 30, l: 42 };
+  var iw = W - m.l - m.r, ih = H - m.t - m.b, n = s.categories.length, k = s.series.length;
+  var y = function (v) { return m.t + ih - (v - s.yMin) / (s.yMax - s.yMin) * ih; };
+  var band = iw / n, gap = s.gap || 2;
+  var bw = Math.max(6, Math.min(mini ? 18 : 24, (band * 0.7 - (k - 1) * gap) / k));
+  var gw = k * bw + (k - 1) * gap;
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  if (mini) svg.setAttribute("aria-hidden", "true");
+  if (!mini) s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, m.l - 8, yy + 4, s.tickFmt(t), "tick", "end"); });
+  else { var y0m = Math.round(y(0)) + 0.5; S("line", { x1: 0, x2: W, y1: y0m, y2: y0m, "class": "axis" }, svg); }
+  s.categories.forEach(function (c, i) {
+    var gx = m.l + band * i + (band - gw) / 2;
+    s.series.forEach(function (se, j) {
+      var v = se.values[i], x = gx + j * (bw + gap), y0 = y(0), y1 = y(v);
+      var p = S("path", { d: vbar(x, bw, y0, y1), "class": "bar grow " + se.cls + (v < 0 ? " neg" : "") }, svg);
+      p.style.animationDelay = (i * 90 + j * 45) + "ms";
+      if (!mini) {
+        T(svg, x + bw / 2, v >= 0 ? y1 - 7 : y1 + 15, (W < 480 && s.fmtShort) ? s.fmtShort(v) : s.fmt(v), "vlabel", "middle");
+        hit(svg, m.l + band * i + band / k * j, m.t, band / k, ih, s.fmt(v), c + " · " + se.name, [p]);
+      }
+    });
+    if (!mini) T(svg, m.l + band * i + band / 2, H - 9, c, "xlabel", "middle");
+  });
+}
+function stack(el, s, W, first) {
+  var H = 44, y = 6, h = 32, gap = 2, n = s.segments.length;
+  var total = s.segments.reduce(function (a, b) { return a + b.value; }, 0);
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  var x = 0, usable = W - gap * (n - 1);
+  s.segments.forEach(function (sg, i) {
+    var w = usable * sg.value / total;
+    var p = S("path", { d: rrect(x, y, w, h, i === 0 ? 4 : 0, i === n - 1 ? 4 : 0), "class": "seg growx " + sg.cls }, svg);
+    p.style.animationDelay = (i * 140) + "ms";
+    var lab = Math.round(sg.share) + "%";
+    if (w > 56) T(svg, x + 12, y + h / 2 + 4.5, lab, sg.on, "start");
+    hit(svg, x, y, w, h, s.fmtVal(sg.value) + " (" + lab + ")", sg.name, [p]);
+    x += w + gap;
+  });
+}
+function slope(el, s, W, first) {
+  var narrow = W < 520, H = 236;
+  var m = { t: 34, b: 18, l: narrow ? 56 : 120, r: narrow ? 128 : 220 };
+  var xL = m.l, xR = W - m.r;
+  var y = function (v) { return m.t + (1 - (v - s.min) / (s.max - s.min)) * (H - m.t - m.b); };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  [xL, xR].forEach(function (x, i) { S("line", { x1: x, x2: x, y1: m.t - 8, y2: H - m.b, "class": "grid" }, svg); T(svg, x, 15, i ? s.right : s.left, "tick", "middle"); });
+  s.series.forEach(function (se) {
+    var ya = y(se.a), yb = y(se.b);
+    var ln = S("path", { d: "M" + xL + "," + ya + "L" + xR + "," + yb, "class": "line " + se.ln }, svg);
+    var d1 = S("circle", { cx: xL, cy: ya, r: 5, "class": "dot " + se.cls }, svg);
+    var d2 = S("circle", { cx: xR, cy: yb, r: 5, "class": "dot " + se.cls }, svg);
+    T(svg, xL - 12, ya + 4, s.fmt(se.a), "vlabel", "end");
+    var rl = T(svg, xR + 12, yb - 2, s.fmt(se.b), "vlabel", "start");
+    var cg = S("tspan", { "class": "chg", dx: 8 }, rl); cg.textContent = se.chg;
+    T(svg, xR + 12, yb + 14, se.name, "xlabel-sm", "start");
+    hit(svg, xL - 16, ya - 16, 32, 32, s.fmt(se.a), se.name + " · " + s.left, [ln, d1, d2]);
+    hit(svg, xR - 16, yb - 16, 32, 32, s.fmt(se.b) + " (" + se.chg + ")", se.name + " · " + s.right, [ln, d1, d2]);
+  });
+}
+function range(el, s, W, first) {
+  var mini = !!s.mini, narrow = !mini && W < 560;
+  var labelW = mini ? 84 : (narrow ? 0 : 196), rowH = mini ? 20 : (narrow ? 60 : 48), barH = mini ? 8 : 14;
+  var m = mini ? { t: 4, r: 6, b: 4, l: labelW } : { t: 44, r: 16, b: 28, l: narrow ? 12 : labelW };
+  var H = m.t + s.rows.length * rowH + m.b;
+  var x = function (v) { return m.l + (v - s.domain[0]) / (s.domain[1] - s.domain[0]) * (W - m.l - m.r); };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  if (mini) svg.setAttribute("aria-hidden", "true");
+  var later = [], mks = s.markers.map(function (mk) { return x(mk.value); });
+  if (!mini) s.ticks.forEach(function (t) { var xx = Math.round(x(t)) + 0.5; S("line", { x1: xx, x2: xx, y1: m.t - 10, y2: H - m.b, "class": "grid" }, svg); T(svg, xx, H - 8, "$" + t, "tick", "middle"); });
+  s.rows.forEach(function (r, i) {
+    var top = m.t + i * rowH;
+    var by = narrow ? top + 30 : top + (rowH - barH) / 2;
+    var x0 = x(r.lo), x1 = x(r.hi);
+    var p = S("path", { d: rrect(x0, by, x1 - x0, barH, mini ? 3 : 4, mini ? 3 : 4), "class": "bar growx s1" }, svg);
+    p.style.animationDelay = (i * 90) + "ms";
+    if (!mini && r.mid != null) S("line", { x1: x(r.mid), x2: x(r.mid), y1: by + 2, y2: by + barH - 2, "class": "midtick" }, svg);
+    if (!mini) hit(svg, x0 - 4, by - 10, x1 - x0 + 8, barH + 20, "$" + r.lo.toFixed(2) + " to $" + r.hi.toFixed(2) + (r.midLabel ? ", " + r.midLabel : ""), r.label + " (" + r.sub + ")", [p]);
+    later.push(function () {
+      if (mini) { T(svg, m.l - 8, by + barH / 2 + 4, r.short || r.label, "xlabel-sm", "end"); return; }
+      if (narrow) { var lt = T(svg, m.l, top + 18, r.label, "xlabel-strong halo", "start"); var st = S("tspan", { "class": "xlabel-sm", dx: 6 }, lt); st.textContent = r.sub; }
+      else { T(svg, m.l - 16, by + 4, r.label, "xlabel-strong", "end"); T(svg, m.l - 16, by + 18, r.sub, "xlabel-sm", "end"); }
+      var lo = T(svg, x0 - 6, by + 11, "$" + Math.round(r.lo), "vlabel halo", "end");
+      var lw = lo.getComputedTextLength(), minX = narrow ? 0 : m.l - 4;
+      var loClash = mks.some(function (mx) { return mx > x0 - 9 - lw && mx < x0 - 3; });
+      if (x0 - 6 - lw < minX || loClash) { lo.setAttribute("x", x0 + 6); lo.setAttribute("text-anchor", "start"); lo.setAttribute("class", "vlabel-on1"); }
+      var hi = T(svg, x1 + 6, by + 11, "$" + Math.round(r.hi), "vlabel halo", "start");
+      var hw = hi.getComputedTextLength();
+      var hiClash = mks.some(function (mx) { return mx > x1 + 3 && mx < x1 + 9 + hw; });
+      if (x1 + 6 + hw > W || hiClash) { hi.setAttribute("x", x1 - 6); hi.setAttribute("text-anchor", "end"); hi.setAttribute("class", "vlabel-on1"); }
+    });
+  });
+  s.markers.forEach(function (mk, k) {
+    var xx = mks[k];
+    S("line", { x1: xx, x2: xx, y1: mini ? 1 : m.t - 16, y2: H - (mini ? 1 : m.b), "class": mk.cls }, svg);
+    if (!mini) later.push(function () { T(svg, mk.side === "left" ? xx - 6 : xx + 6, m.t - 22, mk.label, "mlabel", mk.side === "left" ? "end" : "start"); });
+  });
+  later.forEach(function (f) { f(); });
+}
+function multiples(el, s, W, first) {
+  var grid = document.createElement("div"); grid.className = "mult";
+  el.replaceChildren(grid);
+  s.panels.forEach(function (pn) {
+    var box = document.createElement("div");
+    var h = document.createElement("h4"); h.textContent = pn.title;
+    var note = document.createElement("span"); note.textContent = pn.note; h.appendChild(note);
+    box.appendChild(h); grid.appendChild(box);
+  });
+  Array.prototype.forEach.call(grid.children, function (box, i) {
+    var pn = s.panels[i], PW = Math.max(120, box.clientWidth), H = 78, rm = 58;
+    var svg = svgRoot(box, PW, H, first); box.appendChild(svg);
+    var x = function (v) { return v / pn.max * (PW - rm); };
+    S("line", { x1: 0.5, x2: 0.5, y1: 2, y2: H - 4, "class": "axis" }, svg);
+    s.series.forEach(function (se, j) {
+      var by = 10 + j * 32, bh = 20, v = pn.values[j];
+      var p = S("path", { d: hbar(by, bh, 1, 1 + x(v)), "class": "bar growx " + se.cls }, svg);
+      p.style.animationDelay = (i * 90 + j * 60) + "ms";
+      T(svg, 1 + x(v) + 8, by + 14.5, pn.fmt(v), "vlabel", "start");
+      hit(svg, 0, by - 5, PW, bh + 10, pn.fmt(v), pn.title + " · " + se.name, [p]);
+    });
+  });
+}
+function deciles(el, s, W, first) {
+  var grid = document.createElement("div"); grid.className = "mult2";
+  el.replaceChildren(grid);
+  s.panels.forEach(function (pn) {
+    var box = document.createElement("div");
+    var h = document.createElement("h4");
+    var sw = document.createElement("i"); sw.className = pn.sw; sw.style.background = "var(--" + pn.cls + ")";
+    var nm = document.createElement("b"); nm.textContent = pn.name;
+    var note = document.createElement("span"); note.textContent = "long-short " + sgn(pn.ls, 2) + "%";
+    h.append(sw, nm, note); box.appendChild(h); grid.appendChild(box);
+  });
+  Array.prototype.forEach.call(grid.children, function (box, pi) {
+    var pn = s.panels[pi], PW = Math.max(240, box.clientWidth), H = 232;
+    var m = { t: 18, r: 4, b: 26, l: 36 }, iw = PW - m.l - m.r, ih = H - m.t - m.b;
+    var y = function (v) { return m.t + (s.domain[1] - v) / (s.domain[1] - s.domain[0]) * ih; };
+    var slots = 11.7, sw = iw / slots, bw = Math.min(18, sw * 0.66);
+    var svg = svgRoot(box, PW, H, first); box.appendChild(svg);
+    s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: PW - m.r, y1: yy, y2: yy, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, m.l - 7, yy + 4, (t > 0 ? "+" : t < 0 ? MINUS : "") + Math.abs(t) + "%", "tick", "end"); });
+    var showAll = PW >= 380;
+    var vals = pn.values.concat([pn.ls]);
+    vals.forEach(function (v, i) {
+      var isLS = i === 10;
+      var cx = m.l + sw * (i + 0.5) + (isLS ? sw * 0.7 : 0);
+      var x = cx - bw / 2, y0 = y(0), y1 = y(v);
+      var p = S("path", { d: vbar(x, bw, y0, y1), "class": "bar grow " + pn.cls + (v < 0 ? " neg" : "") }, svg);
+      p.style.animationDelay = (pi * 120 + i * 35) + "ms";
+      if (isLS || pn.label.indexOf(i) > -1) T(svg, cx, v >= 0 ? y1 - 6 : y1 + 14, sgn(v, 2), "vlabel", "middle");
+      if (isLS || showAll || i === 0 || i === 4 || i === 9) T(svg, cx, H - 8, isLS ? "L-S" : String(i + 1), isLS ? "xlabel-strong" : "xlabel", "middle");
+      var hr = isLS ? pn.lsHit : pn.hits[i];
+      hit(svg, cx - sw / 2, m.t, sw, ih, sgn(v, 2) + "% avg. return", (isLS ? "Long-short" : "Decile " + (i + 1)) + " · " + pn.name + " · hit rate " + hr.toFixed(2) + "%", [p]);
+    });
+  });
+}
+function waterfallH(el, s, W, first) {
+  var rowH = 34, barH = 16, m = { t: 6, r: 64, b: 24, l: 104 };
+  var n = s.steps.length, H = m.t + n * rowH + m.b;
+  var x = function (v) { return m.l + v / s.max * (W - m.l - m.r); };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  [0, 10000, 20000].forEach(function (t) { var xx = Math.round(x(t)) + 0.5; S("line", { x1: xx, x2: xx, y1: m.t, y2: H - m.b, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, xx, H - 6, s.tickFmt(t), "tick", t === 0 ? "start" : "middle"); });
+  var run = 0, prevLevel = null, prevBottom = null;
+  s.steps.forEach(function (st, i) {
+    var by = m.t + i * rowH + (rowH - barH) / 2, a, b, cls, val;
+    if (st.kind === "total") { a = 0; b = st.value; run = st.value; cls = "s1"; val = st.value; }
+    else if (st.kind === "subtotal") { a = 0; b = run; cls = "s1"; val = run; }
+    else { a = run; b = run + st.value; run = b; cls = "s2"; val = st.value; }
+    var loV = Math.min(a, b), hiV = Math.max(a, b);
+    if (prevLevel !== null) { var cx = Math.round(x(prevLevel)) + 0.5; S("line", { x1: cx, x2: cx, y1: prevBottom, y2: by, "class": "connector" }, svg); }
+    var p, xa = x(loV), xb = Math.max(x(hiV), xa + 2);
+    if (cls === "s1") p = S("path", { d: hbar(by, barH, x(0), x(hiV)), "class": "bar growx s1" }, svg);
+    else p = S("path", { d: rrect(xa, by, xb - xa, barH, Math.min(4, (xb - xa) / 2), 0), "class": "bar growx s2" }, svg);
+    p.style.animationDelay = (i * 70) + "ms";
+    T(svg, xb + 6, by + 12, s.fmt(val), "vlabel", "start");
+    T(svg, m.l - 10, by + 12, st.short || st.label.replace("|", " "), "xlabel", "end");
+    hit(svg, 0, by - (rowH - barH) / 2, W, rowH, s.fmt(val), st.label.replace("|", " "), [p]);
+    prevLevel = run; prevBottom = by + barH;
+  });
+}
+function waterfall(el, s, W, first) {
+  if (W < 560) return waterfallH(el, s, W, first);
+  var H = 296, m = { t: 26, r: 6, b: 46, l: 46 };
+  var iw = W - m.l - m.r, ih = H - m.t - m.b, n = s.steps.length, band = iw / n;
+  var bw = Math.min(24, band * 0.62);
+  var y = function (v) { return m.t + ih - v / s.max * ih; };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, m.l - 8, yy + 4, s.tickFmt(t), "tick", "end"); });
+  var run = 0, prevLevel = null, prevRight = null;
+  s.steps.forEach(function (st, i) {
+    var cx = m.l + band * i + band / 2, x = cx - bw / 2, a, b, cls, val;
+    if (st.kind === "total") { a = 0; b = st.value; run = st.value; cls = "s1"; val = st.value; }
+    else if (st.kind === "subtotal") { a = 0; b = run; cls = "s1"; val = run; }
+    else { a = run; b = run + st.value; run = b; cls = "s2"; val = st.value; }
+    var hiV = Math.max(a, b), loV = Math.min(a, b);
+    if (prevLevel !== null) S("line", { x1: prevRight, x2: x, y1: Math.round(y(prevLevel)) + 0.5, y2: Math.round(y(prevLevel)) + 0.5, "class": "connector" }, svg);
+    var p;
+    if (cls === "s1") { p = S("path", { d: vbar(x, bw, y(0), y(hiV)), "class": "bar grow s1" }, svg); }
+    else { var yt = y(hiV), yb = Math.max(y(loV), yt + 2); p = S("path", { d: vbar(x, bw, yt, yb), "class": "bar grow neg s2" }, svg); }
+    p.style.animationDelay = (i * 80) + "ms";
+    if (cls === "s1") T(svg, cx, y(hiV) - 7, s.fmt(val), "vlabel", "middle");
+    else T(svg, cx, Math.max(y(loV), y(hiV) + 2) + 14, s.fmt(val), "vlabel", "middle");
+    TL(svg, cx, H - 26, st.label, "xlabel", "middle", 13);
+    hit(svg, m.l + band * i, m.t, band, ih, s.fmt(val), st.label.replace("|", " "), [p]);
+    prevLevel = run; prevRight = x + bw;
+  });
+}
+function hbars(el, s, W, first) {
+  var narrow = W < 520, rowH = narrow ? 52 : 42, labW = narrow ? 0 : 250, bh = 16;
+  var H = s.rows.length * rowH + 6, rm = 52;
+  var x0 = narrow ? 1 : labW;
+  var x = function (v) { return x0 + v / s.max * (W - x0 - rm); };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  S("line", { x1: x0 + 0.5, x2: x0 + 0.5, y1: 2, y2: H - 2, "class": "axis" }, svg);
+  s.rows.forEach(function (r, i) {
+    var top = i * rowH, by = narrow ? top + 26 : top + (rowH - bh) / 2;
+    if (narrow) { var lt = T(svg, x0 + 1, top + 16, r.label, "xlabel-strong", "start"); var st = S("tspan", { "class": "xlabel-sm", dx: 6 }, lt); st.textContent = r.sub; }
+    else { T(svg, x0 - 14, by + 5, r.label, "xlabel-strong", "end"); T(svg, x0 - 14, by + 19, r.sub, "xlabel-sm", "end"); }
+    var p = S("path", { d: hbar(by, bh, x0 + 1, x(r.value)), "class": "bar growx " + s.cls }, svg);
+    p.style.animationDelay = (i * 80) + "ms";
+    T(svg, x(r.value) + 8, by + 12, s.fmt(r.value), "vlabel", "start");
+    hit(svg, x0, by - 8, W - x0, bh + 16, s.fmt(r.value), r.label + " · " + r.sub, [p]);
+  });
+}
+var RENDER = { grouped: grouped, stack: stack, slope: slope, range: range, multiples: multiples, deciles: deciles, waterfall: waterfall, hbars: hbars };
+
+var widths = new WeakMap();
+function renderChart(el) {
+  var s = CH[el.getAttribute("data-chart")]; if (!s) return;
+  var W = Math.floor(el.clientWidth); if (!W) return;
+  if (widths.get(el) === W) return;
+  var first = !widths.has(el); widths.set(el, W);
+  try { RENDER[s.type](el, s, W, first); } catch (e) { if (window.console) console.error(e); }
+}
+var charts = $$(".chart[data-chart]");
+if ("ResizeObserver" in window) {
+  var ro = new ResizeObserver(function (entries) { window.requestAnimationFrame(function () { entries.forEach(function (en) { renderChart(en.target); }); }); });
+  charts.forEach(function (el) { ro.observe(el); });
+}
+function renderVisible(root) { $$(".chart[data-chart]", root).forEach(renderChart); }
+window.addEventListener("resize", function () { renderVisible(document); });
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(function () {
+    charts.forEach(function (el) { var s = CH[el.getAttribute("data-chart")]; var W = Math.floor(el.clientWidth); if (s && W && widths.has(el)) { widths.set(el, W); try { RENDER[s.type](el, s, W, false); } catch (e) {} } });
+  });
+}
+
+/* legends and data tables */
+$$("[data-legend]").forEach(function (box) {
+  (LEGENDS[box.getAttribute("data-legend")] || []).forEach(function (it) {
+    var sp = document.createElement("span"); var i = document.createElement("i"); i.className = it[0];
+    if (it[0].indexOf("ln") > -1) i.style.background = it[0].indexOf("l1") > -1 ? "var(--s1)" : "var(--s2)";
+    sp.appendChild(i); sp.appendChild(document.createTextNode(it[1])); box.appendChild(sp);
+  });
+});
+function buildTable(spec) {
+  var t = document.createElement("table"); t.className = "data";
+  var hr = t.createTHead().insertRow();
+  spec.head.forEach(function (h, i) { var th = document.createElement("th"); th.textContent = h; if (i) th.className = "num"; hr.appendChild(th); });
+  var tb = t.createTBody();
+  spec.rows.forEach(function (r) { var row = tb.insertRow(); r.forEach(function (c, i) { var td = row.insertCell(); td.textContent = c; if (i) td.className = "num"; }); });
+  return t;
+}
+$$("[data-toggle-table]").forEach(function (btn) {
+  var fig = btn.closest(".exhibit"), box = $(".ex-table", fig), key = fig.getAttribute("data-ex");
+  var label = btn.textContent;
+  btn.setAttribute("aria-expanded", "false");
+  btn.addEventListener("click", function () {
+    if (!box.firstChild && CH[key] && CH[key].table) box.appendChild(buildTable(CH[key].table));
+    box.hidden = !box.hidden;
+    btn.textContent = box.hidden ? label : "Hide data";
+    btn.setAttribute("aria-expanded", String(!box.hidden));
+  });
+});
+
+/* ---------- router ---------- */
+var PROJECTS = ["indego", "cfa", "tsla", "factor", "minwage", "citi", "fidelity"];
+var home = $("#view-home"), views = $$("article.view"), current = null;
+function instantScroll(fn) { var h = document.documentElement, b = h.style.scrollBehavior; h.style.scrollBehavior = "auto"; fn(); h.style.scrollBehavior = b; }
+function route() {
+  var h = decodeURIComponent((location.hash || "").slice(1));
+  var isP = PROJECTS.indexOf(h) > -1;
+  hideTip();
+  if (isP) {
+    home.hidden = true;
+    views.forEach(function (v) { v.hidden = v.id !== "view-" + h; });
+    var v = $("#view-" + h);
+    instantScroll(function () { window.scrollTo(0, 0); });
+    renderVisible(v);
+    var t = $(".p-title", v); if (t && current !== null) t.focus({ preventScroll: true });
+    current = h;
+  } else {
+    var wasProject = current && PROJECTS.indexOf(current) > -1;
+    views.forEach(function (v) { v.hidden = true; });
+    home.hidden = false;
+    renderVisible(home);
+    var target = h ? document.getElementById(h) : null;
+    if (target) instantScroll(function () { target.scrollIntoView(); });
+    else if (wasProject || h === "") instantScroll(function () { window.scrollTo(0, 0); });
+    current = "";
+  }
+}
+window.addEventListener("hashchange", route);
+route();
+
+/* ---------- filter ---------- */
+var chips = $$(".filters .chip"), cards = $$("#work .card"), count = $("#filter-count");
+chips.forEach(function (c) {
+  c.addEventListener("click", function () {
+    var f = c.getAttribute("data-filter"), n = 0;
+    chips.forEach(function (x) { x.setAttribute("aria-pressed", String(x === c)); });
+    cards.forEach(function (card) {
+      var ok = f === "all" || (card.getAttribute("data-tags") || "").split(" ").indexOf(f) > -1;
+      card.classList.toggle("is-dim", !ok); if (ok) n++;
+    });
+    count.textContent = n + (n === 1 ? " project" : " projects");
+  });
+});
+
+/* ---------- copy email ---------- */
+$$("[data-copy]").forEach(function (b) {
+  var original = b.textContent;
+  b.addEventListener("click", function () {
+    var v = b.getAttribute("data-copy");
+    function done(msg, keep) { b.textContent = msg; if (!keep) setTimeout(function () { b.textContent = original; }, 2200); }
+    try {
+      navigator.clipboard.writeText(v).then(function () { done("Email copied"); }, function () { done(v, true); });
+    } catch (e) { done(v, true); }
+  });
+});
+
+/* ---------- downloads ---------- */
+var DL = null;
+function setDlVisible(on) { $$("[data-download]").forEach(function (b) { b.hidden = !on; }); }
+(function () {
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("downloads").then(function (ns) { DL = ns || null; setDlVisible(!!DL); }, function () { DL = null; setDlVisible(false); });
+  } else { DL = "native"; setDlVisible(true); }
+})();
+function statusFor(btn) { var f = btn.closest(".file-actions"); return f ? $(".dl-status", f) : null; }
+function blobFor(path) {
+  if (path.indexOf("embedded:") === 0) {
+    var src = document.getElementById(path.slice(9));
+    var bin = atob((src ? src.textContent : "").replace(/\s+/g, "")), bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return Promise.resolve(new Blob([bytes], { type: "application/zip" }));
+  }
+  return fetch(path).then(function (r) { if (!r.ok) throw { code: "fetch" }; return r.blob(); });
+}
+function download(btn) {
+  var path = btn.getAttribute("data-download"), name = btn.getAttribute("data-filename"), st = statusFor(btn);
+  function say(m) { if (st) st.textContent = m; }
+  if (DL === "native") {
+    blobFor(path).then(function (blob) { var u = URL.createObjectURL(blob), a = document.createElement("a"); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(u); }, 5000); });
+    return;
+  }
+  if (!DL) return;
+  say("Preparing...");
+  blobFor(path)
+    .then(function (blob) { return DL.save({ filename: name, data: blob }); })
+    .then(function () { say("Saved"); })
+    .catch(function (e) {
+      var c = e && e.code;
+      if (c === "declined") say("Download cancelled");
+      else if (c === "rate_limited") say("Another download is waiting for approval");
+      else { say("Downloads are not available here"); if (["unavailable", "not_granted", "capability_disabled", "capability_removed"].indexOf(c) > -1) setDlVisible(false); }
+    });
+}
+document.addEventListener("click", function (e) {
+  var b = e.target.closest && e.target.closest("[data-download]");
+  if (b) { e.preventDefault(); download(b); }
+});
+
+/* ---------- document viewer ---------- */
+var DOCS = {
+  indego: { title: "Indego growth brief", pages: 2, w: 1600, h: 900, pdf: "files/docs/indego-growth-brief.pdf", file: "Aella_Nguyen_Indego_Growth_Brief.pdf" },
+  cfa: { title: "Carpenter Technology equity research", pages: 47, w: 1400, h: 788, pdf: "files/docs/cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
+  factor: { title: "Sales growth factor study", pages: 16, w: 1400, h: 788, pdf: "files/docs/sales-growth-factor.pdf", file: "Aella_Nguyen_Sales_Growth_Factor.pdf" },
+  citi: { title: "Citi Q4 2022 operating plan", pages: 14, w: 1400, h: 788, pdf: "files/docs/citi-operating-plan.pdf", file: "Aella_Nguyen_Citi_Operating_Plan.pdf" },
+  minwage: { title: "Minimum wage research design memo", pages: 6, w: 1100, h: 1424, portrait: true, pdf: "files/docs/minimum-wage-research-design.pdf", file: "Aella_Nguyen_Minimum_Wage_Research_Design.pdf" }
+};
+var viewer = $("#viewer"), vBody = $("#viewer-body"), vTitle = $("#viewer-title"), vMeta = $("#viewer-meta"), vDl = $("#viewer-dl"), vClose = $("#viewer-close");
+var lastFocus = null, inertEls = [$(".nav"), $("#main"), $(".foot")];
+function openDoc(key) {
+  var d = DOCS[key]; if (!d) return;
+  lastFocus = document.activeElement;
+  vTitle.textContent = d.title; vMeta.textContent = d.pages + (d.portrait ? " pages" : " slides");
+  vBody.replaceChildren(); vBody.setAttribute("data-shape", d.portrait ? "portrait" : "wide");
+  for (var i = 1; i <= d.pages; i++) {
+    var f = document.createElement("figure"); f.className = "vpage";
+    var img = document.createElement("img");
+    img.loading = i <= 2 ? "eager" : "lazy"; img.decoding = "async"; img.width = d.w; img.height = d.h;
+    img.alt = d.title + ", page " + i + " of " + d.pages;
+    img.src = "files/pages/" + key + "/p" + (i < 10 ? "0" + i : i) + ".webp";
+    var c = document.createElement("figcaption"); c.textContent = "Page " + i + " of " + d.pages;
+    f.appendChild(img); f.appendChild(c); vBody.appendChild(f);
+  }
+  vDl.setAttribute("data-download", d.pdf); vDl.setAttribute("data-filename", d.file); vDl.hidden = !DL;
+  viewer.hidden = false; document.documentElement.classList.add("lock");
+  inertEls.forEach(function (n) { if (n) n.inert = true; });
+  vBody.scrollTop = 0; vClose.focus();
+}
+function closeDoc() {
+  viewer.hidden = true; document.documentElement.classList.remove("lock");
+  inertEls.forEach(function (n) { if (n) n.inert = false; });
+  vBody.replaceChildren();
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+vClose.addEventListener("click", closeDoc);
+document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !viewer.hidden) closeDoc(); });
+$$("[data-open-doc]").forEach(function (b) { b.addEventListener("click", function () { openDoc(b.getAttribute("data-open-doc")); }); });
+
+/* ---------- code viewer ---------- */
+var box = $("#codebox-indego");
+function fillCode() {
+  if (!box || box.getAttribute("data-ready")) return;
+  var code = $("#code-indego"); code.textContent = ($("#src-indego").textContent || "").replace(/^\s+|\s+$/g, "");
+  if (window.hljs) { try { window.hljs.highlightElement(code); } catch (e) {} }
+  box.setAttribute("data-ready", "1");
+}
+if (box) box.addEventListener("toggle", function () { if (box.open) fillCode(); });
+$$("[data-open-code]").forEach(function (b) {
+  b.addEventListener("click", function () { var d = document.getElementById(b.getAttribute("data-open-code")); if (!d) return; d.open = true; fillCode(); d.scrollIntoView({ block: "start" }); });
+});
+})();
+</script>
+</body>
+</html>
