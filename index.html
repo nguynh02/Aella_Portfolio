@@ -220,7 +220,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 @media (max-width:520px){.rating{grid-template-columns:repeat(2,minmax(0,1fr))}.rating>div:nth-child(3){border-left:0}.rating>div:nth-child(n+3){border-top:1px solid var(--line-strong)}}
 
 /* skills */
-.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .skill-col{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--bg);min-width:0}
 .skill-col h3{display:flex;align-items:center;gap:10px;font-size:1.06rem;font-weight:750;margin-bottom:8px}
 .skill-col h3::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--primary)}
@@ -240,7 +240,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .xp{border-top:1px solid var(--line)}
 .xp-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding:22px 0;border-bottom:1px solid var(--line)}
 .xp-when{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);padding-top:4px}
-.xp-org{font-size:1.1rem;font-weight:750}
+.xp-org{font-size:1.2rem;font-weight:750;letter-spacing:-.01em}
 .xp-title{color:var(--ink-2);font-size:.93rem}
 .xp-row .pts{margin-top:10px;max-width:76ch}
 .xp-row .pts li{font-size:.95rem}
@@ -252,13 +252,13 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .band .eyebrow{color:var(--band-muted)}
 .band .h2{color:var(--band-ink)}
 .band .section-sub{color:var(--band-muted)}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .gallery figure{margin:0;min-width:0}
 .gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px;background:var(--band-line)}
 .gallery figcaption{margin-top:9px;font-size:.84rem;line-height:1.4;color:var(--band-muted)}
 .gallery figcaption b{display:block;color:var(--band-ink);font-weight:600}
 @media (max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.gallery{grid-template-columns:1fr}}
+@media (max-width:520px){.gallery{gap:14px 10px}.gallery figcaption{font-size:.76rem}}
 
 /* leadership + education */
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -456,6 +456,66 @@ table.data tr.total td{font-weight:700}
 .viewer-body[data-shape="portrait"] .vpage{width:min(100%,820px)}
 .vpage img{width:100%;height:auto;border-radius:6px;background:var(--paper);box-shadow:0 8px 28px rgba(0,0,0,.35)}
 .vpage figcaption{margin-top:7px;text-align:center;font-family:var(--f-mono);font-size:.72rem;color:var(--overlay-ink)}
+/* hero recommendation chip */
+.cat-ai::before{background:linear-gradient(135deg,var(--primary),var(--teal))}
+.rec-chip{display:inline-flex;align-items:center;gap:10px;max-width:100%;margin-top:18px;padding:7px 14px 7px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2);font-size:.88rem;line-height:1.35;text-decoration:none;box-shadow:var(--shadow);transition:border-color .15s,transform .15s}
+.rec-chip:hover{border-color:var(--primary);transform:translateY(-1px)}
+.rec-chip .q{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sky-wash);color:var(--link);font-family:var(--f-display);font-size:1.5rem;line-height:1;padding-top:9px}
+.rec-chip b{color:var(--ink)}
+.rec-chip .arr{flex:none;color:var(--link);font-weight:600}
+
+/* experience and programs name strip */
+.names{margin-top:34px;text-align:center}
+.names-label{display:block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.names ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 44px;margin-top:10px}
+.names li{font-family:var(--f-display);font-size:clamp(1.1rem,2vw,1.42rem);font-weight:500;color:var(--ink-2);white-space:nowrap;font-variation-settings:"opsz" 36}
+@media (max-width:640px){.names ul{gap:2px 22px}}
+
+/* skills: AI column and toolkit groups */
+.skill-col.ai h3::before{background:linear-gradient(135deg,var(--primary),var(--teal))}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tool-group{padding:18px 20px 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg);min-width:0}
+.tool-group h4{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:.98rem;font-weight:750;color:var(--ink)}
+.ico{flex:none;width:32px;height:32px;padding:6px;border-radius:9px;background:var(--sky-wash);color:var(--link);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tool-group.ana .ico{background:var(--teal-wash);color:var(--teal-ink)}
+.tool-group.ai .ico{background:linear-gradient(135deg,var(--sky-wash),var(--teal-wash));color:var(--primary)}
+.tool-group .tag{background:var(--surface);border:1px solid var(--line);font-size:.8rem}
+@media (max-width:900px){.tools{grid-template-columns:1fr}}
+
+/* experience: initials marks */
+.xp-body{display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:16px;align-items:start}
+.xp-body>*{grid-column:2}
+.xp-body>.xp-mark{grid-column:1;grid-row:1 / span 2;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--sky-wash);color:var(--link);font-family:var(--f-display);font-size:1.05rem;font-weight:600;letter-spacing:.02em}
+.xp-mark.inv{background:var(--gold-wash);color:var(--gold-ink)}
+.xp-mark.ana{background:var(--teal-wash);color:var(--teal-ink)}
+
+/* recommendation and credentials */
+.rec-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:900px){.rec-grid{grid-template-columns:1fr}}
+.rec{position:relative;overflow:hidden;margin:0;padding:30px 32px 28px;border:1px solid var(--line);border-radius:18px;background:var(--bg)}
+.rec::before{content:"\201C";position:absolute;right:26px;top:10px;font-family:var(--f-display);font-size:7.5rem;line-height:1;color:var(--sky-wash);pointer-events:none}
+.rec blockquote{position:relative;margin:12px 0 0}
+.rec blockquote p{font-family:var(--f-display);font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.28;letter-spacing:-.005em;color:var(--ink);font-variation-settings:"opsz" 48}
+.rec figcaption{position:relative;display:flex;align-items:center;gap:12px;margin-top:20px}
+.rec-mark{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:.85rem;font-weight:700;letter-spacing:.04em}
+.rec figcaption>span:last-child{font-size:.9rem;line-height:1.35;color:var(--ink-2)}
+.rec figcaption b{display:block;font-size:1.02rem;color:var(--ink)}
+.rec-more{position:relative;display:grid;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.rec-more li{font-family:var(--f-display);font-style:italic;font-size:1.08rem;line-height:1.4;color:var(--ink-2)}
+.rec .file-actions{position:relative;margin-top:20px}
+.rec-inline{padding:24px 26px 22px;background:var(--sky-wash);border-color:transparent}
+.rec-inline::before{color:var(--surface);opacity:.7}
+.rec-inline blockquote{margin-top:0}
+.rec-inline blockquote p{font-size:clamp(1.2rem,2.2vw,1.55rem)}
+.creds h3{font-size:1.12rem;font-weight:750}
+.cred-list{margin-top:6px}
+.cred-list li{padding:14px 0;border-top:1px solid var(--line)}
+.cred-list li:first-child{border-top:0}
+.cred-list b{display:block;font-size:.98rem;line-height:1.35;color:var(--ink)}
+.cred-list span{display:block;margin-top:3px;font-size:.84rem;color:var(--muted)}
+.cred-list a{display:inline-block;margin-top:6px;font-size:.86rem;font-weight:600;text-decoration:none}
+.cred-list a:hover{text-decoration:underline}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -482,7 +542,7 @@ table.data tr.total td{font-weight:700}
         <h1 class="display">Aella Nguyen</h1>
         <p class="slogan">Find the driver. <em>Make the call.</em></p>
         <ul class="hero-list">
-          <li><b>Microsoft Finance Analyst Intern, 2026.</b> Overhauled the company-wide ARR report behind monthly close.</li>
+          <li><b>Microsoft Finance Analyst Intern, 2026.</b> Overhauled the company-wide ARR report behind monthly close. Built an AI agent for ARR onboarding.</li>
           <li><b>CFA Research Challenge team lead.</b> Valued a $19B aerospace supplier and made a HOLD call.</li>
           <li><b>Mathematical Economics '27, Gettysburg College.</b> 3.94 GPA. Minors in Business and Data Science.</li>
         </ul>
@@ -491,6 +551,7 @@ table.data tr.total td{font-weight:700}
           <button class="btn btn-ghost" type="button" data-copy="yennhi12132005@gmail.com">Copy email</button>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/aella-nguyen" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
+        <a class="rec-chip" href="#recommendation"><span class="q" aria-hidden="true">“</span><span>Recommended by <b>Amy Zhang</b>, Group Finance Manager at Microsoft</span><span class="arr" aria-hidden="true">→</span></a>
       </div>
       <figure class="portrait">
         <img src="aella-hero.webp" width="900" height="1125" alt="Aella Nguyen at the Microsoft campus in Redmond">
@@ -502,9 +563,13 @@ table.data tr.total td{font-weight:700}
   <div class="wrap">
     <div class="proof" aria-label="Highlights">
       <a href="#microsoft"><b>~16 → 1</b><span>fragmented reports consolidated into one ARR scorecard</span><span class="cat">Microsoft</span></a>
-      <a href="#microsoft"><b>3 teams</b><span>adopted my recurring-revenue benchmark</span><span class="cat">Microsoft</span></a>
+      <a href="#microsoft"><b>3 hrs/week</b><span>saved by the AI agent I built for ARR onboarding</span><span class="cat cat-ai">Microsoft · AI</span></a>
       <a href="#indego"><b>2.26M</b><span>trip records analyzed in Python for a growth call</span><span class="cat cat-ana">Indego analysis</span></a>
       <a href="#cfa"><b>$363.69</b><span>HOLD target from the 5-person team I led</span><span class="cat cat-inv">CFA Challenge</span></a>
+    </div>
+    <div class="names" aria-label="Experience and programs">
+      <span class="names-label">Experience &amp; programs</span>
+      <ul><li>Microsoft</li><li>Glasswing Ventures</li><li>CFA Institute Research Challenge</li><li>McKinsey Forward Program</li></ul>
     </div>
   </div>
 
@@ -533,6 +598,7 @@ table.data tr.total td{font-weight:700}
           <ul class="pts">
             <li>Overhauled the company-wide <b>ARR Power BI report</b> during Microsoft's shift to ARR.</li>
             <li>Built a <b>Price x Quantity model</b> that splits growth into volume, price and mix.</li>
+            <li>Built an <b>AI agent</b> for ARR onboarding that saves 3 hours a week.</li>
             <li>Benchmarked 15 cloud peers. <b>3 teams</b> adopted the recommendations.</li>
             <li><b>Honorable Mention</b> in the finance intern challenge.</li>
           </ul>
@@ -612,7 +678,7 @@ table.data tr.total td{font-weight:700}
         </a>
       </div>
 
-      <h3 class="subhead">More work <span>Shorter projects and simulations</span></h3>
+      <h3 class="subhead">More work</h3>
       <div class="grid-2" style="margin-top:0">
         <a class="card" href="#fidelity" data-tags="inv">
           <span class="cat cat-inv">Job simulation · Fidelity International</span>
@@ -634,8 +700,8 @@ table.data tr.total td{font-weight:700}
     <div class="wrap">
       <div class="section-head"><div>
         <p class="eyebrow">Skills</p>
-        <h2 class="h2">Proof, not keywords</h2>
-        <p class="section-sub">Every skill links to the work that shows it.</p>
+        <h2 class="h2">What I bring</h2>
+        <p class="section-sub">Each skill links to the work where I used it.</p>
       </div></div>
       <div class="skills-grid">
         <div class="skill-col">
@@ -658,6 +724,15 @@ table.data tr.total td{font-weight:700}
             <li><span>Data validation before it ships</span><span class="ev"><a href="#microsoft">Microsoft</a><a href="#indego">Indego</a></span></li>
           </ul>
         </div>
+        <div class="skill-col ai">
+          <h3>AI and automation</h3>
+          <ul class="skill-list">
+            <li><span>AI agent for ARR onboarding, 3 hrs a week saved</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>Historical ARR snapshot tool, built with GitHub Copilot</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>GitHub Copilot to validate 40+ DAX measures</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>AI and ML fundamentals</span><span class="ev"><a href="#credentials">AWS cert</a></span></li>
+          </ul>
+        </div>
         <div class="skill-col lead">
           <h3>Leadership and communication</h3>
           <ul class="skill-list">
@@ -669,9 +744,20 @@ table.data tr.total td{font-weight:700}
           </ul>
         </div>
       </div>
-      <div class="toolkit" aria-label="Toolkit">
-        <span class="label">Toolkit</span>
-        <span class="tag">Excel (advanced)</span><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Stata</span><span class="tag">R</span><span class="tag">FactSet</span><span class="tag">Bloomberg Terminal</span><span class="tag">Salesforce</span><span class="tag">GitHub Copilot</span><span class="tag">Microsoft Copilot</span>
+      <h3 class="subhead">Toolkit</h3>
+      <div class="tools">
+        <div class="tool-group">
+          <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"/></svg>Finance &amp; BI</h4>
+          <ul class="tags"><li class="tag">Excel (advanced)</li><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">FactSet</li><li class="tag">Bloomberg Terminal</li><li class="tag">Salesforce</li><li class="tag">Microsoft 365</li></ul>
+        </div>
+        <div class="tool-group ana">
+          <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>Data &amp; code</h4>
+          <ul class="tags"><li class="tag">Python</li><li class="tag">SQL</li><li class="tag">Stata</li><li class="tag">R</li><li class="tag">Anaconda</li><li class="tag">GitHub</li></ul>
+        </div>
+        <div class="tool-group ai">
+          <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3.5l1.8 4.9 4.9 1.8-4.9 1.8L11 16.9l-1.8-4.9-4.9-1.8 4.9-1.8z"/><path d="M18.5 14.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9z"/></svg>AI tools</h4>
+          <ul class="tags"><li class="tag">Claude</li><li class="tag">ChatGPT</li><li class="tag">GitHub Copilot</li><li class="tag">Microsoft Copilot</li><li class="tag">AI agents</li></ul>
+        </div>
       </div>
     </div>
   </section>
@@ -680,16 +766,18 @@ table.data tr.total td{font-weight:700}
     <div class="wrap">
       <div class="section-head"><div>
         <p class="eyebrow">Experience</p>
-        <h2 class="h2">On the job</h2>
+        <h2 class="h2">Where I've worked</h2>
       </div></div>
       <ol class="xp">
         <li class="xp-row">
           <p class="xp-when">May 2026 - Aug. 2026</p>
-          <div>
+          <div class="xp-body">
+            <span class="xp-mark" aria-hidden="true">M</span>
             <h3 class="xp-org">Microsoft</h3>
             <p class="xp-title">Finance Analyst Intern, Finance Rotation Program (Central Finance Team) · Redmond, WA</p>
             <ul class="pts">
               <li>Overhauled the company-wide ARR report behind monthly close; consolidated ~16 reports into one scorecard.</li>
+              <li>Built an AI agent for ARR onboarding, saving 3 hours a week.</li>
               <li>Benchmarked 15 cloud peers; 3 teams adopted the recommendations. Honorable Mention, intern challenge.</li>
             </ul>
             <a class="xp-link" href="#microsoft">Read the case study →</a>
@@ -697,7 +785,8 @@ table.data tr.total td{font-weight:700}
         </li>
         <li class="xp-row">
           <p class="xp-when">May 2025 - Aug. 2025</p>
-          <div>
+          <div class="xp-body">
+            <span class="xp-mark inv" aria-hidden="true">GV</span>
             <h3 class="xp-org">Glasswing Ventures</h3>
             <p class="xp-title">Venture Capital Research, Finance &amp; Marketing Intern · VC firm managing $270M+ in AI startups</p>
             <ul class="pts">
@@ -708,7 +797,8 @@ table.data tr.total td{font-weight:700}
         </li>
         <li class="xp-row">
           <p class="xp-when">Dec. 2024 - Present</p>
-          <div>
+          <div class="xp-body">
+            <span class="xp-mark ana" aria-hidden="true">GL</span>
             <h3 class="xp-org">Gettysburg Lab for Experimental Economics</h3>
             <p class="xp-title">Research Assistant · Gettysburg, PA</p>
             <ul class="pts">
@@ -719,7 +809,8 @@ table.data tr.total td{font-weight:700}
         </li>
         <li class="xp-row">
           <p class="xp-when">Jan. 2025 - Present</p>
-          <div>
+          <div class="xp-body">
+            <span class="xp-mark" aria-hidden="true">GC</span>
             <h3 class="xp-org">Gettysburg College, dining and retail operations</h3>
             <p class="xp-title">Financial Analyst &amp; Marketing Intern · Gettysburg, PA</p>
             <ul class="pts">
@@ -730,15 +821,44 @@ table.data tr.total td{font-weight:700}
         </li>
         <li class="xp-row">
           <p class="xp-when">May 2024 - Aug. 2024</p>
-          <div>
+          <div class="xp-body">
+            <span class="xp-mark" aria-hidden="true">LD</span>
             <h3 class="xp-org">Llanerch Diner</h3>
             <p class="xp-title">Financial Analyst Intern · Philadelphia, PA</p>
             <ul class="pts">
               <li>Lifted revenue 12% and foot traffic 18% by finding high-value customer segments.</li>
+              <li>Modeled a seasonal product line projected at $8,500+ a year; month one brought in $900+.</li>
             </ul>
           </div>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section id="recommendation" class="section section-alt">
+    <div class="wrap rec-grid">
+      <figure class="rec">
+        <p class="eyebrow">Recommendation</p>
+        <blockquote><p>“I was very impressed by her intellectual curiosity, strong work ethic, creativity, analytical thinking, and resilience.”</p></blockquote>
+        <figcaption><span class="rec-mark" aria-hidden="true">AZ</span><span><b>Amy Zhang</b>Group Finance Manager, Microsoft</span></figcaption>
+        <ul class="rec-more">
+          <li>“What stood out most was her dedication and resilience.”</li>
+          <li>“She brings a calm and thoughtful attitude to the team, communicates well, and works well with others.”</li>
+        </ul>
+        <div class="file-actions">
+          <a class="btn btn-small" href="doc-microsoft-recommendation-letter.pdf" target="_blank" rel="noopener" data-view="rec">Read the full letter</a>
+          <span class="dl-status" aria-live="polite"></span>
+        </div>
+      </figure>
+      <div class="panel creds" id="credentials">
+        <h3>Credentials</h3>
+        <ul class="cred-list">
+          <li><b>Excel for Financial Planning and Analysis (FP&amp;A)</b><span>LinkedIn Learning · May 2026</span><a href="doc-excel-fpa-certificate.pdf" target="_blank" rel="noopener" data-view="cert">View certificate →</a></li>
+          <li><b>AWS Certified AI Practitioner</b><span>Amazon Web Services</span></li>
+          <li><b>CFA Institute Research Challenge</b><span>Team lead, 5-person team</span></li>
+          <li><b>McKinsey Forward Program</b><span>2024</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -752,8 +872,10 @@ table.data tr.total td{font-weight:700}
         <figure><img src="photo-microsoft-interns.webp" width="1179" height="937" alt="Microsoft summer interns in front of the Microsoft sign" loading="lazy"><figcaption><b>Microsoft interns, summer 2026</b>Redmond campus</figcaption></figure>
         <figure><img src="photo-microsoft-challenge.webp" width="1100" height="841" alt="Aella and her six-person team at the finance intern challenge" loading="lazy" style="object-position:40% 50%"><figcaption><b>Finance intern challenge</b>Team of 6, Honorable Mention</figcaption></figure>
         <figure><img src="photo-microsoft-team.webp" width="1400" height="788" alt="Aella at lunch with her Microsoft team" loading="lazy" style="object-position:22% 50%"><figcaption><b>My Microsoft team</b>Central Finance, Commercial Business Insights</figcaption></figure>
-        <figure><img src="photo-cfa-philadelphia.webp" width="800" height="1067" alt="Aella with CFA Research Challenge participants at CFA Society Philadelphia" loading="lazy" style="object-position:50% 62%"><figcaption><b>CFA Institute Research Challenge</b>CFA Society Philadelphia</figcaption></figure>
-        <figure><img src="photo-cfa-session.webp" width="800" height="600" alt="Aella with Research Challenge participants in Philadelphia" loading="lazy"><figcaption><b>Research Challenge</b>Philadelphia</figcaption></figure>
+        <figure><img src="photo-cfa-team.webp" width="800" height="1067" alt="Aella with fellow CFA Research Challenge participants" loading="lazy" style="object-position:50% 62%"><figcaption><b>CFA Institute Research Challenge</b>Led our 5-person team</figcaption></figure>
+        <figure><img src="photo-cfa-session.webp" width="800" height="600" alt="Aella with Research Challenge participants and professionals" loading="lazy"><figcaption><b>Research Challenge</b>Equity research competition</figcaption></figure>
+        <figure><img src="photo-fic-workshop.webp" width="1178" height="884" alt="Finance and Investment Club workshop with students at round tables" loading="lazy"><figcaption><b>Finance &amp; Investment Club workshop</b>Vice president since 2024</figcaption></figure>
+        <figure><img src="photo-ode-alumni.webp" width="1179" height="884" alt="Omicron Delta Epsilon alumni meeting group photo" loading="lazy" style="object-position:50% 70%"><figcaption><b>ODE alumni meeting</b>Planned and organized by me</figcaption></figure>
         <figure><img src="photo-ode.webp" width="800" height="800" alt="Omicron Delta Epsilon membership certificate" loading="lazy"><figcaption><b>Omicron Delta Epsilon</b>Economics honor society, now vice president</figcaption></figure>
       </div>
     </div>
@@ -765,7 +887,7 @@ table.data tr.total td{font-weight:700}
         <h3>Leadership</h3>
         <ul class="lead-list" style="margin-top:10px">
           <li><b>Vice President, Finance &amp; Investment Club</b><span>Aug. 2024 - Present</span><p>Doubled membership to 100+. Lifted participation 60% with Bloomberg Terminal workshops.</p></li>
-          <li><b>Vice President, Omicron Delta Epsilon</b><span>Jan. 2025 - Present</span><p>Raised $10,000 from alumni and students for case competitions.</p></li>
+          <li><b>Vice President, Omicron Delta Epsilon</b><span>Jan. 2025 - Present</span><p>Raised $10,000 from alumni and students for case competitions. Planned and organized alumni meetings.</p></li>
           <li><b>Treasurer, Women in Finance</b></li>
         </ul>
       </div>
@@ -774,7 +896,7 @@ table.data tr.total td{font-weight:700}
         <p style="margin-top:8px;color:var(--ink)"><b>Gettysburg College</b>. B.S. Mathematical Economics; minors in Business and Data Science. GPA 3.94/4.00. Expected May 2027.</p>
         <span class="k">Honors</span><p>Dean's List (all semesters) · Abraham Lincoln Scholarship · Eisenhower Institute Fellowship</p>
         <span class="k">Coursework</span><p>Financial Modeling &amp; Forecasting · Econometrics · Financial Econometrics · Investment Management · Applied Finance · Data Science Programming</p>
-        <span class="k">Credentials</span><p>AWS Certified AI Practitioner · CFA Institute Research Challenge · McKinsey Forward Program</p>
+        <span class="k">Credentials</span><p>AWS Certified AI Practitioner · Excel for FP&amp;A (LinkedIn Learning) · McKinsey Forward Program · <a href="#credentials">See all</a></p>
         <span class="k">Study abroad</span><p>Budapest, Hungary (Spring 2026)</p>
       </div>
     </div>
@@ -809,7 +931,7 @@ table.data tr.total td{font-weight:700}
         <dl>
           <div><dt>Role</dt><dd>Finance Analyst Intern, Finance Rotation Program</dd></div>
           <div><dt>Team</dt><dd>Central Finance Team, Commercial Business Insights</dd></div>
-          <div><dt>Tools</dt><dd>Power BI, DAX, Excel, GitHub Copilot, SEC filings</dd></div>
+          <div><dt>Tools</dt><dd>Power BI, DAX, Excel, GitHub Copilot, AI agents, SEC filings</dd></div>
           <div><dt>Best fit</dt><dd class="fit">FP&amp;A, revenue and strategic finance, BI and data analytics</dd></div>
         </dl>
       </aside>
@@ -831,6 +953,8 @@ table.data tr.total td{font-weight:700}
         <li>Validated <b>40+ DAX measures</b> cell by cell, using GitHub Copilot to move faster.</li>
         <li>Built a <b>Price x Quantity model</b> that splits Net New ARR into volume, price, mix and Copilot attach.</li>
         <li>Designed <b>5 new growth metrics</b>. All 5 were adopted.</li>
+        <li>Built an <b>AI agent</b> that answers ARR questions and onboards new teammates, saving 3 hours a week.</li>
+        <li>Built a <b>historical ARR snapshot tool</b> with GitHub Copilot, so past ARR views stay reproducible when contracts change.</li>
         <li><b>Stress-tested before launch</b>, traced 3 root-cause constraints, and re-architected instead of shipping.</li>
         <li><b>Benchmarked 15 public software and cloud peers</b>, including AWS, Google Cloud and Salesforce, on how they report ARR, RPO and cRPO. Delivered a 16-page white paper and a 7-tab tracker.</li>
       </ul></div>
@@ -848,6 +972,19 @@ table.data tr.total td{font-weight:700}
       </div>
     </section>
     <section class="p-sec">
+      <h2>In their words</h2>
+      <div class="p-body">
+        <figure class="rec rec-inline">
+          <blockquote><p>“I was very impressed by her intellectual curiosity, strong work ethic, creativity, analytical thinking, and resilience.”</p></blockquote>
+          <figcaption><span class="rec-mark" aria-hidden="true">AZ</span><span><b>Amy Zhang</b>Group Finance Manager, Microsoft</span></figcaption>
+          <div class="file-actions">
+            <a class="btn btn-small btn-ghost" href="doc-microsoft-recommendation-letter.pdf" target="_blank" rel="noopener" data-view="rec">Read the full letter</a>
+            <span class="dl-status" aria-live="polite"></span>
+          </div>
+        </figure>
+      </div>
+    </section>
+    <section class="p-sec">
       <h2>On the ground</h2>
       <div class="p-body"><div class="photos">
         <figure><img src="photo-microsoft-challenge.webp" width="1100" height="841" alt="Aella and her six-person team at the finance intern challenge" loading="lazy" style="object-position:40% 50%"><figcaption>Intern challenge, team of 6</figcaption></figure>
@@ -858,7 +995,7 @@ table.data tr.total td{font-weight:700}
     <section class="p-sec">
       <h2>Skills</h2>
       <div class="p-body skills-two">
-        <div><h3>Technical</h3><ul class="tags"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Excel</li><li class="tag">Driver-based modeling</li><li class="tag">SEC filing analysis</li><li class="tag">Data validation</li><li class="tag">GitHub Copilot</li></ul></div>
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Excel</li><li class="tag">Driver-based modeling</li><li class="tag">SEC filing analysis</li><li class="tag">Data validation</li><li class="tag">GitHub Copilot</li><li class="tag">AI agents</li></ul></div>
         <div><h3>Soft skills</h3><ul class="soft">
           <li><b>Judgment.</b> Called a re-architecture instead of shipping a fragile report.</li>
           <li><b>Stakeholder management.</b> Proved an inherited metric added no information, then moved it to the appendix with its users' buy-in.</li>
@@ -999,7 +1136,7 @@ table.data tr.total td{font-weight:700}
         <h2 class="kd-title">Key data</h2>
         <dl>
           <div><dt>Role</dt><dd>Team lead, 5 students</dd></div>
-          <div><dt>Contest</dt><dd>CFA Institute Research Challenge, CFA Society Philadelphia</dd></div>
+          <div><dt>Contest</dt><dd>CFA Institute Research Challenge</dd></div>
           <div><dt>Data</dt><dd>Company filings, FactSet</dd></div>
           <div><dt>Best fit</dt><dd class="fit">Equity research, investment analyst, corporate finance</dd></div>
         </dl>
@@ -1060,8 +1197,8 @@ table.data tr.total td{font-weight:700}
     <section class="p-sec">
       <h2>On the ground</h2>
       <div class="p-body"><div class="photos two-up">
-        <figure><img src="photo-cfa-philadelphia.webp" width="800" height="1067" alt="Research Challenge participants at CFA Society Philadelphia" loading="lazy" style="object-position:50% 62%"><figcaption>CFA Society Philadelphia</figcaption></figure>
-        <figure><img src="photo-cfa-session.webp" width="800" height="600" alt="Research Challenge session with industry professionals" loading="lazy"><figcaption>Research Challenge session</figcaption></figure>
+        <figure><img src="photo-cfa-team.webp" width="800" height="1067" alt="Aella with fellow CFA Research Challenge participants" loading="lazy" style="object-position:50% 62%"><figcaption>CFA Institute Research Challenge</figcaption></figure>
+        <figure><img src="photo-cfa-session.webp" width="800" height="600" alt="Aella with Research Challenge participants and professionals" loading="lazy"><figcaption>Research Challenge event</figcaption></figure>
       </div></div>
     </section>
     <section class="p-sec">
@@ -2266,14 +2403,17 @@ function claudeDownload(link) {
 var DOCS = {
   indego: { title: "Indego growth brief", pages: 2, w: 1600, h: 900, pdf: "doc-indego-brief.pdf", file: "Aella_Nguyen_Indego_Growth_Brief.pdf" },
   cfa: { title: "Carpenter Technology equity research", pages: 47, w: 1400, h: 788, pdf: "doc-cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
-  minwage: { title: "Minimum wage research design memo", pages: 6, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-research-design.pdf", file: "Aella_Nguyen_Minimum_Wage_Research_Design.pdf" }
+  minwage: { title: "Minimum wage research design memo", pages: 6, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-research-design.pdf", file: "Aella_Nguyen_Minimum_Wage_Research_Design.pdf" },
+  rec: { title: "Recommendation letter, Microsoft", pages: 1, w: 1100, h: 1424, portrait: true, pdf: "doc-microsoft-recommendation-letter.pdf", file: "Aella_Nguyen_Microsoft_Recommendation_Letter.pdf" },
+  cert: { title: "Excel for FP&A certificate, LinkedIn Learning", pages: 1, w: 1400, h: 1082, unit: "page", pdf: "doc-excel-fpa-certificate.pdf", file: "Aella_Nguyen_Excel_FPA_Certificate.pdf" }
 };
 var viewer = $("#viewer"), vBody = $("#viewer-body"), vTitle = $("#viewer-title"), vMeta = $("#viewer-meta"), vDl = $("#viewer-dl"), vClose = $("#viewer-close");
 var lastFocus = null, inertEls = [$(".nav"), $("#main"), $(".foot")];
 function openDoc(key) {
   var d = DOCS[key]; if (!d) return;
   lastFocus = document.activeElement;
-  vTitle.textContent = d.title; vMeta.textContent = d.pages + (d.portrait ? " pages" : " slides");
+  var unit = d.unit || (d.portrait ? "page" : "slide");
+  vTitle.textContent = d.title; vMeta.textContent = d.pages + " " + unit + (d.pages === 1 ? "" : "s");
   vBody.replaceChildren(); vBody.setAttribute("data-shape", d.portrait ? "portrait" : "wide");
   for (var i = 1; i <= d.pages; i++) {
     var f = document.createElement("figure"); f.className = "vpage";
