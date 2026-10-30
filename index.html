@@ -515,6 +515,19 @@ table.data tr.total td{font-weight:700}
 .cred-list span{display:block;margin-top:3px;font-size:.84rem;color:var(--muted)}
 .cred-list a{display:inline-block;margin-top:6px;font-size:.86rem;font-weight:600;text-decoration:none}
 .cred-list a:hover{text-decoration:underline}
+.rec-wide{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:8px 40px;align-items:end}
+.rec-wide .rec-main,.rec-wide .rec-side{position:relative;min-width:0}
+.rec-wide .rec-more{margin-top:0;padding:0 0 0 28px;border-top:0;border-left:1px solid var(--line)}
+.rec-wide .file-actions{padding-left:28px}
+@media (max-width:900px){.rec-wide{grid-template-columns:1fr}.rec-wide .rec-more{margin-top:20px;padding:18px 0 0;border-left:0;border-top:1px solid var(--line)}.rec-wide .file-actions{padding-left:0}}
+.creds-block{margin-top:60px;scroll-margin-top:84px}
+.cred-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+@media (max-width:900px){.cred-grid{grid-template-columns:1fr}}
+.cred-group{padding:22px 24px 8px;border:1px solid var(--line);border-radius:14px;background:var(--bg);min-width:0}
+.cred-group h3{display:flex;align-items:center;gap:10px;font-size:1.02rem;font-weight:750}
+.cred-group h3 i{flex:none;width:10px;height:10px;border-radius:3px;background:var(--primary)}
+.cred-group.ana h3 i{background:linear-gradient(135deg,var(--primary),var(--teal))}
+.cred-group.inv h3 i{background:var(--gold)}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
@@ -722,6 +735,7 @@ table.data tr.total td{font-weight:700}
             <li><span>Econometrics: difference-in-differences</span><span class="ev"><a href="#minwage">Min wage</a></span></li>
             <li><span>Backtesting and factor research</span><span class="ev"><a href="#factor">Factor</a><a href="#tsla">TSLA</a></span></li>
             <li><span>Data validation before it ships</span><span class="ev"><a href="#microsoft">Microsoft</a><a href="#indego">Indego</a></span></li>
+            <li><span>SQL and data analytics, certified</span><span class="ev"><a href="#credentials">Google</a></span></li>
           </ul>
         </div>
         <div class="skill-col ai">
@@ -730,7 +744,7 @@ table.data tr.total td{font-weight:700}
             <li><span>AI agent for ARR onboarding, 3 hrs a week saved</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>Historical ARR snapshot tool, built with GitHub Copilot</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>GitHub Copilot to validate 40+ DAX measures</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
-            <li><span>AI and ML fundamentals</span><span class="ev"><a href="#credentials">AWS cert</a></span></li>
+            <li><span>AI and ML fundamentals, certified</span><span class="ev"><a href="#credentials">AWS</a><a href="#credentials">Google</a></span></li>
           </ul>
         </div>
         <div class="skill-col lead">
@@ -836,28 +850,55 @@ table.data tr.total td{font-weight:700}
   </section>
 
   <section id="recommendation" class="section section-alt">
-    <div class="wrap rec-grid">
-      <figure class="rec">
-        <p class="eyebrow">Recommendation</p>
-        <blockquote><p>“I was very impressed by her intellectual curiosity, strong work ethic, creativity, analytical thinking, and resilience.”</p></blockquote>
-        <figcaption><span class="rec-mark" aria-hidden="true">AZ</span><span><b>Amy Zhang</b>Group Finance Manager, Microsoft</span></figcaption>
-        <ul class="rec-more">
-          <li>“What stood out most was her dedication and resilience.”</li>
-          <li>“She brings a calm and thoughtful attitude to the team, communicates well, and works well with others.”</li>
-        </ul>
-        <div class="file-actions">
-          <a class="btn btn-small" href="doc-microsoft-recommendation-letter.pdf" target="_blank" rel="noopener" data-view="rec">Read the full letter</a>
-          <span class="dl-status" aria-live="polite"></span>
+    <div class="wrap">
+      <figure class="rec rec-wide">
+        <div class="rec-main">
+          <p class="eyebrow">Recommendation</p>
+          <blockquote><p>“I was very impressed by her intellectual curiosity, strong work ethic, creativity, analytical thinking, and resilience.”</p></blockquote>
+          <figcaption><span class="rec-mark" aria-hidden="true">AZ</span><span><b>Amy Zhang</b>Group Finance Manager, Microsoft</span></figcaption>
+        </div>
+        <div class="rec-side">
+          <ul class="rec-more">
+            <li>“What stood out most was her dedication and resilience.”</li>
+            <li>“She brings a calm and thoughtful attitude to the team, communicates well, and works well with others.”</li>
+          </ul>
+          <div class="file-actions">
+            <a class="btn btn-small" href="doc-microsoft-recommendation-letter.pdf" target="_blank" rel="noopener" data-view="rec">Read the full letter</a>
+            <span class="dl-status" aria-live="polite"></span>
+          </div>
         </div>
       </figure>
-      <div class="panel creds" id="credentials">
-        <h3>Credentials</h3>
-        <ul class="cred-list">
-          <li><b>Excel for Financial Planning and Analysis (FP&amp;A)</b><span>LinkedIn Learning · May 2026</span><a href="doc-excel-fpa-certificate.pdf" target="_blank" rel="noopener" data-view="cert">View certificate →</a></li>
-          <li><b>AWS Certified AI Practitioner</b><span>Amazon Web Services</span></li>
-          <li><b>CFA Institute Research Challenge</b><span>Team lead, 5-person team</span></li>
-          <li><b>McKinsey Forward Program</b><span>2024</span></li>
-        </ul>
+
+      <div id="credentials" class="creds-block">
+        <div class="section-head"><div>
+          <p class="eyebrow">Credentials</p>
+          <h2 class="h2">Certificates and programs</h2>
+        </div></div>
+        <div class="cred-grid">
+          <div class="cred-group">
+            <h3><i aria-hidden="true"></i>Finance and markets</h3>
+            <ul class="cred-list">
+              <li><b>Excel for Financial Planning and Analysis (FP&amp;A)</b><span>LinkedIn Learning · May 2026</span><a href="doc-excel-fpa-certificate.pdf" target="_blank" rel="noopener" data-view="cert">View certificate →</a></li>
+              <li><b>Bloomberg Market Concepts</b><span>Bloomberg</span></li>
+            </ul>
+          </div>
+          <div class="cred-group ana">
+            <h3><i aria-hidden="true"></i>Data and AI</h3>
+            <ul class="cred-list">
+              <li><b>Google Data Analytics Professional Certificate</b><span>Google</span></li>
+              <li><b>Google AI Professional Certificate</b><span>Google</span></li>
+              <li><b>SQL for Data Science</b></li>
+              <li><b>AWS Certified AI Practitioner</b><span>Amazon Web Services</span></li>
+            </ul>
+          </div>
+          <div class="cred-group inv">
+            <h3><i aria-hidden="true"></i>Programs</h3>
+            <ul class="cred-list">
+              <li><b>CFA Institute Research Challenge</b><span>Team lead, 5-person team</span></li>
+              <li><b>McKinsey Forward Program</b><span>2024</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -896,7 +937,7 @@ table.data tr.total td{font-weight:700}
         <p style="margin-top:8px;color:var(--ink)"><b>Gettysburg College</b>. B.S. Mathematical Economics; minors in Business and Data Science. GPA 3.94/4.00. Expected May 2027.</p>
         <span class="k">Honors</span><p>Dean's List (all semesters) · Abraham Lincoln Scholarship · Eisenhower Institute Fellowship</p>
         <span class="k">Coursework</span><p>Financial Modeling &amp; Forecasting · Econometrics · Financial Econometrics · Investment Management · Applied Finance · Data Science Programming</p>
-        <span class="k">Credentials</span><p>AWS Certified AI Practitioner · Excel for FP&amp;A (LinkedIn Learning) · McKinsey Forward Program · <a href="#credentials">See all</a></p>
+        <span class="k">Credentials</span><p>Google Data Analytics · Google AI · Bloomberg Market Concepts · Excel for FP&amp;A · AWS AI Practitioner · <a href="#credentials">See all</a></p>
         <span class="k">Study abroad</span><p>Budapest, Hungary (Spring 2026)</p>
       </div>
     </div>
