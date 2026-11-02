@@ -402,6 +402,10 @@ table.data tr.total td{font-weight:700}
 .viz .mk-target{stroke:var(--warm);stroke-width:2}
 .viz .mk-price{stroke:var(--ink);stroke-width:1.5}
 .viz .hit{fill:transparent;outline:none;pointer-events:all}
+.viz .whisker{stroke:var(--s1);stroke-width:1.6;stroke-linecap:round;opacity:.55;transition:opacity .15s}
+.viz .dot.ref{fill:var(--surface);stroke:var(--ink-2);stroke-width:1.6}
+.viz.hovering .whisker:not(.on){opacity:.15}
+.viz .whisker.on{opacity:.9}
 .viz line,.viz path,.viz circle{pointer-events:none}
 .viz .halo{paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round}
 .viz .hit:focus-visible{stroke:var(--sky);stroke-width:2;fill:var(--sky-wash);fill-opacity:.35}
@@ -670,13 +674,13 @@ table.data tr.total td{font-weight:700}
           <div class="card-foot"><span class="role">Team lead</span><span class="cta">Read <span class="arr">→</span></span></div>
         </a>
         <a class="card" href="#minwage" data-tags="ana">
-          <span class="cat cat-ana">Econometrics · In progress</span>
+          <span class="cat cat-ana">Econometrics · ECON 352</span>
           <h3>Do minimum wage hikes cost teen jobs?</h3>
           <ul class="pts">
-            <li>Causal test on <b>535,323</b> survey records from 36 states.</li>
-            <li>Staggered difference-in-differences design.</li>
+            <li>Stacked DiD across <b>33</b> state increases of $0.25+.</li>
+            <li>No detectable job loss in year one: <b class="nw">+0.11 pp</b>, <span class="nw">p = 0.83</span>.</li>
           </ul>
-          <ul class="tags"><li class="tag">Causal inference</li><li class="tag">Panel data</li><li class="tag">Survey weights</li></ul>
+          <ul class="tags"><li class="tag">Causal inference</li><li class="tag">Event study</li><li class="tag">Stata</li></ul>
           <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
         </a>
         <a class="card" href="#factor" data-tags="inv ana">
@@ -732,7 +736,7 @@ table.data tr.total td{font-weight:700}
           <ul class="skill-list">
             <li><span>Power BI and DAX (40+ measures)</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>Python pipelines on 2.26M rows</span><span class="ev"><a href="#indego">Indego</a></span></li>
-            <li><span>Econometrics: difference-in-differences</span><span class="ev"><a href="#minwage">Min wage</a></span></li>
+            <li><span>Econometrics: stacked DiD, event study</span><span class="ev"><a href="#minwage">Min wage</a></span></li>
             <li><span>Backtesting and factor research</span><span class="ev"><a href="#factor">Factor</a><a href="#tsla">TSLA</a></span></li>
             <li><span>Data validation before it ships</span><span class="ev"><a href="#microsoft">Microsoft</a><a href="#indego">Indego</a></span></li>
             <li><span>SQL and data analytics, certified</span><span class="ev"><a href="#credentials">Google</a></span></li>
@@ -1150,7 +1154,7 @@ table.data tr.total td{font-weight:700}
               <span class="dl-status" aria-live="polite"></span>
             </div></div></div>
         </div>
-        <details class="codebox" id="codebox-indego"><summary>indego_growth_analysis.py</summary><pre><code class="language-python" id="code-indego"></code></pre></details>
+        <details class="codebox" id="codebox-indego" data-src="src-indego"><summary>indego_growth_analysis.py</summary><pre><code class="language-python" id="code-indego"></code></pre></details>
       </div>
     </section>
     <nav class="p-next" aria-label="More projects"><a href="#microsoft"><small>← Previous</small><b>Microsoft ARR case study</b></a><a class="nx" href="#cfa"><small>Next →</small><b>Carpenter Technology equity research</b></a></nav>
@@ -1344,84 +1348,132 @@ table.data tr.total td{font-weight:700}
     <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">5 of 8</span></div>
     <header class="p-head">
       <div>
-        <span class="cat cat-ana">Econometrics research · ECON 352 · Fall 2026</span><span class="status">In progress</span>
+        <span class="cat cat-ana">Econometrics research · ECON 352 · Fall 2026</span>
         <h1 class="p-title" tabindex="-1">Do minimum wage hikes cost teen jobs?</h1>
-        <p class="p-dek">A causal test on 535,323 survey records from 36 states, using a staggered difference-in-differences design.</p>
+        <p class="p-dek">No detectable job loss in the first year. Across 33 state increases of $0.25 or more, the estimated effect on teen employment is +0.11 percentage points, statistically indistinguishable from zero.</p>
       </div>
       <aside class="keydata" aria-label="Key data">
         <h2 class="kd-title">Key data</h2>
         <dl>
-          <div><dt>Role</dt><dd>Solo</dd></div>
-          <div><dt>Status</dt><dd>Data and design done; estimation next</dd></div>
-          <div><dt>Data</dt><dd>IPUMS CPS, 2010-2019; state minimum wages</dd></div>
-          <div><dt>Method</dt><dd>Staggered DiD, event study</dd></div>
+          <div><dt>Role</dt><dd>Solo, end to end</dd></div>
+          <div><dt>Status</dt><dd>Final paper</dd></div>
+          <div><dt>Data</dt><dd>IPUMS CPS Basic Monthly, 2010-2019; Vaghul and Zipperer minimum wages</dd></div>
+          <div><dt>Method</dt><dd>Stacked DiD, event study, wild cluster bootstrap</dd></div>
+          <div><dt>Tools</dt><dd>Stata</dd></div>
           <div><dt>Best fit</dt><dd class="fit">Data analyst, economic research, risk analytics</dd></div>
         </dl>
       </aside>
     </header>
     <div class="stats">
-      <div class="stat"><b>535,323</b><span>Observations</span><small>Teens 16-19, monthly survey</small></div>
-      <div class="stat"><b>36</b><span>States</span><small>All at $7.25 in Jan. 2010</small></div>
-      <div class="stat"><b>15 / 21</b><span>Treated / comparison</span><small>Raised the wage vs. stayed put</small></div>
-      <div class="stat"><b>120</b><span>Months</span><small>2010 to 2019</small></div>
+      <div class="stat"><b>+0.11 pp</b><span>Effect on teen employment</span><small>Wild bootstrap p = 0.83, not significant</small></div>
+      <div class="stat"><b>33</b><span>Treated state-events</span><small>Increases of $0.25+, in 11 cohorts</small></div>
+      <div class="stat"><b>10,008</b><span>State-month observations</span><small>Stacked; all 50 states and DC</small></div>
+      <div class="stat"><b>p = 0.41</b><span>Pre-trend test</span><small>Wild bootstrap; no sign of diverging trends</small></div>
     </div>
     <section class="p-sec">
       <h2>The ask</h2>
-      <div class="p-body"><p class="ask">Theory disagrees on whether higher minimum wages cut teen jobs. What does the data say?</p></div>
+      <div class="p-body"><p class="ask">What is the causal effect of state minimum-wage increases of at least $0.25 on employment among teens ages 16 to 19?</p></div>
     </section>
     <section class="p-sec">
       <h2>What I did</h2>
       <div class="p-body"><ul class="ticks">
-        <li>Merged individual survey records with <b>monthly state minimum wages</b>. Every record matched.</li>
-        <li><b>Tightened the design</b>: 36 states start at $7.25; 15 raise it, 21 never do.</li>
-        <li>Built <b>survey-weighted statistics</b> for both groups.</li>
-        <li>Specified a <b>staggered DiD</b> with state and month fixed effects and clustered errors.</li>
+        <li>Built a <b>survey-weighted state-month panel</b> of teen employment from IPUMS CPS, merged with monthly state minimum wages.</li>
+        <li>Defined <b>substantial events</b>: increases of $0.25 or more, with no other such increase 24 months before or 11 months after.</li>
+        <li>Ran a <b>stacked difference-in-differences</b>: one sub-experiment per cohort, clean controls and corrective weights.</li>
+        <li>Tested <b>parallel trends</b> with a monthly event study, from 12 months before to 11 months after.</li>
+        <li>Used a <b>wild cluster bootstrap</b> (9,999 draws), since there are only 51 state clusters.</li>
       </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>What I found</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="mw-es">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Event study: effect on teen employment, percentage points</span></figcaption>
+          <div class="legend"><span><i class="l1" style="border-radius:50%"></i>Estimate</span><span><i class="ln" style="background:var(--s1);opacity:.55"></i>95% confidence interval</span></div>
+          <div class="chart" data-chart="mw-es" role="img" aria-label="Monthly event-study estimates from 12 months before to 11 months after an increase. Estimates move around zero and every 95 percent confidence interval includes zero."></div>
+          <div class="ex-foot"><span>Month −1 is the reference. 95% intervals use state-clustered SEs. Source: IPUMS CPS, my estimates.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 2</span><span class="ex-title">Stacked difference-in-differences estimates</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data">
+              <thead><tr><th></th><th class="num">Model 1: main</th><th class="num">Model 2: + controls</th></tr></thead>
+              <tbody>
+                <tr><td>Treated × Post (pp)</td><td class="num">0.109</td><td class="num">0.106</td></tr>
+                <tr><td>State-clustered SE (pp)</td><td class="num">0.499</td><td class="num">0.507</td></tr>
+                <tr><td>Clustered p-value</td><td class="num">0.829</td><td class="num">0.835</td></tr>
+                <tr><td>Wild bootstrap p-value</td><td class="num">0.830</td><td class="num">0.836</td></tr>
+                <tr><td>Demographic controls</td><td class="num">No</td><td class="num">Yes</td></tr>
+                <tr class="total"><td>Observations</td><td class="num">10,008</td><td class="num">10,008</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Both models: state × cohort and calendar month × cohort fixed effects, corrective stacked-DiD weights, 51 state clusters.</span></div>
+        </figure>
+        <div class="callout">
+          <h3>Takeaway</h3>
+          <p>No evidence that increases of $0.25 or more cut teen jobs within a year. The estimate is small and not significant, and the event study shows no downward drift after increases.</p>
+          <p>A null result is not proof of zero. Limits: short-run effects only, noisy CPS samples in small states, and parallel trends can't be observed directly.</p>
+        </div>
+      </div>
     </section>
     <section class="p-sec">
       <h2>Design</h2>
       <div class="p-body">
         <figure class="exhibit">
-          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Descriptive statistics, survey-weighted</span></figcaption>
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 3</span><span class="ex-title">Descriptive statistics, stacked sample</span></figcaption>
           <div class="ex-table" style="margin-top:0">
             <table class="data">
-              <thead><tr><th>Variable</th><th class="num">All</th><th class="num">Treated</th><th class="num">Never treated</th></tr></thead>
+              <thead><tr><th>Variable</th><th class="num">All</th><th class="num">Treated</th><th class="num">Controls</th></tr></thead>
               <tbody>
-                <tr><td>Employed (%)</td><td class="num">29.40</td><td class="num">27.80</td><td class="num">30.48</td></tr>
-                <tr><td>Female (%)</td><td class="num">49.22</td><td class="num">49.03</td><td class="num">49.34</td></tr>
-                <tr><td>Age, average</td><td class="num">17.43</td><td class="num">17.44</td><td class="num">17.43</td></tr>
-                <tr><td>Minimum wage ($), average</td><td class="num">7.62</td><td class="num">8.18</td><td class="num">7.25</td></tr>
-                <tr class="total"><td>Observations</td><td class="num">535,323</td><td class="num">222,819</td><td class="num">312,504</td></tr>
+                <tr><td>Teen employment rate (%)</td><td class="num">32.16</td><td class="num">31.66</td><td class="num">32.20</td></tr>
+                <tr><td>Female share (%)</td><td class="num">49.24</td><td class="num">48.85</td><td class="num">49.27</td></tr>
+                <tr><td>Average age (years)</td><td class="num">17.42</td><td class="num">17.45</td><td class="num">17.42</td></tr>
+                <tr><td>Effective minimum wage ($)</td><td class="num">7.58</td><td class="num">8.19</td><td class="num">7.53</td></tr>
+                <tr><td>State-month observations</td><td class="num">10,008</td><td class="num">792</td><td class="num">9,216</td></tr>
+                <tr class="total"><td>State × cohort units</td><td class="num">417</td><td class="num">33</td><td class="num">384</td></tr>
               </tbody>
             </table>
           </div>
-          <div class="ex-foot"><span>Civilian teens 16-19, IPUMS CPS Basic Monthly 2010-2019, weighted by WTFINL. Treated = states that later raise their wage.</span></div>
+          <div class="ex-foot"><span>Means use the corrective stacked-DiD weights; counts are unweighted. Event months −12 to +11.</span></div>
         </figure>
-        <div class="eq" role="math" aria-label="Employment for teen i in state s and month t equals alpha s plus lambda t plus beta times Treatment s t plus X prime gamma plus error.">Employment<sub>ist</sub> = α<sub>s</sub> + λ<sub>t</sub> + β·Treatment<sub>st</sub> + X′<sub>ist</sub>γ + ε<sub>ist</sub></div>
-        <p class="note">Key assumption: parallel trends. The event study tests it before treatment begins.</p>
+        <div class="eq" role="math" aria-label="Employment for state s in cohort c and month t equals alpha s c plus lambda c t plus beta times Treated times Post plus X prime gamma plus error.">Employment<sub>sct</sub> = α<sub>sc</sub> + λ<sub>ct</sub> + β(Treated<sub>sc</sub> × Post<sub>ct</sub>) + X′<sub>sct</sub>γ + ε<sub>sct</sub></div>
+        <p class="note">β is the effect. Fixed effects absorb state-by-cohort levels and cohort-specific monthly shocks.</p>
       </div>
     </section>
     <section class="p-sec">
       <h2>Skills</h2>
       <div class="p-body skills-two">
-        <div><h3>Technical</h3><ul class="tags"><li class="tag">Causal inference</li><li class="tag">Difference-in-differences</li><li class="tag">Event study</li><li class="tag">Panel microdata</li><li class="tag">Survey weights</li></ul></div>
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Stata</li><li class="tag">Stacked difference-in-differences</li><li class="tag">Event study</li><li class="tag">Wild cluster bootstrap</li><li class="tag">Panel data</li><li class="tag">Survey weights</li></ul></div>
         <div><h3>Soft skills</h3><ul class="soft">
-          <li><b>Independence.</b> Scoped, built and designed it alone.</li>
-          <li><b>Self-correction.</b> Rebuilt the treatment definition when the first one proved too loose.</li>
+          <li><b>Independence.</b> Scoped, built and wrote it alone.</li>
+          <li><b>Coachability.</b> Rebuilt the design after feedback, from a simple treated-versus-untreated split to $0.25+ events with clean controls.</li>
+          <li><b>Honest reporting.</b> Reported a null result without overclaiming.</li>
         </ul></div>
       </div>
     </section>
     <section class="p-sec">
       <h2>Files</h2>
-      <div class="p-body"><div class="files">
-        <div class="file"><span class="file-ic">PDF</span><div>
-          <h3>Data and design memo</h3><p>6 pages, with references</p>
-          <div class="file-actions">
-            <a class="btn btn-small" href="doc-minimum-wage-research-design.pdf" target="_blank" rel="noopener" data-view="minwage">View memo</a>
-            <a class="btn btn-small btn-ghost" href="doc-minimum-wage-research-design.pdf" download="Aella_Nguyen_Minimum_Wage_Research_Design.pdf" data-dl>Download PDF</a>
-            <span class="dl-status" aria-live="polite"></span>
-          </div></div></div>
-      </div></div>
+      <div class="p-body">
+        <div class="files">
+          <div class="file"><span class="file-ic">PDF</span><div>
+            <h3>Final paper</h3><p>9 pages: methods, results, references</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="doc-minimum-wage-paper.pdf" target="_blank" rel="noopener" data-view="minwage">View paper</a>
+              <a class="btn btn-small btn-ghost" href="doc-minimum-wage-paper.pdf" download="Aella_Nguyen_Minimum_Wage_Teen_Employment.pdf" data-dl>Download PDF</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+          <div class="file"><span class="file-ic">ZIP</span><div>
+            <h3>Stata code and results</h3><p>5 do-files, 4 result tables, README</p>
+            <div class="file-actions">
+              <button class="btn btn-small" type="button" data-open-code="codebox-minwage">View code</button>
+              <a class="btn btn-small btn-ghost" href="code-minimum-wage-stata.zip" download="Aella_Nguyen_Minimum_Wage_Stata_Code.zip" data-dl data-embedded="zip-minwage">Download ZIP</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+        </div>
+        <details class="codebox" id="codebox-minwage" data-src="src-minwage"><summary>05_stacked_did_event_study.do</summary><pre><code class="language-plaintext" id="code-minwage"></code></pre></details>
+      </div>
     </section>
     <nav class="p-next" aria-label="More projects"><a href="#citi"><small>← Previous</small><b>A bank P&amp;L under rising credit costs</b></a><a class="nx" href="#factor"><small>Next →</small><b>Sales growth factor study</b></a></nav>
   </div>
@@ -1927,6 +1979,388 @@ else:
 print("\nDONE. Open this folder:", OUT)
 print("Start with 00_READ_ME_FIRST.txt and 02_ytd_executive_summary.csv (when available).")
 </script>
+<script type="text/plain" id="src-minwage">
+*******************************************************
+* ECON 352 Milestone 3
+* Step 5: Main stacked DiD results + event study
+*
+* FINAL ANALYSIS:
+* Model 1 (main):
+*   emp_rate on treat_post
+*   + state-by-stack fixed effects
+*   + calendar-month-by-stack fixed effects
+*
+* Model 2 (robustness):
+*   same model + female and age composition controls
+*
+* Inference:
+*   - conventional SEs clustered by state
+*   - wild cluster bootstrap p-values by state
+*
+* Event study:
+*   - monthly event-time indicators from -12 to +11
+*   - month -1 omitted as reference period
+*******************************************************
+
+clear all
+set more off
+capture log close
+
+cd "H:\Private\ECON 352\ECON352_Milestone2"
+
+log using "05B_main_results_eventstudy.log", text replace
+
+*******************************************************
+* 0. MAKE SURE BOOTTEST IS AVAILABLE
+*******************************************************
+
+* Stata 17 compatibility:
+* The newest SSC boottest build may contain a Mata library compiled
+* under a newer Stata version. Pin version 3.0.2, which the official
+* boottest help file provides as a directly installable older release.
+
+capture ado uninstall boottest
+
+net install boottest, replace ///
+    from("https://raw.github.com/droodman/boottest/v3.0.2")
+
+which boottest
+
+*******************************************************
+* 1. OPEN FINAL CLEAN STACKED SAMPLE
+*******************************************************
+
+use "M3_stacked_DiD_final_clean12.dta", clear
+
+count
+display "Expected analysis rows = 10,008. Actual = " r(N)
+
+egen state_tag_check = tag(statefip)
+count if state_tag_check
+display "Expected unique states/DC = 51. Actual = " r(N)
+drop state_tag_check
+
+*******************************************************
+* 2. MAIN STACKED DID: MODEL 1
+*    No demographic composition controls
+*******************************************************
+
+display "=================================================="
+display "MODEL 1: MAIN STACKED DID"
+display "=================================================="
+
+reg emp_rate ///
+    treat_post ///
+    i.state_stack ///
+    i.time_stack ///
+    [pw=stack_weight], ///
+    vce(cluster statefip)
+
+scalar b1  = _b[treat_post]
+scalar se1 = _se[treat_post]
+scalar pcluster1 = 2*ttail(e(df_r), abs(b1/se1))
+scalar N1 = e(N)
+scalar clusters1 = e(N_clust)
+
+display "Main coefficient = " %9.6f b1
+display "Clustered SE = " %9.6f se1
+display "Clustered p-value = " %9.6f pcluster1
+display "Effect in percentage points = " %9.3f (100*b1)
+
+* Wild cluster bootstrap inference
+boottest treat_post, ///
+    cluster(statefip) ///
+    reps(9999) ///
+    seed(3522026) ///
+    nograph
+
+scalar pwild1 = r(p)
+
+display "Wild-cluster-bootstrap p-value = " %9.6f pwild1
+
+*******************************************************
+* 3. MODEL 2: ADD DEMOGRAPHIC COMPOSITION CONTROLS
+*******************************************************
+
+display "=================================================="
+display "MODEL 2: WITH DEMOGRAPHIC COMPOSITION CONTROLS"
+display "=================================================="
+
+reg emp_rate ///
+    treat_post ///
+    female_share ///
+    age17_share age18_share age19_share ///
+    i.state_stack ///
+    i.time_stack ///
+    [pw=stack_weight], ///
+    vce(cluster statefip)
+
+scalar b2  = _b[treat_post]
+scalar se2 = _se[treat_post]
+scalar pcluster2 = 2*ttail(e(df_r), abs(b2/se2))
+scalar N2 = e(N)
+scalar clusters2 = e(N_clust)
+
+display "Controlled coefficient = " %9.6f b2
+display "Clustered SE = " %9.6f se2
+display "Clustered p-value = " %9.6f pcluster2
+display "Effect in percentage points = " %9.3f (100*b2)
+
+boottest treat_post, ///
+    cluster(statefip) ///
+    reps(9999) ///
+    seed(3522027) ///
+    nograph
+
+scalar pwild2 = r(p)
+
+display "Wild-cluster-bootstrap p-value = " %9.6f pwild2
+
+*******************************************************
+* 4. EXPORT MAIN RESULTS FOR MANUSCRIPT TABLE
+*******************************************************
+
+tempfile mainresults
+tempname mainhandle
+
+postfile `mainhandle' ///
+    str35 model ///
+    double coefficient ///
+    double clustered_se ///
+    double clustered_p ///
+    double wild_bootstrap_p ///
+    double observations ///
+    double state_clusters ///
+    using `mainresults', replace
+
+post `mainhandle' ///
+    ("Model 1: Main stacked DiD") ///
+    (b1) (se1) (pcluster1) (pwild1) (N1) (clusters1)
+
+post `mainhandle' ///
+    ("Model 2: + demographic controls") ///
+    (b2) (se2) (pcluster2) (pwild2) (N2) (clusters2)
+
+postclose `mainhandle'
+
+preserve
+    use `mainresults', clear
+
+    gen effect_percentage_points = 100*coefficient
+
+    order model coefficient effect_percentage_points ///
+          clustered_se clustered_p wild_bootstrap_p ///
+          observations state_clusters
+
+    list, noobs
+
+    export delimited using ///
+        "05B_main_regression_results.csv", replace
+restore
+
+*******************************************************
+* 5. CREATE MONTHLY EVENT-STUDY VARIABLES
+*
+* Reference period = event month -1.
+*******************************************************
+
+* Pre-treatment months: -12 through -2
+forvalues k = 12(-1)2 {
+    gen byte lead`k' = ///
+        (treat == 1 & event_time == -`k')
+}
+
+* Treatment month 0
+gen byte event0 = ///
+    (treat == 1 & event_time == 0)
+
+* Post-treatment months +1 through +11
+forvalues k = 1/11 {
+    gen byte lag`k' = ///
+        (treat == 1 & event_time == `k')
+}
+
+*******************************************************
+* 6. EVENT-STUDY REGRESSION
+*
+* No demographic controls in the main event study.
+* Month -1 is omitted.
+*******************************************************
+
+display "=================================================="
+display "EVENT STUDY: REFERENCE MONTH = -1"
+display "=================================================="
+
+reg emp_rate ///
+    lead12 lead11 lead10 lead9 lead8 lead7 ///
+    lead6 lead5 lead4 lead3 lead2 ///
+    event0 ///
+    lag1 lag2 lag3 lag4 lag5 lag6 ///
+    lag7 lag8 lag9 lag10 lag11 ///
+    i.state_stack ///
+    i.time_stack ///
+    [pw=stack_weight], ///
+    vce(cluster statefip)
+
+*******************************************************
+* 7. JOINT PRE-TREND TEST
+*******************************************************
+
+display "=================================================="
+display "PRE-TREND TEST: ALL LEADS -12 TO -2 = 0"
+display "=================================================="
+
+test ///
+    lead12 lead11 lead10 lead9 lead8 lead7 ///
+    lead6 lead5 lead4 lead3 lead2
+
+scalar pretrend_cluster_p = r(p)
+
+display "Conventional clustered joint pre-trend p-value = " ///
+    %9.6f pretrend_cluster_p
+
+boottest ///
+    lead12 lead11 lead10 lead9 lead8 lead7 ///
+    lead6 lead5 lead4 lead3 lead2, ///
+    cluster(statefip) ///
+    reps(9999) ///
+    seed(3522028) ///
+    nograph
+
+scalar pretrend_wild_p = r(p)
+
+display "Wild-bootstrap joint pre-trend p-value = " ///
+    %9.6f pretrend_wild_p
+
+*******************************************************
+* 8. EXPORT EVENT-STUDY COEFFICIENTS
+*******************************************************
+
+tempfile esresults
+tempname eshandle
+
+postfile `eshandle' ///
+    int event_time ///
+    double coefficient ///
+    double clustered_se ///
+    double ci_low ///
+    double ci_high ///
+    using `esresults', replace
+
+* Leads -12 through -2
+forvalues k = 12(-1)2 {
+
+    scalar btmp = _b[lead`k']
+    scalar setmp = _se[lead`k']
+
+    post `eshandle' ///
+        (-`k') ///
+        (btmp) ///
+        (setmp) ///
+        (btmp - 1.96*setmp) ///
+        (btmp + 1.96*setmp)
+}
+
+* Reference month -1
+post `eshandle' (-1) (0) (0) (0) (0)
+
+* Treatment month 0
+scalar btmp = _b[event0]
+scalar setmp = _se[event0]
+
+post `eshandle' ///
+    (0) ///
+    (btmp) ///
+    (setmp) ///
+    (btmp - 1.96*setmp) ///
+    (btmp + 1.96*setmp)
+
+* Lags +1 through +11
+forvalues k = 1/11 {
+
+    scalar btmp = _b[lag`k']
+    scalar setmp = _se[lag`k']
+
+    post `eshandle' ///
+        (`k') ///
+        (btmp) ///
+        (setmp) ///
+        (btmp - 1.96*setmp) ///
+        (btmp + 1.96*setmp)
+}
+
+postclose `eshandle'
+
+*******************************************************
+* 9. CREATE EVENT-STUDY FIGURE
+*******************************************************
+
+preserve
+
+    use `esresults', clear
+    sort event_time
+
+    gen coefficient_pp = 100*coefficient
+    gen ci_low_pp = 100*ci_low
+    gen ci_high_pp = 100*ci_high
+
+    export delimited using ///
+        "05B_eventstudy_results.csv", replace
+
+    twoway ///
+        (rcap ci_low_pp ci_high_pp event_time) ///
+        (scatter coefficient_pp event_time), ///
+        xline(-0.5, lpattern(dash)) ///
+        yline(0, lpattern(solid)) ///
+        xlabel(-12(1)11, labsize(small)) ///
+        xtitle("Months Relative to Minimum-Wage Increase") ///
+        ytitle("Effect on Teen Employment (percentage points)") ///
+        title("Figure 2. Event-Study Estimates") ///
+        subtitle("Substantial Minimum-Wage Increases of at Least $0.25") ///
+        note("Reference period is month -1. 95% confidence intervals use state-clustered SEs.") ///
+        legend(off) ///
+        graphregion(color(white))
+
+    graph export ///
+        "05B_Figure2_event_study.png", ///
+        width(2400) replace
+
+restore
+
+*******************************************************
+* 10. FINAL SUMMARY TO LOG
+*******************************************************
+
+display "=================================================="
+display "FINAL RESULTS SUMMARY"
+display "=================================================="
+
+display "MODEL 1 coefficient: " %9.6f b1
+display "MODEL 1 effect (pp): " %9.3f (100*b1)
+display "MODEL 1 clustered SE: " %9.6f se1
+display "MODEL 1 clustered p: " %9.6f pcluster1
+display "MODEL 1 wild-bootstrap p: " %9.6f pwild1
+
+display "--------------------------------------------------"
+
+display "MODEL 2 coefficient: " %9.6f b2
+display "MODEL 2 effect (pp): " %9.3f (100*b2)
+display "MODEL 2 clustered SE: " %9.6f se2
+display "MODEL 2 clustered p: " %9.6f pcluster2
+display "MODEL 2 wild-bootstrap p: " %9.6f pwild2
+
+display "--------------------------------------------------"
+
+display "Pre-trend clustered joint p: " ///
+    %9.6f pretrend_cluster_p
+
+display "Pre-trend wild-bootstrap joint p: " ///
+    %9.6f pretrend_wild_p
+
+display "=================================================="
+
+log close
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>
 (function () {
@@ -2340,6 +2774,34 @@ $$("[data-toggle-table]").forEach(function (btn) {
   });
 });
 
+/* ---------- event-study coefficient plot ---------- */
+CH["mw-es"] = {"type": "coef", "domain": [-5, 5], "ticks": [-4, -2, 0, 2, 4], "pts": [[-12, -1.531, -4.321, 1.2591], [-11, -1.1232, -4.3584, 2.1121], [-10, -0.6017, -3.4642, 2.2608], [-9, -0.9589, -3.6927, 1.7748], [-8, 0.56, -1.9546, 3.0746], [-7, 0.2479, -2.5405, 3.0363], [-6, -0.0754, -3.6164, 3.4656], [-5, 1.3861, -1.4213, 4.1934], [-4, -1.3722, -3.6845, 0.9401], [-3, -0.1825, -2.4788, 2.1137], [-2, -0.4134, -2.3711, 1.5444], [-1, 0.0, 0.0, 0.0], [0, 0.8911, -1.2089, 2.9912], [1, -0.8709, -2.4675, 0.7257], [2, -1.6408, -3.9135, 0.6319], [3, -1.3583, -3.2279, 0.5113], [4, 0.7484, -1.6141, 3.111], [5, 0.5937, -2.3924, 3.5798], [6, -0.4036, -3.3857, 2.5784], [7, 1.7224, -0.9926, 4.4375], [8, -0.5956, -3.1138, 1.9225], [9, -1.2907, -4.0329, 1.4516], [10, 1.2564, -1.6634, 4.1763], [11, -1.8138, -4.1018, 0.4742]], "table": {"head": ["Event month", "Estimate (pp)", "95% CI low", "95% CI high"], "rows": [["−12", "−1.53", "−4.32", "+1.26"], ["−11", "−1.12", "−4.36", "+2.11"], ["−10", "−0.60", "−3.46", "+2.26"], ["−9", "−0.96", "−3.69", "+1.77"], ["−8", "+0.56", "−1.95", "+3.07"], ["−7", "+0.25", "−2.54", "+3.04"], ["−6", "−0.08", "−3.62", "+3.47"], ["−5", "+1.39", "−1.42", "+4.19"], ["−4", "−1.37", "−3.68", "+0.94"], ["−3", "−0.18", "−2.48", "+2.11"], ["−2", "−0.41", "−2.37", "+1.54"], ["−1 (reference)", "0.00", "", ""], ["0", "+0.89", "−1.21", "+2.99"], ["+1", "−0.87", "−2.47", "+0.73"], ["+2", "−1.64", "−3.91", "+0.63"], ["+3", "−1.36", "−3.23", "+0.51"], ["+4", "+0.75", "−1.61", "+3.11"], ["+5", "+0.59", "−2.39", "+3.58"], ["+6", "−0.40", "−3.39", "+2.58"], ["+7", "+1.72", "−0.99", "+4.44"], ["+8", "−0.60", "−3.11", "+1.92"], ["+9", "−1.29", "−4.03", "+1.45"], ["+10", "+1.26", "−1.66", "+4.18"], ["+11", "−1.81", "−4.10", "+0.47"]]}};
+RENDER.coef = function (el, s, W, first) {
+  var narrow = W < 560, H = narrow ? 280 : 310, m = { t: 30, r: 8, b: 46, l: 40 };
+  var iw = W - m.l - m.r, ih = H - m.t - m.b, n = s.pts.length, band = iw / n;
+  var y = function (v) { return m.t + (s.domain[1] - v) / (s.domain[1] - s.domain[0]) * ih; };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  s.ticks.forEach(function (t) {
+    var yy = Math.round(y(t)) + 0.5;
+    S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": t === 0 ? "axis" : "grid" }, svg);
+    T(svg, m.l - 8, yy + 4, (t > 0 ? "+" : t < 0 ? MINUS : "") + Math.abs(t), "tick", "end");
+  });
+  var i0 = 0; s.pts.forEach(function (p, i) { if (p[0] === 0) i0 = i; });
+  var xv = Math.round(m.l + band * i0) + 0.5;
+  S("line", { x1: xv, x2: xv, y1: m.t - 16, y2: H - m.b, "class": "mk-target", "stroke-dasharray": "4 4" }, svg);
+  T(svg, xv + 6, m.t - 6, "Increase takes effect", "xlabel-sm", "start");
+  s.pts.forEach(function (p, i) {
+    var cx = m.l + band * (i + 0.5), ref = p[0] === -1, marks = [];
+    if (!ref) marks.push(S("line", { x1: cx, x2: cx, y1: y(p[3]), y2: y(p[2]), "class": "whisker" }, svg));
+    marks.push(S("circle", { cx: cx, cy: y(p[1]), r: ref ? 3.5 : 4.5, "class": "dot " + (ref ? "ref" : "s1") }, svg));
+    var lab = p[0] > 0 ? "+" + p[0] : p[0] < 0 ? MINUS + Math.abs(p[0]) : "0";
+    if (!narrow || p[0] % 3 === 0) T(svg, cx, H - m.b + 18, lab, "tick", "middle");
+    hit(svg, cx - band / 2, m.t, band, ih, ref ? "0 (reference month)" : sgn(p[1], 2) + " pp",
+        "Month " + lab + (ref ? "" : " · 95% CI " + sgn(p[2], 2) + " to " + sgn(p[3], 2) + " pp"), marks);
+  });
+  T(svg, m.l + iw / 2, H - 6, "Months relative to the increase", "xlabel", "middle");
+};
+
 /* ---------- router ---------- */
 var PROJECTS = ["microsoft", "indego", "cfa", "citi", "minwage", "factor", "fidelity", "tsla"];
 var home = $("#view-home"), views = $$("article.view"), current = null;
@@ -2444,7 +2906,7 @@ function claudeDownload(link) {
 var DOCS = {
   indego: { title: "Indego growth brief", pages: 2, w: 1600, h: 900, pdf: "doc-indego-brief.pdf", file: "Aella_Nguyen_Indego_Growth_Brief.pdf" },
   cfa: { title: "Carpenter Technology equity research", pages: 47, w: 1400, h: 788, pdf: "doc-cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
-  minwage: { title: "Minimum wage research design memo", pages: 6, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-research-design.pdf", file: "Aella_Nguyen_Minimum_Wage_Research_Design.pdf" },
+  minwage: { title: "Minimum wage and teen employment, final paper", pages: 9, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-paper.pdf", file: "Aella_Nguyen_Minimum_Wage_Teen_Employment.pdf" },
   rec: { title: "Recommendation letter, Microsoft", pages: 1, w: 1100, h: 1424, portrait: true, pdf: "doc-microsoft-recommendation-letter.pdf", file: "Aella_Nguyen_Microsoft_Recommendation_Letter.pdf" },
   cert: { title: "Excel for FP&A certificate, LinkedIn Learning", pages: 1, w: 1400, h: 1082, unit: "page", pdf: "doc-excel-fpa-certificate.pdf", file: "Aella_Nguyen_Excel_FPA_Certificate.pdf" }
 };
@@ -2488,17 +2950,17 @@ document.addEventListener("click", function (e) {
   else claudeDownload(t);
 });
 
-/* ---------- code viewer ---------- */
-var box = $("#codebox-indego");
-function fillCode() {
+/* ---------- code viewers ---------- */
+function fillCode(box) {
   if (!box || box.getAttribute("data-ready")) return;
-  var code = $("#code-indego"); code.textContent = ($("#src-indego").textContent || "").replace(/^\s+|\s+$/g, "");
-  if (window.hljs) { try { window.hljs.highlightElement(code); } catch (e) {} }
+  var code = $("code", box), src = document.getElementById(box.getAttribute("data-src"));
+  code.textContent = ((src && src.textContent) || "").replace(/^\s+|\s+$/g, "");
+  if (window.hljs && !code.classList.contains("language-plaintext")) { try { window.hljs.highlightElement(code); } catch (e) {} }
   box.setAttribute("data-ready", "1");
 }
-if (box) box.addEventListener("toggle", function () { if (box.open) fillCode(); });
+$$("details.codebox").forEach(function (box) { box.addEventListener("toggle", function () { if (box.open) fillCode(box); }); });
 $$("[data-open-code]").forEach(function (b) {
-  b.addEventListener("click", function () { var d = document.getElementById(b.getAttribute("data-open-code")); if (!d) return; d.open = true; fillCode(); d.scrollIntoView({ block: "start" }); });
+  b.addEventListener("click", function () { var d = document.getElementById(b.getAttribute("data-open-code")); if (!d) return; d.open = true; fillCode(d); d.scrollIntoView({ block: "start" }); });
 });
 
 window.addEventListener("hashchange", route);
