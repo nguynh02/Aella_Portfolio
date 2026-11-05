@@ -373,7 +373,9 @@ table.data th{padding:8px 10px;border-bottom:1px solid var(--line-strong);text-a
 table.data td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink)}
 table.data .num{text-align:right;white-space:nowrap}
 table.data tr.total td{font-weight:700}
-.sens td.up{color:var(--pos);font-weight:600}
+.sens td.up,table.data td.up{color:var(--pos);font-weight:600}
+table.data td.dn{color:var(--neg);font-weight:600}
+.callout p b{color:var(--ink)}
 .sens td.base{outline:2px solid var(--primary);outline-offset:-2px;border-radius:4px;font-weight:700;background:var(--sky-wash)}
 .sens th.row{color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:.85rem}
 .eq{margin:14px 0 4px;padding:16px 18px;border-radius:12px;background:var(--panel);font-family:var(--f-display);font-size:1.18rem;color:var(--ink);overflow-x:auto;white-space:nowrap}
@@ -1169,7 +1171,7 @@ table.data tr.total td{font-weight:700}
       <div>
         <span class="cat cat-inv">Equity research · CFA Institute Research Challenge · Sep.&nbsp;2025&nbsp;-&nbsp;Feb.&nbsp;2026</span>
         <h1 class="p-title" tabindex="-1">Carpenter Technology (NYSE: CRS)</h1>
-        <p class="p-dek">Great business, full price. Record aerospace demand is real, but at 43.1x earnings the stock already prices it in.</p>
+        <p class="p-dek">Great business, full price. Aerospace demand is outrunning qualified supply, but at about 40% above its historical P/E, the stock already prices it in.</p>
         <dl class="rating">
           <div><dt>Rating</dt><dd><span class="hold">HOLD</span></dd></div>
           <div><dt>12-month target</dt><dd>$363.69</dd></div>
@@ -1191,16 +1193,17 @@ table.data tr.total td{font-weight:700}
       <div class="stat"><b>$357.10</b><span>DCF value</span><small>80% of the target</small></div>
       <div class="stat"><b>$390.02</b><span>Comps value</span><small>20% of the target</small></div>
       <div class="stat"><b>9.45%</b><span>WACC</span><small>CAPM, re-levered peer beta</small></div>
-      <div class="stat"><b>10,000</b><span>Monte Carlo runs</span><small>Mean value $360.68</small></div>
+      <div class="stat"><b>10,000</b><span>Monte Carlo runs</span><small>Mean $360.68, median $328.83</small></div>
     </div>
     <section class="p-sec">
       <h2>The ask</h2>
-      <div class="p-body"><p class="ask">Operating margin jumped from &minus;2.9% to 18.4% in four years. At $367.98, is there upside left?</p></div>
+      <div class="p-body"><p class="ask">Operating margin climbed from &minus;1.4% to 18.1% in three years, FY22 to FY25. At $367.98, is there upside left?</p></div>
     </section>
     <section class="p-sec">
       <h2>What I did</h2>
       <div class="p-body"><ul class="ticks">
         <li><b>Led a 5-person team</b> through a five-month competition.</li>
+        <li>Built a <b>three-statement model to FY30E</b>: revenue reaches $4.1B and net income $832M.</li>
         <li>Built a <b>5-year DCF</b>: 18.5x exit multiple, 9.45% WACC.</li>
         <li>Valued CRS against <b>5 metals and aerospace peers</b>, weighting EV/EBITDA 75% and P/E 25%.</li>
         <li><b>Stress-tested the target</b>: bull, base and bear cases, a sensitivity grid, 10,000 Monte Carlo runs.</li>
@@ -1210,9 +1213,9 @@ table.data tr.total td{font-weight:700}
       <h2>What I found</h2>
       <div class="p-body">
         <div class="thesis">
-          <div><b>Margins surged</b><span>&minus;2.9% to 18.4% operating margin in four years.</span></div>
-          <div><b>Demand is durable</b><span>Aerospace and defense drive record backlogs.</span></div>
-          <div><b>Price says it all</b><span>43.1x P/E, about 40% above its own history.</span></div>
+          <div><b>Demand beats supply</b><span>A&amp;D was 61% of FY25 sales; few qualified melters.</span></div>
+          <div><b>Mix and price lift margins</b><span>&minus;1.4% to 18.1% operating margin, FY22 to FY25.</span></div>
+          <div><b>Already in the price</b><span>P/E about 40% above its own history.</span></div>
         </div>
         <figure class="exhibit" data-ex="cfa-ff">
           <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Valuation football field, $ per share</span></figcaption>
@@ -1237,6 +1240,25 @@ table.data tr.total td{font-weight:700}
           </div>
           <div class="ex-foot"><span>$ per share. Boxed: base case. Green: above the $367.98 price. Most cases sit below it.</span></div>
         </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 3</span><span class="ex-title">Scenarios: the downside outweighs the upside</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data">
+              <thead><tr><th>Scenario</th><th class="num">DCF value</th><th class="num">vs. price</th><th class="num">Comps value</th><th class="num">vs. price</th></tr></thead>
+              <tbody>
+                <tr><td>Bull</td><td class="num">$413.95</td><td class="num up">+12.5%</td><td class="num">$427.08</td><td class="num up">+16.1%</td></tr>
+                <tr><td>Base</td><td class="num">$357.10</td><td class="num">&minus;3.0%</td><td class="num">$390.02</td><td class="num">+6.0%</td></tr>
+                <tr><td>Bear</td><td class="num">$250.05</td><td class="num dn">&minus;32.0%</td><td class="num">$328.47</td><td class="num dn">&minus;10.7%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Against the $367.98 price. Scenarios flex A&amp;D demand, OEM production and price realization.</span></div>
+        </figure>
+        <div class="callout">
+          <h3>What would change the call</h3>
+          <p><b>Upgrade:</b> bull-case margins (FY30E gross margin 37.0%) lift the DCF to $413.95, 12.5% upside.</p>
+          <p><b>Downgrade:</b> weaker A&amp;D demand or pricing (gross margin 27.5%) cuts it to $250.05, 32.0% downside.</p>
+        </div>
       </div>
     </section>
     <section class="p-sec">
@@ -1253,7 +1275,7 @@ table.data tr.total td{font-weight:700}
         <div><h3>Soft skills</h3><ul class="soft">
           <li><b>Leadership.</b> Led 5 people for five months.</li>
           <li><b>Conviction.</b> A HOLD on a hot stock, backed by three methods.</li>
-          <li><b>Collaboration.</b> Five people, one 47-slide argument.</li>
+          <li><b>Collaboration.</b> Five people, one 38-slide argument.</li>
         </ul></div>
       </div>
     </section>
@@ -1261,7 +1283,7 @@ table.data tr.total td{font-weight:700}
       <h2>Files</h2>
       <div class="p-body"><div class="files">
         <div class="file"><span class="file-ic">PDF</span><div>
-          <h3>Equity research deck</h3><p>47 slides, with the full appendix</p>
+          <h3>Equity research deck</h3><p>38 slides, with the full appendix</p>
           <div class="file-actions">
             <a class="btn btn-small" href="doc-cfa-carpenter-technology.pdf" target="_blank" rel="noopener" data-view="cfa">View slides</a>
             <a class="btn btn-small btn-ghost" href="doc-cfa-carpenter-technology.pdf" download="Aella_Nguyen_CFA_Carpenter_Technology.pdf" data-dl>Download PDF</a>
@@ -2905,7 +2927,7 @@ function claudeDownload(link) {
 /* ---------- document viewer (Claude preview only) ---------- */
 var DOCS = {
   indego: { title: "Indego growth brief", pages: 2, w: 1600, h: 900, pdf: "doc-indego-brief.pdf", file: "Aella_Nguyen_Indego_Growth_Brief.pdf" },
-  cfa: { title: "Carpenter Technology equity research", pages: 47, w: 1400, h: 788, pdf: "doc-cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
+  cfa: { title: "Carpenter Technology equity research", pages: 38, w: 1400, h: 788, pdf: "doc-cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
   minwage: { title: "Minimum wage and teen employment, final paper", pages: 9, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-paper.pdf", file: "Aella_Nguyen_Minimum_Wage_Teen_Employment.pdf" },
   rec: { title: "Recommendation letter, Microsoft", pages: 1, w: 1100, h: 1424, portrait: true, pdf: "doc-microsoft-recommendation-letter.pdf", file: "Aella_Nguyen_Microsoft_Recommendation_Letter.pdf" },
   cert: { title: "Excel for FP&A certificate, LinkedIn Learning", pages: 1, w: 1400, h: 1082, unit: "page", pdf: "doc-excel-fpa-certificate.pdf", file: "Aella_Nguyen_Excel_FPA_Certificate.pdf" }
