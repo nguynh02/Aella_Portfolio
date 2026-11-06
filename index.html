@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Aella Nguyen">
 <meta property="og:title" content="Aella Nguyen | Corporate Finance, FP&amp;A and Data Analytics">
-<meta property="og:description" content="Microsoft Finance Analyst Intern. CFA Research Challenge team lead. Eight projects, each with the evidence attached.">
+<meta property="og:description" content="Microsoft Finance Analyst Intern. CFA Research Challenge team lead. Nine projects, each with the evidence attached.">
 <meta property="og:url" content="https://nguynh02.github.io/Aella_Portfolio/">
 <meta property="og:image" content="https://nguynh02.github.io/Aella_Portfolio/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -179,6 +179,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
 @media (max-width:1000px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3>:last-child{grid-column:span 2}}
 @media (max-width:760px){.grid-2,.grid-3{grid-template-columns:1fr}.grid-3>:last-child{grid-column:auto}}
+@media (min-width:1001px){.grid-big .rating{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-big .rating>div:nth-child(3){border-left:0}.grid-big .rating>div:nth-child(n+3){border-top:1px solid var(--line-strong)}}
 .card{position:relative;display:flex;flex-direction:column;gap:13px;min-width:0;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s,opacity .2s}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
 .card.is-dim{opacity:.28}
@@ -211,6 +212,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .mini-cap i.l1{background:var(--s1)}.mini-cap i.l2{background:var(--s2)}
 .mini-cap i.mk-t{width:2px;height:11px;border-radius:0;background:var(--warm)}
 .mini-cap i.mk-p{width:2px;height:11px;border-radius:0;background:var(--ink)}
+.mini-cap i.ln{width:14px;height:2px;border-radius:2px}
 .rating{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;background:var(--panel)}
 .rating>div{padding:10px 14px;border-left:1px solid var(--line-strong);min-width:0}
 .rating>div:first-child{border-left:0}
@@ -359,7 +361,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:8px;font-size:.82rem;color:var(--ink-2)}
 .legend span{display:inline-flex;align-items:center;gap:7px}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:3px}
-.legend i.l1{background:var(--s1)}.legend i.l2{background:var(--s2)}
+.legend i.l1{background:var(--s1)}.legend i.l2{background:var(--s2)}.legend i.l3{background:var(--teal)}.legend i.l4{background:var(--gold)}
 .legend i.ln{width:16px;height:2px;border-radius:2px}
 .legend i.mk-t{width:2px;height:14px;border-radius:0;background:var(--warm)}
 .legend i.mk-p{width:2px;height:14px;border-radius:0;background:var(--ink)}
@@ -375,6 +377,16 @@ table.data .num{text-align:right;white-space:nowrap}
 table.data tr.total td{font-weight:700}
 .sens td.up,table.data td.up{color:var(--pos);font-weight:600}
 table.data td.dn{color:var(--neg);font-weight:600}
+table.data td small{display:block;margin-top:2px;font-size:.78rem;line-height:1.4;color:var(--muted)}
+table.data td.st:not(.up):not(.dn){color:var(--ink-2)}
+table.data td.val{text-align:right}
+.triggers td:first-child{min-width:190px}
+.sens.wrap th.row{white-space:normal;min-width:180px;line-height:1.35}
+.sens.wrap thead th:first-child{white-space:normal}
+@media (max-width:520px){.sens.wrap th.row{min-width:124px}table.data.sens.wrap td,table.data.sens.wrap th{padding:8px 6px}
+  table.data.triggers,.triggers tbody{display:block;width:100%}.triggers thead{display:none}.triggers tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:11px 2px;border-bottom:1px solid var(--line)}
+  table.data.triggers td{padding:0;border:0;min-width:0}.triggers td:first-child{grid-column:1/-1}
+  table.data.triggers td.val{text-align:left;color:var(--ink-2)}.triggers td.val::before{content:"Q3 2026: ";color:var(--muted)}.triggers td.st{text-align:right}.triggers tr:last-child{border-bottom:0}}
 .callout p b{color:var(--ink)}
 .sens td.base{outline:2px solid var(--primary);outline-offset:-2px;border-radius:4px;font-weight:700;background:var(--sky-wash)}
 .sens th.row{color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:.85rem}
@@ -389,13 +401,14 @@ table.data td.dn{color:var(--neg);font-weight:600}
 .viz .xlabel-strong{font-size:12.5px;font-weight:600;fill:var(--ink)}
 .viz .xlabel-sm{font-size:11px;fill:var(--muted)}
 .viz .vlabel{font-size:11.5px;font-weight:600;fill:var(--ink)}
+.viz .vlabel-sm{font-size:10.5px}
 .viz .vlabel-on1{font-size:12px;font-weight:700;fill:var(--on-s1)}
 .viz .vlabel-on2{font-size:12px;font-weight:700;fill:var(--on-s2)}
 .viz .mlabel{font-size:11.5px;font-weight:700;fill:var(--ink)}
 .viz .chg{font-weight:600;fill:var(--ink-2)}
 .viz .grid{stroke:var(--grid);stroke-width:1}
 .viz .axis{stroke:var(--axis);stroke-width:1}
-.viz .s1{fill:var(--s1)}.viz .s2{fill:var(--s2)}
+.viz .s1{fill:var(--s1)}.viz .s2{fill:var(--s2)}.viz .s3{fill:var(--teal)}.viz .s4{fill:var(--gold)}
 .viz .line{fill:none;stroke-width:2;stroke-linecap:round}
 .viz .ln1{stroke:var(--s1)}.viz .ln2{stroke:var(--s2)}
 .viz .dot{stroke:var(--surface);stroke-width:2}
@@ -605,7 +618,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
           <button class="chip" type="button" data-filter="fpa" aria-pressed="false"><i aria-hidden="true"></i>FP&amp;A &amp; Corporate Finance</button>
           <button class="chip" type="button" data-filter="ana" aria-pressed="false"><i class="ana" aria-hidden="true"></i>Data &amp; Analytics</button>
           <button class="chip" type="button" data-filter="inv" aria-pressed="false"><i class="inv" aria-hidden="true"></i>Investments &amp; Risk</button>
-          <span class="filter-count" id="filter-count" aria-live="polite">8 projects</span>
+          <span class="filter-count" id="filter-count" aria-live="polite">9 projects</span>
         </div>
       </div>
 
@@ -630,7 +643,20 @@ table.data td.dn{color:var(--neg);font-weight:600}
         </div>
       </a>
 
-      <div class="grid-2">
+      <div class="grid-3 grid-big">
+        <a class="card card-big" href="#tesla-energy" data-tags="fpa ana">
+          <span class="cat">FP&amp;A case study · Public filings</span>
+          <h3>Tesla Energy: margin quality and the 2027 pricing call</h3>
+          <ul class="pts">
+            <li>Q3 2026 gross margin was <b>23.8%</b> without one-time refunds, not the reported 33.1%.</li>
+            <li>Revenue per GWh fell <b>14%</b>. Cost per GWh fell only 4%.</li>
+            <li>Call: no broad 2027 price cuts. In my break-even math, a 5% cut needs about <b>20% more volume</b>.</li>
+          </ul>
+          <div class="mini-cap" aria-hidden="true"><span><i class="l2 ln"></i>Reported</span><span><i class="l1 ln"></i>Ex one-time items</span><span>Gross margin by quarter</span></div>
+          <div class="chart mini" data-chart="tesla-mini" aria-hidden="true"></div>
+          <ul class="tags"><li class="tag">Excel model</li><li class="tag">Margin bridge</li><li class="tag">Pricing math</li></ul>
+          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
         <a class="card card-big" href="#indego" data-tags="fpa ana">
           <span class="cat cat-ana">Independent analysis · Public data</span>
           <h3>Indego Bike Share: where the growth comes from</h3>
@@ -728,6 +754,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
           <ul class="skill-list">
             <li><span>Driver-based growth model (price x quantity)</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>Monthly-close revenue reporting</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>Gross margin bridge and pricing break-even math</span><span class="ev"><a href="#tesla-energy">Tesla</a></span></li>
             <li><span>P&amp;L walk and credit-cost analysis</span><span class="ev"><a href="#citi">Citi</a></span></li>
             <li><span>DCF, comps and WACC</span><span class="ev"><a href="#cfa">CFA</a></span></li>
             <li><span>Business case with go or no-go gates</span><span class="ev"><a href="#indego">Indego</a></span></li>
@@ -966,7 +993,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 <!-- ============ MICROSOFT ============ -->
 <article id="view-microsoft" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">1 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">1 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat">Experience case study · Microsoft · May&nbsp;2026&nbsp;-&nbsp;Aug.&nbsp;2026</span>
@@ -1050,14 +1077,145 @@ table.data td.dn{color:var(--neg);font-weight:600}
         </ul></div>
       </div>
     </section>
-    <nav class="p-next" aria-label="More projects"><a href="#tsla"><small>← Previous</small><b>Risk-first swing strategy</b></a><a class="nx" href="#indego"><small>Next →</small><b>Indego Bike Share growth</b></a></nav>
+    <nav class="p-next" aria-label="More projects"><a href="#tsla"><small>← Previous</small><b>Risk-first swing strategy</b></a><a class="nx" href="#tesla-energy"><small>Next →</small><b>Tesla Energy margin and pricing</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ TESLA ENERGY ============ -->
+<article id="view-tesla-energy" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">2 of 9</span></div>
+    <header class="p-head">
+      <div>
+        <span class="cat">FP&amp;A case study · Public filings · Nov.&nbsp;2026</span>
+        <h1 class="p-title" tabindex="-1">Tesla Energy: margin quality and the 2027 pricing call</h1>
+        <p class="p-dek">Tesla Energy's gross margin rose to 33.1% in Q3 2026, but one-time tariff refunds drove the rise. Without them, margin was about 23.8%, down from 31.4% a year earlier. I rebuilt the numbers from the filings, then tested whether Tesla should cut Megapack prices in 2027.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Solo, end to end</dd></div>
+          <div><dt>Data</dt><dd>Tesla FY2025 10-K, 2026 10-Qs, Q3 2026 Update, earnings call quotes</dd></div>
+          <div><dt>Window</dt><dd><span class="nw">Q1 2025</span> to <span class="nw">Q3 2026</span>, by quarter</dd></div>
+          <div><dt>Tools</dt><dd>Excel: 7-tab model, 470+ formulas, tie-out checks</dd></div>
+          <div><dt>Best fit</dt><dd class="fit">FP&amp;A, revenue and commercial finance, strategic finance</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>23.8%</b><span>Q3 2026 margin, ex refunds</span><small>vs. 33.1% reported, 31.4% a year earlier</small></div>
+      <div class="stat"><b>&minus;14%</b><span>Revenue per GWh, YoY</span><small>Cost per GWh fell only 4%</small></div>
+      <div class="stat"><b>+20%</b><span>Volume to offset a 5% cut</span><small>Illustrative, at a 30% contribution margin</small></div>
+      <div class="stat"><b>~7%</b><span>Cost cut per 5% of price</span><small>Illustrative, same assumption</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The ask</h2>
+      <div class="p-body"><p class="ask">How much of Tesla Energy's Q3 2026 margin was one-time? And should Tesla cut Megapack prices in 2027, or protect price and cut cost?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>What I did</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Rebuilt Tesla Energy's <b>revenue, cost and gross margin by quarter</b> from the 10-K and 10-Qs, with tie-out checks against the filings.</li>
+        <li>Backed out <b>three one-time items</b>: a $200M tariff benefit, a $240M warranty charge and $187M of net tariff refunds.</li>
+        <li>Split the change in Q3 gross profit into <b>volume, revenue per GWh and cost per GWh</b>.</li>
+        <li>Tested the 2027 pricing choice with <b>break-even math</b>, flexing the contribution margin Tesla does not disclose from 20% to 40%.</li>
+        <li>Built a <b>7-tab Excel model</b> with 470+ formulas and color-coded inputs, then a 10-slide deck with a recommendation and five triggers.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>What I found</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="tesla-margin">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Excluding one-time items, 2026 margin fell from 31.2% to 23.8%</span></figcaption>
+          <div class="legend" data-legend="tesla-margin"></div>
+          <div class="chart" data-chart="tesla-margin" role="img" aria-label="Reported gross margin: 28.8, 30.3, 31.4 and 28.6 percent in 2025, then 39.5, 20.4 and 33.1 percent in 2026. Excluding one-time items, 2026 margin was 31.2, 28.0 and 23.8 percent."></div>
+          <div class="ex-foot"><span>One-time items: Q1 2026 <span class="nw">+$200M</span> tariff benefit, Q2 <span class="nw">&minus;$240M</span> warranty charge, Q3 <span class="nw">+$187M</span> net refunds. None disclosed in 2025. Source: Tesla 10-K and 10-Qs.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit" data-ex="tesla-bridge">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 2</span><span class="ex-title">Lower revenue per GWh more than offset volume and cost gains</span></figcaption>
+          <div class="legend" data-legend="tesla-bridge"></div>
+          <div class="chart" data-chart="tesla-bridge" role="img" aria-label="Q3 gross profit bridge in millions of dollars: 1,073 in Q3 2025, plus 103 from more GWh, minus 523 from lower revenue per GWh, plus 114 from lower cost per GWh, gives 767 excluding refunds. Adding 187 of one-time tariff refunds gives 954 reported."></div>
+          <div class="ex-foot"><span>Gross profit, $M. GWh deployed rose 10%. Revenue per GWh mixes price, product mix and timing, so this shows direction, not a proven price cut. Source: Tesla Q3 2026 10-Q, deployment data.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 3</span><span class="ex-title">Break-even math for a 5% price move</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data sens wrap">
+              <thead><tr><th>Contribution margin</th><th class="num">20%</th><th class="num">30%</th><th class="num">40%</th></tr></thead>
+              <tbody>
+                <tr><th class="row" scope="row">Extra volume to offset a 5% cut</th><td class="num">+33%</td><td class="num base">+20%</td><td class="num">+14%</td></tr>
+                <tr><th class="row" scope="row">Volume a 5% raise can lose</th><td class="num">&minus;20%</td><td class="num base">&minus;14%</td><td class="num">&minus;11%</td></tr>
+                <tr><th class="row" scope="row">Variable cost cut that offsets a 5% cut</th><td class="num">6.3%</td><td class="num base">7.1%</td><td class="num">8.3%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Illustrative. Tesla does not disclose contribution margin, so the boxed 30% is my assumption, tested from 20% to 40%. Volume to offset a cut = <span class="nw">p / (CM &minus; p)</span>. Cost cut = <span class="nw">p / (1 &minus; CM)</span>.</span></div>
+        </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 4</span><span class="ex-title">Five triggers to track in 2027</span></figcaption>
+          <div class="ex-table" style="margin-top:0">
+            <table class="data triggers">
+              <thead><tr><th>What to watch</th><th class="num">Q3 2026</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Margin excluding one-time items<small>Trigger: below 20%, the low end of the CFO's long-term range</small></td><td class="val">23.8%</td><td class="st up">Inside range</td></tr>
+                <tr><td>Revenue vs. cost per GWh<small>Trigger: revenue per GWh falling faster than cost</small></td><td class="val"><span class="nw">&minus;14% vs.</span> <span class="nw">&minus;4%</span></td><td class="st dn">Flag</td></tr>
+                <tr><td>Extra volume from a 5% cut<small>Trigger: break-even, +20% at a 30% margin</small></td><td class="val">Not disclosed</td><td class="st">Needs evidence</td></tr>
+                <tr><td>Cost-down per 5% of price<small>Trigger: about 7% of variable cost</small></td><td class="val">Not disclosed</td><td class="st">Needs data</td></tr>
+                <tr><td>Texas Megapack 3 ramp<small>Trigger: fixed cost per unit falls as output rises</small></td><td class="val">Production started</td><td class="st">Needs data</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>Trigger levels are my proposals for discussion, not Tesla policy.</span></div>
+        </figure>
+        <div class="callout">
+          <h3>My call</h3>
+          <p>Keep broad 2027 pricing. Approve targeted discounts only with matching cost-downs, about 7% of variable cost per 5% of price, or proof of extra volume Tesla can deliver.</p>
+          <p>Management says 2027 Megapacks are almost sold out. If supply is the limit, a cut adds little volume, yet it needs about 20% more to break even. Discounting to fill the new Texas line would trade a short-term cost issue for a lasting price issue.</p>
+        </div>
+        <p class="note">Caveat: Tesla did not size Q3's lower warranty costs, so that benefit is still inside the 23.8%. Treat it as an estimate, not a run-rate.</p>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">Excel modeling</li><li class="tag">Financial statement analysis</li><li class="tag">Gross margin bridge</li><li class="tag">Unit economics</li><li class="tag">Break-even analysis</li><li class="tag">Sensitivity analysis</li><li class="tag">SEC filings</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Skepticism.</b> Looked past a headline margin jump to what drove it.</li>
+          <li><b>Intellectual honesty.</b> Labeled every input Tesla does not disclose, and tested a range instead of one number.</li>
+          <li><b>Executive communication.</b> One recommendation, five triggers that would change it.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Files</h2>
+      <div class="p-body">
+        <div class="files">
+          <div class="file"><span class="file-ic">PDF</span><div>
+            <h3>Case deck</h3><p>10 slides</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="doc-tesla-energy-2027.pdf" target="_blank" rel="noopener" data-view="tesla">View slides</a>
+              <a class="btn btn-small btn-ghost" href="doc-tesla-energy-2027.pdf" download="Aella_Nguyen_Tesla_Energy_2027.pdf" data-dl>Download PDF</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+          <div class="file"><span class="file-ic">XLSX</span><div>
+            <h3>Excel model</h3><p>7 tabs, 470+ formulas. Change the yellow cells to test your own case.</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="model-tesla-energy-2027.xlsx" download="Aella_Nguyen_Tesla_Energy_2027_FPA_Model.xlsx" data-dl data-embedded="xlsx-tesla" data-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">Download Excel</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+        </div>
+      </div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#microsoft"><small>← Previous</small><b>Microsoft ARR case study</b></a><a class="nx" href="#indego"><small>Next →</small><b>Indego Bike Share growth</b></a></nav>
   </div>
 </article>
 
 <!-- ============ INDEGO ============ -->
 <article id="view-indego" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">2 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">3 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-ana">Independent analysis · Public data · Oct.&nbsp;2026</span>
@@ -1159,14 +1317,14 @@ table.data td.dn{color:var(--neg);font-weight:600}
         <details class="codebox" id="codebox-indego" data-src="src-indego"><summary>indego_growth_analysis.py</summary><pre><code class="language-python" id="code-indego"></code></pre></details>
       </div>
     </section>
-    <nav class="p-next" aria-label="More projects"><a href="#microsoft"><small>← Previous</small><b>Microsoft ARR case study</b></a><a class="nx" href="#cfa"><small>Next →</small><b>Carpenter Technology equity research</b></a></nav>
+    <nav class="p-next" aria-label="More projects"><a href="#tesla-energy"><small>← Previous</small><b>Tesla Energy margin and pricing</b></a><a class="nx" href="#cfa"><small>Next →</small><b>Carpenter Technology equity research</b></a></nav>
   </div>
 </article>
 
 <!-- ============ CFA ============ -->
 <article id="view-cfa" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">3 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">4 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Equity research · CFA Institute Research Challenge · Sep.&nbsp;2025&nbsp;-&nbsp;Feb.&nbsp;2026</span>
@@ -1298,7 +1456,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 <!-- ============ CITI ============ -->
 <article id="view-citi" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">4 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">5 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat">Job simulation · Citi Finance virtual program</span>
@@ -1367,7 +1525,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 <!-- ============ MIN WAGE ============ -->
 <article id="view-minwage" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">5 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">6 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-ana">Econometrics research · ECON 352 · Fall 2026</span>
@@ -1504,7 +1662,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 <!-- ============ FACTOR ============ -->
 <article id="view-factor" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">6 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">7 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Factor research · Team project</span>
@@ -1572,7 +1730,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 <!-- ============ FIDELITY ============ -->
 <article id="view-fidelity" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">7 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">8 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Job simulation · Fidelity International</span>
@@ -1627,7 +1785,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 <!-- ============ TSLA ============ -->
 <article id="view-tsla" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">8 of 8</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">9 of 9</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Quant research · Summer 2025</span>
@@ -1685,7 +1843,7 @@ table.data td.dn{color:var(--neg);font-weight:600}
 </article>
 </main>
 
-<footer class="foot"><div class="wrap foot-in"><span>© 2026 Aella Nguyen</span><span>Updated Oct. 2026</span></div></footer>
+<footer class="foot"><div class="wrap foot-in"><span>© 2026 Aella Nguyen</span><span>Updated Nov. 2026</span></div></footer>
 
 <div class="tip" id="tip" aria-hidden="true" hidden></div>
 
@@ -2452,7 +2610,9 @@ var LEGENDS = {
   "indego-src": [["l1", "Stations opened in 2025-26: +1.99M min (59%)"], ["l2", "Stations opened before 2025: +1.36M min (41%)"]],
   "indego-bike": [["l1 ln", "E-bike trips"], ["l2 ln", "Standard-bike trips"]],
   "tsla-mult": [["l1", "ATR take-profit and stop-loss"], ["l2", "Trailing stop"]],
-  "citi-wf": [["l1", "Total or subtotal"], ["l2", "Deduction"]]
+  "citi-wf": [["l1", "Total or subtotal"], ["l2", "Deduction"]],
+  "tesla-margin": [["l2 ln", "Reported"], ["l1 ln", "Excluding one-time items"]],
+  "tesla-bridge": [["l1", "Gross profit"], ["l3", "Increase"], ["l2", "Decrease"], ["l4", "One-time item"]]
 };
 
 /* ---------- svg helpers ---------- */
@@ -2678,26 +2838,26 @@ function deciles(el, s, W, first) {
   });
 }
 function waterfallH(el, s, W, first) {
-  var rowH = 34, barH = 16, m = { t: 6, r: 64, b: 24, l: 104 };
+  var rowH = 34, barH = 16, m = { t: 6, r: 64, b: 24, l: s.hLeft || 104 };
   var n = s.steps.length, H = m.t + n * rowH + m.b;
   var x = function (v) { return m.l + v / s.max * (W - m.l - m.r); };
   var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
-  [0, 10000, 20000].forEach(function (t) { var xx = Math.round(x(t)) + 0.5; S("line", { x1: xx, x2: xx, y1: m.t, y2: H - m.b, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, xx, H - 6, s.tickFmt(t), "tick", t === 0 ? "start" : "middle"); });
+  (s.hTicks || [0, s.max / 2, s.max]).forEach(function (t) { var xx = Math.round(x(t)) + 0.5; S("line", { x1: xx, x2: xx, y1: m.t, y2: H - m.b, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, xx, H - 6, s.tickFmt(t), "tick", t === 0 ? "start" : "middle"); });
   var run = 0, prevLevel = null, prevBottom = null;
   s.steps.forEach(function (st, i) {
     var by = m.t + i * rowH + (rowH - barH) / 2, a, b, cls, val;
     if (st.kind === "total") { a = 0; b = st.value; run = st.value; cls = "s1"; val = st.value; }
     else if (st.kind === "subtotal") { a = 0; b = run; cls = "s1"; val = run; }
-    else { a = run; b = run + st.value; run = b; cls = "s2"; val = st.value; }
+    else { a = run; b = run + st.value; run = b; cls = st.kind === "onetime" ? "s4" : (s.signed && st.value > 0 ? "s3" : "s2"); val = st.value; }
     var loV = Math.min(a, b), hiV = Math.max(a, b);
     if (prevLevel !== null) { var cx = Math.round(x(prevLevel)) + 0.5; S("line", { x1: cx, x2: cx, y1: prevBottom, y2: by, "class": "connector" }, svg); }
     var p, xa = x(loV), xb = Math.max(x(hiV), xa + 2);
     if (cls === "s1") p = S("path", { d: hbar(by, barH, x(0), x(hiV)), "class": "bar growx s1" }, svg);
-    else p = S("path", { d: rrect(xa, by, xb - xa, barH, Math.min(4, (xb - xa) / 2), 0), "class": "bar growx s2" }, svg);
+    else { var rr = Math.min(4, (xb - xa) / 2), up = s.signed && val > 0; p = S("path", { d: rrect(xa, by, xb - xa, barH, up ? 0 : rr, up ? rr : 0), "class": "bar growx " + cls }, svg); }
     p.style.animationDelay = (i * 70) + "ms";
-    T(svg, xb + 6, by + 12, s.fmt(val), "vlabel", "start");
+    T(svg, xb + 6, by + 12, s.fmt(val, st.kind), "vlabel", "start");
     T(svg, m.l - 10, by + 12, st.short || st.label.replace("|", " "), "xlabel", "end");
-    hit(svg, 0, by - (rowH - barH) / 2, W, rowH, s.fmt(val), st.label.replace("|", " "), [p]);
+    hit(svg, 0, by - (rowH - barH) / 2, W, rowH, s.fmt(val, st.kind), st.label.replace("|", " "), [p]);
     prevLevel = run; prevBottom = by + barH;
   });
 }
@@ -2714,17 +2874,18 @@ function waterfall(el, s, W, first) {
     var cx = m.l + band * i + band / 2, x = cx - bw / 2, a, b, cls, val;
     if (st.kind === "total") { a = 0; b = st.value; run = st.value; cls = "s1"; val = st.value; }
     else if (st.kind === "subtotal") { a = 0; b = run; cls = "s1"; val = run; }
-    else { a = run; b = run + st.value; run = b; cls = "s2"; val = st.value; }
+    else { a = run; b = run + st.value; run = b; cls = st.kind === "onetime" ? "s4" : (s.signed && st.value > 0 ? "s3" : "s2"); val = st.value; }
     var hiV = Math.max(a, b), loV = Math.min(a, b);
     if (prevLevel !== null) S("line", { x1: prevRight, x2: x, y1: Math.round(y(prevLevel)) + 0.5, y2: Math.round(y(prevLevel)) + 0.5, "class": "connector" }, svg);
     var p;
     if (cls === "s1") { p = S("path", { d: vbar(x, bw, y(0), y(hiV)), "class": "bar grow s1" }, svg); }
-    else { var yt = y(hiV), yb = Math.max(y(loV), yt + 2); p = S("path", { d: vbar(x, bw, yt, yb), "class": "bar grow neg s2" }, svg); }
+    else { var yt = y(hiV), yb = Math.max(y(loV), yt + 2), up = s.signed && val > 0; p = S("path", { d: up ? vbar(x, bw, yb, yt) : vbar(x, bw, yt, yb), "class": "bar grow " + (up ? "" : "neg ") + cls }, svg); }
     p.style.animationDelay = (i * 80) + "ms";
-    if (cls === "s1") T(svg, cx, y(hiV) - 7, s.fmt(val), "vlabel", "middle");
-    else T(svg, cx, Math.max(y(loV), y(hiV) + 2) + 14, s.fmt(val), "vlabel", "middle");
+    if (cls === "s1") T(svg, cx, y(hiV) - 7, s.fmt(val, st.kind), "vlabel", "middle");
+    else if (s.signed && val > 0) T(svg, cx, y(hiV) - 7, s.fmt(val, st.kind), "vlabel", "middle");
+    else T(svg, cx, Math.max(y(loV), y(hiV) + 2) + 14, s.fmt(val, st.kind), "vlabel", "middle");
     TL(svg, cx, H - 26, st.label, "xlabel", "middle", 13);
-    hit(svg, m.l + band * i, m.t, band, ih, s.fmt(val), st.label.replace("|", " "), [p]);
+    hit(svg, m.l + band * i, m.t, band, ih, s.fmt(val, st.kind), st.label.replace("|", " "), [p]);
     prevLevel = run; prevRight = x + bw;
   });
 }
@@ -2824,8 +2985,54 @@ RENDER.coef = function (el, s, W, first) {
   T(svg, m.l + iw / 2, H - 6, "Months relative to the increase", "xlabel", "middle");
 };
 
+/* ---------- Tesla Energy: margin lines and gross profit bridge ---------- */
+var TQ = ["Q1|2025", "Q2|2025", "Q3|2025", "Q4|2025", "Q1|2026", "Q2|2026", "Q3|2026"];
+var TSERIES = [
+  { name: "Reported", short: "reported", cls: "s2", line: "ln2", values: [28.8, 30.3, 31.4, 28.6, 39.5, 20.4, 33.1] },
+  { name: "Excluding one-time items", short: "ex one-time", cls: "s1", line: "ln1", values: [null, null, null, 28.6, 31.2, 28.0, 23.8] }];
+CH["tesla-margin"] = { type: "lines", domain: [17.5, 42.5], ticks: [20, 25, 30, 35, 40], labels: TQ, series: TSERIES,
+  table: { head: ["Quarter", "Reported", "Excluding one-time items", "One-time items in gross profit"],
+    rows: [["Q1 2025", "28.8%", "28.8%", "None disclosed"], ["Q2 2025", "30.3%", "30.3%", "None disclosed"], ["Q3 2025", "31.4%", "31.4%", "None disclosed"], ["Q4 2025", "28.6%", "28.6%", "None disclosed"],
+      ["Q1 2026", "39.5%", "31.2%", "+$200M tariff benefit"], ["Q2 2026", "20.4%", "28.0%", MINUS + "$240M warranty charge"], ["Q3 2026", "33.1%", "23.8%", "+$187M net tariff refunds"]] } };
+CH["tesla-mini"] = { type: "lines", mini: true, domain: [18, 42], labels: TQ, series: TSERIES };
+CH["tesla-bridge"] = { type: "waterfall", signed: true, max: 1200, ticks: [0, 300, 600, 900, 1200], hLeft: 124,
+  tickFmt: function (v) { return v === 0 ? "$0" : v >= 1000 ? "$" + (v / 1000).toFixed(1) + "B" : "$" + v + "M"; },
+  fmt: function (v, kind) { var a = "$" + Math.abs(v).toLocaleString("en-US") + "M"; return (kind === "total" || kind === "subtotal") ? a : (v < 0 ? MINUS : "+") + a; },
+  steps: [{ label: "Q3 2025", value: 1073, kind: "total" }, { label: "More|GWh", short: "More GWh", value: 103 }, { label: "Revenue|per GWh", short: "Revenue per GWh", value: -523 },
+    { label: "Cost|per GWh", short: "Cost per GWh", value: 114 }, { label: "Q3 2026|ex refunds", short: "Q3 2026 ex refunds", kind: "subtotal" },
+    { label: "Tariff|refunds", short: "Tariff refunds", value: 187, kind: "onetime" }, { label: "Q3 2026|reported", short: "Q3 2026 reported", kind: "subtotal" }],
+  table: { head: ["Step", "Gross profit ($M)"],
+    rows: [["Q3 2025 gross profit", "1,073"], ["More GWh deployed", "+103"], ["Lower revenue per GWh", MINUS + "523"], ["Lower cost per GWh", "+114"],
+      ["Q3 2026, excluding refunds", "767"], ["Net tariff refunds (one-time)", "+187"], ["Q3 2026, reported", "954"]] } };
+RENDER.lines = function (el, s, W, first) {
+  var mini = !!s.mini, H = mini ? (s.height || 96) : (W < 560 ? 250 : 290), m = mini ? { t: 10, r: 46, b: 10, l: 6 } : { t: 20, r: W < 560 ? 62 : 132, b: 40, l: 42 };
+  var n = s.labels.length, iw = W - m.l - m.r, ih = H - m.t - m.b;
+  var x = function (i) { return m.l + i * iw / (n - 1); };
+  var y = function (v) { return m.t + (s.domain[1] - v) / (s.domain[1] - s.domain[0]) * ih; };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  if (mini) svg.setAttribute("aria-hidden", "true");
+  if (!mini) {
+    s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": "grid" }, svg); T(svg, m.l - 8, yy + 4, t + "%", "tick", "end"); });
+    s.labels.forEach(function (lb, i) { if (W >= 560 || i % 2 === 0) TL(svg, x(i), H - 22, lb, "xlabel", "middle", 13); });
+  }
+  var lines = [], dots = s.labels.map(function () { return []; });
+  s.series.forEach(function (sr) {
+    var pts = []; sr.values.forEach(function (v, i) { if (v != null) pts.push([x(i), y(v), i, v]); });
+    lines.push(S("path", { d: pts.map(function (p, j) { return (j ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(""), "class": "line " + sr.line }, svg));
+    pts.forEach(function (p) { dots[p[2]].push(S("circle", { cx: p[0], cy: p[1], r: mini ? 3 : 4.5, "class": "dot " + sr.cls }, svg)); });
+    var last = pts[pts.length - 1];
+    T(svg, last[0] + (mini ? 7 : 10), last[1] + 4, last[3].toFixed(1) + "%" + (mini || W < 560 ? "" : " " + sr.short), mini ? "vlabel vlabel-sm" : "vlabel", "start");
+  });
+  if (mini) return;
+  var bw = iw / (n - 1);
+  s.labels.forEach(function (lb, i) {
+    var parts = s.series.map(function (sr) { var v = sr.values[i]; return v == null ? null : v.toFixed(1) + "% " + sr.short; }).filter(Boolean);
+    hit(svg, x(i) - bw / 2, m.t, bw, ih, parts.join(" · "), lb.replace("|", " "), lines.concat(dots[i]));
+  });
+};
+
 /* ---------- router ---------- */
-var PROJECTS = ["microsoft", "indego", "cfa", "citi", "minwage", "factor", "fidelity", "tsla"];
+var PROJECTS = ["microsoft", "tesla-energy", "indego", "cfa", "citi", "minwage", "factor", "fidelity", "tsla"];
 var home = $("#view-home"), views = $$("article.view"), current = null;
 function instantScroll(fn) { var h = document.documentElement, b = h.style.scrollBehavior; h.style.scrollBehavior = "auto"; fn(); h.style.scrollBehavior = b; }
 function route() {
@@ -2898,7 +3105,7 @@ function blobFor(link) {
   if (b64) {
     var bin = atob(b64), bytes = new Uint8Array(bin.length);
     for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-    return Promise.resolve(new Blob([bytes], { type: "application/zip" }));
+    return Promise.resolve(new Blob([bytes], { type: link.getAttribute("data-type") || "application/zip" }));
   }
   return fetch(link.getAttribute("href")).then(function (r) { if (!r.ok) throw { code: "fetch" }; return r.blob(); });
 }
@@ -2929,6 +3136,7 @@ var DOCS = {
   indego: { title: "Indego growth brief", pages: 2, w: 1600, h: 900, pdf: "doc-indego-brief.pdf", file: "Aella_Nguyen_Indego_Growth_Brief.pdf" },
   cfa: { title: "Carpenter Technology equity research", pages: 38, w: 1400, h: 788, pdf: "doc-cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
   minwage: { title: "Minimum wage and teen employment, final paper", pages: 9, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-paper.pdf", file: "Aella_Nguyen_Minimum_Wage_Teen_Employment.pdf" },
+  tesla: { title: "Tesla Energy: margin quality and the 2027 pricing decision", pages: 10, w: 1400, h: 788, pdf: "doc-tesla-energy-2027.pdf", file: "Aella_Nguyen_Tesla_Energy_2027.pdf" },
   rec: { title: "Recommendation letter, Microsoft", pages: 1, w: 1100, h: 1424, portrait: true, pdf: "doc-microsoft-recommendation-letter.pdf", file: "Aella_Nguyen_Microsoft_Recommendation_Letter.pdf" },
   cert: { title: "Excel for FP&A certificate, LinkedIn Learning", pages: 1, w: 1400, h: 1082, unit: "page", pdf: "doc-excel-fpa-certificate.pdf", file: "Aella_Nguyen_Excel_FPA_Certificate.pdf" }
 };
