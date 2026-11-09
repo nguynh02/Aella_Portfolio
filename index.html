@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Aella Nguyen">
 <meta property="og:title" content="Aella Nguyen | Corporate Finance, FP&amp;A and Data Analytics">
-<meta property="og:description" content="Microsoft Finance Analyst Intern. CFA Research Challenge team lead. Nine projects, each with the evidence attached.">
+<meta property="og:description" content="Microsoft Finance Analyst Intern. CFA Research Challenge team lead. Ten projects, each with the evidence attached.">
 <meta property="og:url" content="https://nguynh02.github.io/Aella_Portfolio/">
 <meta property="og:image" content="https://nguynh02.github.io/Aella_Portfolio/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -34,6 +34,7 @@
   --gold:#B7791F; --gold-wash:#FBF1E1; --gold-ink:#8A5A12;
   --pos:#12805C; --neg:#C2412D;
   --s1:#0176D3; --s2:#E2654A; --on-s1:#FFFFFF; --on-s2:#0B2341;
+  --bar-muted:#AEBFD0; --bar-light:#DCE6F0;
   --grid:#E5ECF3; --axis:#B7C7D8; --code-bg:#F4F8FC;
   --nav-bg:rgba(246,249,252,.88); --hero-top:#E3F0FD;
   --band:#0B2341; --band-ink:#EEF4FA; --band-muted:#A9BCD0; --band-line:rgba(255,255,255,.12);
@@ -57,6 +58,7 @@
     --gold:#E0A84A; --gold-wash:#33260F; --gold-ink:#F0C47A;
     --pos:#3CC48E; --neg:#F08268;
     --s1:#2E8BEA; --s2:#DE6A4F; --on-s1:#06162A; --on-s2:#0B2341;
+    --bar-muted:#3D5A7C; --bar-light:#22405F;
     --grid:#17304C; --axis:#2D4767; --code-bg:#0A1828;
     --nav-bg:rgba(7,20,35,.86); --hero-top:#0C2340;
     --band:#0F2440; --band-ink:#EEF4FA; --band-muted:#A9BCD0; --band-line:rgba(255,255,255,.1);
@@ -77,6 +79,7 @@
   --gold:#E0A84A; --gold-wash:#33260F; --gold-ink:#F0C47A;
   --pos:#3CC48E; --neg:#F08268;
   --s1:#2E8BEA; --s2:#DE6A4F; --on-s1:#06162A; --on-s2:#0B2341;
+  --bar-muted:#3D5A7C; --bar-light:#22405F;
   --grid:#17304C; --axis:#2D4767; --code-bg:#0A1828;
   --nav-bg:rgba(7,20,35,.86); --hero-top:#0C2340;
   --band:#0F2440; --band-ink:#EEF4FA; --band-muted:#A9BCD0; --band-line:rgba(255,255,255,.1);
@@ -179,7 +182,6 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
 @media (max-width:1000px){.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3>:last-child{grid-column:span 2}}
 @media (max-width:760px){.grid-2,.grid-3{grid-template-columns:1fr}.grid-3>:last-child{grid-column:auto}}
-@media (min-width:1001px){.grid-big .rating{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-big .rating>div:nth-child(3){border-left:0}.grid-big .rating>div:nth-child(n+3){border-top:1px solid var(--line-strong)}}
 .card{position:relative;display:flex;flex-direction:column;gap:13px;min-width:0;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s,opacity .2s}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
 .card.is-dim{opacity:.28}
@@ -363,6 +365,13 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .legend i{display:inline-block;width:11px;height:11px;border-radius:3px}
 .legend i.l1{background:var(--s1)}.legend i.l2{background:var(--s2)}.legend i.l3{background:var(--teal)}.legend i.l4{background:var(--gold)}
 .legend i.ln{width:16px;height:2px;border-radius:2px}
+.legend i.lr,.mini-cap i.lr{background:var(--bar-muted)}.legend i.lp{background:var(--bar-light)}.legend i.lnew{background:var(--bar-light);outline:1px dashed var(--muted);outline-offset:-1px}
+.mbridge{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:2px;padding:0;list-style:none}
+.mbridge>div{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+.mbridge b{display:block;font-family:var(--f-display);font-size:1.55rem;font-weight:600;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mbridge span{display:block;margin-top:5px;font-size:.8rem;line-height:1.4;color:var(--muted)}
+.mbridge .dn b{color:var(--neg)}.mbridge .end{background:var(--warm-wash);border-color:transparent}.mbridge .end b{color:var(--warm-ink)}
+@media (max-width:640px){.mbridge{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .legend i.mk-t{width:2px;height:14px;border-radius:0;background:var(--warm)}
 .legend i.mk-p{width:2px;height:14px;border-radius:0;background:var(--ink)}
 .chart{position:relative;width:100%;min-width:0}
@@ -383,7 +392,7 @@ table.data td.val{text-align:right}
 .triggers td:first-child{min-width:190px}
 .sens.wrap th.row{white-space:normal;min-width:180px;line-height:1.35}
 .sens.wrap thead th:first-child{white-space:normal}
-@media (max-width:520px){.sens.wrap th.row{min-width:124px}table.data.sens.wrap td,table.data.sens.wrap th{padding:8px 6px}
+@media (max-width:520px){.sens.wrap th.row{min-width:108px}table.data.sens.wrap td,table.data.sens.wrap th{padding:8px 6px}
   table.data.triggers,.triggers tbody{display:block;width:100%}.triggers thead{display:none}.triggers tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:11px 2px;border-bottom:1px solid var(--line)}
   table.data.triggers td{padding:0;border:0;min-width:0}.triggers td:first-child{grid-column:1/-1}
   table.data.triggers td.val{text-align:left;color:var(--ink-2)}.triggers td.val::before{content:"Q3 2026: ";color:var(--muted)}.triggers td.st{text-align:right}.triggers tr:last-child{border-bottom:0}}
@@ -409,8 +418,9 @@ table.data td.val{text-align:right}
 .viz .grid{stroke:var(--grid);stroke-width:1}
 .viz .axis{stroke:var(--axis);stroke-width:1}
 .viz .s1{fill:var(--s1)}.viz .s2{fill:var(--s2)}.viz .s3{fill:var(--teal)}.viz .s4{fill:var(--gold)}
+.viz .sr{fill:var(--bar-muted)}.viz .sp{fill:var(--bar-light)}.viz .sn{fill:var(--bar-light);stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
 .viz .line{fill:none;stroke-width:2;stroke-linecap:round}
-.viz .ln1{stroke:var(--s1)}.viz .ln2{stroke:var(--s2)}
+.viz .ln1{stroke:var(--s1)}.viz .ln2{stroke:var(--s2)}.viz .ln3{stroke:var(--teal)}
 .viz .dot{stroke:var(--surface);stroke-width:2}
 .viz .midtick{stroke:var(--surface);stroke-width:2}
 .viz .connector{stroke:var(--axis);stroke-width:1}
@@ -618,7 +628,7 @@ table.data td.val{text-align:right}
           <button class="chip" type="button" data-filter="fpa" aria-pressed="false"><i aria-hidden="true"></i>FP&amp;A &amp; Corporate Finance</button>
           <button class="chip" type="button" data-filter="ana" aria-pressed="false"><i class="ana" aria-hidden="true"></i>Data &amp; Analytics</button>
           <button class="chip" type="button" data-filter="inv" aria-pressed="false"><i class="inv" aria-hidden="true"></i>Investments &amp; Risk</button>
-          <span class="filter-count" id="filter-count" aria-live="polite">9 projects</span>
+          <span class="filter-count" id="filter-count" aria-live="polite">10 projects</span>
         </div>
       </div>
 
@@ -643,7 +653,20 @@ table.data td.val{text-align:right}
         </div>
       </a>
 
-      <div class="grid-3 grid-big">
+      <div class="grid-2">
+        <a class="card card-big" href="#alphabet" data-tags="fpa ana">
+          <span class="cat">FP&amp;A case study · SQL, Python, Excel</span>
+          <h3>Alphabet: the 2027 depreciation wave and a margin guardrail</h3>
+          <ul class="pts">
+            <li>2027E depreciation of <b>$53B</b>, up 69%. <b>83%</b> is already locked in by assets bought through Sep. 2026.</li>
+            <li>Python model backtested out of sample: <b>2.8%</b> average miss per quarter.</li>
+            <li>Call: cap 2027 growth in other costs at <b>14%</b> to hold the 33.1% operating margin.</li>
+          </ul>
+          <div class="mini-cap" aria-hidden="true"><span><i class="lr"></i>Reported</span><span><i class="l1"></i>2027E locked in</span><span>Depreciation, $B</span></div>
+          <div class="chart mini" data-chart="alphabet-mini" aria-hidden="true"></div>
+          <ul class="tags"><li class="tag">SQL</li><li class="tag">Python</li><li class="tag">Excel model</li></ul>
+          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </a>
         <a class="card card-big" href="#tesla-energy" data-tags="fpa ana">
           <span class="cat">FP&amp;A case study · Public filings</span>
           <h3>Tesla Energy: margin quality and the 2027 pricing call</h3>
@@ -754,6 +777,7 @@ table.data td.val{text-align:right}
           <ul class="skill-list">
             <li><span>Driver-based growth model (price x quantity)</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>Monthly-close revenue reporting</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>Depreciation forecast and margin guardrail</span><span class="ev"><a href="#alphabet">Alphabet</a></span></li>
             <li><span>Gross margin bridge and pricing break-even math</span><span class="ev"><a href="#tesla-energy">Tesla</a></span></li>
             <li><span>P&amp;L walk and credit-cost analysis</span><span class="ev"><a href="#citi">Citi</a></span></li>
             <li><span>DCF, comps and WACC</span><span class="ev"><a href="#cfa">CFA</a></span></li>
@@ -764,6 +788,7 @@ table.data td.val{text-align:right}
           <h3>Data and analytics</h3>
           <ul class="skill-list">
             <li><span>Power BI and DAX (40+ measures)</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>SQL pipeline from SEC filings to model inputs</span><span class="ev"><a href="#alphabet">Alphabet</a></span></li>
             <li><span>Python pipelines on 2.26M rows</span><span class="ev"><a href="#indego">Indego</a></span></li>
             <li><span>Econometrics: stacked DiD, event study</span><span class="ev"><a href="#minwage">Min wage</a></span></li>
             <li><span>Backtesting and factor research</span><span class="ev"><a href="#factor">Factor</a><a href="#tsla">TSLA</a></span></li>
@@ -993,7 +1018,7 @@ table.data td.val{text-align:right}
 <!-- ============ MICROSOFT ============ -->
 <article id="view-microsoft" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">1 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">1 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat">Experience case study · Microsoft · May&nbsp;2026&nbsp;-&nbsp;Aug.&nbsp;2026</span>
@@ -1077,14 +1102,160 @@ table.data td.val{text-align:right}
         </ul></div>
       </div>
     </section>
-    <nav class="p-next" aria-label="More projects"><a href="#tsla"><small>← Previous</small><b>Risk-first swing strategy</b></a><a class="nx" href="#tesla-energy"><small>Next →</small><b>Tesla Energy margin and pricing</b></a></nav>
+    <nav class="p-next" aria-label="More projects"><a href="#tsla"><small>← Previous</small><b>Risk-first swing strategy</b></a><a class="nx" href="#alphabet"><small>Next →</small><b>Alphabet depreciation and margin plan</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ ALPHABET ============ -->
+<article id="view-alphabet" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">2 of 10</span></div>
+    <header class="p-head">
+      <div>
+        <span class="cat">FP&amp;A case study · SEC data, SQL, Python, Excel · Nov.&nbsp;2026</span>
+        <h1 class="p-title" tabindex="-1">Alphabet: the 2027 depreciation wave and a margin guardrail</h1>
+        <p class="p-dek">Alphabet will spend about $200B on property and equipment in 2026, mostly AI servers and data centers. I built a data pipeline and a forecast model from SEC filings to show what that spend does to the 2027 P&amp;L, and how fast other costs can grow if the operating margin is to hold.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Solo, end to end</dd></div>
+          <div><dt>Data</dt><dd>269 SEC XBRL facts, 2007 to Q3 2026; Alphabet 10-K, 10-Q and Q3 2026 call</dd></div>
+          <div><dt>Tools</dt><dd>SQL (BigQuery dialect, run on DuckDB), Python, Excel</dd></div>
+          <div><dt>Outputs</dt><dd>9-tab Excel plan, CFO memo, 9-slide deck</dd></div>
+          <div><dt>Best fit</dt><dd class="fit">FP&amp;A, corporate finance, finance data and analytics</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>$53B</b><span>2027E depreciation</span><small>Up 69% from $31B in 2026E</small></div>
+      <div class="stat"><b>83%</b><span>Already locked in</span><small>By assets bought through Sep.&nbsp;30, 2026</small></div>
+      <div class="stat"><b>2.8%</b><span>Average backtest miss</span><small>7 quarters the model never saw</small></div>
+      <div class="stat"><b>14%</b><span>Cap on other cost growth</span><small>Holds the 33.1% margin, vs. 18.9% in 2026E</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>The ask</h2>
+      <div class="p-body"><p class="ask">How much will Alphabet's AI build-out raise 2027 depreciation, how much of it is already locked in, and how fast can other costs grow if the operating margin is to hold?</p></div>
+    </section>
+    <section class="p-sec">
+      <h2>What I did</h2>
+      <div class="p-body"><ul class="ticks">
+        <li>Pulled <b>269 facts from the SEC XBRL API</b>: CapEx, depreciation, revenue and operating income, 2007 to Q3 2026.</li>
+        <li>Wrote a <b>SQL pipeline</b> in BigQuery dialect, run on DuckDB: the latest filing wins, quarters come from year-to-date figures, and five tie-out checks run against the filings.</li>
+        <li>Built a <b>Python vintage model</b>: each quarter's spend splits by asset type, waits in construction, then depreciates straight-line once it goes live.</li>
+        <li>Fit the model on data through 2024 only and <b>backtested it on the next seven quarters</b> before trusting the forecast.</li>
+        <li>Mirrored it in a <b>9-tab Excel plan</b> with 1,045 live formulas, scenario switches and 15 checks, then wrote a CFO memo and a 9-slide deck.</li>
+      </ul></div>
+    </section>
+    <section class="p-sec">
+      <h2>What I found</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="alphabet-dep">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">2027E depreciation: $53B, 83% already locked in</span></figcaption>
+          <div class="legend" data-legend="alphabet-dep"></div>
+          <div class="chart" data-chart="alphabet-dep" role="img" aria-label="Depreciation in billions of dollars: 13.5 in 2022, 11.9 in 2023, 15.3 in 2024 and 21.1 in 2025 reported; 31.4 in 2026E and 53.1 in 2027E projected. Of 2027E, 43.9 is locked in by assets bought through September 30, 2026, and 9.3 depends on new spend."></div>
+          <div class="ex-foot"><span>$B. 2026E = 9M reported + model Q4. Locked in = <span class="nw">$36.6B</span> run-off of assets in service + <span class="nw">$7.3B</span> construction in progress going live. Base case 2027 CapEx $300B. Source: SEC XBRL (10-K, 10-Q); model estimates.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit" data-ex="alphabet-backtest">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 2</span><span class="ex-title">Tested out of sample: 2.8% average miss per quarter</span></figcaption>
+          <div class="legend" data-legend="alphabet-backtest"></div>
+          <div class="chart" data-chart="alphabet-backtest" role="img" aria-label="Quarterly depreciation, Q1 2025 to Q3 2026. The model, fit on data through 2024, tracks reported depreciation from 4.5 to 8.4 billion dollars, missing by 2.8 percent on average and by 5.8 percent in Q3 2026."></div>
+          <div class="ex-foot"><span>Quarterly depreciation, $B. Fit on data through Dec. 2024 only, then run on reported CapEx. FY2025 within 1.3%. Misses grew in 2026 as spend tilted to faster-depreciating servers. Source: SEC XBRL; vintage model.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <figure class="exhibit">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 3</span><span class="ex-title">To hold a 33% margin, other costs can grow 14%</span></figcaption>
+          <div class="mbridge" role="list" aria-label="2027E margin walk">
+            <div role="listitem"><b>33.1%</b><span>2026E operating margin</span></div>
+            <div role="listitem" class="dn"><b>&minus;2.7 pts</b><span>Depreciation climbs to 9.0% of revenue, from 6.3%</span></div>
+            <div role="listitem"><b>+0.1 pts</b><span>Other costs grow 18.9%, in step with 19% revenue growth</span></div>
+            <div role="listitem" class="end"><b>30.5%</b><span>2027E margin if other costs keep 2026's pace</span></div>
+          </div>
+          <div class="ex-table" style="margin-top:14px">
+            <table class="data sens wrap">
+              <thead><tr><th>2027 revenue growth</th><th class="num">+15%</th><th class="num">+19% base</th><th class="num">+23%</th></tr></thead>
+              <tbody>
+                <tr><th class="row" scope="row">Depreciation, % of revenue</th><td class="num">9.3%</td><td class="num">9.0%</td><td class="num">8.7%</td></tr>
+                <tr><th class="row" scope="row">Max growth in other costs to hold 33.1%</th><td class="num">+9.3%</td><td class="num base">+13.7%</td><td class="num">+18.2%</td></tr>
+                <tr><th class="row" scope="row">Margin if other costs grow 18.9%</th><td class="num">28.0%</td><td class="num">30.5%</td><td class="num">32.7%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ex-foot"><span>2026E = 9M reported + Q4 at revenue +22% and other costs +20% YoY. Other costs = everything but depreciation. Each extra point of revenue growth allows about 1.1 points more cost growth.</span></div>
+        </figure>
+        <figure class="exhibit" data-ex="alphabet-scen">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 4</span><span class="ex-title">CapEx moves 2028; useful life moves 2027</span></figcaption>
+          <div class="legend" data-legend="alphabet-scen"></div>
+          <div class="chart" data-chart="alphabet-scen" role="img" aria-label="Depreciation by 2027 CapEx case, in billions: at 250 billion of CapEx, 52.3 in 2027E and 79.6 in 2028E; at the 300 billion base, 53.1 and 84.6; at 350 billion, 54.0 and 89.6."></div>
+          <div class="ex-foot"><span>By 2027 CapEx case. Every case shares the same <span class="nw">$43.9B</span> locked-in base; new 2027 spend goes live through the year and depreciates mostly from 2028. Bigger 2027 risk: if server and network lives drop from 6 to 5 years in January 2027, 2027E depreciation rises <span class="nw">$13.7B</span>, about 2.3 points of margin.</span><button class="link-btn" type="button" data-toggle-table>Show data</button></div>
+          <div class="ex-table" hidden></div>
+        </figure>
+        <div class="callout">
+          <h3>My call</h3>
+          <p><b>Cap 2027 growth in costs other than depreciation at 14%,</b> versus 18.9% in 2026E. That holds the operating margin near 33% at 19% revenue growth.</p>
+          <p><b>Show locked-in depreciation next to CapEx in monthly reporting,</b> so every CapEx approval shows what it adds to 2027 and 2028 depreciation before it is signed.</p>
+          <p><b>Re-test the plan after the Q4 2026 call.</b> Triggers: 2027 CapEx guidance outside $250B to $350B, any useful-life change, or Q4 2026 depreciation outside $9.0B to $9.9B (model: $9.4B).</p>
+        </div>
+        <p class="note">Limits: one blended life per asset class, construction timing is a fitted average rather than project-level data, and the server share rests on one CFO comment. Each 5 points of server share moves 2027E by about $1.2B.</p>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Skills</h2>
+      <div class="p-body skills-two">
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">SQL (BigQuery, DuckDB)</li><li class="tag">Python (NumPy)</li><li class="tag">SEC XBRL API</li><li class="tag">Data tie-outs</li><li class="tag">Forecasting</li><li class="tag">Backtesting</li><li class="tag">Excel modeling</li><li class="tag">Scenario analysis</li></ul></div>
+        <div><h3>Soft skills</h3><ul class="soft">
+          <li><b>Rigor.</b> Tested the model on seven quarters it had never seen before using it to forecast.</li>
+          <li><b>Business judgment.</b> Turned a depreciation forecast into one number a budget owner can act on: 14%.</li>
+          <li><b>Executive writing.</b> A CFO memo and a deck that both lead with the decision.</li>
+        </ul></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Files</h2>
+      <div class="p-body">
+        <div class="files">
+          <div class="file"><span class="file-ic">PDF</span><div>
+            <h3>Deck</h3><p>9 slides</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="doc-alphabet-2027-depreciation.pdf" target="_blank" rel="noopener" data-view="alphabet">View slides</a>
+              <a class="btn btn-small btn-ghost" href="doc-alphabet-2027-depreciation.pdf" download="Aella_Nguyen_Alphabet_2027_Depreciation_Deck.pdf" data-dl>Download PDF</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+          <div class="file"><span class="file-ic">PDF</span><div>
+            <h3>CFO memo</h3><p>2 pages</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="doc-alphabet-cfo-memo.pdf" target="_blank" rel="noopener" data-view="alphabet-memo">View memo</a>
+              <a class="btn btn-small btn-ghost" href="doc-alphabet-cfo-memo.pdf" download="Aella_Nguyen_Alphabet_CFO_Memo.pdf" data-dl>Download PDF</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+          <div class="file"><span class="file-ic">XLSX</span><div>
+            <h3>Excel planning model</h3><p>9 tabs, 1,045 formulas, 15 checks. Pick a CapEx case and flex the blue inputs.</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="model-alphabet-2027-depreciation.xlsx" download="Aella_Nguyen_Alphabet_Depreciation_Margin_Model.xlsx" data-dl data-embedded="xlsx-alphabet" data-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">Download Excel</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+          <div class="file"><span class="file-ic">ZIP</span><div>
+            <h3>Code and data</h3><p>SQL, Python, tests and the SEC data. The model runs in about 15 seconds.</p>
+            <div class="file-actions">
+              <a class="btn btn-small btn-ghost" href="code-and-data-alphabet.zip" download="Aella_Nguyen_Alphabet_Code_and_Data.zip" data-dl data-embedded="zip-alphabet">Download ZIP</a>
+              <button class="btn btn-small" type="button" data-open-code="codebox-alphabet-sql">View SQL</button>
+              <button class="btn btn-small" type="button" data-open-code="codebox-alphabet-py">View Python</button>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+        </div>
+        <details class="codebox" id="codebox-alphabet-sql" data-src="src-alphabet-sql"><summary>sql/04_tieout_checks.sql</summary><pre><code class="language-sql" id="code-alphabet-sql"></code></pre></details>
+        <details class="codebox" id="codebox-alphabet-py" data-src="src-alphabet-py"><summary>model/depreciation_model.py</summary><pre><code class="language-python" id="code-alphabet-py"></code></pre></details>
+      </div>
+    </section>
+    <nav class="p-next" aria-label="More projects"><a href="#microsoft"><small>← Previous</small><b>Microsoft ARR case study</b></a><a class="nx" href="#tesla-energy"><small>Next →</small><b>Tesla Energy margin and pricing</b></a></nav>
   </div>
 </article>
 
 <!-- ============ TESLA ENERGY ============ -->
 <article id="view-tesla-energy" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">2 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">3 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat">FP&amp;A case study · Public filings · Nov.&nbsp;2026</span>
@@ -1208,14 +1379,14 @@ table.data td.val{text-align:right}
         </div>
       </div>
     </section>
-    <nav class="p-next" aria-label="More projects"><a href="#microsoft"><small>← Previous</small><b>Microsoft ARR case study</b></a><a class="nx" href="#indego"><small>Next →</small><b>Indego Bike Share growth</b></a></nav>
+    <nav class="p-next" aria-label="More projects"><a href="#alphabet"><small>← Previous</small><b>Alphabet depreciation and margin plan</b></a><a class="nx" href="#indego"><small>Next →</small><b>Indego Bike Share growth</b></a></nav>
   </div>
 </article>
 
 <!-- ============ INDEGO ============ -->
 <article id="view-indego" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">3 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">4 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-ana">Independent analysis · Public data · Oct.&nbsp;2026</span>
@@ -1324,7 +1495,7 @@ table.data td.val{text-align:right}
 <!-- ============ CFA ============ -->
 <article id="view-cfa" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">4 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">5 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Equity research · CFA Institute Research Challenge · Sep.&nbsp;2025&nbsp;-&nbsp;Feb.&nbsp;2026</span>
@@ -1456,7 +1627,7 @@ table.data td.val{text-align:right}
 <!-- ============ CITI ============ -->
 <article id="view-citi" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">5 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">6 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat">Job simulation · Citi Finance virtual program</span>
@@ -1525,7 +1696,7 @@ table.data td.val{text-align:right}
 <!-- ============ MIN WAGE ============ -->
 <article id="view-minwage" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">6 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">7 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-ana">Econometrics research · ECON 352 · Fall 2026</span>
@@ -1662,7 +1833,7 @@ table.data td.val{text-align:right}
 <!-- ============ FACTOR ============ -->
 <article id="view-factor" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">7 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">8 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Factor research · Team project</span>
@@ -1730,7 +1901,7 @@ table.data td.val{text-align:right}
 <!-- ============ FIDELITY ============ -->
 <article id="view-fidelity" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">8 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">9 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Job simulation · Fidelity International</span>
@@ -1785,7 +1956,7 @@ table.data td.val{text-align:right}
 <!-- ============ TSLA ============ -->
 <article id="view-tsla" class="view project" hidden>
   <div class="wrap">
-    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">9 of 9</span></div>
+    <div class="crumbs"><a class="back" href="#work">← All projects</a><span class="crumb-pos">10 of 10</span></div>
     <header class="p-head">
       <div>
         <span class="cat cat-inv">Quant research · Summer 2025</span>
@@ -2541,6 +2712,526 @@ display "=================================================="
 
 log close
 </script>
+<script type="text/plain" id="src-alphabet-sql">
+-- 04_tieout_checks.sql
+-- Automated checks before any number reaches the model. PASS / WARN / INFO / FAIL per row.
+-- Tolerance: the larger of $2M or 0.25% (XBRL values are rounded to $1M).
+
+CREATE OR REPLACE TABLE finance.tieout_report AS
+WITH
+derived_vs_reported AS (
+  -- 1. Quarter derived from YTD facts vs the 3-month figure reported for the same quarter
+  SELECT
+    'derived_vs_reported_quarter' AS check_name,
+    d.concept,
+    CONCAT(CAST(d.fiscal_year AS STRING), 'Q', CAST(d.fiscal_quarter AS STRING)) AS period,
+    r.value_musd AS expected_musd,
+    d.value_musd AS actual_musd
+  FROM finance.quarterly_facts AS d
+  JOIN finance.clean_facts AS r
+    ON r.concept = d.concept
+   AND r.period_end = d.period_end
+   AND r.basis = 'discrete'
+   AND r.months = 3
+),
+annual_ranked AS (
+  SELECT
+    concept,
+    fiscal_year,
+    value_musd,
+    ROW_NUMBER() OVER (PARTITION BY concept, period_start, period_end ORDER BY filed ASC) AS first_rank,
+    ROW_NUMBER() OVER (PARTITION BY concept, period_start, period_end ORDER BY filed DESC) AS last_rank
+  FROM finance.mapped_facts
+  WHERE concept IS NOT NULL AND months = 12
+),
+restatements AS (
+  -- 2. First-reported vs latest-filed full-year value (restatements and reclassifications)
+  SELECT
+    'annual_restatement' AS check_name,
+    f.concept,
+    CAST(f.fiscal_year AS STRING) AS period,
+    f.value_musd AS expected_musd,
+    l.value_musd AS actual_musd
+  FROM annual_ranked AS f
+  JOIN annual_ranked AS l
+    ON l.concept = f.concept AND l.fiscal_year = f.fiscal_year AND l.last_rank = 1
+  WHERE f.first_rank = 1
+),
+years AS (
+  SELECT DISTINCT fiscal_year FROM finance.model_inputs_quarterly
+),
+quarters AS (
+  SELECT 1 AS fiscal_quarter UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+),
+coverage_spec AS (
+  SELECT 'capex' AS concept, 2015 AS first_year UNION ALL
+  SELECT 'depreciation', 2023 UNION ALL
+  SELECT 'revenue', 2021 UNION ALL
+  SELECT 'operating_income', 2019
+),
+expected AS (
+  SELECT s.concept, y.fiscal_year, q.fiscal_quarter
+  FROM coverage_spec AS s
+  CROSS JOIN years AS y
+  CROSS JOIN quarters AS q
+  WHERE y.fiscal_year >= s.first_year
+    AND y.fiscal_year * 10 + q.fiscal_quarter <= 20263   -- latest reported quarter: Q3 2026
+),
+present AS (
+  SELECT 'capex' AS concept, fiscal_year, fiscal_quarter FROM finance.model_inputs_quarterly WHERE capex_musd IS NOT NULL
+  UNION ALL SELECT 'depreciation', fiscal_year, fiscal_quarter FROM finance.model_inputs_quarterly WHERE depreciation_musd IS NOT NULL
+  UNION ALL SELECT 'revenue', fiscal_year, fiscal_quarter FROM finance.model_inputs_quarterly WHERE revenue_musd IS NOT NULL
+  UNION ALL SELECT 'operating_income', fiscal_year, fiscal_quarter FROM finance.model_inputs_quarterly WHERE operating_income_musd IS NOT NULL
+),
+completeness AS (
+  -- 3. Every quarter the model needs is present
+  SELECT
+    'quarter_completeness' AS check_name,
+    e.concept,
+    STRING_AGG(CASE WHEN p.concept IS NULL THEN CONCAT(CAST(e.fiscal_year AS STRING), 'Q', CAST(e.fiscal_quarter AS STRING)) END, ', ') AS missing,
+    COUNT(*) AS n_expected,
+    COUNT(p.concept) AS n_present
+  FROM expected AS e
+  LEFT JOIN present AS p
+    ON p.concept = e.concept AND p.fiscal_year = e.fiscal_year AND p.fiscal_quarter = e.fiscal_quarter
+  GROUP BY e.concept
+),
+controls AS (
+  -- 4. Pipeline 9M 2026 totals vs control totals hand-keyed from the Q3 2026 10-Q
+  SELECT
+    'control_total_9m2026' AS check_name,
+    CASE m.item
+      WHEN 'control_capex_ytd' THEN 'capex'
+      WHEN 'control_depreciation_ytd' THEN 'depreciation'
+      WHEN 'control_revenue_ytd' THEN 'revenue'
+      WHEN 'operating_income_ytd' THEN 'operating_income'
+    END AS concept,
+    '9M2026' AS period,
+    m.value_musd AS expected_musd
+  FROM finance.manual_inputs AS m
+  WHERE m.period_or_date = '9M2026'
+    AND m.item IN ('control_capex_ytd', 'control_depreciation_ytd', 'control_revenue_ytd', 'operating_income_ytd')
+),
+pipeline_9m AS (
+  SELECT 'capex' AS concept, SUM(capex_musd) AS actual_musd FROM finance.model_inputs_quarterly WHERE fiscal_year = 2026
+  UNION ALL SELECT 'depreciation', SUM(depreciation_musd) FROM finance.model_inputs_quarterly WHERE fiscal_year = 2026
+  UNION ALL SELECT 'revenue', SUM(revenue_musd) FROM finance.model_inputs_quarterly WHERE fiscal_year = 2026
+  UNION ALL SELECT 'operating_income', SUM(operating_income_musd) FROM finance.model_inputs_quarterly WHERE fiscal_year = 2026
+),
+negatives AS (
+  -- 5. No negative quarters for flows that cannot be negative
+  SELECT
+    'non_negative_quarter' AS check_name,
+    concept,
+    CONCAT(CAST(fiscal_year AS STRING), 'Q', CAST(fiscal_quarter AS STRING)) AS period,
+    0.0 AS expected_musd,
+    value_musd AS actual_musd
+  FROM finance.quarterly_facts
+  WHERE concept IN ('capex', 'depreciation', 'revenue') AND value_musd < 0
+)
+SELECT
+  check_name, concept, period, expected_musd, actual_musd,
+  actual_musd - expected_musd AS diff_musd,
+  CASE WHEN ABS(actual_musd - expected_musd) <= GREATEST(2, 0.0025 * ABS(expected_musd)) THEN 'PASS' ELSE 'WARN' END AS status,
+  'Derived quarter vs reported 3-month figure (latest filing)' AS note
+FROM derived_vs_reported
+UNION ALL
+SELECT
+  check_name, concept, period, expected_musd, actual_musd,
+  actual_musd - expected_musd,
+  CASE WHEN ABS(actual_musd - expected_musd) <= GREATEST(2, 0.0025 * ABS(expected_musd)) THEN 'PASS' ELSE 'INFO' END,
+  'First-reported vs latest-filed full year; the latest value is used'
+FROM restatements
+UNION ALL
+SELECT
+  check_name, concept, 'all quarters', n_expected, n_present,
+  n_present - n_expected,
+  CASE WHEN n_present = n_expected THEN 'PASS' ELSE 'FAIL' END,
+  CASE WHEN missing IS NULL THEN 'Every expected quarter present' ELSE CONCAT('Missing: ', missing) END
+FROM completeness
+UNION ALL
+SELECT
+  c.check_name, c.concept, c.period, c.expected_musd, p.actual_musd,
+  p.actual_musd - c.expected_musd,
+  CASE WHEN ABS(p.actual_musd - c.expected_musd) <= 2 THEN 'PASS' ELSE 'FAIL' END,
+  'Sum of Q1-Q3 2026 vs 10-Q control total'
+FROM controls AS c
+JOIN pipeline_9m AS p ON p.concept = c.concept
+UNION ALL
+SELECT
+  check_name, concept, period, expected_musd, actual_musd,
+  actual_musd - expected_musd, 'FAIL', 'Negative quarter after YTD differencing'
+FROM negatives;
+</script>
+<script type="text/plain" id="src-alphabet-py">
+"""
+Alphabet CapEx-to-depreciation planning model
+
+What it does
+  1. Builds quarterly asset additions from the SQL pipeline output (cash CapEx + change in unpaid CapEx
+     + finance-lease assets + acquired P&E), 2007 to Q3 2026, then forecast CapEx to 2028
+  2. Runs a vintage engine: each quarter's spend is split into servers/network, buildings, other and land;
+     servers/network and buildings wait in construction in progress (CIP) and go into service at a fitted
+     rate per quarter; straight-line depreciation starts the quarter after an asset goes into service;
+     useful-life changes are prospective (remaining book value over remaining new life), as Alphabet did
+     in 2021 and 2023
+  3. Fits the unknown parameters (spend mix, CIP speed, building life) by grid search
+       a. out of sample: fit on data through Dec 2024 only, then score Q1 2025 to Q3 2026
+       b. full: fit on all data through Q3 2026, used for the forecast
+  4. Forecasts 2026E to 2028E depreciation, the locked-in share, CapEx scenarios, useful-life risk
+     and the 2027 margin math; writes model/outputs/*.json and *.csv for the Excel file and the deck
+
+All $ in millions. Run: python3 model/depreciation_model.py   (needs numpy; about 15 seconds)
+"""
+import csv
+import itertools
+import json
+import pathlib
+
+import numpy as np
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+PROC, RAW, OUT = ROOT / 'data' / 'processed', ROOT / 'data' / 'raw', ROOT / 'model' / 'outputs'
+
+QUARTERS = [(y, q) for y in range(2007, 2029) for q in (1, 2, 3, 4)]
+IDX = {k: i for i, k in enumerate(QUARTERS)}
+T = len(QUARTERS)
+LAST_ACTUAL = (2026, 3)
+CUT = IDX[LAST_ACTUAL]
+
+# ------------------------------------------------------------------ assumptions (labelled, editable)
+ASSUME = {
+    'capex_fy2026_guidance_mid': 200000,      # midpoint of $195-205B (Q3 2026 earnings call)
+    'capex_2027': {'low': 250000, 'base': 300000, 'high': 350000},   # company: "significant increase"
+    'capex_2027_quarter_weights': [0.22, 0.24, 0.26, 0.28],
+    'capex_2028_growth': 0.10,
+    'q4_2026_revenue_growth_yoy': 0.22,       # Q3 2026 was +24.7%
+    'q4_2026_nondep_cost_growth_yoy': 0.20,   # Q3 2026 was +20.0%
+    'revenue_growth_2027_cases': [0.15, 0.19, 0.23],
+    'useful_life_risk_years': 5,              # servers/network from 6 to 5 years, Jan 2027
+}
+OTHER_SHARE, LAND_SHARE, OTHER_LIFE_Q = 0.04, 0.05, 28   # corporate/other assets ~7 years; land never depreciates
+
+GRID = dict(e0=[0.40, 0.50], e1=[0.45, 0.55], e2=[0.50, 0.55, 0.60], e3=[0.50, 0.55, 0.60, 0.65],
+            pE=[0.15, 0.20, 0.25, 0.30, 0.35, 0.40], pB=[0.05, 0.065, 0.08, 0.10, 0.13], LB=[10, 12, 15, 20, 25])
+# 2026+ servers/network share of additions. Three quarters of 2026 data barely pin it down (fit loss is flat
+# from 0.60 to 0.75), so it is anchored to the CFO's Q3 2026 disclosure: about 65% of spend to servers + network.
+E4_DISCLOSED = 0.65
+W_ANNUAL_ONLY, W_CIP = 4.0, 0.25          # an annual target counts like four quarters
+
+
+# ------------------------------------------------------------------ inputs
+def _f(x):
+    return float(x) if x not in ('', None) else None
+
+
+def load_inputs():
+    annual = {int(r['fiscal_year']): {k: _f(v) for k, v in r.items()} for r in csv.DictReader(open(PROC / 'model_inputs_annual.csv'))}
+    quarterly = {(int(r['fiscal_year']), int(r['fiscal_quarter'])): {k: _f(v) if k not in ('quarter_label', 'flags') else v
+                                                                      for k, v in r.items()}
+                 for r in csv.DictReader(open(PROC / 'model_inputs_quarterly.csv'))}
+    manual = {(r['item'], r['period_or_date']): float(r['value_musd']) for r in csv.DictReader(open(RAW / 'manual_filing_inputs.csv'))}
+    return annual, quarterly, manual
+
+
+def build_additions(inp, capex_2027=None, capex_q4_2026=None, capex_2028=None, zero_after_cut=False):
+    """Quarterly asset additions, accrual basis. Forecast quarters are cash CapEx assumptions."""
+    annual, quarterly, manual = inp
+    add = np.zeros(T)
+    for (y, q), i in IDX.items():
+        if y < 2015:
+            add[i] = annual[y]['capex_musd'] / 4
+        elif (y, q) <= LAST_ACTUAL:
+            add[i] = quarterly[(y, q)]['capex_musd']
+    ub = lambda d: manual[('unpaid_capex_balance', d)]
+    spread = {   # extra additions spread pro rata to cash CapEx within each period's reported quarters
+        2024: ub('2024-12-31') - ub('2023-12-31'),
+        2025: ub('2025-12-31') - ub('2024-12-31') + manual[('finance_lease_rou_additions', 'FY2025')],
+        2026: ub('2026-09-30') - ub('2025-12-31') + manual[('finance_lease_rou_additions', '9M2026')],
+    }
+    for y, extra in spread.items():
+        idx = [IDX[(y, q)] for q in (1, 2, 3, 4) if (y, q) <= LAST_ACTUAL]
+        cash = add[idx].sum()
+        add[idx] += extra * add[idx] / cash
+    add[IDX[(2026, 1)]] += manual[('acquired_ppe_intersect', '2026Q1')]
+    if zero_after_cut:
+        add[CUT + 1:] = 0.0
+        return add
+    c26 = ASSUME['capex_fy2026_guidance_mid'] - sum(quarterly[(2026, q)]['capex_musd'] for q in (1, 2, 3))
+    add[IDX[(2026, 4)]] = c26 if capex_q4_2026 is None else capex_q4_2026
+    c27 = ASSUME['capex_2027']['base'] if capex_2027 is None else capex_2027
+    for q, w in zip((1, 2, 3, 4), ASSUME['capex_2027_quarter_weights']):
+        add[IDX[(2027, q)]] = c27 * w
+    c28 = c27 * (1 + ASSUME['capex_2028_growth']) if capex_2028 is None else capex_2028
+    for q in (1, 2, 3, 4):
+        add[IDX[(2028, q)]] = c28 / 4
+    return add
+
+
+# ------------------------------------------------------------------ engine
+def equip_share(y, p):
+    if y < 2018: return p['e0']
+    if y < 2021: return p['e1']
+    if y < 2024: return p['e2']
+    if y < 2026: return p['e3']
+    return p['e4']
+
+
+def equip_life_q(y, life_2027_q=None):
+    """Servers + network, in quarters: 3y before 2021; ~4.25y blend 2021-22 (servers 4y, network 5y); 6y from 2023."""
+    if y < 2021: return 12
+    if y < 2023: return 17
+    if life_2027_q and y >= 2027: return life_2027_q
+    return 24
+
+
+def straight_line(placed, life_q):
+    """Depreciation of assets placed each quarter, starting the next quarter, over life_q quarters."""
+    out = np.zeros(T)
+    for k in range(1, min(life_q, T - 1) + 1):
+        out[k:] += placed[:-k] / life_q
+    return out
+
+
+def run(p, add, life_2027_years=None, split_at=None):
+    """Returns dict of quarterly arrays. split_at = quarter index: also returns depreciation from assets
+    placed in service at or before it (the in-service run-off)."""
+    e = np.array([equip_share(y, p) for y, _ in QUARTERS])
+    aE, aO, aL = add * e, add * OTHER_SHARE, add * LAND_SHARE
+    aB = add - aE - aO - aL
+    placedE, placedB, cipE, cipB = (np.zeros(T) for _ in range(4))
+    cE = cB = 0.0
+    for t in range(T):
+        cE += aE[t]; placedE[t] = p['pE'] * cE; cE -= placedE[t]; cipE[t] = cE
+        cB += aB[t]; placedB[t] = p['pB'] * cB; cB -= placedB[t]; cipB[t] = cB
+
+    life_2027_q = int(round(life_2027_years * 4)) if life_2027_years else None
+    changes = {IDX[(2021, 1)]: 17, IDX[(2023, 1)]: 24}
+    if life_2027_q:
+        changes[IDX[(2027, 1)]] = life_2027_q
+    life = np.array([equip_life_q(y, life_2027_q) for y, _ in QUARTERS], dtype=float)
+    nbv, rem = np.zeros(T), np.zeros(T)
+    depE, depE_in = np.zeros(T), np.zeros(T)
+    ages_all = np.arange(T)
+    for t in range(T):
+        if t in changes:
+            rem[:t] = np.maximum(changes[t] - (t - ages_all[:t]), 1)
+        act = (nbv[:t] > 1e-9) & (rem[:t] > 0)
+        x = np.where(act, nbv[:t] / np.where(rem[:t] > 0, rem[:t], 1), 0.0)
+        nbv[:t] -= x
+        rem[:t] -= act
+        depE[t] = x.sum()
+        if split_at is not None:
+            depE_in[t] = x[:split_at + 1].sum()
+        nbv[t], rem[t] = placedE[t], life[t]
+
+    LBq = int(p['LB'] * 4)
+    depB, depO = straight_line(placedB, LBq), straight_line(aO, OTHER_LIFE_Q)
+    res = dict(dep=depE + depB + depO, depE=depE, depB=depB, depO=depO, cip=cipE + cipB, cipE=cipE, cipB=cipB,
+               placedE=placedE, placedB=placedB, aE=aE, aB=aB, aO=aO, add=add)
+    if split_at is not None:
+        mask = np.arange(T) <= split_at
+        res['dep_inservice'] = depE_in + straight_line(placedB * mask, LBq) + straight_line(aO * mask, OTHER_LIFE_Q)
+    return res
+
+
+def ysum(arr, y, quarters=(1, 2, 3, 4)):
+    return float(sum(arr[IDX[(y, q)]] for q in quarters))
+
+
+# ------------------------------------------------------------------ calibration
+def targets(inp):
+    annual, quarterly, manual = inp
+    dep_q = {k: v['depreciation_musd'] for k, v in quarterly.items() if v['depreciation_musd'] is not None}
+    dep_annual_only = {y: annual[y]['depreciation_musd'] for y in (2021, 2022)}
+    cip = {(2024, 4): manual[('construction_in_progress', '2024-12-31')],
+           (2025, 4): manual[('construction_in_progress', '2025-12-31')],
+           (2026, 3): manual[('construction_in_progress', '2026-09-30')]}
+    return dep_q, dep_annual_only, cip
+
+
+def loss(p, add, tg, upto):
+    dep_q, dep_a, cip = tg
+    r = run(p, add)
+    e2 = [(r['dep'][IDX[k]] / v - 1) ** 2 for k, v in dep_q.items() if k <= upto]
+    e2 += [W_ANNUAL_ONLY * (ysum(r['dep'], y) / v - 1) ** 2 for y, v in dep_a.items() if (y, 4) <= upto]
+    e2 += [W_CIP * (r['cip'][IDX[k]] / v - 1) ** 2 for k, v in cip.items() if k <= upto]
+    return float(sum(e2))
+
+
+def ranked_fits(add, tg, upto, e4=None):
+    """e4=None: carry the latest fitted mix (e3) forward, as an analyst would before any 2026 data."""
+    keys = list(GRID)
+    fits = []
+    for combo in itertools.product(*[GRID[k] for k in keys]):
+        p = dict(zip(keys, combo))
+        p['e4'] = p['e3'] if e4 is None else e4
+        fits.append((loss(p, add, tg, upto), p))
+    return sorted(fits, key=lambda f: f[0])
+
+
+# ------------------------------------------------------------------ main
+def main():
+    OUT.mkdir(parents=True, exist_ok=True)
+    inp = load_inputs()
+    annual, quarterly, manual = inp
+    tg = targets(inp)
+    dep_q = tg[0]
+    add_base = build_additions(inp)
+
+    # a. out-of-sample backtest
+    oos = ranked_fits(add_base, tg, upto=(2024, 4))
+    p_oos = oos[0][1]
+    r = run(p_oos, add_base)
+    test_q = [k for k in sorted(dep_q) if (2025, 1) <= k <= LAST_ACTUAL]
+    backtest = [dict(quarter=f'{y}Q{q}', model=round(float(r['dep'][IDX[(y, q)]]), 1), actual=dep_q[(y, q)],
+                     error=float(r['dep'][IDX[(y, q)]] / dep_q[(y, q)] - 1)) for y, q in test_q]
+    mape = float(np.mean([abs(b['error']) for b in backtest]))
+    fy25_m, fy25_a = ysum(r['dep'], 2025), annual[2025]['depreciation_musd']
+    m9_m, m9_a = ysum(r['dep'], 2026, (1, 2, 3)), sum(dep_q[(2026, q)] for q in (1, 2, 3))
+    cip_bt = {k: dict(model=float(r['cip'][IDX[k]]), actual=v, error=float(r['cip'][IDX[k]] / v - 1))
+              for k, v in tg[2].items() if k > (2024, 4)}
+    fits_in_oos = [dict(quarter=f'{y}Q{q}', model=round(float(r['dep'][IDX[(y, q)]]), 1), actual=dep_q[(y, q)])
+                   for y, q in sorted(dep_q) if (y, q) <= (2024, 4)]
+
+    # b. full fit for the forecast
+    full = ranked_fits(add_base, tg, upto=LAST_ACTUAL, e4=E4_DISCLOSED)
+    P = full[0][1]
+    base = run(P, add_base, split_at=CUT)
+    locked = run(P, build_additions(inp, zero_after_cut=True))
+    life = run(P, add_base, life_2027_years=ASSUME['useful_life_risk_years'])
+    dep26 = m9_a + float(base['dep'][IDX[(2026, 4)]])
+    dep27, dep28 = ysum(base['dep'], 2027), ysum(base['dep'], 2028)
+    lock27, lock28 = ysum(locked['dep'], 2027), ysum(locked['dep'], 2028)
+    inserv27 = ysum(base['dep_inservice'], 2027)
+
+    scen = {}
+    for name, c27 in ASSUME['capex_2027'].items():
+        rs = run(P, build_additions(inp, capex_2027=c27))
+        scen[name] = dict(capex_2027=c27, dep_2027=ysum(rs['dep'], 2027), dep_2028=ysum(rs['dep'], 2028))
+
+    top = []
+    for _, p in full[:15]:
+        a, lk, lf = run(p, add_base), run(p, build_additions(inp, zero_after_cut=True)), run(p, add_base, life_2027_years=ASSUME['useful_life_risk_years'])
+        d = ysum(a['dep'], 2027)
+        top.append(dict(dep_2027=d, locked_share=ysum(lk['dep'], 2027) / d, life_effect=ysum(lf['dep'], 2027) - d))
+
+    e4_sens = {f'{e:.2f}': ysum(run(dict(P, e4=e), add_base)['dep'], 2027) for e in (0.60, 0.65, 0.70)}
+
+    # in-sample fit of the full model
+    fit_full = [dict(quarter=f'{y}Q{q}', model=round(float(base['dep'][IDX[(y, q)]]), 1), actual=dep_q[(y, q)],
+                     error=float(base['dep'][IDX[(y, q)]] / dep_q[(y, q)] - 1)) for y, q in sorted(dep_q)]
+
+    # c. 2026E and 2027 margin math (actuals from the pipeline; Q4 2026 assumptions labelled above)
+    rev = lambda y, q: quarterly[(y, q)]['revenue_musd']
+    oi = lambda y, q: quarterly[(y, q)]['operating_income_musd']
+    dq = lambda y, q: quarterly[(y, q)]['depreciation_musd']
+    cost = lambda y, q: rev(y, q) - oi(y, q) - dq(y, q)       # costs other than depreciation
+    rev25, oi25, d25 = annual[2025]['revenue_musd'], annual[2025]['operating_income_musd'], annual[2025]['depreciation_musd']
+    cost25 = rev25 - oi25 - d25
+    rev26_q4 = rev(2025, 4) * (1 + ASSUME['q4_2026_revenue_growth_yoy'])
+    cost26_q4 = cost(2025, 4) * (1 + ASSUME['q4_2026_nondep_cost_growth_yoy'])
+    rev26 = sum(rev(2026, q) for q in (1, 2, 3)) + rev26_q4
+    cost26 = sum(cost(2026, q) for q in (1, 2, 3)) + cost26_q4
+    oi26 = rev26 - cost26 - dep26
+    m26, g_cost26 = oi26 / rev26, cost26 / cost25 - 1
+    margin_cases = []
+    for g in ASSUME['revenue_growth_2027_cases']:
+        rev27 = rev26 * (1 + g)
+        neutral = (rev27 * (1 - m26) - dep27) / cost26 - 1
+        same_pace = (rev27 - cost26 * (1 + g_cost26) - dep27) / rev27
+        margin_cases.append(dict(revenue_growth=g, revenue_2027=rev27, dep_pct_revenue=dep27 / rev27,
+                                 margin_neutral_cost_growth=neutral, margin_at_2026_cost_pace=same_pace))
+
+    out = dict(
+        params_out_of_sample=p_oos, params_full=P,
+        backtest=dict(quarters=backtest, mape=mape, fy2025=dict(model=fy25_m, actual=fy25_a, error=fy25_m / fy25_a - 1),
+                      nine_months_2026=dict(model=m9_m, actual=m9_a, error=m9_m / m9_a - 1),
+                      cip={f'{y}Q{q}': v for (y, q), v in cip_bt.items()}, in_sample=fits_in_oos),
+        fit_full=fit_full,
+        forecast=dict(dep_2026E=dep26, dep_q4_2026E=float(base['dep'][IDX[(2026, 4)]]), dep_2027E=dep27, dep_2028E=dep28,
+                      growth_2027=dep27 / dep26 - 1, locked_2027=lock27, locked_share_2027=lock27 / dep27,
+                      inservice_runoff_2027=inserv27, cip_drain_2027=lock27 - inserv27, new_capex_2027=dep27 - lock27,
+                      locked_2028=lock28, locked_share_2028=lock28 / dep28,
+                      life_risk_2027=ysum(life['dep'], 2027) - dep27, life_risk_2028=ysum(life['dep'], 2028) - dep28,
+                      capex_q4_2026E=float(add_base[IDX[(2026, 4)]]),
+                      cip_model_2026Q3=float(base['cip'][CUT]), cipE_2026Q3=float(base['cipE'][CUT]), cipB_2026Q3=float(base['cipB'][CUT])),
+        scenarios=scen,
+        e4_sensitivity_dep_2027=e4_sens,
+        range_2027_from_backtest_errors=[dep27 * (1 + min(b['error'] for b in backtest)),
+                                         dep27 * (1 + max(b['error'] for b in backtest))],
+        robustness_top15=dict(dep_2027=[min(t['dep_2027'] for t in top), max(t['dep_2027'] for t in top)],
+                              locked_share=[min(t['locked_share'] for t in top), max(t['locked_share'] for t in top)],
+                              life_effect=[min(t['life_effect'] for t in top), max(t['life_effect'] for t in top)]),
+        margin=dict(rev_2025=rev25, oi_2025=oi25, cost_2025=cost25, margin_2025=oi25 / rev25,
+                    rev_q4_2026E=rev26_q4, cost_q4_2026E=cost26_q4, rev_2026E=rev26, cost_2026E=cost26, oi_2026E=oi26,
+                    margin_2026E=m26, cost_growth_2026E=g_cost26, dep_pct_rev_2025=d25 / rev25, dep_pct_rev_2026E=dep26 / rev26,
+                    cases_2027=margin_cases),
+        capex_to_dep={str(y): annual[y]['capex_musd'] / annual[y]['depreciation_musd'] for y in range(2021, 2026)} | {
+            '2026E': ASSUME['capex_fy2026_guidance_mid'] / dep26},
+        assumptions=ASSUME,
+    )
+    (OUT / 'results.json').write_text(json.dumps(out, indent=1))
+
+    # quarterly forecast table for the deck and the Excel file
+    with open(OUT / 'forecast_quarterly.csv', 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['quarter', 'additions_musd', 'dep_total_musd', 'dep_locked_in_musd', 'dep_inservice_runoff_musd',
+                    'dep_new_capex_musd', 'cip_model_musd', 'dep_actual_musd'])
+        for (y, q), i in IDX.items():
+            if y >= 2021:
+                act = quarterly.get((y, q), {}).get('depreciation_musd')
+                w.writerow([f'{y}Q{q}', round(float(base['add'][i]), 1), round(float(base['dep'][i]), 1),
+                            round(float(locked['dep'][i]), 1), round(float(base['dep_inservice'][i]), 1),
+                            round(float(base['dep'][i] - locked['dep'][i]), 1), round(float(base['cip'][i]), 1),
+                            '' if act is None else act])
+    # Excel feed: opening state at Sep 30, 2026 (exact, not rounded) so the workbook can rebuild the forecast
+    feed = dict(params=P, other_share=OTHER_SHARE, land_share=LAND_SHARE, life_equip_q=24, life_build_q=int(P['LB'] * 4),
+                life_other_q=OTHER_LIFE_Q, cipE_open=float(base['cipE'][CUT]), cipB_open=float(base['cipB'][CUT]),
+                runoff={f'{y}Q{q}': float(base['dep_inservice'][IDX[(y, q)]]) for (y, q) in QUARTERS if (y, q) > LAST_ACTUAL},
+                forecast_capex={f'{y}Q{q}': float(add_base[IDX[(y, q)]]) for (y, q) in QUARTERS if (y, q) > LAST_ACTUAL},
+                dep_total={f'{y}Q{q}': float(base['dep'][IDX[(y, q)]]) for (y, q) in QUARTERS if (y, q) > LAST_ACTUAL})
+    (OUT / 'excel_feed.json').write_text(json.dumps(feed, indent=1))
+    return out
+
+
+def report(o):
+    pct = lambda x: f'{x:+.1%}'
+    print('params, fit through Dec 2024 only:', o['params_out_of_sample'])
+    print('params, fit through Sep 2026     :', o['params_full'])
+    b = o['backtest']
+    print('\nOUT-OF-SAMPLE BACKTEST (depreciation, $M)')
+    for r in b['quarters']:
+        print(f"  {r['quarter']}  model {r['model']:8,.0f}  actual {r['actual']:8,.0f}  error {pct(r['error'])}")
+    print(f"  mean absolute error, 7 quarters: {b['mape']:.1%}")
+    print(f"  FY2025  model {b['fy2025']['model']:,.0f} actual {b['fy2025']['actual']:,.0f} error {pct(b['fy2025']['error'])}")
+    print(f"  9M 2026 model {b['nine_months_2026']['model']:,.0f} actual {b['nine_months_2026']['actual']:,.0f} error {pct(b['nine_months_2026']['error'])}")
+    for k, v in b['cip'].items():
+        print(f"  CIP {k}: model {v['model']:,.0f} actual {v['actual']:,.0f} error {pct(v['error'])}")
+    f = o['forecast']
+    print('\nFORECAST (full fit)')
+    print(f"  2026E {f['dep_2026E']:,.0f} (9M actual + Q4E {f['dep_q4_2026E']:,.0f});  2027E {f['dep_2027E']:,.0f} ({pct(f['growth_2027'])});  2028E {f['dep_2028E']:,.0f}")
+    print(f"  locked-in 2027: {f['locked_2027']:,.0f} = {f['locked_share_2027']:.1%} (in-service run-off {f['inservice_runoff_2027']:,.0f} + CIP going live {f['cip_drain_2027']:,.0f}); new CapEx {f['new_capex_2027']:,.0f}")
+    print(f"  locked-in 2028: {f['locked_2028']:,.0f} = {f['locked_share_2028']:.1%}")
+    print(f"  useful life 6y -> 5y from Jan 2027: 2027 +{f['life_risk_2027']:,.0f}, 2028 +{f['life_risk_2028']:,.0f}")
+    print(f"  model CIP Sep 2026 {f['cip_model_2026Q3']:,.0f} (actual 145,270)")
+    for k, s in o['scenarios'].items():
+        print(f"  CapEx 2027 {s['capex_2027'] / 1000:.0f}B ({k}): 2027E {s['dep_2027']:,.0f}  2028E {s['dep_2028']:,.0f}")
+    print('  2026+ server share sensitivity (2027E):', {k: round(v) for k, v in o['e4_sensitivity_dep_2027'].items()})
+    rb = o['robustness_top15']
+    print(f"  top-15 fits: 2027E {rb['dep_2027'][0]:,.0f}-{rb['dep_2027'][1]:,.0f}; locked {rb['locked_share'][0]:.0%}-{rb['locked_share'][1]:.0%}; 5y life +{rb['life_effect'][0]:,.0f} to +{rb['life_effect'][1]:,.0f}")
+    m = o['margin']
+    print('\nMARGIN')
+    print(f"  2025 margin {m['margin_2025']:.1%}; 2026E revenue {m['rev_2026E']:,.0f}, OI {m['oi_2026E']:,.0f}, margin {m['margin_2026E']:.1%}, non-dep cost growth {pct(m['cost_growth_2026E'])}")
+    print(f"  dep/revenue 2025 {m['dep_pct_rev_2025']:.1%}, 2026E {m['dep_pct_rev_2026E']:.1%}")
+    for c in m['cases_2027']:
+        print(f"  2027 revenue {pct(c['revenue_growth'])}: dep/rev {c['dep_pct_revenue']:.1%}; margin-neutral cost growth {pct(c['margin_neutral_cost_growth'])}; margin at 2026 cost pace {c['margin_at_2026_cost_pace']:.1%}")
+    print('  CapEx/depreciation:', {k: round(v, 1) for k, v in o['capex_to_dep'].items()})
+
+
+if __name__ == '__main__':
+    report(main())
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>
 (function () {
@@ -2612,7 +3303,10 @@ var LEGENDS = {
   "tsla-mult": [["l1", "ATR take-profit and stop-loss"], ["l2", "Trailing stop"]],
   "citi-wf": [["l1", "Total or subtotal"], ["l2", "Deduction"]],
   "tesla-margin": [["l2 ln", "Reported"], ["l1 ln", "Excluding one-time items"]],
-  "tesla-bridge": [["l1", "Gross profit"], ["l3", "Increase"], ["l2", "Decrease"], ["l4", "One-time item"]]
+  "tesla-bridge": [["l1", "Gross profit"], ["l3", "Increase"], ["l2", "Decrease"], ["l4", "One-time item"]],
+  "alphabet-dep": [["lr", "Reported"], ["lp", "2026E projected"], ["l1", "2027E locked in"], ["lnew", "2027E new spend"]],
+  "alphabet-backtest": [["l1 ln", "Reported"], ["l3 ln", "Model, fit on data through 2024"]],
+  "alphabet-scen": [["l1", "2027E depreciation"], ["l3", "2028E depreciation"]]
 };
 
 /* ---------- svg helpers ---------- */
@@ -2687,7 +3381,7 @@ function grouped(el, s, W, first) {
   var iw = W - m.l - m.r, ih = H - m.t - m.b, n = s.categories.length, k = s.series.length;
   var y = function (v) { return m.t + ih - (v - s.yMin) / (s.yMax - s.yMin) * ih; };
   var band = iw / n, gap = s.gap || 2;
-  var bw = Math.max(6, Math.min(mini ? 18 : 24, (band * 0.7 - (k - 1) * gap) / k));
+  var bw = Math.max(6, Math.min(s.barMax || (mini ? 18 : 24), (band * 0.7 - (k - 1) * gap) / k));
   var gw = k * bw + (k - 1) * gap;
   var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
   if (mini) svg.setAttribute("aria-hidden", "true");
@@ -2933,7 +3627,7 @@ if (document.fonts && document.fonts.ready) {
 $$("[data-legend]").forEach(function (box) {
   (LEGENDS[box.getAttribute("data-legend")] || []).forEach(function (it) {
     var sp = document.createElement("span"); var i = document.createElement("i"); i.className = it[0];
-    if (it[0].indexOf("ln") > -1) i.style.background = it[0].indexOf("l1") > -1 ? "var(--s1)" : "var(--s2)";
+    var cl = it[0].split(" "); if (cl.indexOf("ln") > -1) i.style.background = cl.indexOf("l1") > -1 ? "var(--s1)" : cl.indexOf("l3") > -1 ? "var(--teal)" : "var(--s2)";
     sp.appendChild(i); sp.appendChild(document.createTextNode(it[1])); box.appendChild(sp);
   });
 });
@@ -3009,10 +3703,11 @@ RENDER.lines = function (el, s, W, first) {
   var n = s.labels.length, iw = W - m.l - m.r, ih = H - m.t - m.b;
   var x = function (i) { return m.l + i * iw / (n - 1); };
   var y = function (v) { return m.t + (s.domain[1] - v) / (s.domain[1] - s.domain[0]) * ih; };
+  var tf = s.tickFmt || function (t) { return t + "%"; }, vf = s.fmt || function (v) { return v.toFixed(1) + "%"; };
   var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
   if (mini) svg.setAttribute("aria-hidden", "true");
   if (!mini) {
-    s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": "grid" }, svg); T(svg, m.l - 8, yy + 4, t + "%", "tick", "end"); });
+    s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": "grid" }, svg); T(svg, m.l - 8, yy + 4, tf(t), "tick", "end"); });
     s.labels.forEach(function (lb, i) { if (W >= 560 || i % 2 === 0) TL(svg, x(i), H - 22, lb, "xlabel", "middle", 13); });
   }
   var lines = [], dots = s.labels.map(function () { return []; });
@@ -3021,18 +3716,69 @@ RENDER.lines = function (el, s, W, first) {
     lines.push(S("path", { d: pts.map(function (p, j) { return (j ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(""), "class": "line " + sr.line }, svg));
     pts.forEach(function (p) { dots[p[2]].push(S("circle", { cx: p[0], cy: p[1], r: mini ? 3 : 4.5, "class": "dot " + sr.cls }, svg)); });
     var last = pts[pts.length - 1];
-    T(svg, last[0] + (mini ? 7 : 10), last[1] + 4, last[3].toFixed(1) + "%" + (mini || W < 560 ? "" : " " + sr.short), mini ? "vlabel vlabel-sm" : "vlabel", "start");
+    T(svg, last[0] + (mini ? 7 : 10), last[1] + 4, vf(last[3]) + (mini || W < 560 ? "" : " " + sr.short), mini ? "vlabel vlabel-sm" : "vlabel", "start");
   });
   if (mini) return;
   var bw = iw / (n - 1);
   s.labels.forEach(function (lb, i) {
-    var parts = s.series.map(function (sr) { var v = sr.values[i]; return v == null ? null : v.toFixed(1) + "% " + sr.short; }).filter(Boolean);
-    hit(svg, x(i) - bw / 2, m.t, bw, ih, parts.join(" · "), lb.replace("|", " "), lines.concat(dots[i]));
+    var parts = s.series.map(function (sr) { var v = sr.values[i]; return v == null ? null : vf(v) + " " + sr.short; }).filter(Boolean);
+    hit(svg, x(i) - bw / 2, m.t, bw, ih, parts.join(" · "), lb.replace("|", " ") + (s.notes ? " · " + s.notes[i] : ""), lines.concat(dots[i]));
+  });
+};
+
+/* ---------- Alphabet: depreciation columns, backtest, scenarios ---------- */
+var BFMT = function (v) { return "$" + v.toFixed(1) + "B"; };
+var BTICK = function (v) { return v === 0 ? "$0" : "$" + v + "B"; };
+var ADEP = [[{ v: 13.475, cls: "sr", name: "Reported" }], [{ v: 11.946, cls: "sr", name: "Reported" }], [{ v: 15.311, cls: "sr", name: "Reported" }], [{ v: 21.136, cls: "sr", name: "Reported" }],
+  [{ v: 31.391, cls: "sp", name: "9M reported + model Q4" }], [{ v: 43.871, cls: "s1", name: "Locked in" }, { v: 9.264, cls: "sn", name: "New spend" }]];
+CH["alphabet-dep"] = { type: "cols", yMax: 60, ticks: [0, 20, 40, 60], tickFmt: BTICK, fmt: BFMT, fmtShort: function (v) { return v.toFixed(1); },
+  categories: ["2022", "2023", "2024", "2025", "2026E", "2027E"], values: ADEP,
+  table: { head: ["Year", "Depreciation ($B)", "Basis"],
+    rows: [["2022", "13.5", "Reported"], ["2023", "11.9", "Reported"], ["2024", "15.3", "Reported"], ["2025", "21.1", "Reported"], ["2026E", "31.4", "9M reported + model Q4"],
+      ["2027E", "53.1", "Locked in 43.9 (36.6 run-off of assets in service + 7.3 construction going live) + 9.3 from spend from Q4 2026 on"]] } };
+CH["alphabet-mini"] = { type: "cols", mini: true, yMax: 60, fmt: BFMT, fmtShort: function (v) { return "$" + v.toFixed(1) + "B"; }, categories: ["2022", "2023", "2024", "2025", "2026E", "2027E"], values: ADEP };
+var ABQ = ["Q1|2025", "Q2|2025", "Q3|2025", "Q4|2025", "Q1|2026", "Q2|2026", "Q3|2026"];
+var AMISS = [3.5, -0.2, -4.0, -3.3, -2.0, -0.9, -5.8];
+CH["alphabet-backtest"] = { type: "lines", domain: [4, 9], ticks: [4, 5, 6, 7, 8, 9], labels: ABQ,
+  tickFmt: function (v) { return "$" + v + "B"; }, fmt: function (v) { return "$" + v.toFixed(2) + "B"; },
+  notes: AMISS.map(function (e) { return "model vs. reported " + sgn(e, 1) + "%"; }),
+  series: [{ name: "Reported", short: "reported", cls: "s1", line: "ln1", values: [4.487, 4.998, 5.611, 6.040, 6.482, 7.104, 8.369] },
+    { name: "Model", short: "model", cls: "s3", line: "ln3", values: [4.6423, 4.9856, 5.3878, 5.8384, 6.3509, 7.0406, 7.8844] }],
+  table: { head: ["Quarter", "Model ($M)", "Reported ($M)", "Model vs. reported"],
+    rows: [["Q1 2025", "4,642", "4,487", "+3.5%"], ["Q2 2025", "4,986", "4,998", MINUS + "0.2%"], ["Q3 2025", "5,388", "5,611", MINUS + "4.0%"], ["Q4 2025", "5,838", "6,040", MINUS + "3.3%"],
+      ["Q1 2026", "6,351", "6,482", MINUS + "2.0%"], ["Q2 2026", "7,041", "7,104", MINUS + "0.9%"], ["Q3 2026", "7,884", "8,369", MINUS + "5.8%"], ["Average miss", "", "", "2.8%"]] } };
+CH["alphabet-scen"] = { type: "grouped", yMin: 0, yMax: 100, barMax: 56, gap: 6, ticks: [0, 25, 50, 75, 100], tickFmt: BTICK, fmt: BFMT, fmtShort: function (v) { return v.toFixed(1); },
+  categories: ["$250B CapEx", "$300B base", "$350B CapEx"],
+  series: [{ name: "2027E", cls: "s1", values: [52.299, 53.135, 53.971] }, { name: "2028E", cls: "s3", values: [79.552, 84.582, 89.612] }],
+  table: { head: ["2027 CapEx case", "2027E depreciation ($B)", "2028E depreciation ($B)"],
+    rows: [["$250B (+25%)", "52.3", "79.6"], ["$300B base (+50%)", "53.1", "84.6"], ["$350B (+75%)", "54.0", "89.6"], ["Server and network life 6 to 5 years, Jan. 2027", "+13.7", "+14.6"]] } };
+RENDER.cols = function (el, s, W, first) {
+  var mini = !!s.mini, H = mini ? (s.height || 96) : (s.height || 270);
+  var m = mini ? { t: 18, r: 4, b: 2, l: 4 } : { t: 26, r: 6, b: 30, l: 46 };
+  var n = s.categories.length, iw = W - m.l - m.r, ih = H - m.t - m.b, band = iw / n;
+  var bw = Math.max(12, Math.min(mini ? 30 : 46, band * 0.58));
+  var y = function (v) { return m.t + ih - v / s.yMax * ih; };
+  var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
+  if (mini) { svg.setAttribute("aria-hidden", "true"); var ya = Math.round(y(0)) + 0.5; S("line", { x1: 0, x2: W, y1: ya, y2: ya, "class": "axis" }, svg); }
+  else s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, m.l - 8, yy + 4, s.tickFmt(t), "tick", "end"); });
+  s.categories.forEach(function (c, i) {
+    var segs = s.values[i], x = m.l + band * i + (band - bw) / 2, base = 0, marks = [];
+    segs.forEach(function (sg, j) {
+      var y0 = y(base), y1 = y(base + sg.v), top = j === segs.length - 1;
+      var d = top ? vbar(x, bw, y0, y1) : "M" + x.toFixed(1) + " " + y1.toFixed(1) + "H" + (x + bw).toFixed(1) + "V" + y0.toFixed(1) + "H" + x.toFixed(1) + "Z";
+      var p = S("path", { d: d, "class": "bar grow " + sg.cls }, svg);
+      p.style.animationDelay = (i * 80) + "ms"; marks.push(p); base += sg.v;
+    });
+    if (mini) { if (i === n - 1) T(svg, x + bw / 2, y(base) - 6, s.fmtShort(base), "vlabel vlabel-sm", "middle"); return; }
+    T(svg, x + bw / 2, y(base) - 7, (W < 480 && s.fmtShort) ? s.fmtShort(base) : s.fmt(base), "vlabel", "middle");
+    T(svg, m.l + band * i + band / 2, H - 9, c, "xlabel", "middle");
+    var lbl = c + " · " + segs.map(function (sg) { return sg.name + (segs.length > 1 ? " " + s.fmt(sg.v) : ""); }).join(", ");
+    hit(svg, m.l + band * i, m.t, band, ih, s.fmt(base), lbl, marks);
   });
 };
 
 /* ---------- router ---------- */
-var PROJECTS = ["microsoft", "tesla-energy", "indego", "cfa", "citi", "minwage", "factor", "fidelity", "tsla"];
+var PROJECTS = ["microsoft", "alphabet", "tesla-energy", "indego", "cfa", "citi", "minwage", "factor", "fidelity", "tsla"];
 var home = $("#view-home"), views = $$("article.view"), current = null;
 function instantScroll(fn) { var h = document.documentElement, b = h.style.scrollBehavior; h.style.scrollBehavior = "auto"; fn(); h.style.scrollBehavior = b; }
 function route() {
@@ -3136,6 +3882,8 @@ var DOCS = {
   indego: { title: "Indego growth brief", pages: 2, w: 1600, h: 900, pdf: "doc-indego-brief.pdf", file: "Aella_Nguyen_Indego_Growth_Brief.pdf" },
   cfa: { title: "Carpenter Technology equity research", pages: 38, w: 1400, h: 788, pdf: "doc-cfa-carpenter-technology.pdf", file: "Aella_Nguyen_CFA_Carpenter_Technology.pdf" },
   minwage: { title: "Minimum wage and teen employment, final paper", pages: 9, w: 1100, h: 1424, portrait: true, pdf: "doc-minimum-wage-paper.pdf", file: "Aella_Nguyen_Minimum_Wage_Teen_Employment.pdf" },
+  alphabet: { title: "Alphabet 2027 depreciation and margin plan", pages: 9, w: 1400, h: 788, pdf: "doc-alphabet-2027-depreciation.pdf", file: "Aella_Nguyen_Alphabet_2027_Depreciation_Deck.pdf" },
+  "alphabet-memo": { title: "CFO memo: Alphabet 2027 depreciation and margin plan", pages: 2, w: 1100, h: 1424, portrait: true, pdf: "doc-alphabet-cfo-memo.pdf", file: "Aella_Nguyen_Alphabet_CFO_Memo.pdf" },
   tesla: { title: "Tesla Energy: margin quality and the 2027 pricing decision", pages: 10, w: 1400, h: 788, pdf: "doc-tesla-energy-2027.pdf", file: "Aella_Nguyen_Tesla_Energy_2027.pdf" },
   rec: { title: "Recommendation letter, Microsoft", pages: 1, w: 1100, h: 1424, portrait: true, pdf: "doc-microsoft-recommendation-letter.pdf", file: "Aella_Nguyen_Microsoft_Recommendation_Letter.pdf" },
   cert: { title: "Excel for FP&A certificate, LinkedIn Learning", pages: 1, w: 1400, h: 1082, unit: "page", pdf: "doc-excel-fpa-certificate.pdf", file: "Aella_Nguyen_Excel_FPA_Certificate.pdf" }
