@@ -756,6 +756,36 @@ body::before{background:#002941}
 /* scroll reveal: only once JS opts in, so content never hides without it */
 .js-rv [data-rv]{opacity:0;transform:translateY(22px)}
 .js-rv [data-rv].in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+/* cards with media, tool tiles */
+.card.has-media{padding:0;overflow:hidden;gap:0}
+.c-media{position:relative;aspect-ratio:16/9;overflow:hidden}
+.c-media .c-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .c-bg{transform:scale(1.04)}
+.c-media .c-slide{position:absolute;right:5%;bottom:-9%;width:50%;height:auto;border-radius:8px;box-shadow:0 16px 40px rgba(0,20,33,.42);transform:rotate(-4deg);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.card:hover .c-slide{transform:rotate(-2deg) translateY(-8px)}
+.m-coral{background:#FD6E6E}
+.m-coral::before{background:#002941}
+.c-media.f-deck .s-back{width:58%;left:37%;top:9%}
+.c-media.f-deck .s-front{width:62%;left:6%;top:19%}
+.c-photo .f-note{background:#F4F9FB;color:#002941}
+.c-body{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0;padding:26px 26px 22px}
+.subhead span{font-family:var(--f-ui)}
+.toolgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tool{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;padding:20px 20px 16px;border:1px solid var(--line);border-radius:18px;background:var(--bg);color:var(--ink-2);text-decoration:none;transition:transform .18s,border-color .18s,background-color .18s}
+.tool:hover{transform:translateY(-3px);border-color:#B6DFED;background:#023A5B}
+.t-ico{width:46px;height:46px;padding:10px;margin-bottom:8px;border-radius:14px;background:#B6DFED;color:#002941;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tool.ana .t-ico{background:#6FB7D2}
+.tool.inv .t-ico{background:#FD6E6E}
+.tool.ai .t-ico{background:linear-gradient(135deg,#B6DFED,#FD6E6E)}
+.tool b{font-size:1.08rem;font-weight:700;line-height:1.25;color:var(--ink)}
+.tool>span{font-size:.86rem;line-height:1.45}
+.tool i{margin-top:auto;padding-top:10px;font-family:var(--f-mono);font-size:.66rem;font-style:normal;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--link)}
+.tool:hover i{color:#FD6E6E}
+@media (max-width:1000px){.toolgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.toolgrid{grid-template-columns:1fr}.tool{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 14px}.t-ico{margin:0}.tool b{flex:1}.tool>span,.tool i{flex-basis:100%}}
+.slides figure{margin:0;min-width:0;color:var(--muted)}
+.slides figure img{aspect-ratio:16/9;object-fit:cover}
+.slides figcaption{margin-top:9px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
 .hero-copy>*,.portrait{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 .hero-copy>:nth-child(2){animation-delay:.06s}.hero-copy>:nth-child(3){animation-delay:.14s}.hero-copy>:nth-child(4){animation-delay:.2s}.hero-copy>:nth-child(5){animation-delay:.26s}.hero-copy>:nth-child(6){animation-delay:.32s}.portrait{animation-delay:.12s}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}}
@@ -959,36 +989,50 @@ body::before{background:#002941}
       </a>
 
       <div class="grid-2">
-        <a class="card card-big" href="#indego" data-tags="fpa ana">
-          <span class="cat cat-ana">Independent analysis · Public data</span>
-          <h3>Indego Bike Share: where the growth comes from</h3>
-          <ul class="pts">
-            <li>Analyzed <b>2.26M trips</b> in Python. Ride-minutes grew <b>18.9%</b>.</li>
-            <li>Traced <b>59%</b> of the gain to new stations. E-bike trips rose <b>34.9%</b>.</li>
-            <li>Call: a small, reversible e-bike pilot before any big spend.</li>
-          </ul>
-          <div class="mini-cap" aria-hidden="true"><span><i class="l1"></i>Ride-minutes</span><span><i class="l2"></i>Trips</span><span>Growth by quarter</span></div>
-          <div class="chart mini" data-chart="indego-mini" aria-hidden="true"></div>
-          <ul class="tags"><li class="tag">Python</li><li class="tag">Growth analysis</li><li class="tag">Executive brief</li></ul>
-          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
+        <a class="card card-big has-media" href="#indego" data-tags="fpa ana" data-rv>
+          <div class="c-media c-photo">
+            <img class="c-bg" src="photo-indego-bikes.webp" width="780" height="439" alt="Indego bike share bikes docked at a station in Philadelphia" loading="lazy">
+            <img class="c-slide" src="slide-indego-1.webp" width="1000" height="563" alt="Slide from my Indego brief: demand grew 18.9%, newer stations drove most of it" loading="lazy">
+            <span class="f-note">Indego · Philadelphia</span>
+          </div>
+          <div class="c-body">
+            <span class="f-idx"><b>04</b>Independent analysis · Public data</span>
+            <h3>Indego Bike Share: where the growth comes from</h3>
+            <ul class="pts">
+              <li>Analyzed <b>2.26M trips</b> in Python. Ride-minutes grew <b>18.9%</b>.</li>
+              <li>Traced <b>59%</b> of the gain to new stations. E-bike trips rose <b>34.9%</b>.</li>
+              <li>Call: a small, reversible e-bike pilot before any big spend.</li>
+            </ul>
+            <div class="card-metrics">
+              <div class="metric"><b>2.26M</b><span>trips analyzed</span></div>
+              <div class="metric"><b>+18.9%</b><span>ride-minutes</span></div>
+              <div class="metric"><b>59%</b><span>of the gain from new stations</span></div>
+            </div>
+            <div class="card-foot"><span class="role">Solo project · Python, executive brief</span><span class="cta">Read <span class="arr">→</span></span></div>
+          </div>
         </a>
-        <a class="card card-big" href="#cfa" data-tags="inv fpa">
-          <span class="cat cat-inv">Equity research · CFA Institute Research Challenge</span>
-          <h3>Carpenter Technology (NYSE: CRS)</h3>
-          <ul class="pts">
-            <li>Led a <b>5-person team</b> valuing a $19B aerospace alloys maker.</li>
-            <li>Great business, full price: <b>HOLD</b>, with ~1% downside.</li>
-          </ul>
-          <dl class="rating">
-            <div><dt>Rating</dt><dd><span class="hold">HOLD</span></dd></div>
-            <div><dt>Target</dt><dd>$363.69</dd></div>
-            <div><dt>Price</dt><dd>$367.98</dd></div>
-            <div><dt>Downside</dt><dd>1.2%</dd></div>
-          </dl>
-          <div class="mini-cap" aria-hidden="true"><span><i class="l1"></i>Value range, $ per share</span><span><i class="mk-t"></i>Target</span><span><i class="mk-p"></i>Price</span></div>
-          <div class="chart" data-chart="cfa-mini" aria-hidden="true"></div>
-          <ul class="tags"><li class="tag">DCF</li><li class="tag">Comps</li><li class="tag">Monte Carlo</li><li class="tag">FactSet</li></ul>
-          <div class="card-foot"><span class="role">Team lead, 5 people</span><span class="cta">Read <span class="arr">→</span></span></div>
+        <a class="card card-big has-media" href="#cfa" data-tags="inv fpa" data-rv>
+          <div class="c-media f-deck m-coral">
+            <img class="s-back" src="slide-cfa-2.webp" width="1000" height="563" alt="" loading="lazy">
+            <img class="s-front" src="slide-cfa-1.webp" width="1000" height="563" alt="Cover slide of our Carpenter Technology equity research deck, Team Bullets" loading="lazy">
+            <span class="f-note">From our 38-slide deck</span>
+          </div>
+          <div class="c-body">
+            <span class="f-idx"><b>05</b>Equity research · CFA Institute Research Challenge</span>
+            <h3>Carpenter Technology (NYSE: CRS)</h3>
+            <ul class="pts">
+              <li>Led a <b>5-person team</b> valuing a $19B aerospace alloys maker.</li>
+              <li>Great business, full price: <b>HOLD</b>, with ~1% downside.</li>
+            </ul>
+            <dl class="rating">
+              <div><dt>Rating</dt><dd><span class="hold">HOLD</span></dd></div>
+              <div><dt>Target</dt><dd>$363.69</dd></div>
+              <div><dt>Price</dt><dd>$367.98</dd></div>
+              <div><dt>Downside</dt><dd>1.2%</dd></div>
+            </dl>
+            <ul class="tags"><li class="tag">DCF</li><li class="tag">Comps</li><li class="tag">Monte Carlo</li><li class="tag">FactSet</li></ul>
+            <div class="card-foot"><span class="role">Team lead, 5 people</span><span class="cta">Read <span class="arr">→</span></span></div>
+          </div>
         </a>
       </div>
 
@@ -1095,21 +1139,18 @@ body::before{background:#002941}
           </ul>
         </div>
       </div>
-      <h3 class="subhead">Toolkit</h3>
-      <div class="tools">
-        <div class="tool-group">
-          <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"/></svg>Finance &amp; BI</h4>
-          <ul class="tags"><li class="tag">Excel (advanced)</li><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">FactSet</li><li class="tag">Bloomberg Terminal</li><li class="tag">Salesforce</li><li class="tag">Microsoft 365</li></ul>
-        </div>
-        <div class="tool-group ana">
-          <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>Data &amp; code</h4>
-          <ul class="tags"><li class="tag">Python</li><li class="tag">SQL</li><li class="tag">Stata</li><li class="tag">R</li><li class="tag">Anaconda</li><li class="tag">GitHub</li></ul>
-        </div>
-        <div class="tool-group ai">
-          <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3.5l1.8 4.9 4.9 1.8-4.9 1.8L11 16.9l-1.8-4.9-4.9-1.8 4.9-1.8z"/><path d="M18.5 14.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9z"/></svg>AI tools</h4>
-          <ul class="tags"><li class="tag">Claude</li><li class="tag">ChatGPT</li><li class="tag">GitHub Copilot</li><li class="tag">Microsoft Copilot</li><li class="tag">AI agents</li></ul>
-        </div>
+      <h3 class="subhead">Toolkit <span>the tools I use most, and where I used them</span></h3>
+      <div class="toolgrid">
+        <a class="tool " href="#microsoft"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"/></svg><b>Power BI and DAX</b><span>40+ DAX measures validated for the company-wide ARR report</span><i>Microsoft <span aria-hidden="true">→</span></i></a>
+        <a class="tool " href="#alphabet"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 10h16M4 15h16M10 5v14"/></svg><b>Advanced Excel</b><span>A 9-tab plan with 1,045 live formulas and 15 checks</span><i>Alphabet <span aria-hidden="true">→</span></i></a>
+        <a class="tool ana" href="#alphabet"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6c0-1.7 3.1-3 7-3s7 1.3 7 3-3.1 3-7 3-7-1.3-7-3zM5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg><b>SQL</b><span>A pipeline from 269 SEC facts to model inputs, with five tie-out checks</span><i>Alphabet <span aria-hidden="true">→</span></i></a>
+        <a class="tool ana" href="#indego"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><b>Python</b><span>2.26M trip records cleaned and analyzed for a growth call</span><i>Indego <span aria-hidden="true">→</span></i></a>
+        <a class="tool ana" href="#minwage"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16M7 16l11-9"/><circle cx="9" cy="11" r="1"/><circle cx="13" cy="14" r="1"/><circle cx="16" cy="6" r="1"/></svg><b>Stata</b><span>Stacked DiD and an event study across 33 state increases</span><i>Min wage <span aria-hidden="true">→</span></i></a>
+        <a class="tool inv" href="#cfa"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4M8.5 13v-2M11 13V9M13.5 13v-3"/></svg><b>FactSet</b><span>Market data behind the Carpenter Technology valuation</span><i>CFA <span aria-hidden="true">→</span></i></a>
+        <a class="tool inv" href="#leadership"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v12H3zM8 21h8M12 17v4M7 9l3 2-3 2M12.5 13H16"/></svg><b>Bloomberg Terminal</b><span>Taught workshops as Finance &amp; Investment Club vice president</span><i>Club <span aria-hidden="true">→</span></i></a>
+        <a class="tool ai" href="#microsoft"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3.5l1.8 4.9 4.9 1.8-4.9 1.8L11 16.9l-1.8-4.9-4.9-1.8 4.9-1.8z"/><path d="M18.5 14.5l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9z"/></svg><b>AI agents and GitHub Copilot</b><span>An onboarding agent that saves 3 hours a week</span><i>Microsoft <span aria-hidden="true">→</span></i></a>
       </div>
+      <div class="toolkit"><span class="label">Also in the kit</span><ul class="tags"><li class="tag">R</li><li class="tag">Anaconda</li><li class="tag">GitHub</li><li class="tag">Salesforce</li><li class="tag">Microsoft 365</li><li class="tag">Claude</li><li class="tag">ChatGPT</li><li class="tag">Microsoft Copilot</li></ul></div>
     </div>
   </section>
 
@@ -1699,6 +1740,11 @@ body::before{background:#002941}
       <div class="stat"><b>59%</b><span>Of the gain</span><small>From stations opened in 2025-26</small></div>
       <div class="stat"><b>+34.9%</b><span>E-bike trips</span><small>Standard-bike trips fell 9.1%</small></div>
     </div>
+    <div class="slides" aria-label="Slides from the deck">
+      <a href="doc-indego-brief.pdf" target="_blank" rel="noopener" data-view="indego"><img src="slide-indego-1.webp" width="1000" height="563" alt="Brief page 1: demand grew 18.9%, newer stations drove most incremental ride-minutes" loading="lazy"><span>Slide 1 · Growth diagnosis</span></a>
+      <a href="doc-indego-brief.pdf" target="_blank" rel="noopener" data-view="indego"><img src="slide-indego-2.webp" width="1000" height="563" alt="Brief page 2: pilot e-bike capacity at proven-demand stations before a broad rollout" loading="lazy"><span>Slide 2 · Recommendation</span></a>
+      <figure><img src="photo-indego-bikes.webp" width="780" height="439" alt="Indego bikes docked at a station in Philadelphia" loading="lazy"><figcaption>Indego docks, Philadelphia</figcaption></figure>
+    </div>
     <section class="p-sec">
       <h2>The ask</h2>
       <div class="p-body"><p class="ask">If Philadelphia's bike share were a for-profit business, how fast is it really growing, and what should leaders do next?</p></div>
@@ -1812,6 +1858,11 @@ body::before{background:#002941}
       <div class="stat"><b>$390.02</b><span>Comps value</span><small>20% of the target</small></div>
       <div class="stat"><b>9.45%</b><span>WACC</span><small>CAPM, re-levered peer beta</small></div>
       <div class="stat"><b>10,000</b><span>Monte Carlo runs</span><small>Mean $360.68, median $328.83</small></div>
+    </div>
+    <div class="slides" aria-label="Slides from the deck">
+      <a href="doc-cfa-carpenter-technology.pdf" target="_blank" rel="noopener" data-view="cfa"><img src="slide-cfa-2.webp" width="1000" height="563" alt="Investment summary slide: strong tailwinds, already priced into the multiple" loading="lazy"><span>Slide 2 · Investment summary</span></a>
+      <a href="doc-cfa-carpenter-technology.pdf" target="_blank" rel="noopener" data-view="cfa"><img src="slide-cfa-8.webp" width="1000" height="563" alt="Valuation slide: blended target of $363.69 implies about 1% downside" loading="lazy"><span>Slide 8 · Valuation</span></a>
+      <a href="doc-cfa-carpenter-technology.pdf" target="_blank" rel="noopener" data-view="cfa"><img src="slide-cfa-12.webp" width="1000" height="563" alt="Recommendation slide: HOLD, a quality franchise at a full price" loading="lazy"><span>Slide 12 · Recommendation</span></a>
     </div>
     <section class="p-sec">
       <h2>The ask</h2>
