@@ -20,28 +20,29 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23002941'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='28' fill='%23F4F9FB'%3EAN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&display=swap">
 <style>
-/* Layout: a calm research desk. Sky-white page, trust-navy ink, one navy band for people; projects open as one-page research notes with a key-data rail, sourced exhibits and original files. Palette: midnight navy #002941, soft blue #B6DFED, coral #FD6E6E as the smallest accent. Category colors: navy = FP&A and corporate finance, sea blue = data and analytics, coral = investments and risk. */
+/* Layout: an editorial annual report. Warm paper, midnight-navy and coral color blocks, one display serif; projects open as one-page research notes with a key-data rail, sourced exhibits and original files. Palette: midnight navy #002941, soft blue #B6DFED, coral #FD6E6E as the smallest accent. Category colors: navy = FP&A and corporate finance, sea blue = data and analytics, coral = investments and risk. */
 :root{
-  --bg:#F4F9FB; --surface:#FCFEFF; --panel:#EAF4F8; --paper:#FFFFFF;
-  --ink:#002941; --ink-2:#29445A; --muted:#546E80;
-  --line:#D3E6EF; --line-strong:#B9D3E0;
-  --primary:#002941; --btn-fg:#F4F9FB; --link:#1F6E8C;
-  --sky:#1F6E8C; --sky-wash:#E4F2F8; --grid-line:rgba(0,41,65,.06);
-  --warm:#FD6E6E; --warm-wash:#FFECEC; --warm-ink:#B4383C;
-  --teal:#3B91B0; --teal-wash:#E1F0F6; --teal-ink:#1F6E8C;
-  --gold:#FD6E6E; --gold-wash:#FFECEC; --gold-ink:#B4383C;
+  --bg:#FBF8F3; --surface:#FFFFFF; --panel:#F3EEE5; --paper:#FFFFFF;
+  --ink:#002941; --ink-2:#2B4458; --muted:#5A6C7A;
+  --line:#E8E0D3; --line-strong:#CFC6B6;
+  --primary:#002941; --btn-fg:#FBF8F3; --link:#16607D;
+  --sky:#1F6E8C; --sky-wash:#DCEFF6; --grid-line:rgba(0,41,65,.06);
+  --warm:#FD6E6E; --warm-wash:#FFE7E4; --warm-ink:#B4383C;
+  --teal:#3B91B0; --teal-wash:#DCEFF6; --teal-ink:#1F6E8C;
+  --gold:#FD6E6E; --gold-wash:#FFE7E4; --gold-ink:#B4383C;
   --pos:#1F6E8C; --neg:#B4383C;
   --s1:#002941; --s2:#FD6E6E; --s4:#B6DFED; --on-s1:#F4F9FB; --on-s2:#002941;
   --bar-muted:#B6DFED; --bar-light:#E4F2F8;
-  --grid:#E2EEF3; --axis:#AFC9D6; --code-bg:#EEF6F9;
-  --nav-bg:rgba(244,249,251,.88); --hero-top:#DDEFF6;
+  --grid:#EDE6DB; --axis:#C9BFAF; --code-bg:#F6F2EB;
+  --nav-bg:rgba(0,41,65,.94); --hero-top:#DDEFF6;
   --band:#002941; --band-ink:#F2F8FB; --band-muted:#A7C3D2; --band-line:rgba(255,255,255,.12);
   --overlay:rgba(0,20,33,.97); --overlay-ink:#B6CFDB;
   --shadow:0 1px 2px rgba(0,41,65,.05),0 6px 20px rgba(0,41,65,.06);
-  --shadow-hover:0 2px 6px rgba(0,41,65,.08),0 18px 40px rgba(0,41,65,.11);
-  --f-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --shadow-hover:0 2px 6px rgba(0,41,65,.08),0 18px 40px rgba(0,41,65,.13);
+  --f-display:"Instrument Serif","Newsreader","Iowan Old Style",Georgia,serif;
+  --f-serif:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
   --f-ui:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
   --maxw:1160px;
@@ -117,7 +118,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--nav-bg);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;gap:14px;min-height:62px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;letter-spacing:-.01em;white-space:nowrap}
-.monogram{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);font-family:var(--f-display);font-size:16px;font-weight:600;letter-spacing:.02em}
+.monogram{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);font-family:var(--f-serif);font-size:16px;font-weight:600;letter-spacing:.02em}
 .nav-links{display:flex;gap:2px;margin-left:auto}
 .nav-links a{color:var(--ink-2);text-decoration:none;font-size:.9rem;font-weight:500;padding:8px 10px;border-radius:8px}
 .nav-links a:hover{background:var(--panel);color:var(--ink)}
@@ -137,40 +138,11 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font-size:.75rem;font-weight:500;line-height:1.2;padding:5px 10px;border-radius:999px;background:var(--panel);color:var(--ink-2)}
 
-/* hero */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--hero-top),var(--bg) 92%)}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 60% 80% at 20% 30%,#000 10%,transparent 72%);mask-image:radial-gradient(ellipse 60% 80% at 20% 30%,#000 10%,transparent 72%)}
-.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:56px;align-items:center;padding-block:64px 60px}
-.display{font-family:var(--f-display);font-weight:500;font-size:clamp(3rem,7vw,5.1rem);line-height:.98;letter-spacing:-.025em;margin-top:14px;font-variation-settings:"opsz" 72}
-.slogan{font-family:var(--f-display);font-style:italic;font-size:clamp(1.55rem,3.2vw,2.3rem);line-height:1.15;margin-top:14px;color:var(--ink);font-variation-settings:"opsz" 48}
-.slogan em{font-style:italic;color:var(--ink);text-decoration:underline;text-decoration-color:var(--warm);text-decoration-thickness:3px;text-underline-offset:7px;text-decoration-skip-ink:none}
-.hero-list{margin-top:22px;display:grid;gap:10px;max-width:58ch}
-.hero-list li{position:relative;padding-left:22px;color:var(--ink-2);font-size:1.02rem;line-height:1.5}
-.hero-list li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:3px;background:var(--primary)}
-.hero-list li:nth-child(2)::before{background:var(--gold)}
-.hero-list li:nth-child(3)::before{background:var(--teal)}
-.hero-list b{color:var(--ink);font-weight:700}
-.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.portrait{position:relative;margin:0;justify-self:end;width:min(100%,400px)}
-.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;box-shadow:var(--shadow-hover)}
-.portrait figcaption{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(0,41,65,.82);color:#F4F9FB;font-size:.78rem;font-weight:600;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.portrait figcaption i{width:8px;height:8px;border-radius:50%;background:#FD6E6E}
-@media (max-width:920px){.hero-grid{grid-template-columns:1fr;gap:34px;padding-block:44px 40px}.portrait{justify-self:start;width:min(100%,360px)}}
-
-/* proof strip */
-.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:-34px;position:relative;z-index:2}
-.proof a{display:flex;flex-direction:column;gap:6px;padding:18px 18px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s}
-.proof a:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
-.proof b{font-size:clamp(1.5rem,2.6vw,1.95rem);font-weight:800;letter-spacing:-.025em;line-height:1.05;color:var(--ink)}
-.proof span{font-size:.88rem;line-height:1.35;color:var(--ink-2)}
-.proof .cat{margin-top:auto;padding-top:8px;font-size:.66rem}
-@media (max-width:900px){.proof{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:24px}}
-
 /* sections */
 .section{padding-block:72px}
 .section-alt{background:var(--surface);border-block:1px solid var(--line)}
 .section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;margin-bottom:26px}
-.h2{font-family:var(--f-display);font-weight:500;font-size:clamp(2.1rem,4.2vw,3rem);line-height:1.04;letter-spacing:-.015em;margin-top:6px;font-variation-settings:"opsz" 60}
+.h2{font-family:var(--f-serif);font-weight:500;font-size:clamp(2.1rem,4.2vw,3rem);line-height:1.04;letter-spacing:-.015em;margin-top:6px;font-variation-settings:"opsz" 60}
 .section-sub{margin-top:8px;color:var(--ink-2);max-width:60ch}
 .subhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:36px 0 14px;font-size:1.02rem;font-weight:700}
 .subhead span{font-weight:400;font-size:.88rem;color:var(--muted)}
@@ -292,7 +264,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .crumb-pos{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
 .p-head{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:44px;align-items:start;padding-bottom:30px}
 @media (max-width:920px){.p-head{grid-template-columns:1fr;gap:26px}}
-.p-title{font-family:var(--f-display);font-weight:500;font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.05;letter-spacing:-.02em;margin-top:12px;font-variation-settings:"opsz" 72}
+.p-title{font-family:var(--f-serif);font-weight:500;font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.05;letter-spacing:-.02em;margin-top:12px;font-variation-settings:"opsz" 72}
 .p-title:focus{outline:none}
 .p-dek{margin-top:16px;max-width:60ch;font-size:1.14rem;line-height:1.55;color:var(--ink-2)}
 .status{display:inline-flex;align-items:center;margin-left:8px;padding:3px 10px;border-radius:999px;background:var(--warm-wash);color:var(--warm-ink);font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase}
@@ -311,7 +283,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .stat span{display:block;margin-top:5px;font-size:.86rem;font-weight:600;color:var(--ink);line-height:1.3}
 .stat small{display:block;margin-top:2px;font-size:.78rem;color:var(--muted);line-height:1.35}
 .p-sec{display:grid;grid-template-columns:190px minmax(0,1fr);gap:36px;padding-block:30px;border-top:1px solid var(--line)}
-.p-sec>h2{font-family:var(--f-display);font-weight:500;font-size:1.55rem;line-height:1.15;font-variation-settings:"opsz" 36}
+.p-sec>h2{font-family:var(--f-serif);font-weight:500;font-size:1.55rem;line-height:1.15;font-variation-settings:"opsz" 36}
 @media (max-width:920px){.p-sec{grid-template-columns:1fr;gap:14px}}
 .p-body{min-width:0;max-width:780px}
 .p-body>p{color:var(--ink-2)}
@@ -368,7 +340,7 @@ section[id],.panel[id],.codebox{scroll-margin-top:84px}
 .legend i.lr,.mini-cap i.lr{background:var(--bar-muted)}.legend i.lp{background:var(--bar-light);outline:1px dashed var(--muted);outline-offset:-1px}.legend i.lnew{background:var(--warm)}
 .mbridge{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:2px;padding:0;list-style:none}
 .mbridge>div{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
-.mbridge b{display:block;font-family:var(--f-display);font-size:1.55rem;font-weight:600;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mbridge b{display:block;font-family:var(--f-serif);font-size:1.55rem;font-weight:600;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 .mbridge span{display:block;margin-top:5px;font-size:.8rem;line-height:1.4;color:var(--muted)}
 .mbridge .dn b{color:var(--neg)}.mbridge .end{background:var(--warm-wash);border-color:transparent}.mbridge .end b{color:var(--warm-ink)}
 @media (max-width:640px){.mbridge{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -399,7 +371,7 @@ table.data td.val{text-align:right}
 .callout p b{color:var(--ink)}
 .sens td.base{outline:2px solid var(--primary);outline-offset:-2px;border-radius:4px;font-weight:700;background:var(--sky-wash)}
 .sens th.row{color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:.85rem}
-.eq{margin:14px 0 4px;padding:16px 18px;border-radius:12px;background:var(--panel);font-family:var(--f-display);font-size:1.18rem;color:var(--ink);overflow-x:auto;white-space:nowrap}
+.eq{margin:14px 0 4px;padding:16px 18px;border-radius:12px;background:var(--panel);font-family:var(--f-serif);font-size:1.18rem;color:var(--ink);overflow-x:auto;white-space:nowrap}
 .eq sub{font-size:.68em}
 
 /* svg charts */
@@ -489,7 +461,7 @@ table.data td.val{text-align:right}
 .cat-ai::before{background:linear-gradient(135deg,var(--primary),var(--teal))}
 .rec-chip{display:inline-flex;align-items:center;gap:10px;max-width:100%;margin-top:18px;padding:7px 14px 7px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2);font-size:.88rem;line-height:1.35;text-decoration:none;box-shadow:var(--shadow);transition:border-color .15s,transform .15s}
 .rec-chip:hover{border-color:var(--primary);transform:translateY(-1px)}
-.rec-chip .q{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sky-wash);color:var(--link);font-family:var(--f-display);font-size:1.5rem;line-height:1;padding-top:9px}
+.rec-chip .q{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sky-wash);color:var(--link);font-family:var(--f-serif);font-size:1.5rem;line-height:1;padding-top:9px}
 .rec-chip b{color:var(--ink)}
 .rec-chip .arr{flex:none;color:var(--link);font-weight:600}
 
@@ -497,7 +469,7 @@ table.data td.val{text-align:right}
 .names{margin-top:34px;text-align:center}
 .names-label{display:block;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .names ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 44px;margin-top:10px}
-.names li{font-family:var(--f-display);font-size:clamp(1.1rem,2vw,1.42rem);font-weight:500;color:var(--ink-2);white-space:nowrap;font-variation-settings:"opsz" 36}
+.names li{font-family:var(--f-serif);font-size:clamp(1.1rem,2vw,1.42rem);font-weight:500;color:var(--ink-2);white-space:nowrap;font-variation-settings:"opsz" 36}
 @media (max-width:640px){.names ul{gap:2px 22px}}
 
 /* skills: AI column and toolkit groups */
@@ -514,7 +486,7 @@ table.data td.val{text-align:right}
 /* experience: initials marks */
 .xp-body{display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:16px;align-items:start}
 .xp-body>*{grid-column:2}
-.xp-body>.xp-mark{grid-column:1;grid-row:1 / span 2;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--sky-wash);color:var(--link);font-family:var(--f-display);font-size:1.05rem;font-weight:600;letter-spacing:.02em}
+.xp-body>.xp-mark{grid-column:1;grid-row:1 / span 2;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--sky-wash);color:var(--link);font-family:var(--f-serif);font-size:1.05rem;font-weight:600;letter-spacing:.02em}
 .xp-mark.inv{background:var(--gold-wash);color:var(--gold-ink)}
 .xp-mark.ana{background:var(--teal-wash);color:var(--teal-ink)}
 
@@ -522,15 +494,15 @@ table.data td.val{text-align:right}
 .rec-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:24px;align-items:start}
 @media (max-width:900px){.rec-grid{grid-template-columns:1fr}}
 .rec{position:relative;overflow:hidden;margin:0;padding:30px 32px 28px;border:1px solid var(--line);border-radius:18px;background:var(--bg)}
-.rec::before{content:"\201C";position:absolute;right:26px;top:10px;font-family:var(--f-display);font-size:7.5rem;line-height:1;color:var(--sky-wash);pointer-events:none}
+.rec::before{content:"\201C";position:absolute;right:26px;top:10px;font-family:var(--f-serif);font-size:7.5rem;line-height:1;color:var(--sky-wash);pointer-events:none}
 .rec blockquote{position:relative;margin:12px 0 0}
-.rec blockquote p{font-family:var(--f-display);font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.28;letter-spacing:-.005em;color:var(--ink);font-variation-settings:"opsz" 48}
+.rec blockquote p{font-family:var(--f-serif);font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.28;letter-spacing:-.005em;color:var(--ink);font-variation-settings:"opsz" 48}
 .rec figcaption{position:relative;display:flex;align-items:center;gap:12px;margin-top:20px}
 .rec-mark{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:.85rem;font-weight:700;letter-spacing:.04em}
 .rec figcaption>span:last-child{font-size:.9rem;line-height:1.35;color:var(--ink-2)}
 .rec figcaption b{display:block;font-size:1.02rem;color:var(--ink)}
 .rec-more{position:relative;display:grid;gap:8px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
-.rec-more li{font-family:var(--f-display);font-style:italic;font-size:1.08rem;line-height:1.4;color:var(--ink-2)}
+.rec-more li{font-family:var(--f-serif);font-style:italic;font-size:1.08rem;line-height:1.4;color:var(--ink-2)}
 .rec .file-actions{position:relative;margin-top:20px}
 .rec-inline{padding:24px 26px 22px;background:var(--sky-wash);border-color:transparent}
 .rec-inline::before{color:var(--surface);opacity:.7}
@@ -558,6 +530,236 @@ table.data td.val{text-align:right}
 .cred-group.ana h3 i{background:linear-gradient(135deg,var(--primary),var(--teal))}
 .cred-group.inv h3 i{background:var(--gold)}
 
+/* ================= v3: editorial layer =================
+   Bold color blocks (midnight navy, coral, soft blue) on warm paper, one high-contrast display serif,
+   numbered sections. Fixed-color blocks set their own local tokens so every child stays readable in both themes. */
+.on-navy{--bg:#01324E;--surface:#01324E;--panel:#0A4466;--ink:#F4F9FB;--ink-2:#C9DDE7;--muted:#9DBBCB;--line:rgba(255,255,255,.14);--line-strong:rgba(255,255,255,.3);--link:#B6DFED;--primary:#B6DFED;--btn-fg:#002941;--sky:#B6DFED;--sky-wash:rgba(182,223,237,.14);--teal:#6FB7D2;--teal-wash:rgba(182,223,237,.14);--teal-ink:#B6DFED;--warm-ink:#FF9E9E;--warm-wash:rgba(253,110,110,.16);background:#002941;color:#F4F9FB}
+.on-blue{--bg:#B6DFED;--surface:#FFFFFF;--ink:#002941;--ink-2:#143C54;--muted:#2A5169;--line:rgba(0,41,65,.2);--line-strong:rgba(0,41,65,.38);--link:#002941;--primary:#002941;--btn-fg:#F4F9FB;--sky-wash:rgba(255,255,255,.55);background:#B6DFED;color:#002941}
+.on-coral{--bg:#FD6E6E;--surface:#002941;--ink:#002941;--ink-2:#0C3048;--muted:#0C3048;--line:rgba(0,41,65,.28);--line-strong:rgba(0,41,65,.5);--link:#002941;--primary:#002941;--btn-fg:#FBF8F3;background:#FD6E6E;color:#002941}
+
+body::before{background:#002941}
+.display,.slogan,.h2,.p-title,.p-sec>h2,.names li,.rec blockquote p{font-family:var(--f-display);font-weight:400;font-variation-settings:normal}
+.eyebrow .idx{display:inline-block;margin-right:12px;padding:2px 8px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;letter-spacing:.06em}
+.h2{font-size:clamp(2.7rem,6.2vw,4.7rem);line-height:.98;letter-spacing:-.012em;margin-top:12px}
+.h2 em,.p-title em{font-style:italic;color:var(--warm-ink)}
+.section{padding-block:92px}
+.section-head{margin-bottom:34px}
+.section-sub{font-size:1.04rem}
+
+/* nav: always navy */
+.nav{background:rgba(0,41,65,.94);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav .brand{color:#F4F9FB}
+.nav .monogram{background:#FD6E6E;color:#002941;font-family:var(--f-serif);border-radius:50%}
+.nav-links a{color:#C9DDE7}
+.nav-links a:hover{background:rgba(255,255,255,.1);color:#FFFFFF}
+.nav :focus-visible{outline-color:#B6DFED}
+.btn-accent{background:#FD6E6E;color:#002941;border-color:transparent}
+.btn-accent:hover{background:#FF8585}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:#002941;color:#F4F9FB;--ink:#F4F9FB;--ink-2:#C9DDE7;--muted:#9DBBCB;--line:rgba(255,255,255,.16);--line-strong:rgba(255,255,255,.34);--link:#B6DFED;--primary:#B6DFED;--surface:rgba(255,255,255,.06);--sky:#B6DFED}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(182,223,237,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(182,223,237,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 90% at 25% 20%,#000 5%,transparent 75%);mask-image:radial-gradient(ellipse 70% 90% at 25% 20%,#000 5%,transparent 75%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:center;padding-block:72px 64px}
+.hero-eb{display:flex;align-items:center;gap:10px;color:#B6DFED}
+.hero-eb i{flex:none;width:9px;height:9px;border-radius:50%;background:#FD6E6E;box-shadow:0 0 0 0 rgba(253,110,110,.6);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{to{box-shadow:0 0 0 12px rgba(253,110,110,0)}}
+.display{font-size:clamp(4.6rem,12.4vw,11.2rem);line-height:.84;letter-spacing:-.022em;margin-top:22px;color:#F4F9FB}
+.display em{display:block;font-style:italic;color:#B6DFED;padding-left:.32em}
+.slogan{font-style:italic;font-size:clamp(1.7rem,3.3vw,2.6rem);line-height:1.1;margin-top:26px;color:#F4F9FB}
+.slogan em{font-style:italic;color:#FD6E6E;text-decoration:none}
+.hero-pitch{margin-top:16px;max-width:52ch;font-size:1.08rem;line-height:1.6;color:#C9DDE7}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero .btn-ghost{color:#F4F9FB;border-color:rgba(255,255,255,.34)}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#FFFFFF}
+.hero .rec-chip{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);color:#C9DDE7;box-shadow:none}
+.hero .rec-chip:hover{border-color:#B6DFED}
+.hero .rec-chip b{color:#FFFFFF}
+.hero .rec-chip .q{background:#FD6E6E;color:#002941}
+.hero .rec-chip .arr{color:#B6DFED}
+.portrait{position:relative;margin:0;justify-self:end;width:min(100%,410px);isolation:isolate}
+.portrait::before{content:"";position:absolute;z-index:-1;right:-11%;top:-5%;width:64%;aspect-ratio:1;border-radius:50%;background:#FD6E6E}
+.portrait::after{content:"";position:absolute;z-index:-1;left:-8%;bottom:-6%;width:60%;height:42%;border-radius:26px;background:#B6DFED}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 26px 26px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.portrait figcaption{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(0,41,65,.86);color:#F4F9FB;font-size:.78rem;font-weight:600;white-space:nowrap;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.portrait figcaption i{width:8px;height:8px;border-radius:50%;background:#FD6E6E}
+.badge{position:absolute;left:-58px;top:30%;width:128px;height:128px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.3))}
+.badge-disc{fill:#F4F9FB}
+.badge-text{font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;fill:#002941}
+.badge-spin{transform-origin:70px 70px;animation:spin 26s linear infinite}
+.badge-mark{fill:#FD6E6E}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-facts{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid rgba(255,255,255,.16)}
+.hero-facts li{padding:20px 24px 20px 0;font-size:.9rem;line-height:1.45;color:#9DBBCB}
+.hero-facts li+li{padding-left:24px;border-left:1px solid rgba(255,255,255,.16)}
+.hero-facts span{display:block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#FD6E6E}
+.hero-facts b{display:block;margin:5px 0 2px;font-size:1rem;font-weight:700;color:#F4F9FB}
+.proof{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;border-top:1px solid rgba(255,255,255,.16)}
+.proof a{display:flex;flex-direction:column;gap:8px;padding:30px 24px 34px 0;background:none;border:0;border-radius:0;box-shadow:none;text-decoration:none;color:inherit;transition:none}
+.proof a+a{padding-left:24px;border-left:1px solid rgba(255,255,255,.16)}
+.proof a:hover{transform:none;box-shadow:none}
+.proof b{font-family:var(--f-display);font-weight:400;font-size:clamp(2.5rem,4.6vw,3.9rem);letter-spacing:-.01em;line-height:1;color:#F4F9FB;white-space:nowrap;transition:color .15s}
+.proof a:hover b{color:#FD6E6E}
+.proof span{font-size:.92rem;line-height:1.4;color:#C9DDE7}
+.proof .cat{margin-top:auto;padding-top:6px;font-size:.66rem;color:#9DBBCB}
+.proof .cat::before{background:#B6DFED}
+.proof .cat-inv::before{background:#FD6E6E}
+.proof .cat-ana::before{background:#6FB7D2}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr;gap:44px;padding-block:44px 48px}.portrait{justify-self:center;width:min(78%,340px)}.badge{left:-44px;width:104px;height:104px}}
+@media (max-width:900px){.proof{grid-template-columns:repeat(2,minmax(0,1fr))}.proof a{padding:22px 16px 24px 0}.proof a+a{padding-left:16px}.proof a:nth-child(3){padding-left:0;border-left:0}.proof a:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+  .hero-facts{grid-template-columns:1fr}.hero-facts li{padding:14px 0}.hero-facts li+li{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.16)}}
+
+/* marquee */
+.marquee{overflow:hidden;background:#FD6E6E;color:#002941;border-block:1px solid #002941}
+.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track ul{display:flex;flex:none}
+.mq-track li{display:flex;align-items:center;white-space:nowrap;padding-block:15px;font-family:var(--f-display);font-style:italic;font-size:clamp(1.45rem,2.6vw,2rem);line-height:1}
+.mq-track li::after{content:"";flex:none;width:9px;height:9px;margin-inline:26px;background:#002941;transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* why hire me */
+.vlist{border-top:2px solid var(--ink)}
+.vrow{display:grid;grid-template-columns:84px minmax(0,1fr) 310px;gap:32px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line-strong)}
+.v-num{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:#FD6E6E;color:#002941;font-family:var(--f-display);font-style:italic;font-size:2rem;line-height:1}
+.vrow:nth-child(even) .v-num{background:#B6DFED}
+.v-main h3{font-family:var(--f-display);font-weight:400;font-size:clamp(1.75rem,3vw,2.4rem);line-height:1.05;letter-spacing:-.008em}
+.v-main p{margin-top:10px;max-width:62ch;color:var(--ink-2)}
+.v-proof{position:relative;display:block;padding:20px 54px 20px 22px;border-radius:18px;background:#002941;color:#C9DDE7;text-decoration:none;transition:transform .18s,background-color .18s}
+.v-proof:hover{transform:translateY(-3px);background:#013A5C}
+.v-proof b{display:block;font-family:var(--f-display);font-weight:400;font-size:2.7rem;line-height:1;color:#B6DFED;white-space:nowrap}
+.v-proof span{display:block;margin-top:8px;font-size:.88rem;line-height:1.35}
+.v-proof i{position:absolute;right:16px;top:16px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#FD6E6E;color:#002941;font-style:normal;font-weight:700;transition:transform .18s}
+.v-proof:hover i{transform:translateX(3px)}
+@media (max-width:900px){.vrow{grid-template-columns:60px minmax(0,1fr);gap:16px 18px;align-items:start;padding:24px 0}.v-num{width:54px;height:54px;font-size:1.5rem}.v-proof{grid-column:1/-1}}
+.names{margin-top:56px}
+.names li{font-size:clamp(1.3rem,2.3vw,1.75rem);color:var(--ink)}
+
+/* work */
+.chip{padding:10px 16px}
+.card{border-radius:18px}
+.card h3{font-family:var(--f-display);font-weight:400;font-size:1.72rem;letter-spacing:-.005em;line-height:1.08}
+.card-big h3{font-size:2rem}
+.card:hover{border-color:var(--ink)}
+.metric b{font-family:var(--f-display);font-weight:400;font-size:2.4rem;line-height:1;letter-spacing:-.005em;white-space:nowrap}
+.metric span{display:block;margin-top:4px;font-size:.8rem}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:0;padding:0;overflow:hidden;margin-top:22px;border-color:var(--line-strong)}
+.feature.rev .f-media{order:2}
+.f-media{position:relative;min-height:440px;overflow:hidden}
+.f-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.feature:hover .f-photo img{transform:scale(1.03)}
+.m-blue{background:#B6DFED}
+.m-navy{background:#002941}
+.f-deck::before{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px;border-radius:50%;background:#FD6E6E}
+.m-blue::before{background:#002941}
+.f-deck img{position:absolute;height:auto;border-radius:8px;box-shadow:0 18px 44px rgba(0,20,33,.34);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.f-deck .s-back{width:72%;left:22%;top:11%;transform:rotate(5deg)}
+.f-deck .s-front{width:80%;left:8%;top:37%;transform:rotate(-3.5deg)}
+.feature:hover .s-back{transform:rotate(8deg) translate(10px,-8px)}
+.feature:hover .s-front{transform:rotate(-2deg) translate(-4px,4px)}
+.f-note{position:absolute;left:18px;bottom:16px;padding:6px 12px;border-radius:999px;background:#002941;color:#F4F9FB;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+.m-navy .f-note{background:#F4F9FB;color:#002941}
+.f-body{display:flex;flex-direction:column;gap:16px;padding:36px 38px 28px;min-width:0}
+.f-idx{display:flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:.72rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.f-idx b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#FD6E6E;color:#002941;font-family:var(--f-display);font-style:italic;font-weight:400;font-size:1.15rem;letter-spacing:0}
+.feature h3{font-size:clamp(2rem,3.4vw,2.85rem);line-height:1.02}
+.feature .card-metrics{gap:14px 30px;padding-top:6px}
+@media (max-width:900px){.feature{grid-template-columns:1fr}.feature.rev .f-media{order:0}.f-media{min-height:0;aspect-ratio:16/11}.f-body{padding:26px 22px 22px}}
+.subhead{font-family:var(--f-display);font-weight:400;font-size:1.9rem;margin-top:48px}
+
+/* skills: navy block */
+.skills-grid{gap:22px}
+.skill-col{position:relative;padding:26px 26px 14px;border-radius:18px;overflow:hidden}
+.skill-col::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:#B6DFED}
+.skill-col.ana::before{background:#6FB7D2}
+.skill-col.ai::before{background:linear-gradient(90deg,#B6DFED,#FD6E6E)}
+.skill-col.lead::before{background:#FD6E6E}
+.skill-col h3{font-family:var(--f-display);font-weight:400;font-size:1.85rem;line-height:1.1;margin-bottom:10px}
+.skill-col h3::before{display:none}
+.skill-list li{padding:12px 0;font-size:.96rem}
+.ev a{padding:4px 9px;border-radius:999px}
+.ev a:hover{background:#FD6E6E;color:#002941}
+.tool-group{border-radius:18px}
+.tool-group .tag{font-size:.86rem;padding:7px 12px;background:transparent;border-color:var(--line-strong);color:var(--ink)}
+.on-navy .ico{background:rgba(182,223,237,.16);color:#B6DFED}
+.on-navy .tool-group.ai .ico{background:rgba(253,110,110,.2);color:#FF9E9E}
+
+/* experience */
+.xp{border-top:2px solid var(--ink)}
+.xp-row{grid-template-columns:200px minmax(0,1fr);padding:28px 0;border-bottom:1px solid var(--line-strong)}
+.xp-org{font-family:var(--f-display);font-weight:400;font-size:clamp(1.7rem,2.8vw,2.2rem);line-height:1.05;letter-spacing:-.005em}
+.xp-title{margin-top:4px}
+.xp-body{grid-template-columns:54px minmax(0,1fr);column-gap:18px}
+.xp-body>.xp-mark{width:54px;height:54px;border-radius:50%;background:#002941;color:#F4F9FB;font-family:var(--f-serif)}
+.xp-body>.xp-mark.inv{background:#FD6E6E;color:#002941}
+.xp-body>.xp-mark.ana{background:#B6DFED;color:#002941}
+.xp-link{justify-self:start;padding:8px 14px;border-radius:999px;background:var(--ink);color:var(--bg)}
+@media (max-width:700px){.xp-row{grid-template-columns:1fr;gap:8px;padding:22px 0}.xp-body{grid-template-columns:46px minmax(0,1fr);column-gap:14px}.xp-body>.xp-mark{width:46px;height:46px}}
+.xp-link:hover{background:#FD6E6E;color:#002941}
+
+/* recommendation: soft blue block */
+.rec{padding:44px 46px 40px;border:0;border-radius:26px}
+.rec::before{right:34px;top:4px;font-size:11rem;color:rgba(0,41,65,.14)}
+.rec blockquote p{font-size:clamp(1.9rem,3.7vw,3.05rem);line-height:1.12;letter-spacing:-.008em}
+.rec-more li{font-family:var(--f-display);font-size:1.3rem;line-height:1.3}
+.rec-mark{background:#002941;color:#F4F9FB}
+.rec-inline{padding:26px 28px 24px}
+.rec-inline blockquote p{font-size:clamp(1.4rem,2.4vw,1.85rem)}
+@media (max-width:640px){.rec{padding:30px 22px 26px}}
+.cred-group{border-radius:18px;background:var(--bg)}
+.cred-group h3{font-family:var(--f-display);font-weight:400;font-size:1.5rem}
+
+/* gallery, panels */
+.band{padding-block:92px}
+.gallery img{border-radius:16px}
+.panel{border-radius:18px;padding:28px}
+.panel>h3{font-family:var(--f-display);font-weight:400;font-size:1.9rem}
+
+/* contact: coral block */
+.contact{padding-block:104px 96px}
+.contact .eyebrow{color:#002941}
+.contact .h2{font-size:clamp(3.1rem,8.6vw,7rem);line-height:.92;color:#002941}
+.contact .h2 em{color:#002941}
+.contact .section-sub{margin-top:18px;font-size:1.1rem;color:#0C3048}
+.contact .email-text{background:#002941;border-color:#002941;color:#F4F9FB}
+.contact .btn-ghost{border-color:#002941;color:#002941}
+.contact .btn-ghost:hover{background:rgba(0,41,65,.1)}
+.foot{background:#002941;border-top:1px solid rgba(255,255,255,.12)}
+.foot-in{color:#9DBBCB}
+
+/* project pages */
+.p-title{font-size:clamp(2.7rem,5.8vw,4.6rem);line-height:.98;letter-spacing:-.015em}
+.p-sec>h2{font-size:1.95rem;line-height:1.05}
+.keydata{--surface:#002941;--ink:#F4F9FB;--muted:#9DBBCB;--line:rgba(255,255,255,.14);--link:#B6DFED;border:0;border-radius:18px;padding:22px 22px 12px;background:#002941}
+.keydata .kd-title{color:#FD6E6E}
+.stats{gap:14px}
+.stat{padding:20px 20px 18px;border-radius:16px;background:var(--surface);border:1px solid var(--line-strong)}
+.stat b{font-family:var(--f-display);font-weight:400;font-size:clamp(2.3rem,3.6vw,3.1rem);line-height:1;letter-spacing:-.005em}
+.stat span{margin-top:9px}
+.stat:first-child{background:#002941;border-color:#002941}
+.stat:first-child b{color:#B6DFED}
+.stat:first-child span{color:#F4F9FB}
+.stat:first-child small{color:#C9DDE7}
+.stat:nth-child(2){background:#B6DFED;border-color:#B6DFED}
+.stat:nth-child(2) b,.stat:nth-child(2) span{color:#002941}
+.stat:nth-child(2) small{color:#143C54}
+.ask{font-family:var(--f-display);font-size:clamp(1.5rem,2.6vw,1.95rem);line-height:1.2}
+.slides{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 38px}
+.slides a{display:block;min-width:0;text-decoration:none;color:var(--muted)}
+.slides img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line-strong);background:var(--paper);box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.slides a:hover img{transform:translateY(-4px) rotate(-.6deg);box-shadow:var(--shadow-hover)}
+.slides span{display:block;margin-top:9px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+.slides a:hover span{color:var(--link)}
+@media (max-width:700px){.slides{grid-template-columns:repeat(3,78%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;-webkit-overflow-scrolling:touch}.slides a{scroll-snap-align:start}}
+.p-next a{border-radius:16px}
+.p-next b{font-family:var(--f-display);font-weight:400;font-size:1.4rem;line-height:1.1}
+
+/* scroll reveal: only once JS opts in, so content never hides without it */
+.js-rv [data-rv]{opacity:0;transform:translateY(22px)}
+.js-rv [data-rv].in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.hero-copy>*,.portrait{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>:nth-child(2){animation-delay:.06s}.hero-copy>:nth-child(3){animation-delay:.14s}.hero-copy>:nth-child(4){animation-delay:.2s}.hero-copy>:nth-child(5){animation-delay:.26s}.hero-copy>:nth-child(6){animation-delay:.32s}.portrait{animation-delay:.12s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -566,12 +768,12 @@ table.data td.val{text-align:right}
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="Aella Nguyen, back to top"><span class="monogram" aria-hidden="true">AN</span><span class="brand-name">Aella Nguyen</span></a>
     <nav class="nav-links" aria-label="Sections">
+      <a class="opt" href="#value">Why me</a>
       <a href="#work">Projects</a>
       <a class="opt" href="#skills">Skills</a>
       <a class="opt" href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-small" href="https://www.linkedin.com/in/aella-nguyen" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn btn-small btn-accent" href="#contact">Get in touch</a>
   </div>
 </header>
 
@@ -579,17 +781,13 @@ table.data td.val{text-align:right}
 <div id="view-home" class="view">
   <section class="hero" id="top">
     <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">Corporate Finance · FP&amp;A · Data Analytics</p>
-        <h1 class="display">Aella Nguyen</h1>
+      <div class="hero-copy">
+        <p class="eyebrow hero-eb"><i aria-hidden="true"></i>Open to 2027 roles · FP&amp;A · Corporate finance · Data analytics</p>
+        <h1 class="display">Aella <em>Nguyen</em></h1>
         <p class="slogan">Find the driver. <em>Make the call.</em></p>
-        <ul class="hero-list">
-          <li><b>Microsoft Finance Analyst Intern, 2026.</b> Overhauled the company-wide ARR report behind monthly close. Built an AI agent for ARR onboarding.</li>
-          <li><b>CFA Research Challenge team lead.</b> Valued a $19B aerospace supplier and made a HOLD call.</li>
-          <li><b>Mathematical Economics '27, Gettysburg College.</b> 3.94 GPA. Minors in Business and Data Science.</li>
-        </ul>
+        <p class="hero-pitch">I turn messy financial data into forecasts, models and reporting that leaders act on. Most recently: the company-wide ARR report behind Microsoft's monthly close.</p>
         <div class="hero-cta">
-          <a class="btn" href="#work">See my work</a>
+          <a class="btn btn-accent" href="#work">See the proof <span aria-hidden="true">↓</span></a>
           <button class="btn btn-ghost" type="button" data-copy="yennhi12132005@gmail.com">Copy email</button>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/aella-nguyen" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
@@ -598,29 +796,90 @@ table.data td.val{text-align:right}
       <figure class="portrait">
         <img src="aella-hero.webp" width="900" height="1125" alt="Aella Nguyen at the Microsoft campus in Redmond">
         <figcaption><i aria-hidden="true"></i>Microsoft · Redmond · 2026</figcaption>
+        <svg class="badge" viewBox="0 0 140 140" aria-hidden="true" focusable="false">
+          <circle cx="70" cy="70" r="70" class="badge-disc"/>
+          <defs><path id="badge-arc" d="M70 70 m-52 0 a52 52 0 1 1 104 0 a52 52 0 1 1 -104 0"/></defs>
+          <g class="badge-spin"><text class="badge-text"><textPath href="#badge-arc" startOffset="0" textLength="322" lengthAdjust="spacing">MICROSOFT INTERN ✦ CFA CHALLENGE LEAD ✦ 3.94 GPA ✦ </textPath></text></g>
+          <path class="badge-mark" d="M70 50l5.4 14.6L90 70l-14.6 5.4L70 90l-5.4-14.6L50 70l14.6-5.4z"/>
+        </svg>
       </figure>
+    </div>
+    <div class="wrap">
+      <ul class="hero-facts" aria-label="Background">
+        <li><span>Now</span><b>Mathematical Economics '27, Gettysburg College</b>3.94 GPA · minors in Business and Data Science</li>
+        <li><span>Summer 2026</span><b>Finance Analyst Intern, Microsoft</b>Finance Rotation Program, Redmond</li>
+        <li><span>2025 - 2026</span><b>Team lead, CFA Institute Research Challenge</b>HOLD call on a $19B aerospace supplier</li>
+      </ul>
+      <div class="proof" aria-label="Highlights">
+        <a href="#microsoft"><b>~16 → 1</b><span>fragmented reports consolidated into one ARR scorecard</span><span class="cat">Microsoft</span></a>
+        <a href="#microsoft"><b>3 hrs/week</b><span>saved by the AI agent I built for ARR onboarding</span><span class="cat cat-ai">Microsoft · AI</span></a>
+        <a href="#indego"><b>2.26M</b><span>trip records analyzed in Python for a growth call</span><span class="cat cat-ana">Indego analysis</span></a>
+        <a href="#cfa"><b>$363.69</b><span>HOLD target from the 5-person team I led</span><span class="cat cat-inv">CFA Challenge</span></a>
+      </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <div class="proof" aria-label="Highlights">
-      <a href="#microsoft"><b>~16 → 1</b><span>fragmented reports consolidated into one ARR scorecard</span><span class="cat">Microsoft</span></a>
-      <a href="#microsoft"><b>3 hrs/week</b><span>saved by the AI agent I built for ARR onboarding</span><span class="cat cat-ai">Microsoft · AI</span></a>
-      <a href="#indego"><b>2.26M</b><span>trip records analyzed in Python for a growth call</span><span class="cat cat-ana">Indego analysis</span></a>
-      <a href="#cfa"><b>$363.69</b><span>HOLD target from the 5-person team I led</span><span class="cat cat-inv">CFA Challenge</span></a>
-    </div>
-    <div class="names" aria-label="Experience and programs">
-      <span class="names-label">Experience &amp; programs</span>
-      <ul><li>Microsoft</li><li>Glasswing Ventures</li><li>CFA Institute Research Challenge</li><li>McKinsey Forward Program</li></ul>
+  <div class="marquee" role="group" aria-label="Core skills">
+    <div class="mq-track">
+      <ul><li>FP&amp;A</li><li>Driver-based models</li><li>Monthly-close reporting</li><li>Power BI and DAX</li><li>SQL</li><li>Python</li><li>Advanced Excel</li><li>DCF and comps</li><li>Econometrics</li><li>AI agents</li></ul>
+      <ul aria-hidden="true"><li>FP&amp;A</li><li>Driver-based models</li><li>Monthly-close reporting</li><li>Power BI and DAX</li><li>SQL</li><li>Python</li><li>Advanced Excel</li><li>DCF and comps</li><li>Econometrics</li><li>AI agents</li></ul>
     </div>
   </div>
 
-  <section id="work" class="section">
+  <section id="value" class="section value">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head" data-rv><div>
+        <p class="eyebrow"><span class="idx">01</span>Why hire me</p>
+        <h2 class="h2">What your team <em>gets</em></h2>
+        <p class="section-sub">Four things I have already done, each with the work to prove it.</p>
+      </div></div>
+      <ol class="vlist">
+        <li class="vrow" data-rv>
+          <span class="v-num" aria-hidden="true">01</span>
+          <div class="v-main">
+            <h3>Reporting your leaders can trust at close</h3>
+            <p>At Microsoft I overhauled the company-wide ARR Power BI report behind monthly close, consolidated ~16 fragmented reports into one scorecard and validated 40+ DAX measures.</p>
+          </div>
+          <a class="v-proof" href="#microsoft"><b>~16 → 1</b><span>reports into one ARR scorecard</span><i aria-hidden="true">→</i></a>
+        </li>
+        <li class="vrow" data-rv>
+          <span class="v-num" aria-hidden="true">02</span>
+          <div class="v-main">
+            <h3>Forecasts built on drivers, and tested first</h3>
+            <p>I build a model from its drivers, then test it before anyone relies on it. My Alphabet model projects 2027 depreciation from SEC filings and was backtested on seven quarters it never saw.</p>
+          </div>
+          <a class="v-proof" href="#alphabet"><b>2.8%</b><span>average backtest miss, out of sample</span><i aria-hidden="true">→</i></a>
+        </li>
+        <li class="vrow" data-rv>
+          <span class="v-num" aria-hidden="true">03</span>
+          <div class="v-main">
+            <h3>A clear call, not just a chart</h3>
+            <p>Every analysis ends in a recommendation and the triggers that would change it: a HOLD on a $19B aerospace supplier, and no broad 2027 price cuts in my Tesla Energy case.</p>
+          </div>
+          <a class="v-proof" href="#cfa"><b>HOLD</b><span>$363.69 target, from the 5-person team I led</span><i aria-hidden="true">→</i></a>
+        </li>
+        <li class="vrow" data-rv>
+          <span class="v-num" aria-hidden="true">04</span>
+          <div class="v-main">
+            <h3>Hours back every week</h3>
+            <p>I automate the repeat work. At Microsoft I built an AI agent for ARR onboarding and a historical ARR snapshot tool with GitHub Copilot.</p>
+          </div>
+          <a class="v-proof" href="#microsoft"><b>3 hrs/week</b><span>saved by the onboarding AI agent</span><i aria-hidden="true">→</i></a>
+        </li>
+      </ol>
+      <div class="names" aria-label="Experience and programs">
+        <span class="names-label">Experience &amp; programs</span>
+        <ul><li>Microsoft</li><li>Glasswing Ventures</li><li>CFA Institute Research Challenge</li><li>McKinsey Forward Program</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head" data-rv>
         <div>
-          <p class="eyebrow">Selected work</p>
-          <h2 class="h2">Projects</h2>
+          <p class="eyebrow"><span class="idx">02</span>Selected work</p>
+          <h2 class="h2">Ten projects, <em>evidence attached</em></h2>
           <p class="section-sub">Pick a role to see the most relevant work first.</p>
         </div>
         <div class="filters" role="group" aria-label="Filter projects by role">
@@ -632,10 +891,10 @@ table.data td.val{text-align:right}
         </div>
       </div>
 
-      <a class="card card-flag" href="#microsoft" data-tags="fpa ana">
-        <div class="flag-img"><img src="photo-microsoft-challenge.webp" width="1100" height="841" alt="Aella and her six-person team at the Microsoft finance intern challenge" loading="lazy"></div>
-        <div class="flag-body">
-          <span class="flag-badge">Featured · Microsoft, Summer 2026</span>
+      <a class="card feature" href="#microsoft" data-tags="fpa ana" data-rv>
+        <div class="f-media f-photo"><img src="photo-microsoft-challenge.webp" width="1100" height="841" alt="Aella and her six-person team at the Microsoft finance intern challenge" loading="lazy"></div>
+        <div class="f-body">
+          <span class="f-idx"><b>01</b>Featured · Microsoft, Summer 2026</span>
           <h3>The ARR report behind Microsoft's monthly close</h3>
           <ul class="pts">
             <li>Overhauled the company-wide <b>ARR Power BI report</b> during Microsoft's shift to ARR.</li>
@@ -653,33 +912,53 @@ table.data td.val{text-align:right}
         </div>
       </a>
 
-      <div class="grid-2">
-        <a class="card card-big" href="#alphabet" data-tags="fpa ana">
-          <span class="cat">FP&amp;A case study · SQL, Python, Excel</span>
+      <a class="card feature rev" href="#alphabet" data-tags="fpa ana" data-rv>
+        <div class="f-media f-deck m-blue">
+          <img class="s-back" src="slide-alphabet-2.webp" width="1000" height="563" alt="" loading="lazy">
+          <img class="s-front" src="slide-alphabet-4.webp" width="1000" height="563" alt="Slide from my Alphabet deck: 2027E depreciation of $53B, 83% already locked in" loading="lazy">
+          <span class="f-note">From my 9-slide deck</span>
+        </div>
+        <div class="f-body">
+          <span class="f-idx"><b>02</b>FP&amp;A case study · SQL, Python, Excel</span>
           <h3>Alphabet: the 2027 depreciation wave and a margin guardrail</h3>
           <ul class="pts">
             <li>2027E depreciation of <b>$53B</b>, up 69%. <b>83%</b> is already locked in by assets bought through Sep. 2026.</li>
             <li>Python model backtested out of sample: <b>2.8%</b> average miss per quarter.</li>
             <li>Call: cap 2027 growth in other costs at <b>14%</b> to hold the 33.1% operating margin.</li>
           </ul>
-          <div class="mini-cap" aria-hidden="true"><span><i class="lr"></i>Reported</span><span><i class="l1"></i>2027E locked in</span><span>Depreciation, $B</span></div>
-          <div class="chart mini" data-chart="alphabet-mini" aria-hidden="true"></div>
-          <ul class="tags"><li class="tag">SQL</li><li class="tag">Python</li><li class="tag">Excel model</li></ul>
-          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
-        </a>
-        <a class="card card-big" href="#tesla-energy" data-tags="fpa ana">
-          <span class="cat">FP&amp;A case study · Public filings</span>
+          <div class="card-metrics">
+            <div class="metric"><b>$53B</b><span>projected 2027 depreciation</span></div>
+            <div class="metric"><b>83%</b><span>already locked in</span></div>
+            <div class="metric"><b>2.8%</b><span>average backtest miss</span></div>
+          </div>
+          <div class="card-foot"><span class="role">Solo project · SQL, Python, Excel model</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </div>
+      </a>
+
+      <a class="card feature" href="#tesla-energy" data-tags="fpa ana" data-rv>
+        <div class="f-media f-deck m-navy">
+          <img class="s-back" src="slide-tesla-5.webp" width="1000" height="563" alt="" loading="lazy">
+          <img class="s-front" src="slide-tesla-1.webp" width="1000" height="563" alt="Cover slide of my Tesla Energy deck: margin quality and the 2027 pricing decision" loading="lazy">
+          <span class="f-note">From my 10-slide deck</span>
+        </div>
+        <div class="f-body">
+          <span class="f-idx"><b>03</b>FP&amp;A case study · Public filings</span>
           <h3>Tesla Energy: margin quality and the 2027 pricing call</h3>
           <ul class="pts">
             <li>Q3 2026 gross margin was <b>23.8%</b> without one-time refunds, not the reported 33.1%.</li>
             <li>Revenue per GWh fell <b>14%</b>. Cost per GWh fell only 4%.</li>
             <li>Call: no broad 2027 price cuts. In my break-even math, a 5% cut needs about <b>20% more volume</b>.</li>
           </ul>
-          <div class="mini-cap" aria-hidden="true"><span><i class="l2 ln"></i>Reported</span><span><i class="l1 ln"></i>Ex one-time items</span><span>Gross margin by quarter</span></div>
-          <div class="chart mini" data-chart="tesla-mini" aria-hidden="true"></div>
-          <ul class="tags"><li class="tag">Excel model</li><li class="tag">Margin bridge</li><li class="tag">Pricing math</li></ul>
-          <div class="card-foot"><span class="role">Solo project</span><span class="cta">Read <span class="arr">→</span></span></div>
-        </a>
+          <div class="card-metrics">
+            <div class="metric"><b>23.8%</b><span>Q3 margin, ex refunds</span></div>
+            <div class="metric"><b>&minus;14%</b><span>revenue per GWh, YoY</span></div>
+            <div class="metric"><b>+20%</b><span>volume to offset a 5% cut</span></div>
+          </div>
+          <div class="card-foot"><span class="role">Solo project · Excel model, margin bridge</span><span class="cta">Read <span class="arr">→</span></span></div>
+        </div>
+      </a>
+
+      <div class="grid-2">
         <a class="card card-big" href="#indego" data-tags="fpa ana">
           <span class="cat cat-ana">Independent analysis · Public data</span>
           <h3>Indego Bike Share: where the growth comes from</h3>
@@ -764,11 +1043,11 @@ table.data td.val{text-align:right}
     </div>
   </section>
 
-  <section id="skills" class="section section-alt">
+  <section id="skills" class="section on-navy">
     <div class="wrap">
-      <div class="section-head"><div>
-        <p class="eyebrow">Skills</p>
-        <h2 class="h2">What I bring</h2>
+      <div class="section-head" data-rv><div>
+        <p class="eyebrow"><span class="idx">03</span>Skills</p>
+        <h2 class="h2">What I <em>bring</em></h2>
         <p class="section-sub">Each skill links to the work where I used it.</p>
       </div></div>
       <div class="skills-grid">
@@ -836,12 +1115,12 @@ table.data td.val{text-align:right}
 
   <section id="experience" class="section">
     <div class="wrap">
-      <div class="section-head"><div>
-        <p class="eyebrow">Experience</p>
-        <h2 class="h2">Where I've worked</h2>
+      <div class="section-head" data-rv><div>
+        <p class="eyebrow"><span class="idx">04</span>Experience</p>
+        <h2 class="h2">Where I've <em>worked</em></h2>
       </div></div>
       <ol class="xp">
-        <li class="xp-row">
+        <li class="xp-row" data-rv>
           <p class="xp-when">May 2026 - Aug. 2026</p>
           <div class="xp-body">
             <span class="xp-mark" aria-hidden="true">M</span>
@@ -855,7 +1134,7 @@ table.data td.val{text-align:right}
             <a class="xp-link" href="#microsoft">Read the case study →</a>
           </div>
         </li>
-        <li class="xp-row">
+        <li class="xp-row" data-rv>
           <p class="xp-when">May 2025 - Aug. 2025</p>
           <div class="xp-body">
             <span class="xp-mark inv" aria-hidden="true">GV</span>
@@ -867,7 +1146,7 @@ table.data td.val{text-align:right}
             </ul>
           </div>
         </li>
-        <li class="xp-row">
+        <li class="xp-row" data-rv>
           <p class="xp-when">Dec. 2024 - Present</p>
           <div class="xp-body">
             <span class="xp-mark ana" aria-hidden="true">GL</span>
@@ -879,7 +1158,7 @@ table.data td.val{text-align:right}
             </ul>
           </div>
         </li>
-        <li class="xp-row">
+        <li class="xp-row" data-rv>
           <p class="xp-when">Jan. 2025 - Present</p>
           <div class="xp-body">
             <span class="xp-mark" aria-hidden="true">GC</span>
@@ -891,7 +1170,7 @@ table.data td.val{text-align:right}
             </ul>
           </div>
         </li>
-        <li class="xp-row">
+        <li class="xp-row" data-rv>
           <p class="xp-when">May 2024 - Aug. 2024</p>
           <div class="xp-body">
             <span class="xp-mark" aria-hidden="true">LD</span>
@@ -909,7 +1188,7 @@ table.data td.val{text-align:right}
 
   <section id="recommendation" class="section section-alt">
     <div class="wrap">
-      <figure class="rec rec-wide">
+      <figure class="rec rec-wide on-blue" data-rv>
         <div class="rec-main">
           <p class="eyebrow">Recommendation</p>
           <blockquote><p>“I was very impressed by her intellectual curiosity, strong work ethic, creativity, analytical thinking, and resilience.”</p></blockquote>
@@ -928,9 +1207,9 @@ table.data td.val{text-align:right}
       </figure>
 
       <div id="credentials" class="creds-block">
-        <div class="section-head"><div>
-          <p class="eyebrow">Credentials</p>
-          <h2 class="h2">Certificates and programs</h2>
+        <div class="section-head" data-rv><div>
+          <p class="eyebrow"><span class="idx">05</span>Credentials</p>
+          <h2 class="h2">Certificates and <em>programs</em></h2>
         </div></div>
         <div class="cred-grid">
           <div class="cred-group">
@@ -963,7 +1242,7 @@ table.data td.val{text-align:right}
 
   <section class="band" aria-label="People and moments">
     <div class="wrap">
-      <div class="section-head"><div>
+      <div class="section-head" data-rv><div>
         <p class="eyebrow">Beyond the spreadsheet</p>
         <h2 class="h2">The people behind the work</h2>
       </div></div>
@@ -1001,10 +1280,10 @@ table.data td.val{text-align:right}
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact" class="contact on-coral">
     <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h2 class="h2">Hiring for 2027? Let's talk.</h2>
+      <p class="eyebrow"><span class="idx">06</span>Contact</p>
+      <h2 class="h2">Hiring for 2027? <em>Let's talk.</em></h2>
       <p class="section-sub">Open to 2027 roles in FP&amp;A, corporate and strategic finance, business and data analytics, and investment management.</p>
       <div class="contact-row">
         <span class="email-text">yennhi12132005@gmail.com</span>
@@ -1132,6 +1411,11 @@ table.data td.val{text-align:right}
       <div class="stat"><b>83%</b><span>Already locked in</span><small>By assets bought through Sep.&nbsp;30, 2026</small></div>
       <div class="stat"><b>2.8%</b><span>Average backtest miss</span><small>7 quarters the model never saw</small></div>
       <div class="stat"><b>14%</b><span>Cap on other cost growth</span><small>Holds the 33.1% margin, vs. 18.9% in 2026E</small></div>
+    </div>
+    <div class="slides" aria-label="Slides from the deck">
+      <a href="doc-alphabet-2027-depreciation.pdf" target="_blank" rel="noopener" data-view="alphabet"><img src="slide-alphabet-2.webp" width="1000" height="563" alt="Executive summary slide: a $53B depreciation year is mostly decided" loading="lazy"><span>Slide 2 · Executive summary</span></a>
+      <a href="doc-alphabet-2027-depreciation.pdf" target="_blank" rel="noopener" data-view="alphabet"><img src="slide-alphabet-4.webp" width="1000" height="563" alt="Forecast slide: 2027E depreciation of $53B, 83% already locked in" loading="lazy"><span>Slide 4 · 2027 forecast</span></a>
+      <a href="doc-alphabet-2027-depreciation.pdf" target="_blank" rel="noopener" data-view="alphabet"><img src="slide-alphabet-6.webp" width="1000" height="563" alt="Margin slide: to hold a 33% margin, other costs grow 14%" loading="lazy"><span>Slide 6 · Margin impact</span></a>
     </div>
     <section class="p-sec">
       <h2>The ask</h2>
@@ -1278,6 +1562,11 @@ table.data td.val{text-align:right}
       <div class="stat"><b>&minus;14%</b><span>Revenue per GWh, YoY</span><small>Cost per GWh fell only 4%</small></div>
       <div class="stat"><b>+20%</b><span>Volume to offset a 5% cut</span><small>Illustrative, at a 30% contribution margin</small></div>
       <div class="stat"><b>~7%</b><span>Cost cut per 5% of price</span><small>Illustrative, same assumption</small></div>
+    </div>
+    <div class="slides" aria-label="Slides from the deck">
+      <a href="doc-tesla-energy-2027.pdf" target="_blank" rel="noopener" data-view="tesla"><img src="slide-tesla-1.webp" width="1000" height="563" alt="Cover slide: Tesla Energy, margin quality and the 2027 pricing decision" loading="lazy"><span>Slide 1 · Cover</span></a>
+      <a href="doc-tesla-energy-2027.pdf" target="_blank" rel="noopener" data-view="tesla"><img src="slide-tesla-4.webp" width="1000" height="563" alt="Trend slide: excluding one-time items, 2026 margin fell from 31.2% to 23.8%" loading="lazy"><span>Slide 4 · 2026 trend</span></a>
+      <a href="doc-tesla-energy-2027.pdf" target="_blank" rel="noopener" data-view="tesla"><img src="slide-tesla-5.webp" width="1000" height="563" alt="Bridge slide: lower revenue per GWh more than offset volume and cost gains" loading="lazy"><span>Slide 5 · Gross profit bridge</span></a>
     </div>
     <section class="p-sec">
       <h2>The ask</h2>
@@ -3940,6 +4229,19 @@ $$("details.codebox").forEach(function (box) { box.addEventListener("toggle", fu
 $$("[data-open-code]").forEach(function (b) {
   b.addEventListener("click", function () { var d = document.getElementById(b.getAttribute("data-open-code")); if (!d) return; d.open = true; fillCode(d); d.scrollIntoView({ block: "start" }); });
 });
+
+/* ---------- scroll reveal ---------- */
+(function () {
+  var els = $$("[data-rv]");
+  if (!els.length || !("IntersectionObserver" in window) || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  document.documentElement.classList.add("js-rv");
+  function show(el) { el.classList.add("in"); setTimeout(function () { el.removeAttribute("data-rv"); el.classList.remove("in"); }, 900); }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); show(en.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+  els.forEach(function (el) { io.observe(el); });
+  setTimeout(function () { els.forEach(function (el) { if (el.hasAttribute("data-rv") && !el.classList.contains("in")) { io.unobserve(el); show(el); } }); }, 6000);
+})();
 
 window.addEventListener("hashchange", route);
 route();
