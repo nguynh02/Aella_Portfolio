@@ -33,7 +33,7 @@
   --teal:#3B91B0; --teal-wash:#DCEFF6; --teal-ink:#1F6E8C;
   --gold:#FD6E6E; --gold-wash:#FFE7E4; --gold-ink:#B4383C;
   --pos:#1F6E8C; --neg:#B4383C;
-  --s1:#002941; --s2:#FD6E6E; --s4:#B6DFED; --on-s1:#F4F9FB; --on-s2:#002941;
+  --s1:#002941; --s2:#FD6E6E; --s4:#B6DFED; --s5:#B49A74; --s6:#8C98A2; --on-s1:#F4F9FB; --on-s2:#002941;
   --bar-muted:#B6DFED; --bar-light:#E4F2F8;
   --grid:#EDE6DB; --axis:#C9BFAF; --code-bg:#F6F2EB;
   --nav-bg:rgba(0,41,65,.94); --hero-top:#DDEFF6;
@@ -58,7 +58,7 @@
     --teal:#5FA8C4; --teal-wash:#0B3246; --teal-ink:#8ECDE6;
     --gold:#FD6E6E; --gold-wash:#3A1A20; --gold-ink:#FF9E9E;
     --pos:#8ECDE6; --neg:#FF8F8F;
-    --s1:#B6DFED; --s2:#FD6E6E; --s4:#1E4B63; --on-s1:#002941; --on-s2:#002941;
+    --s1:#B6DFED; --s2:#FD6E6E; --s4:#1E4B63; --s5:#CDB896; --s6:#7F8D98; --on-s1:#002941; --on-s2:#002941;
     --bar-muted:#3E6F86; --bar-light:#173F55;
     --grid:#0E3043; --axis:#285368; --code-bg:#01192A;
     --nav-bg:rgba(0,19,30,.86); --hero-top:#032A3E;
@@ -79,7 +79,7 @@
   --teal:#5FA8C4; --teal-wash:#0B3246; --teal-ink:#8ECDE6;
   --gold:#FD6E6E; --gold-wash:#3A1A20; --gold-ink:#FF9E9E;
   --pos:#8ECDE6; --neg:#FF8F8F;
-  --s1:#B6DFED; --s2:#FD6E6E; --s4:#1E4B63; --on-s1:#002941; --on-s2:#002941;
+  --s1:#B6DFED; --s2:#FD6E6E; --s4:#1E4B63; --s5:#CDB896; --s6:#7F8D98; --on-s1:#002941; --on-s2:#002941;
   --bar-muted:#3E6F86; --bar-light:#173F55;
   --grid:#0E3043; --axis:#285368; --code-bg:#01192A;
   --nav-bg:rgba(0,19,30,.86); --hero-top:#032A3E;
@@ -786,6 +786,70 @@ body::before{background:#002941}
 .slides figure{margin:0;min-width:0;color:var(--muted)}
 .slides figure img{aspect-ratio:16/9;object-fit:cover}
 .slides figcaption{margin-top:9px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+/* AI CapEx Watch */
+.watch{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:36px;align-items:center;margin:0 0 44px;padding:34px 36px;border-radius:22px;overflow:hidden}
+.watch .eyebrow{display:flex;align-items:center;gap:10px;color:#B6DFED}
+.watch .eyebrow i{flex:none;width:9px;height:9px;border-radius:50%;background:#FD6E6E;box-shadow:0 0 0 0 rgba(253,110,110,.6);animation:pulse 2.4s ease-out infinite}
+.watch h2{font-family:var(--f-display);font-weight:400;font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.04;margin-top:10px;color:#F4F9FB}
+.watch h2 em{font-style:italic;color:#FD6E6E}
+.watch-copy>p:not(.eyebrow){margin-top:12px;max-width:52ch;color:#C9DDE7}
+.watch-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.watch-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+.watch-stats div{padding:16px 16px 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.watch-stats dt{font-family:var(--f-display);font-size:2.3rem;line-height:1;color:#B6DFED;white-space:nowrap}
+.watch-stats dd{margin:8px 0 0;font-size:.84rem;line-height:1.4;color:#C9DDE7}
+@media (max-width:860px){.watch{grid-template-columns:1fr;gap:24px;padding:26px 22px}}
+.card.stretch{position:relative}
+.stretch-link{color:inherit;text-decoration:none}
+.stretch-link::after{content:"";position:absolute;inset:0;z-index:1}
+.stretch-link:focus-visible{outline:none}
+.card.stretch:has(.stretch-link:focus-visible){outline:2px solid var(--sky);outline-offset:3px}
+.card-ctas{display:flex;align-items:center;gap:14px;flex:none}
+.stretch .card-foot{gap:12px;align-items:center}
+@media (max-width:520px){.stretch .card-foot{flex-wrap:wrap}.stretch .card-foot .role{flex-basis:100%}}
+.card-ctas .btn{position:relative;z-index:2}
+.p-title em{font-style:italic}
+.wt-sim{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:16px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+@media (max-width:760px){.wt-sim{grid-template-columns:1fr;gap:18px;padding:18px}}
+.wt-field{display:block;margin-bottom:22px}
+.wt-lab{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px;font-weight:600;color:var(--ink)}
+.wt-lab b{font-family:var(--f-mono);font-weight:600;color:var(--link);white-space:nowrap}
+.wt-field input[type=range]{width:100%;accent-color:#FD6E6E}
+.wt-seg{display:flex;flex-wrap:wrap;gap:8px}
+.wt-seg button{font:inherit;font-size:.9rem;font-weight:600;padding:8px 16px;border:1px solid var(--line-strong);border-radius:999px;background:var(--bg);color:var(--ink);cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
+.wt-seg button:hover{border-color:var(--ink)}
+.wt-seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.wt-out{display:grid;gap:12px}
+.wt-out>div{padding:16px 18px;border-radius:14px;background:var(--panel)}
+.wt-out .k{display:block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.wt-out b{display:block;margin-top:6px;font-family:var(--f-display);font-weight:400;font-size:2.5rem;line-height:1;color:var(--ink)}
+.wt-out b.ok{color:var(--pos)}.wt-out b.bad{color:var(--neg)}
+.wt-out small{display:block;margin-top:6px;font-size:.86rem;color:var(--ink-2)}
+.wt-flash{padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.wt-flash-head{font-size:1.05rem;line-height:1.5;color:var(--ink)}
+.wt-tag{display:inline-block;margin-right:10px;padding:3px 10px;border-radius:999px;background:#FD6E6E;color:#002941;font-family:var(--f-mono);font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;vertical-align:2px}
+.wt-h3{margin-top:28px;margin-bottom:12px;font-family:var(--f-display);font-weight:400;font-size:1.6rem}
+.wt-replay{margin-top:14px;padding:16px 18px;border-left:3px solid #FD6E6E;border-radius:0 12px 12px 0;background:var(--panel);font-size:1.02rem;line-height:1.55;color:var(--ink)}
+.wt-table{margin-top:14px;overflow-x:auto}
+.wt-table table.data{min-width:520px}
+.wt-table td.hi{font-weight:700;color:var(--ink)}
+.wt-table tr.avg td{font-weight:700;border-top:2px solid var(--ink)}
+.wt-table tr.open td{color:var(--muted);font-style:italic}
+.wt-table tr.hi-row td{font-weight:700;color:var(--ink)}
+.wt-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:st}
+.wt-steps li{display:flex;flex-direction:column;gap:8px;min-width:0;padding:18px 16px 16px;border:1px solid var(--line);border-radius:16px;background:var(--surface);counter-increment:st}
+.wt-steps li::before{content:counter(st,decimal-leading-zero);font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
+.wt-steps b{font-family:var(--f-display);font-weight:400;font-size:1.55rem;line-height:1;color:var(--ink)}
+.wt-steps span{font-size:.86rem;line-height:1.45;color:var(--ink-2)}
+.wt-st{margin-top:auto;align-self:flex-start;padding:4px 10px;border-radius:999px;font-family:var(--f-mono);font-size:.64rem;font-style:normal;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.wt-st.on{background:var(--ink);color:var(--bg)}
+.wt-st.off{border:1px dashed var(--line-strong);color:var(--muted)}
+@media (max-width:980px){.wt-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.wt-steps{grid-template-columns:1fr}}
+.p-body code{font-family:var(--f-mono);font-size:.86em;padding:1px 6px;border-radius:6px;background:var(--code-bg)}
+.viz .slive{fill:var(--warm-wash);stroke:var(--warm);stroke-width:1.5;stroke-dasharray:4 3}
+.legend i.llive{background:var(--warm-wash);outline:1.5px dashed var(--warm);outline-offset:-1.5px}
+.viz .s5{fill:var(--s5)}.viz .s6{fill:var(--s6)}.viz .ln5{stroke:var(--s5)}.viz .ln6{stroke:var(--s6)}.viz .lnb{stroke-width:3.5}
 .hero-copy>*,.portrait{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 .hero-copy>:nth-child(2){animation-delay:.06s}.hero-copy>:nth-child(3){animation-delay:.14s}.hero-copy>:nth-child(4){animation-delay:.2s}.hero-copy>:nth-child(5){animation-delay:.26s}.hero-copy>:nth-child(6){animation-delay:.32s}.portrait{animation-delay:.12s}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}}
@@ -876,9 +940,9 @@ body::before{background:#002941}
           <span class="v-num" aria-hidden="true">02</span>
           <div class="v-main">
             <h3>Forecasts built on drivers, and tested first</h3>
-            <p>I build a model from its drivers, then test it before anyone relies on it. My Alphabet model projects 2027 depreciation from SEC filings and was backtested on seven quarters it never saw.</p>
+            <p>I build a model from its drivers, then test it before anyone relies on it. My Alphabet model projects 2027 depreciation from SEC filings, and its tracker forecasts each quarter one step ahead and scores itself against what Alphabet reports.</p>
           </div>
-          <a class="v-proof" href="#alphabet"><b>2.8%</b><span>average backtest miss, out of sample</span><i aria-hidden="true">→</i></a>
+          <a class="v-proof" href="#capex-watch"><b>2.3%</b><span>average miss one quarter ahead, 7-quarter backtest (no-change forecast: 9.3%)</span><i aria-hidden="true">→</i></a>
         </li>
         <li class="vrow" data-rv>
           <span class="v-num" aria-hidden="true">03</span>
@@ -942,28 +1006,28 @@ body::before{background:#002941}
         </div>
       </a>
 
-      <a class="card feature rev" href="#alphabet" data-tags="fpa ana" data-rv>
+      <div class="card feature rev stretch" data-tags="fpa ana" data-rv>
         <div class="f-media f-deck m-blue">
           <img class="s-back" src="slide-alphabet-2.webp" width="1000" height="563" alt="" loading="lazy">
           <img class="s-front" src="slide-alphabet-4.webp" width="1000" height="563" alt="Slide from my Alphabet deck: 2027E depreciation of $53B, 83% already locked in" loading="lazy">
           <span class="f-note">From my 9-slide deck</span>
         </div>
         <div class="f-body">
-          <span class="f-idx"><b>02</b>FP&amp;A case study · SQL, Python, Excel</span>
-          <h3>Alphabet: the 2027 depreciation wave and a margin guardrail</h3>
+          <span class="f-idx"><b>02</b>FP&amp;A case study and tracker · SQL, Python, Excel</span>
+          <h3><a class="stretch-link" href="#alphabet">Alphabet: the 2027 depreciation wave and a margin guardrail</a></h3>
           <ul class="pts">
             <li>2027E depreciation of <b>$53B</b>, up 69%. <b>83%</b> is already locked in by assets bought through Sep. 2026.</li>
-            <li>Python model backtested out of sample: <b>2.8%</b> average miss per quarter.</li>
             <li>Call: cap 2027 growth in other costs at <b>14%</b> to hold the 33.1% operating margin.</li>
+            <li>Built <b>AI CapEx Watch</b> on top: it forecasts each quarter, scores itself against the 10-Q and tracks CapEx at 5 hyperscalers.</li>
           </ul>
           <div class="card-metrics">
             <div class="metric"><b>$53B</b><span>projected 2027 depreciation</span></div>
             <div class="metric"><b>83%</b><span>already locked in</span></div>
-            <div class="metric"><b>2.8%</b><span>average backtest miss</span></div>
+            <div class="metric"><b>2.3%</b><span>average miss, backtest</span></div>
           </div>
-          <div class="card-foot"><span class="role">Solo project · SQL, Python, Excel model</span><span class="cta">Read <span class="arr">→</span></span></div>
+          <div class="card-foot"><span class="role">Solo project · SQL, Python, Excel model</span><span class="card-ctas"><a class="btn btn-small btn-accent" href="#capex-watch">Open AI CapEx Watch</a><span class="cta">Read <span class="arr">→</span></span></span></div>
         </div>
-      </a>
+      </div>
 
       <a class="card feature" href="#tesla-energy" data-tags="fpa ana" data-rv>
         <div class="f-media f-deck m-navy">
@@ -1125,6 +1189,7 @@ body::before{background:#002941}
             <li><span>AI agent for ARR onboarding, 3 hrs a week saved</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>Historical ARR snapshot tool, built with GitHub Copilot</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
             <li><span>GitHub Copilot to validate 40+ DAX measures</span><span class="ev"><a href="#microsoft">Microsoft</a></span></li>
+            <li><span>Earnings flash and forecast tracker, one-command refresh</span><span class="ev"><a href="#capex-watch">Alphabet</a></span></li>
             <li><span>AI and ML fundamentals, certified</span><span class="ev"><a href="#credentials">AWS</a><a href="#credentials">Google</a></span></li>
           </ul>
         </div>
@@ -1143,7 +1208,7 @@ body::before{background:#002941}
       <div class="toolgrid">
         <a class="tool " href="#microsoft"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"/></svg><b>Power BI and DAX</b><span>40+ DAX measures validated for the company-wide ARR report</span><i>Microsoft <span aria-hidden="true">→</span></i></a>
         <a class="tool " href="#alphabet"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 10h16M4 15h16M10 5v14"/></svg><b>Advanced Excel</b><span>A 9-tab plan with 1,045 live formulas and 15 checks</span><i>Alphabet <span aria-hidden="true">→</span></i></a>
-        <a class="tool ana" href="#alphabet"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6c0-1.7 3.1-3 7-3s7 1.3 7 3-3.1 3-7 3-7-1.3-7-3zM5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg><b>SQL</b><span>A pipeline from 269 SEC facts to model inputs, with five tie-out checks</span><i>Alphabet <span aria-hidden="true">→</span></i></a>
+        <a class="tool ana" href="#alphabet"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6c0-1.7 3.1-3 7-3s7 1.3 7 3-3.1 3-7 3-7-1.3-7-3zM5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg><b>SQL</b><span>A pipeline from 386 SEC facts to model inputs, with 109 tie-out checks</span><i>Alphabet <span aria-hidden="true">→</span></i></a>
         <a class="tool ana" href="#indego"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><b>Python</b><span>2.26M trip records cleaned and analyzed for a growth call</span><i>Indego <span aria-hidden="true">→</span></i></a>
         <a class="tool ana" href="#minwage"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16h16M7 16l11-9"/><circle cx="9" cy="11" r="1"/><circle cx="13" cy="14" r="1"/><circle cx="16" cy="6" r="1"/></svg><b>Stata</b><span>Stacked DiD and an event study across 33 state increases</span><i>Min wage <span aria-hidden="true">→</span></i></a>
         <a class="tool inv" href="#cfa"><svg class="t-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4M8.5 13v-2M11 13V9M13.5 13v-3"/></svg><b>FactSet</b><span>Market data behind the Carpenter Technology valuation</span><i>CFA <span aria-hidden="true">→</span></i></a>
@@ -1440,9 +1505,9 @@ body::before{background:#002941}
         <h2 class="kd-title">Key data</h2>
         <dl>
           <div><dt>Role</dt><dd>Solo, end to end</dd></div>
-          <div><dt>Data</dt><dd>269 SEC XBRL facts, 2007 to Q3 2026; Alphabet 10-K, 10-Q and Q3 2026 call</dd></div>
+          <div><dt>Data</dt><dd>386 SEC XBRL facts: Alphabet 2007 to Q3 2026, plus four peers; Alphabet 10-K, 10-Q and Q3 2026 call</dd></div>
           <div><dt>Tools</dt><dd>SQL (BigQuery dialect, run on DuckDB), Python, Excel</dd></div>
-          <div><dt>Outputs</dt><dd>9-tab Excel plan, CFO memo, 9-slide deck</dd></div>
+          <div><dt>Outputs</dt><dd>9-tab Excel plan, CFO memo, 9-slide deck, AI CapEx Watch tracker</dd></div>
           <div><dt>Best fit</dt><dd class="fit">FP&amp;A, corporate finance, finance data and analytics</dd></div>
         </dl>
       </aside>
@@ -1458,6 +1523,20 @@ body::before{background:#002941}
       <a href="doc-alphabet-2027-depreciation.pdf" target="_blank" rel="noopener" data-view="alphabet"><img src="slide-alphabet-4.webp" width="1000" height="563" alt="Forecast slide: 2027E depreciation of $53B, 83% already locked in" loading="lazy"><span>Slide 4 · 2027 forecast</span></a>
       <a href="doc-alphabet-2027-depreciation.pdf" target="_blank" rel="noopener" data-view="alphabet"><img src="slide-alphabet-6.webp" width="1000" height="563" alt="Margin slide: to hold a 33% margin, other costs grow 14%" loading="lazy"><span>Slide 6 · Margin impact</span></a>
     </div>
+    <section class="watch on-navy" aria-labelledby="watch-h">
+      <div class="watch-copy">
+        <p class="eyebrow"><i aria-hidden="true"></i>AI CapEx Watch</p>
+        <h2 id="watch-h">I turned the model into a tracker that <em>scores itself</em></h2>
+        <p>Each quarter it forecasts Alphabet's depreciation one quarter ahead, checks the call against the 10-Q, writes a one-page earnings flash and tracks CapEx at five hyperscalers.</p>
+        <div class="watch-cta"><a class="btn btn-accent" href="#capex-watch">Open AI CapEx Watch <span aria-hidden="true">→</span></a></div>
+      </div>
+      <dl class="watch-stats">
+        <div><dt>2.3%</dt><dd>average miss one quarter ahead, vs. 9.3% for a no-change forecast (7-quarter backtest)</dd></div>
+        <div><dt>7 of 7</dt><dd>quarters inside the 5% alert band</dd></div>
+        <div><dt>$9.4B</dt><dd>next call: Q4 2026 depreciation, logged Nov.&nbsp;16, 2026</dd></div>
+        <div><dt>$691B</dt><dd>CapEx over the last 12 months at five hyperscalers</dd></div>
+      </dl>
+    </section>
     <section class="p-sec">
       <h2>The ask</h2>
       <div class="p-body"><p class="ask">How much will Alphabet's AI build-out raise 2027 depreciation, how much of it is already locked in, and how fast can other costs grow if the operating margin is to hold?</p></div>
@@ -1470,6 +1549,7 @@ body::before{background:#002941}
         <li>Built a <b>Python vintage model</b>: each quarter's spend splits by asset type, waits in construction, then depreciates straight-line once it goes live.</li>
         <li>Fit the model on data through 2024 only and <b>backtested it on the next seven quarters</b> before trusting the forecast.</li>
         <li>Mirrored it in a <b>9-tab Excel plan</b> with 1,045 live formulas, scenario switches and 15 checks, then wrote a CFO memo and a 9-slide deck.</li>
+        <li>Turned it into <b>AI CapEx Watch</b>: one command reruns the pipeline, scores a one-quarter-ahead forecast against each 10-Q, writes an earnings flash and tracks CapEx at four peers.</li>
       </ul></div>
     </section>
     <section class="p-sec">
@@ -1528,7 +1608,7 @@ body::before{background:#002941}
     <section class="p-sec">
       <h2>Skills</h2>
       <div class="p-body skills-two">
-        <div><h3>Technical</h3><ul class="tags"><li class="tag">SQL (BigQuery, DuckDB)</li><li class="tag">Python (NumPy)</li><li class="tag">SEC XBRL API</li><li class="tag">Data tie-outs</li><li class="tag">Forecasting</li><li class="tag">Backtesting</li><li class="tag">Excel modeling</li><li class="tag">Scenario analysis</li></ul></div>
+        <div><h3>Technical</h3><ul class="tags"><li class="tag">SQL (BigQuery dialect, DuckDB)</li><li class="tag">Python (NumPy)</li><li class="tag">SEC XBRL API</li><li class="tag">Data tie-outs</li><li class="tag">Forecasting</li><li class="tag">Backtesting</li><li class="tag">Automation</li><li class="tag">Excel modeling</li><li class="tag">Scenario analysis</li></ul></div>
         <div><h3>Soft skills</h3><ul class="soft">
           <li><b>Rigor.</b> Tested the model on seven quarters it had never seen before using it to forecast.</li>
           <li><b>Business judgment.</b> Turned a depreciation forecast into one number a budget owner can act on: 14%.</li>
@@ -1561,9 +1641,9 @@ body::before{background:#002941}
               <span class="dl-status" aria-live="polite"></span>
             </div></div></div>
           <div class="file"><span class="file-ic">ZIP</span><div>
-            <h3>Code and data</h3><p>SQL, Python, tests and the SEC data. The model runs in about 15 seconds.</p>
+            <h3>Repo: model and AI CapEx Watch</h3><p>SQL, Python, tests, the SEC data and the tracker. One command reruns everything.</p>
             <div class="file-actions">
-              <a class="btn btn-small btn-ghost" href="code-and-data-alphabet.zip" download="Aella_Nguyen_Alphabet_Code_and_Data.zip" data-dl data-embedded="zip-alphabet">Download ZIP</a>
+              <a class="btn btn-small btn-ghost" href="code-and-data-alphabet.zip" download="Aella_Nguyen_Alphabet_Model_and_AI_CapEx_Watch.zip" data-dl data-embedded="zip-alphabet">Download ZIP</a>
               <button class="btn btn-small" type="button" data-open-code="codebox-alphabet-sql">View SQL</button>
               <button class="btn btn-small" type="button" data-open-code="codebox-alphabet-py">View Python</button>
               <span class="dl-status" aria-live="polite"></span>
@@ -1574,6 +1654,135 @@ body::before{background:#002941}
       </div>
     </section>
     <nav class="p-next" aria-label="More projects"><a href="#microsoft"><small>← Previous</small><b>Microsoft ARR case study</b></a><a class="nx" href="#tesla-energy"><small>Next →</small><b>Tesla Energy margin and pricing</b></a></nav>
+  </div>
+</article>
+
+<!-- ============ AI CAPEX WATCH ============ -->
+<article id="view-capex-watch" class="view project" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a class="back" href="#alphabet">← Alphabet case study</a><span class="crumb-pos">Tracker built on project 2 of 10</span></div>
+    <header class="p-head">
+      <div>
+        <span class="cat">Forecast tracker · SEC data, SQL, Python · Data through Q3&nbsp;2026</span>
+        <h1 class="p-title" tabindex="-1">AI CapEx <em>Watch</em></h1>
+        <p class="p-dek">An earnings flash and forecast tracker built on my Alphabet model. Each quarter it forecasts Alphabet's depreciation one quarter ahead, scores that forecast against the 10-Q, writes a one-page flash and tracks CapEx at five hyperscalers.</p>
+      </div>
+      <aside class="keydata" aria-label="Key data">
+        <h2 class="kd-title">Key data</h2>
+        <dl>
+          <div><dt>Role</dt><dd>Solo, end to end</dd></div>
+          <div><dt>Data</dt><dd>386 SEC XBRL facts: Alphabet, Amazon, Microsoft, Meta and Oracle</dd></div>
+          <div><dt>Tools</dt><dd>SQL (BigQuery dialect, run on DuckDB), Python</dd></div>
+          <div><dt>Checks</dt><dd>109 tie-out checks passed, 0 failed, 3 flagged for review</dd></div>
+          <div><dt>Refreshed</dt><dd>Nov.&nbsp;16, 2026</dd></div>
+        </dl>
+      </aside>
+    </header>
+    <div class="stats">
+      <div class="stat"><b>2.3%</b><span>Average forecast miss</span><small>One quarter ahead, 7 quarters. No-change forecast 9.3%, momentum 3.0%.</small></div>
+      <div class="stat"><b>7 of 7</b><span>Quarters inside the 5% band</span><small>And closer than a no-change forecast every quarter</small></div>
+      <div class="stat"><b>$9.4B</b><span>Next call: Q4 2026 depreciation</span><small>Logged Nov.&nbsp;16, 2026. Alert band $9.0B to $9.9B.</small></div>
+      <div class="stat"><b>$691B</b><span>Five-company CapEx, last 12 months</span><small>Amazon, Alphabet, Microsoft, Meta and Oracle</small></div>
+    </div>
+    <section class="p-sec">
+      <h2>How the forecast scores</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="watch-score">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 1</span><span class="ex-title">Closer than a no-change forecast in 7 of 7 quarters</span></figcaption>
+          <div class="legend" data-legend="watch-score"></div>
+          <div class="chart" data-chart="watch-score" role="img" aria-label="Alphabet quarterly depreciation from Q1 2025 to Q3 2026, forecast one quarter ahead versus reported, in billions of dollars. Misses range from 0.2% to 4.0% and average 2.3%. The open forecast for Q4 2026 is 9.4 billion dollars."></div>
+          <div class="ex-foot"><span>Alphabet quarterly depreciation, $B. Label = forecast vs. reported. Each forecast refits only on data reported before that quarter. Source: SEC XBRL; vintage model.</span></div>
+        </figure>
+        <div class="wt-table"><table class="data"><thead><tr><th>Quarter</th><th>Data through</th><th class="num">Forecast ($B)</th><th class="num">Reported ($B)</th><th class="num">Model miss</th><th class="num">No-change miss</th><th class="num">Momentum miss</th></tr></thead><tbody><tr><td>Q1 2025</td><td>Q4 2024</td><td class="num">4.64</td><td class="num">4.49</td><td class="num hi">+3.5%</td><td class="num">−6.3%</td><td class="num">−1.4%</td></tr><tr><td>Q2 2025</td><td>Q1 2025</td><td class="num">4.99</td><td class="num">5.00</td><td class="num hi">−0.2%</td><td class="num">−10.2%</td><td class="num">−4.6%</td></tr><tr><td>Q3 2025</td><td>Q2 2025</td><td class="num">5.39</td><td class="num">5.61</td><td class="num hi">−4.0%</td><td class="num">−10.9%</td><td class="num">−1.8%</td></tr><tr><td>Q4 2025</td><td>Q3 2025</td><td class="num">5.84</td><td class="num">6.04</td><td class="num hi">−3.3%</td><td class="num">−7.1%</td><td class="num">+3.0%</td></tr><tr><td>Q1 2026</td><td>Q4 2025</td><td class="num">6.50</td><td class="num">6.48</td><td class="num hi">+0.3%</td><td class="num">−6.8%</td><td class="num">−0.2%</td></tr><tr><td>Q2 2026</td><td>Q1 2026</td><td class="num">7.24</td><td class="num">7.10</td><td class="num hi">+1.8%</td><td class="num">−8.8%</td><td class="num">−2.5%</td></tr><tr><td>Q3 2026</td><td>Q2 2026</td><td class="num">8.13</td><td class="num">8.37</td><td class="num hi">−2.8%</td><td class="num">−15.1%</td><td class="num">−7.7%</td></tr><tr class="avg"><td>Average miss</td><td></td><td class="num"></td><td class="num"></td><td class="num hi">2.3%</td><td class="num">9.3%</td><td class="num">3.0%</td></tr><tr class="open"><td>Q4 2026, open</td><td>Q3 2026</td><td class="num">9.44</td><td class="num">Feb. 2027</td><td class="num"></td><td class="num"></td><td class="num"></td></tr></tbody></table></div>
+        <p class="note">These 7 quarters are a walk-forward backtest run in Nov. 2026, not forecasts published at the time. Live forecasts are logged from Q4 2026 on; the first one is scored when Alphabet reports in early 2027. Bias over the period: −0.7%.</p>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Try it</h2>
+      <div class="p-body">
+        <p>What does 2027 look like under your assumptions? Pick a CapEx budget and move the sliders. The margin and the cost guardrail recalculate from the model's 2027E depreciation.</p>
+        <div class="wt-sim">
+          <div class="wt-ctl">
+            <div class="wt-field"><span class="wt-lab" id="wt-capex-l">2027 CapEx budget</span>
+              <div class="wt-seg" id="wt-capex" role="group" aria-labelledby="wt-capex-l"><button type="button" data-k="low" aria-pressed="false">$250B</button><button type="button" data-k="base" aria-pressed="true">$300B base</button><button type="button" data-k="high" aria-pressed="false">$350B</button></div></div>
+            <label class="wt-field"><span class="wt-lab">2027 revenue growth <b id="wt-gv">19%</b></span><input type="range" id="wt-g" min="5" max="35" step="1" value="19"></label>
+            <label class="wt-field"><span class="wt-lab">Growth in costs other than depreciation <b id="wt-cv">18.9%</b></span><input type="range" id="wt-c" min="5" max="30" step="0.1" value="18.9"></label>
+            <p class="note">Defaults: 19% revenue growth, other costs at the 2026E pace of 18.9%, $300B of 2027 CapEx.</p>
+          </div>
+          <div class="wt-out" aria-live="polite">
+            <div><span class="k">2027E operating margin</span><b id="wt-om">30.5%</b><small id="wt-omd">Falls 2.6 points below the 2026E margin of 33.1%</small></div>
+            <div><span class="k">Max cost growth to hold the 2026E margin</span><b id="wt-gr">13.7%</b><small id="wt-grd">You set 18.9%; the 2026E pace is 18.9%</small></div>
+            <div><span class="k">2027E depreciation</span><b id="wt-dp">$53.1B</b><small id="wt-dpd">9.0% of revenue, at a $300B CapEx budget</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Earnings flash</h2>
+      <div class="p-body">
+        <div class="wt-flash">
+          <p class="wt-flash-head"><span class="wt-tag">Q3 2026 flash</span>Depreciation came in at $8.4B, $0.2B (2.8%) above the $8.1B forecast, inside the 5% alert band.</p>
+          <div class="wt-table"><table class="data"><thead><tr><th>Metric</th><th class="num">Q3 2026</th><th class="num">Q2 2026</th><th class="num">Q3 2025</th></tr></thead><tbody>
+<tr><td>Depreciation</td><td class="num hi">$8.4B</td><td class="num">$7.1B</td><td class="num">$5.6B</td></tr>
+<tr><td>CapEx</td><td class="num hi">$51.4B</td><td class="num">$44.9B</td><td class="num">$24.0B</td></tr>
+<tr><td>Revenue</td><td class="num hi">$127.6B</td><td class="num">$119.8B</td><td class="num">$102.3B</td></tr>
+<tr><td>Operating income</td><td class="num hi">$40.6B</td><td class="num">$40.8B</td><td class="num">$31.2B</td></tr>
+<tr><td>CapEx / depreciation</td><td class="num hi">6.1x</td><td class="num">6.3x</td><td class="num">4.3x</td></tr>
+<tr><td>Depreciation, % of revenue</td><td class="num hi">6.6%</td><td class="num">5.9%</td><td class="num">5.5%</td></tr>
+<tr><td>Operating margin</td><td class="num hi">31.8%</td><td class="num">34.0%</td><td class="num">30.5%</td></tr>
+</tbody></table></div>
+          <p class="note">Depreciation grew 17.8% quarter over quarter and 49.2% year over year; CapEx grew 114.4% year over year. Next: Q4 2026 depreciation forecast $9.4B (+12.7% vs. Q3), alert band $9.0B to $9.9B.</p>
+        </div>
+        <h3 class="wt-h3">Replay any quarter</h3>
+        <div class="wt-seg" id="wt-qs" role="group" aria-label="Pick a quarter"></div>
+        <p class="wt-replay" id="wt-qt" aria-live="polite"></p>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Hyperscaler tracker</h2>
+      <div class="p-body">
+        <figure class="exhibit" data-ex="watch-peers">
+          <figcaption class="ex-head"><span class="ex-num">Exhibit 2</span><span class="ex-title">Five hyperscalers now spend about $691B a year on CapEx</span></figcaption>
+          <div class="legend" data-legend="watch-peers"></div>
+          <div class="chart" data-chart="watch-peers" role="img" aria-label="Trailing 12-month CapEx from Q4 2024 to Q3 2026, in billions of dollars: Amazon 83 to 215, Alphabet 53 to 160, Microsoft 56 to 136, Meta 37 to 104, Oracle 11 to 76."></div>
+          <div class="ex-foot"><span>Trailing 12-month CapEx, $B. Microsoft and Oracle fiscal quarters mapped to the calendar quarter they mostly fall in. All 26 derived quarters tie to reported 3-month figures. Source: SEC XBRL.</span></div>
+        </figure>
+        <div class="wt-table"><table class="data"><thead><tr><th>Company, Q3 2026</th><th class="num">CapEx ($B)</th><th class="num">Year over year</th><th class="num">Last 12 months ($B)</th></tr></thead><tbody><tr><td>Amazon</td><td class="num">77.3</td><td class="num">+120%</td><td class="num">215</td></tr><tr class="hi-row"><td>Alphabet</td><td class="num">51.4</td><td class="num">+114%</td><td class="num">160</td></tr><tr><td>Microsoft</td><td class="num">39.4</td><td class="num">+103%</td><td class="num">136</td></tr><tr><td>Meta</td><td class="num">33.9</td><td class="num">+80%</td><td class="num">104</td></tr><tr><td>Oracle</td><td class="num">28.5</td><td class="num">+235%</td><td class="num">76</td></tr><tr class="avg"><td>Five companies</td><td class="num"></td><td class="num"></td><td class="num">691</td></tr></tbody></table></div>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>How it runs</h2>
+      <div class="p-body">
+        <ol class="wt-steps">
+          <li><b>Detect</b><span>Check SEC EDGAR for new 10-Q and 10-K filings, then pull the XBRL facts.</span><i class="wt-st off">Written, not live yet</i></li>
+          <li><b>Rebuild</b><span>Rerun the SQL pipeline and 109 tie-out checks; stop on any failure.</span><i class="wt-st on">Runs today</i></li>
+          <li><b>Score</b><span>Score the forecast against the reported number, next to two naive forecasts.</span><i class="wt-st on">Runs today</i></li>
+          <li><b>Report</b><span>Write the one-page earnings flash and rebuild the dashboard.</span><i class="wt-st on">Runs today</i></li>
+          <li><b>Publish</b><span>Commit the outputs and deploy the dashboard on a daily schedule.</span><i class="wt-st off">Written, not live yet</i></li>
+        </ol>
+        <p class="note">Today one command, <code>bash watch/refresh.sh</code>, reruns the pipeline, the model, the scoring, the flashes and 5 tests. The scheduled job that checks SEC EDGAR every day is written but not switched on yet. After each Alphabet 10-Q, five balance-sheet inputs are still keyed in from the filing.</p>
+      </div>
+    </section>
+    <section class="p-sec">
+      <h2>Files</h2>
+      <div class="p-body">
+        <div class="files">
+          <div class="file"><span class="file-ic">ZIP</span><div>
+            <h3>Repo: model and tracker</h3><p>SQL, Python, tests, the SEC data, the scheduled workflow and all seven flashes.</p>
+            <div class="file-actions">
+              <a class="btn btn-small" href="code-and-data-alphabet.zip" download="Aella_Nguyen_Alphabet_Model_and_AI_CapEx_Watch.zip" data-dl data-embedded="zip-alphabet">Download ZIP</a>
+              <span class="dl-status" aria-live="polite"></span>
+            </div></div></div>
+          <div class="file"><span class="file-ic">PDF</span><div>
+            <h3>The model behind it</h3><p>Deck, CFO memo and the 9-tab Excel plan, on the Alphabet page.</p>
+            <div class="file-actions">
+              <a class="btn btn-small btn-ghost" href="#alphabet">Go to the Alphabet case</a>
+            </div></div></div>
+        </div>
+        <p class="note">Independent case study on public SEC filings; not affiliated with Alphabet or the other companies. E = estimate.</p>
+      </div>
+    </section>
+    <nav class="p-next" aria-label="More"><a href="#alphabet"><small>← Back to</small><b>Alphabet depreciation and margin plan</b></a><a class="nx" href="#tesla-energy"><small>Next project →</small><b>Tesla Energy margin and pricing</b></a></nav>
   </div>
 </article>
 
@@ -3646,7 +3855,9 @@ var LEGENDS = {
   "tesla-bridge": [["l1", "Gross profit"], ["l3", "Increase"], ["l2", "Decrease"], ["l4", "One-time item"]],
   "alphabet-dep": [["lr", "Reported"], ["lp", "2026E projected"], ["l1", "2027E locked in"], ["lnew", "2027E new spend"]],
   "alphabet-backtest": [["l1 ln", "Reported"], ["l3 ln", "Model, fit on data through 2024"]],
-  "alphabet-scen": [["l1", "2027E depreciation"], ["l3", "2028E depreciation"]]
+  "alphabet-scen": [["l1", "2027E depreciation"], ["l3", "2028E depreciation"]],
+  "watch-score": [["l1", "Forecast, made one quarter ahead"], ["lr", "Reported"], ["llive", "Open forecast, Q4 2026"]],
+  "watch-peers": [["l2 ln", "Alphabet"], ["l1 ln", "Amazon"], ["l3 ln", "Microsoft"], ["l5 ln", "Meta"], ["l6 ln", "Oracle"]]
 };
 
 /* ---------- svg helpers ---------- */
@@ -3722,23 +3933,27 @@ function grouped(el, s, W, first) {
   var y = function (v) { return m.t + ih - (v - s.yMin) / (s.yMax - s.yMin) * ih; };
   var band = iw / n, gap = s.gap || 2;
   var bw = Math.max(6, Math.min(s.barMax || (mini ? 18 : 24), (band * 0.7 - (k - 1) * gap) / k));
-  var gw = k * bw + (k - 1) * gap;
+  var cats = (W < 560 && s.catShort) ? s.catShort : s.categories;
   var svg = svgRoot(el, W, H, first); el.replaceChildren(svg);
   if (mini) svg.setAttribute("aria-hidden", "true");
   if (!mini) s.ticks.forEach(function (t) { var yy = Math.round(y(t)) + 0.5; S("line", { x1: m.l, x2: W - m.r, y1: yy, y2: yy, "class": t === 0 ? "axis" : "grid" }, svg); T(svg, m.l - 8, yy + 4, s.tickFmt(t), "tick", "end"); });
   else { var y0m = Math.round(y(0)) + 0.5; S("line", { x1: 0, x2: W, y1: y0m, y2: y0m, "class": "axis" }, svg); }
   s.categories.forEach(function (c, i) {
-    var gx = m.l + band * i + (band - gw) / 2;
-    s.series.forEach(function (se, j) {
+    var here = s.series.filter(function (se) { return se.values[i] != null; }), kk = here.length;
+    var gw = kk * bw + (kk - 1) * gap, gx = m.l + band * i + (band - gw) / 2, top = Infinity;
+    here.forEach(function (se, j) {
       var v = se.values[i], x = gx + j * (bw + gap), y0 = y(0), y1 = y(v);
-      var p = S("path", { d: vbar(x, bw, y0, y1), "class": "bar grow " + se.cls + (v < 0 ? " neg" : "") }, svg);
+      var cls = (se.clsAt && se.clsAt[i]) || se.cls;
+      var p = S("path", { d: vbar(x, bw, y0, y1), "class": "bar grow " + cls + (v < 0 ? " neg" : "") }, svg);
       p.style.animationDelay = (i * 90 + j * 45) + "ms";
+      top = Math.min(top, y1);
       if (!mini) {
-        T(svg, x + bw / 2, v >= 0 ? y1 - 7 : y1 + 15, (W < 480 && s.fmtShort) ? s.fmtShort(v) : s.fmt(v), "vlabel", "middle");
-        hit(svg, m.l + band * i + band / k * j, m.t, band / k, ih, s.fmt(v), c + " · " + se.name, [p]);
+        if (!s.groupLabels) T(svg, x + bw / 2, v >= 0 ? y1 - 7 : y1 + 15, (W < 480 && s.fmtShort) ? s.fmtShort(v) : s.fmt(v), "vlabel", "middle");
+        hit(svg, m.l + band * i + band / kk * j, m.t, band / kk, ih, s.fmt(v), c + " · " + ((se.nameAt && se.nameAt[i]) || se.name), [p]);
       }
     });
-    if (!mini) T(svg, m.l + band * i + band / 2, H - 9, c, "xlabel", "middle");
+    if (!mini && s.groupLabels && kk && band >= 46) T(svg, m.l + band * i + band / 2, top - 8, s.groupLabels[i], "vlabel", "middle");
+    if (!mini) T(svg, m.l + band * i + band / 2, H - 9, cats[i], "xlabel", "middle");
   });
 }
 function stack(el, s, W, first) {
@@ -3967,7 +4182,7 @@ if (document.fonts && document.fonts.ready) {
 $$("[data-legend]").forEach(function (box) {
   (LEGENDS[box.getAttribute("data-legend")] || []).forEach(function (it) {
     var sp = document.createElement("span"); var i = document.createElement("i"); i.className = it[0];
-    var cl = it[0].split(" "); if (cl.indexOf("ln") > -1) i.style.background = cl.indexOf("l1") > -1 ? "var(--s1)" : cl.indexOf("l3") > -1 ? "var(--teal)" : "var(--s2)";
+    var cl = it[0].split(" "); if (cl.indexOf("ln") > -1) i.style.background = cl.indexOf("l1") > -1 ? "var(--s1)" : cl.indexOf("l3") > -1 ? "var(--teal)" : cl.indexOf("l5") > -1 ? "var(--s5)" : cl.indexOf("l6") > -1 ? "var(--s6)" : "var(--s2)";
     sp.appendChild(i); sp.appendChild(document.createTextNode(it[1])); box.appendChild(sp);
   });
 });
@@ -4117,13 +4332,30 @@ RENDER.cols = function (el, s, W, first) {
   });
 };
 
+/* ---------- AI CapEx Watch ---------- */
+CH["watch-score"] = { type: "grouped", height: 290, yMin: 0, yMax: 10, ticks: [0, 2, 4, 6, 8, 10], gap: 6, barMax: 34,
+  categories: ["Q1 2025", "Q2 2025", "Q3 2025", "Q4 2025", "Q1 2026", "Q2 2026", "Q3 2026", "Q4 2026"],
+  catShort: ["1Q25", "2Q25", "3Q25", "4Q25", "1Q26", "2Q26", "3Q26", "4Q26"],
+  tickFmt: function (v) { return v === 0 ? "$0" : "$" + v + "B"; }, fmt: function (v) { return "$" + v.toFixed(2) + "B"; },
+  groupLabels: ["+3.5%", "−0.2%", "−4.0%", "−3.3%", "+0.3%", "+1.8%", "−2.8%", "open: $9.4B"],
+  series: [{ name: "Forecast, made one quarter ahead", cls: "s1", clsAt: { 7: "slive" }, nameAt: { 7: "Open forecast, logged Nov. 16, 2026" }, values: [4.6423, 4.9856, 5.3878, 5.8384, 6.5014, 7.2353, 8.1335, 9.4355] },
+    { name: "Reported", cls: "sr", values: [4.487, 4.998, 5.611, 6.04, 6.482, 7.104, 8.369, null] }] };
+CH["watch-peers"] = { type: "lines", domain: [0, 250], ticks: [0, 50, 100, 150, 200, 250], labels: ["Q4|2024", "Q1|2025", "Q2|2025", "Q3|2025", "Q4|2025", "Q1|2026", "Q2|2026", "Q3|2026"],
+  tickFmt: function (v) { return v === 0 ? "$0" : "$" + v + "B"; }, fmt: function (v) { return "$" + Math.round(v) + "B"; },
+  series: [{ name: "Oracle", short: "Oracle", cls: "s6", line: "ln6", values: [10.74, 14.93, 21.21, 27.41, 35.48, 48.25, 55.66, 75.66] },
+    { name: "Meta", short: "Meta", cls: "s5", line: "ln5", values: [37.26, 43.8, 52.16, 62.73, 69.69, 75.75, 89.33, 104.44] },
+    { name: "Microsoft", short: "Microsoft", cls: "s3", line: "ln3", values: [55.55, 61.34, 64.55, 69.02, 83.09, 97.22, 115.95, 135.92] },
+    { name: "Amazon", short: "Amazon", cls: "s1", line: "ln1", values: [83.0, 93.09, 107.66, 120.13, 131.82, 151.0, 173.03, 215.19] },
+    { name: "Alphabet", short: "Alphabet", cls: "s2", line: "ln2 lnb", values: [52.53, 57.72, 66.98, 77.87, 91.45, 109.92, 132.4, 159.8] }] };
+
 /* ---------- router ---------- */
 var PROJECTS = ["microsoft", "alphabet", "tesla-energy", "indego", "cfa", "citi", "minwage", "factor", "fidelity", "tsla"];
+var PAGES = PROJECTS.concat(["capex-watch"]);
 var home = $("#view-home"), views = $$("article.view"), current = null;
 function instantScroll(fn) { var h = document.documentElement, b = h.style.scrollBehavior; h.style.scrollBehavior = "auto"; fn(); h.style.scrollBehavior = b; }
 function route() {
   var h = decodeURIComponent((location.hash || "").slice(1));
-  var isP = PROJECTS.indexOf(h) > -1;
+  var isP = PAGES.indexOf(h) > -1;
   hideTip();
   if (!viewer.hidden) closeDoc(true);
   if (isP) {
@@ -4135,7 +4367,7 @@ function route() {
     var t = $(".p-title", v); if (t && current !== null) t.focus({ preventScroll: true });
     current = h;
   } else {
-    var wasProject = current && PROJECTS.indexOf(current) > -1;
+    var wasProject = current && PAGES.indexOf(current) > -1;
     views.forEach(function (v) { v.hidden = true; });
     home.hidden = false;
     renderVisible(home);
@@ -4280,6 +4512,38 @@ $$("details.codebox").forEach(function (box) { box.addEventListener("toggle", fu
 $$("[data-open-code]").forEach(function (b) {
   b.addEventListener("click", function () { var d = document.getElementById(b.getAttribute("data-open-code")); if (!d) return; d.open = true; fillCode(d); d.scrollIntoView({ block: "start" }); });
 });
+
+/* ---------- AI CapEx Watch: scenario sliders and flash replay ---------- */
+(function () {
+  var root = document.getElementById("view-capex-watch"); if (!root) return;
+  var WD = {"rev26": 496140.38, "cost26": 300498.0, "m26": 0.3310592384167515, "pace": 0.189332742291054, "dep": {"low": 52299.001330949264, "base": 53134.96477886593, "high": 53970.928226782606}, "capex": {"low": 250000, "base": 300000, "high": 350000}, "flash": {"2025Q1": {"f": 4642.3, "a": 4487.0, "e": 0.03460962205827012, "n": -0.06284822821484293, "t": "2024Q4"}, "2025Q2": {"f": 4985.6, "a": 4998.0, "e": -0.0024712475446840854, "n": -0.10224089635854339, "t": "2025Q1"}, "2025Q3": {"f": 5387.8, "a": 5611.0, "e": -0.03977119569434728, "n": -0.10924968811263591, "t": "2025Q2"}, "2025Q4": {"f": 5838.4, "a": 6040.0, "e": -0.03338098081528351, "n": -0.07102649006622519, "t": "2025Q3"}, "2026Q1": {"f": 6501.4, "a": 6482.0, "e": 0.002999018353341265, "n": -0.06818883060783709, "t": "2025Q4"}, "2026Q2": {"f": 7235.3, "a": 7104.0, "e": 0.01847879894143234, "n": -0.08755630630630629, "t": "2026Q1"}, "2026Q3": {"f": 8133.5, "a": 8369.0, "e": -0.028144311538496725, "n": -0.15115306488230373, "t": "2026Q2"}}};
+  var k = "base", gIn = $("#wt-g"), cIn = $("#wt-c");
+  function pc(x, d) { var v = (Math.abs(x) * 100).toFixed(d == null ? 1 : d); return (x < -0.00005 ? MINUS : "") + v + "%"; }
+  function ql(q) { return "Q" + q.charAt(5) + " " + q.slice(0, 4); }
+  function calc() {
+    var g = +gIn.value / 100, c = +cIn.value / 100, dep = WD.dep[k], rev = WD.rev26 * (1 + g);
+    var mg = (rev - WD.cost26 * (1 + c) - dep) / rev, guard = (rev * (1 - WD.m26) - dep) / WD.cost26 - 1, holds = mg >= WD.m26 - 0.0005;
+    $("#wt-gv").textContent = pc(g, 0); $("#wt-cv").textContent = pc(c);
+    var om = $("#wt-om"); om.textContent = pc(mg); om.className = holds ? "ok" : "bad";
+    $("#wt-omd").textContent = (holds ? "Holds" : "Falls " + ((WD.m26 - mg) * 100).toFixed(1) + " points below") + " the 2026E margin of " + pc(WD.m26);
+    $("#wt-gr").textContent = pc(guard); $("#wt-grd").textContent = "You set " + pc(c) + "; the 2026E pace is " + pc(WD.pace);
+    $("#wt-dp").textContent = "$" + (dep / 1000).toFixed(1) + "B"; $("#wt-dpd").textContent = pc(dep / rev) + " of revenue, at a $" + WD.capex[k] / 1000 + "B CapEx budget";
+  }
+  $$("#wt-capex button").forEach(function (b) {
+    b.addEventListener("click", function () { k = b.getAttribute("data-k"); $$("#wt-capex button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); calc(); });
+  });
+  gIn.addEventListener("input", calc); cIn.addEventListener("input", calc); calc();
+  var qs = Object.keys(WD.flash), box = $("#wt-qs"), out = $("#wt-qt");
+  function show(q) {
+    var f = WD.flash[q];
+    $$("button", box).forEach(function (x) { x.setAttribute("aria-pressed", String(x.getAttribute("data-q") === q)); });
+    var b = document.createElement("b"); b.textContent = ql(q) + ": ";
+    out.replaceChildren(b, document.createTextNode("depreciation came in at $" + (f.a / 1000).toFixed(2) + "B, " + Math.abs(f.e * 100).toFixed(1) + "% " + (f.a > f.f ? "above" : "below") +
+      " the $" + (f.f / 1000).toFixed(2) + "B forecast made with data through " + ql(f.t) + ". A no-change forecast would have missed by " + Math.abs(f.n * 100).toFixed(1) + "%."));
+  }
+  qs.forEach(function (q) { var b = document.createElement("button"); b.type = "button"; b.textContent = ql(q); b.setAttribute("data-q", q); b.setAttribute("aria-pressed", "false"); b.addEventListener("click", function () { show(q); }); box.appendChild(b); });
+  show(qs[qs.length - 1]);
+})();
 
 /* ---------- scroll reveal ---------- */
 (function () {
